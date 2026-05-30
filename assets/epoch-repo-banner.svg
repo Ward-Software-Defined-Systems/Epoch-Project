@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640" role="img" aria-label="The Epoch Project — boundary-defined continuity">
+<!-- ================= PALETTE — edit colours here =================
+     ink      #0E0F13   ink2 #15171D
+     bone     #EFEAE0   bone-soft #C7CAD2   muted #8B909B
+     slate    #6FA0B2   slate-deep #3E5A66
+     ember    #E9883B   ember-soft #F4A862   ember-deep #C96A28
+     hair     #272C35
+     Fonts use generic families so the SVG renders reliably as a
+     GitHub README image. Swap the first family in each stack to
+     restyle (kept editable, not converted to paths).
+=============================================================== -->
+<defs>
+  <style>
+    .serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif;}
+    .mono{font-family:ui-monospace,'SF Mono','JetBrains Mono',Menlo,Consolas,monospace;}
+    .bone{fill:#EFEAE0;} .bonesoft{fill:#C7CAD2;} .muted{fill:#8B909B;}
+    .slate{fill:#6FA0B2;} .ember{fill:#E9883B;}
+    .hairstroke{stroke:#272C35;stroke-width:1;}
+    .slatestroke{stroke:#6FA0B2;fill:none;} .emberstroke{stroke:#E9883B;fill:none;}
+  </style>
+  <linearGradient id="inkGrad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#121319"/>
+    <stop offset="100%" stop-color="#0B0C0F"/>
+  </linearGradient>
+  <radialGradient id="bgWarm" cx="78%" cy="42%" r="40%">
+    <stop offset="0%" stop-color="#2E1C11" stop-opacity="0.6"/>
+    <stop offset="100%" stop-color="#2E1C11" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="vig" cx="44%" cy="46%" r="82%">
+    <stop offset="56%" stop-color="#0E0F13" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000000" stop-opacity="0.48"/>
+  </radialGradient>
+  <pattern id="grid" width="38" height="38" patternUnits="userSpaceOnUse">
+    <path d="M38 0 H0 V38" fill="none" stroke="#FFFFFF" stroke-opacity="0.035" stroke-width="1"/>
+  </pattern>
+  <filter id="emberGlow" x="-120%" y="-120%" width="340%" height="340%">
+    <feGaussianBlur stdDeviation="6" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="softHalo" x="-160%" y="-160%" width="420%" height="420%">
+    <feGaussianBlur stdDeviation="24"/>
+  </filter>
+  <marker id="ah" markerWidth="9" markerHeight="8" refX="6.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0,0 L7,3.5 L0,7 Z" fill="#6FA0B2"/>
+  </marker>
+</defs>
+
+<!-- ===== background ===== -->
+<rect width="1280" height="640" fill="url(#inkGrad)"/>
+<rect width="1280" height="640" fill="url(#grid)"/>
+<rect width="1280" height="640" fill="url(#bgWarm)"/>
+<text x="1218" y="610" class="serif ember" font-size="118" font-style="italic" text-anchor="end" opacity="0.10">&#968;</text>
+<rect width="1280" height="640" fill="url(#vig)"/>
+
+<!-- ===== right motif: identity verified across a boundary ===== -->
+<g>
+  <circle cx="1000" cy="300" r="30" fill="#E9883B" opacity="0.20" filter="url(#softHalo)"/>
+  <line x1="828" y1="300" x2="1172" y2="300" class="hairstroke"/>
+  <line x1="1000" y1="208" x2="1000" y2="392" class="emberstroke" stroke-width="1.5" opacity="0.85"/>
+  <text x="1014" y="216" class="serif ember" font-size="22" font-style="italic">&#968;</text>
+  <circle cx="900" cy="300" r="8.5" fill="#6FA0B2" opacity="0.55"/>
+  <circle cx="1100" cy="300" r="8.5" fill="#6FA0B2" opacity="0.55"/>
+  <line x1="916" y1="300" x2="980" y2="300" class="slatestroke" stroke-width="1.5" opacity="0.7" marker-end="url(#ah)"/>
+  <line x1="1020" y1="300" x2="1084" y2="300" class="slatestroke" stroke-width="1.5" opacity="0.7" marker-end="url(#ah)"/>
+  <text x="948" y="287" class="mono slate" font-size="12" text-anchor="middle" opacity="0.85">&#948;</text>
+  <text x="1052" y="287" class="mono slate" font-size="12" text-anchor="middle" opacity="0.85">&#948;</text>
+  <circle cx="1000" cy="300" r="12.5" fill="#F4A862" filter="url(#emberGlow)"/>
+  <text x="1000" y="424" class="mono muted" font-size="13" text-anchor="middle" letter-spacing="0.5">identity verified across the boundary</text>
+</g>
+
+<!-- ===== type block ===== -->
+<g>
+  <text x="98" y="120" class="mono slate" font-size="16" letter-spacing="5">BOUNDARY-DEFINED CONTINUITY</text>
+  <text x="92" y="360" class="serif bone" font-size="170" letter-spacing="2" font-weight="700">EPOCH</text>
+  <circle cx="650" cy="347" r="13" fill="#F4A862" filter="url(#emberGlow)"/>
+  <line x1="98" y1="392" x2="628" y2="392" class="hairstroke"/>
+  <text x="100" y="424" class="mono muted" font-size="17" letter-spacing="6">THE EPOCH PROJECT</text>
+  <text x="98" y="470" class="serif bonesoft" font-size="29" font-style="italic">an epoch lasts as long as its boundary condition holds</text>
+  <text x="98" y="598" class="mono muted" font-size="14" letter-spacing="1.5" opacity="0.9">embOS&#160;&#160;&#183;&#160;&#160;the Steward</text>
+</g>
+</svg>

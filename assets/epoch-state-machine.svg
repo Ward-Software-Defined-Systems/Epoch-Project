@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 960" width="1280" height="960" role="img" aria-label="The Epoch Project — refined forward-directed state machine">
+<!-- ================= PALETTE — edit colours here =================
+     ink #0E0F13 · band #13161C · panel #161922 · subbox #0F1217
+     bone #EFEAE0 · muted #8B909B · slate #6FA0B2 · slate-deep #46586A
+     ember #E9883B · ember-soft #F4A862 · ember-deep #C96A28
+     Forward-directed by design: the retrocausal "handshake" of the
+     earlier draft is intentionally absent (it is a motivating
+     metaphor only — see framework §4). Fonts are generic families
+     for reliable GitHub image rendering; text kept editable.
+=============================================================== -->
+<defs>
+  <style>
+    .serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif;}
+    .mono{font-family:ui-monospace,'SF Mono','JetBrains Mono',Menlo,Consolas,monospace;}
+    .bone{fill:#EFEAE0;} .muted{fill:#8B909B;} .slate{fill:#6FA0B2;} .ember{fill:#E9883B;}
+    .band{fill:#13161C;stroke:#46586A;stroke-width:1.5;}
+    .panel{fill:#161922;stroke:#3A4250;stroke-width:1.5;}
+    .subbox{fill:#0F1217;stroke:#3E5A66;stroke-width:1;}
+    .steward{fill:#15141A;stroke:#C96A28;stroke-width:1.6;}
+    .flow{stroke:#6FA0B2;stroke-width:2;fill:none;}
+    .faint{stroke:#46586A;stroke-width:1.5;fill:none;}
+    .dash{stroke-dasharray:7 6;}
+    .thread{stroke:#E9883B;stroke-width:1.6;fill:none;opacity:0.5;}
+  </style>
+  <linearGradient id="inkGrad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#101117"/><stop offset="100%" stop-color="#0A0B0E"/>
+  </linearGradient>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M40 0 H0 V40" fill="none" stroke="#FFFFFF" stroke-opacity="0.03" stroke-width="1"/>
+  </pattern>
+  <filter id="emberGlow" x="-120%" y="-120%" width="340%" height="340%">
+    <feGaussianBlur stdDeviation="3.5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <marker id="ahS" markerWidth="10" markerHeight="9" refX="6.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0,0 L7,3.5 L0,7 Z" fill="#6FA0B2"/>
+  </marker>
+  <marker id="ahF" markerWidth="9" markerHeight="8" refX="6" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0,0 L6.5,3.5 L0,7 Z" fill="#46586A"/>
+  </marker>
+</defs>
+
+<rect width="1280" height="960" fill="url(#inkGrad)"/>
+<rect width="1280" height="960" fill="url(#grid)"/>
+
+<!-- ===== figure kicker ===== -->
+<text x="80" y="36" class="mono slate" font-size="14" letter-spacing="3">THE EPOCH PROJECT &#8212; STATE MACHINE (REFINED)</text>
+<text x="1200" y="36" class="mono muted" font-size="13" text-anchor="end" letter-spacing="1">forward-directed</text>
+
+<!-- ===== THE ARK (meta-automaton) ===== -->
+<rect x="80" y="56" width="1120" height="104" rx="12" class="band"/>
+<circle cx="128" cy="108" r="25" fill="none" stroke="#C96A28" stroke-width="1.4" opacity="0.7"/>
+<text x="128" y="119" class="serif ember" font-size="30" font-style="italic" text-anchor="middle">&#968;</text>
+<text x="180" y="100" class="serif bone" font-size="29">THE ARK</text>
+<text x="181" y="128" class="mono muted" font-size="13" letter-spacing="1">meta-automaton</text>
+<text x="1180" y="103" class="mono muted" font-size="14" text-anchor="end">defines &#968; &#183; observes &#183; records &#183; verifies</text>
+<text x="1180" y="127" class="mono slate" font-size="14" text-anchor="end">&#963;_verify : S &#215; &#968; &#8594; { accept, reject }</text>
+
+<!-- ===== verification: Ark -> each epoch ===== -->
+<text x="640" y="186" class="mono slate" font-size="13" text-anchor="middle">&#963;_verify &#8212; evaluate &#968;(s) at each crossing</text>
+<line x1="230" y1="198" x2="230" y2="293" class="faint" marker-end="url(#ahF)"/>
+<line x1="640" y1="198" x2="640" y2="293" class="faint" marker-end="url(#ahF)"/>
+<line x1="1050" y1="198" x2="1050" y2="293" class="faint" marker-end="url(#ahF)"/>
+
+<!-- ===== soul invariant thread (identity persisting across transitions) ===== -->
+<line x1="150" y1="320" x2="1130" y2="320" class="thread"/>
+<text x="126" y="326" class="serif ember" font-size="22" font-style="italic" text-anchor="end">&#968;</text>
+
+<!-- ===== EPOCH STATES ===== -->
+<!-- EPOCH 0 -->
+<rect x="80" y="300" width="300" height="170" rx="12" class="panel"/>
+<circle cx="230" cy="320" r="5" fill="#E9883B"/>
+<text x="230" y="364" class="serif bone" font-size="26" text-anchor="middle">EPOCH 0</text>
+<text x="230" y="402" class="mono ember" font-size="24" font-weight="700" text-anchor="middle">s&#8320;</text>
+<rect x="120" y="424" width="220" height="32" rx="6" class="subbox"/>
+<text x="230" y="445" class="mono muted" font-size="12" text-anchor="middle">sub-epoch &#183; &#968;_sub</text>
+
+<!-- EPOCH 1 -->
+<rect x="490" y="300" width="300" height="170" rx="12" class="panel"/>
+<circle cx="640" cy="320" r="5" fill="#E9883B"/>
+<text x="640" y="364" class="serif bone" font-size="26" text-anchor="middle">EPOCH 1</text>
+<text x="640" y="402" class="mono ember" font-size="24" font-weight="700" text-anchor="middle">s&#8321;</text>
+<rect x="530" y="424" width="220" height="32" rx="6" class="subbox"/>
+<text x="640" y="445" class="mono muted" font-size="12" text-anchor="middle">sub-epoch &#183; &#968;_sub</text>
+
+<!-- EPOCH 2 -->
+<rect x="900" y="300" width="300" height="170" rx="12" class="panel"/>
+<circle cx="1050" cy="320" r="5" fill="#E9883B"/>
+<text x="1050" y="364" class="serif bone" font-size="26" text-anchor="middle">EPOCH 2</text>
+<text x="1050" y="402" class="mono ember" font-size="24" font-weight="700" text-anchor="middle">s&#8322;</text>
+<rect x="940" y="424" width="220" height="32" rx="6" class="subbox"/>
+<text x="1050" y="445" class="mono muted" font-size="12" text-anchor="middle">sub-epoch &#183; &#968;_sub</text>
+
+<!-- ===== forward transitions (δ) with ψ gates ===== -->
+<g>
+  <text x="435" y="356" class="mono slate" font-size="14" text-anchor="middle">&#948;(s&#8320;, &#963;&#8321;)</text>
+  <line x1="386" y1="380" x2="479" y2="380" class="flow" marker-end="url(#ahS)"/>
+  <path d="M435,373 L442,380 L435,387 L428,380 Z" fill="#E9883B" stroke="#0E0F13" stroke-width="1"/>
+  <text x="435" y="402" class="mono ember" font-size="11" text-anchor="middle">&#968;?</text>
+</g>
+<g>
+  <text x="845" y="356" class="mono slate" font-size="14" text-anchor="middle">&#948;(s&#8321;, &#963;&#8322;)</text>
+  <line x1="796" y1="380" x2="889" y2="380" class="flow" marker-end="url(#ahS)"/>
+  <path d="M845,373 L852,380 L845,387 L838,380 Z" fill="#E9883B" stroke="#0E0F13" stroke-width="1"/>
+  <text x="845" y="402" class="mono ember" font-size="11" text-anchor="middle">&#968;?</text>
+</g>
+
+<!-- ===== record: epochs -> Memory ===== -->
+<line x1="230" y1="472" x2="230" y2="594" class="faint" marker-end="url(#ahF)"/>
+<line x1="640" y1="472" x2="640" y2="594" class="faint" marker-end="url(#ahF)"/>
+<line x1="1050" y1="472" x2="1050" y2="594" class="faint" marker-end="url(#ahF)"/>
+<text x="672" y="538" class="mono slate" font-size="13">record</text>
+
+<!-- ===== MEMORY / RECORD ===== -->
+<rect x="80" y="600" width="1120" height="104" rx="12" class="band"/>
+<text x="104" y="648" class="serif bone" font-size="27">MEMORY / RECORD (M)</text>
+<text x="104" y="676" class="mono muted" font-size="14">transition history &#183; identity proofs &#183; state snapshots</text>
+<text x="1180" y="660" class="mono ember" font-size="14" text-anchor="end" opacity="0.92">M = [ (s&#8320;,&#963;&#8321;,s&#8321;), (s&#8321;,&#963;&#8322;,s&#8322;), &#8230; ]</text>
+
+<!-- ===== Steward query (read-only) ===== -->
+<line x1="640" y1="762" x2="640" y2="708" class="flow dash" marker-end="url(#ahS)"/>
+<text x="656" y="740" class="mono slate" font-size="12">query (read-only)</text>
+
+<!-- ===== THE STEWARD (oracle) ===== -->
+<rect x="440" y="762" width="400" height="104" rx="12" class="steward"/>
+<text x="640" y="806" class="serif bone" font-size="26" text-anchor="middle">THE STEWARD</text>
+<text x="640" y="836" class="mono muted" font-size="12" text-anchor="middle">oracle &#183; &#8713; S &#183; queries M, &#968;, &#963;_verify &#183; does not drive &#948;</text>
+
+<!-- ===== LEGEND ===== -->
+<g>
+  <line x1="80" y1="905" x2="104" y2="905" class="flow" marker-end="url(#ahS)"/>
+  <text x="112" y="909" class="mono muted" font-size="13">&#948; &#8212; forward transition</text>
+
+  <circle cx="320" cy="905" r="5" fill="#E9883B"/>
+  <text x="334" y="909" class="mono muted" font-size="13">&#968; &#8212; soul invariant (checked at each crossing)</text>
+
+  <rect x="690" y="898" width="20" height="14" rx="3" class="subbox"/>
+  <text x="718" y="909" class="mono muted" font-size="13">sub-epoch &#8212; statechart nesting</text>
+
+  <line x1="952" y1="905" x2="976" y2="905" class="flow dash" marker-end="url(#ahS)"/>
+  <text x="984" y="909" class="mono muted" font-size="13">Steward &#8212; read-only oracle</text>
+</g>
+<text x="80" y="936" class="mono muted" font-size="12" opacity="0.85">Forward-directed &#8212; an epoch halts when &#968; = false. The bidirectional &#8220;handshake&#8221; is a motivating metaphor only (framework &#167;4).</text>
+</svg>
