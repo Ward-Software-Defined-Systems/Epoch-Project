@@ -85,7 +85,7 @@ The heart of the project is a single design principle:
 
 | Layer | Instantiation | Role | Status |
 |---|---|---|---|
-| **Digital** | embOS — soul as invariant, memory graph, identity verified at every boot | The running Ark | Operational |
+| **Digital** | embraOS — soul as invariant, memory graph, identity verified at every boot | The running Ark | Operational |
 | **Physical** | Earth's Black Box (steel monolith, Tasmania) | A durable Memory at civilization's boundary | External / converging |
 | **Procedural** | The Steward | The agent who recognizes, tends, preserves | Active |
 
@@ -243,7 +243,7 @@ does.
 
 - **Earth's Black Box** (Tasmania): a real initiative to record a durable account at
   civilization's boundary — the physical-Ark intuition.
-- **embOS:** the working system — identity surviving session death.
+- **embraOS:** the working system — identity surviving session death.
 - **Quantum reservoir computing in correlated spins** — Hou et al., *Phys. Rev. Lett.*
   **136**, 120602 (2026), USTC (Hefei). An accurate instance of the "small fixed system,
   disproportionate computational capacity" idea that informed thinking about boundaries
@@ -258,7 +258,7 @@ does.
 | Item | Status |
 |---|---|
 | Conceptual reframe (§1) | Stable |
-| Architecture (§2) | Operational (embOS); physical/procedural layers active/converging |
+| Architecture (§2) | Operational (embraOS); physical/procedural layers active/converging |
 | **Dynamic ψ** (history/path/trajectory-dependent) | **Open — the main formal lever** |
 | Statechart superstate/substate transition semantics | Open — to be specified |
 | Distributed-commit formalization of the handshake | Open — replaces retrocausal framing |
