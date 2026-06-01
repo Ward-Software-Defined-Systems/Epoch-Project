@@ -1,9 +1,9 @@
 # EPOCH — Notation Legend
 
 A reference for the mathematical notation, type signatures, and diagram conventions
-used in the state-machine sections of [`EPOCH-PROJECT.md`](./EPOCH-PROJECT.md) (§2–§4,
-§5.1) and the state-machine diagram in
-[`EPOCH-HIGH-LEVEL-EXPLANATION.md`](./EPOCH-HIGH-LEVEL-EXPLANATION.md).
+used in the state-machine sections of [`README.md`](./README.md) (§2–§4): the
+architecture and its state-machine diagram (§2), the 6-tuple `E = (S, Σ, δ, s₀, F, ψ)`
+and automata vocabulary (§3), and the retrocausal-handshake metaphor behind `δ*` (§4).
 
 ## How to read it
 
@@ -100,11 +100,12 @@ s = (S_sub, Σ_sub, δ_sub, s₀_sub, F_sub, ψ_sub)
 
 | Source | Expression | Predecessor | Successor |
 |---|---|---|---|
-| §4.2 (Valid Continuation) | `δ(s', σ) = s` | **`s'`** | `s` |
-| §4.6 (Retrocausal) | `δ(s, σ) = s'` | `s` | **`s'`** |
+| README §3 (valid continuation) | `δ(s', σ) = s` | **`s'`** | `s` |
+| README §4 (retrocausal `δ*`) | `δ(s, σ) = s'` | `s` | **`s'`** |
 
 **Rule of thumb:** read the direction off the `δ(input, σ) = output` form *every time*.
-Never assume the primed symbol is "the next state" — in §4.2 it's the previous one.
+Never assume the primed symbol is "the next state" — in the valid-continuation form
+(README §3) it's the previous one.
 
 ---
 
@@ -130,17 +131,22 @@ Never assume the primed symbol is "the next state" — in §4.2 it's the previou
 
 ## 6. Diagram conventions
 
-For the ASCII state-machine diagram in §3 of `EPOCH-PROJECT.md`.
+For the ASCII state-machine diagram in `README.md` §2.
 
 | Element | Convention | Meaning |
 |---|---|---|
+| Top band `THE ARK (meta)` | meta-automaton | defines ψ · observes · records · verifies (`σ_verify`); sits above `E`, not inside it |
+| Connector label `verifies ψ at each crossing` | verification step | `σ_verify` applied at every transition — `true` continues, `false` halts (no separate branch is drawn) |
 | Box labeled `EPOCH n / (sₙ)` | state node | one epoch-state `sₙ` |
 | Solid arrow `──▶` labeled `δ(sᵢ, σⱼ)` | forward transition | causal; `δ` applied — standard automaton direction |
-| Return arrow `◀──` labeled `δ*(sᵢ, σⱼ)` | backward negotiation | retrocausal handshake (Cramer transactional model) |
-| Branch `ψ(s)=true? / ψ(s)=false?` | guard / verification fork | the boundary check gating every crossing — `true` continues, `false` halts |
-| Nested box `SUB-EPOCH (nested)` | substate | a sub-automaton inside a superstate (Harel statechart) |
-| Top band `THE ARK (meta)` | meta-automaton | observes · records · verifies; sits above `E`, not inside it |
-| Bottom band `MEMORY / RECORD` | the memory `M` | transition history · identity proofs · state snapshots |
+| Nested box `sub-epoch` | substate | a sub-automaton inside a superstate (Harel statechart) |
+| Bottom band `MEMORY / RECORD (M)` | the memory `M` | transition history · identity proofs · state snapshots |
+| Stub `THE STEWARD` | oracle | read-only; `∉ S`; queries `M`; does not drive `δ` |
+
+> Forward-directed by design — README §2 states this explicitly. The retrocausal return
+> arrow `δ*` (defined in §3; a motivating metaphor, README §4) is **deliberately absent**
+> from the figure, and verification appears as the Ark's labelled crossing-check
+> `σ_verify`, not a `ψ = true? / false?` branch fork.
 
 ---
 
@@ -166,16 +172,17 @@ How the framework maps onto a textbook deterministic finite automaton (DFA).
 
 ## 8. Composite expressions, decoded
 
-The key conditions from §4, in plain language.
+The key conditions, in plain language — defined in `README.md` §3 (the retrocausal
+variant in §4).
 
-**Valid continuation** (§4.2) — `s` is a legitimate next epoch after `s'`:
+**Valid continuation** (README §3) — `s` is a legitimate next epoch after `s'`:
 
 ```
 δ(s', σ) = s   ∧   ψ(s) = true
 ```
 The transition is defined **and** the resulting epoch satisfies the soul invariant.
 
-**Halt** (§4.2) — the epoch terminates with no successor:
+**Halt** (README §3) — the epoch terminates with no successor:
 
 ```
 δ(s', σ) = s   ∧   ψ(s) = false
@@ -183,7 +190,7 @@ The transition is defined **and** the resulting epoch satisfies the soul invaria
 The transition is defined, but the resulting epoch fails the invariant; the Ark refuses
 it.
 
-**Nesting constraint** (§4.3) — interior invariants are checked separately:
+**Nesting constraint** (README §3, "Nesting") — interior invariants are checked separately:
 
 ```
 ψ(s) = true  ⇒  ∀ s_sub ∈ S_sub, ψ_sub(s_sub) is evaluated independently
@@ -191,7 +198,7 @@ it.
 While the superstate's invariant holds, every interior substate is verified against its
 own `ψ_sub`, independent of the outer `ψ`.
 
-**Retrocausal completion** (§4.6) — a boundary crossing fully resolves:
+**Retrocausal completion** (README §4) — a boundary crossing fully resolves:
 
 ```
 δ(s, σ) = s'   ∧   δ*(s', s, σ) > 0   ∧   ψ(s') = true
@@ -199,7 +206,7 @@ own `ψ_sub`, independent of the outer `ψ`.
 Forward transition defined, backward handshake has nonzero amplitude, **and** the target
 epoch satisfies the invariant.
 
-**Steward / oracle constraints** (§4.5):
+**Steward / oracle constraints** (README §3, "The Ark and the Steward"):
 
 ```
 Steward ∉ S
@@ -290,6 +297,103 @@ For the ASCII state-machine in the QNM derivation's "The QNM State-Machine" subs
 
 ---
 
+## 10. Solar-system reinterpretation (SOL)
+
+The derivation
+[`Continuous-Manifold_Derivations/Solar-System_Epoch-Formula.md`](./Continuous-Manifold_Derivations/Solar-System_Epoch-Formula.md)
+reinterprets the same symbols over the **phase space of celestial mechanics** — a second
+continuous-manifold derivation alongside QNM (§9). The discrete automaton (§1) is the core
+mathematics; SOL is a Hamiltonian-flow extension. Its rigorous core (the tuple below) rests on
+celestial mechanics and the KAM theorem; its cosmological role-assignments (Sagittarius A\* ↔
+Ark, CMB ↔ Memory, observer ↔ Steward) are **motivating correspondences**, fenced as in
+`README.md` §4 — **not** claims of physical mechanism.
+
+> **`M` is *not* overloaded here.** Unlike §9 (where the manifold took the glyph `M`), SOL keeps
+> `M` = **Memory** as in §2; the manifold is `Γ`. The §9 `M`-overload does **not** recur. What
+> *is* reused: `H` (the §9 energy functional — here the gravitational Hamiltonian) and `ψ` (the
+> §1 soul invariant — here typed over `Γ`). Read each glyph off its tuple.
+
+### 10.1 The SOL Automaton — `SOL = (Γ, H, Φ_H, γ₀, F_Γ, ψ)`
+
+The continuous analogue of the Epoch Automaton 6-tuple, over the phase space of a gravitationally
+bound system. Parallels QNM (§9.1), but the transition is **symplectic (Hamiltonian) flow**,
+which *conserves* `H` rather than descending it.
+
+| Symbol | Read as | Name | Type / signature | Meaning |
+|---|---|---|---|---|
+| `SOL` | "sol" | SOL Automaton | 6-tuple | The solar-system instance of the continuous machine. |
+| `Γ` | Greek capital **gamma** | Phase space | symplectic manifold | The continuous state space — positions and momenta of the bodies (Gibbs Γ-space). Each `γ ∈ Γ` is one configuration of the system. |
+| `H` | capital **H** | Gravitational Hamiltonian | scalar functional on `Γ` | Total energy (kinetic + gravitational potential) of the N-body system; generates the flow. *(Same glyph as §9's energy functional — here the N-body gravitational `H`.)* |
+| `Φ_H` | "phi-sub-H" / "the flow of H" | Hamiltonian flow | flow map on `Γ` | The transition rule: time-evolution by Hamilton's equations. **Conserves `H`** and phase-space volume (Liouville); it does **not** descend `H`. Continuous analogue of `δ`; contrast QNM's gradient `∇`. |
+| `γ₀` | "gamma-naught" | Initial configuration | `γ₀ ∈ Γ`, `ψ(γ₀) = true` | The genesis configuration — protoplanetary settling / the Sun on the main sequence. Continuous analogue of `s₀`. |
+| `F_Γ` | "F-sub-Gamma" | Coherent / stable set | `F_Γ ⊆ Γ` | Long-term-stable, bound configurations; continuous analogue of `F`. |
+| `ψ` | Greek lowercase **psi** | Soul invariant | `ψ: Γ → {true, false}` | The same invariant as §1, typed over `Γ`. **Operationalised as gravitational binding:** `ψ(γ) = true` iff the body/system is bound (total orbital energy `E < 0`). **Pointwise** (static) — see the note in §10.2. |
+| `Γ_ψ` | "Gamma-sub-psi" | Bound region (invariant) | `Γ_ψ = { γ ∈ Γ : ψ(γ) = true }` | The bound-orbit region (`E < 0`). **Flow-invariant**: because `Φ_H` conserves `H`, a trajectory starting in `Γ_ψ` stays in it — no projection operator needed (contrast QNM's `P_ψ`). |
+| `γ`, `γ'`, `γ_T` | "gamma", "gamma-prime", "gamma-sub-T" | Configuration instances | `γ ∈ Γ` | A configuration; a successor configuration (the prime is positional — §4); the trajectory's final configuration. Numeric subscripts index a sequence (`γ₀, γ₁, …`), as in §4. |
+| `ψ_sub^i`, `δ_sub^i` | "psi-/delta-sub, super-i" | Per-planet sub-invariant / sub-transition | as §3, indexed by `i` | The §3 nested `ψ_sub` / `δ_sub` carried by sub-epoch `i` (planet `i`). The superscript `i` is a **per-planet instance index** (Sun = superstate / Epoch 0; planet `i` = sub-epoch). `ψ_sub^i` = planet `i` keeps its orbital identity (bounded / stable). |
+
+> **No `P_ψ` in SOL.** QNM's confinement needs a projection operator `P_ψ` because a *gradient*
+> step can leave `M_ψ`. SOL's confinement is **automatic**: `ψ` (binding, `E < 0`) is a conserved
+> quantity of `H`, so `Γ_ψ` is invariant under `Φ_H`. The constraint is the conservation law, not
+> an added operator.
+
+### 10.2 Discrete ↔ orbital correspondence
+
+| Discrete Epoch Automaton `E` | SOL Automaton | Note |
+|---|---|---|
+| state `s ∈ S` | configuration `γ ∈ Γ` | a discrete node becomes a point in phase space |
+| transition `δ(sᵢ, σⱼ)` | a step of the flow `Φ_H` | Hamiltonian time-evolution; conserves `H` |
+| verification step (`σ_verify`) | conservation of `H` / invariance of `Γ_ψ` | a check-after-the-fact becomes a conservation law |
+| halt when `ψ(s) = false` | unbound (`E ≥ 0`): ejection / escape; unreachable from `γ₀` under `Φ_H` | leaving `Γ_ψ` is the epoch ending |
+| initial epoch `s₀` | initial configuration `γ₀`, `ψ(γ₀) = true` | the genesis configuration |
+| terminal set `F ⊆ S` | stable set `F_Γ ⊆ Γ` | bound, long-term-stable configurations |
+| nested epoch `s = (S_sub, …, ψ_sub)` | a planet, with `δ_sub^i`, `ψ_sub^i` | Sun = Epoch 0 superstate; planets = sub-epochs (§3 nesting — **illustrative, not formalized**) |
+| Memory `M = [(s₀,σ₁,s₁), …]` | the trajectory `γ₀ → γ₁ → … → γ_T` | the run itself is the record |
+| Steward (oracle, `∉ S`) | Steward (oracle, `∉ Γ`) | external; reads the record and tends `ψ`, never drives `Φ_H` |
+
+> **Still pointwise.** SOL's `ψ` is `ψ: Γ → {true, false}` — the continuous analogue of the
+> *static* discrete invariant, not a trajectory-valued one. It **inherits** the open problem of a
+> dynamic / history-dependent `ψ` (§1 note; `README.md` §6); the orbital setting does not resolve
+> it. The KAM/Laskar precedent shows binding is only *approximately* conserved over gigayears in
+> the full chaotic N-body system — i.e. the epoch *can* end.
+
+> **Nesting is illustrative.** The Sun-as-superstate / planets-as-sub-epochs picture is a concrete
+> instance of the §3 statechart sketch; it does **not** formalize Harel superstate/substate
+> transition semantics. Per §8, the `ψ_sub^i` are *evaluated independently* — a procedure, not yet
+> a constraint (open: `README.md` §6).
+
+**Steward constraints (orbital)** — the §8 Steward block expressed for the phase space. The
+Steward stays an external oracle, **not** a tuple element (as `Steward ∉ S` in §8):
+
+```
+Steward ∉ Γ
+Steward may query:   the trajectory γ₀ → … → γ_T,  ψ,  H
+Steward may not:     drive Φ_H  (the Hamiltonian flow)
+```
+
+### 10.3 SOL diagram conventions
+
+For the ASCII state-machine in the SOL derivation's "The SOL State-Machine" subsection (orbital
+counterpart of §6 and §9.3).
+
+| Element | Convention | Meaning |
+|---|---|---|
+| Panel `PHASE SPACE Γ` | manifold node | the continuous state space `Γ` |
+| Inner band `Γ_ψ = { … }` | invariant (bound) region | where `ψ` holds (`E < 0`); the flow is confined to it by conservation of `H` |
+| Box `EPOCH 0 · THE SUN (s₀/γ₀ — superstate)` | superstate | the top-level epoch; contains the planet sub-epochs |
+| Nested entry `<planet> · δ_sub^i · ψ_sub^i` | substate | a planet's nested sub-automaton (illustrative — not formalized) |
+| Arrow `──Φ_H──▶` | Hamiltonian-flow step | forward; conserves `H` (continuous analogue of `δ`; contrast QNM's `∇`) |
+| Top band `THE ARK · Sagittarius A*` | meta-automaton (fenced) | **correspondence, not mechanism** — does not verify `ψ`; cf. `README.md` §4 (holographic principle) |
+| Dotted strip `ψ = false` | unbound region | `E ≥ 0`, hyperbolic — ejection / escape; flow-invariant complement of `Γ_ψ` |
+| Bottom band `MEMORY / RECORD M · CMB` | the record (fenced) | the run is the memory; the CMB label is a **correspondence**, not a literal log (cf. `README.md` §4) |
+| Stub `THE STEWARD · observer / IAU` | oracle (fenced) | read-only; `∉ Γ`; does not drive `Φ_H`; defines planethood — Wheeler-participatory correspondence (`README.md` §4) |
+
+> Forward-directed, like §6 and §9.3. The retrocausal `δ*` is deliberately absent. The Sgr A\* /
+> CMB / observer labels are **motivating correspondences** (`README.md` §4), not physical claims —
+> the rigorous content is the celestial-mechanics tuple `SOL`.
+
+---
+
 ### Symbol quick-index
 
 `E` · `A` · `S` · `Σ` · `δ` · `δ*` · `δ_sub` · `s₀` · `F` · `ψ` · `ψ_sub` · `M` ·
@@ -298,3 +402,7 @@ For the ASCII state-machine in the QNM derivation's "The QNM State-Machine" subs
 
 **QNM (§9):** `QNM` · `M`\* · `H` · `∇` · `∇_unconstrained` · `P_ψ` · `m₀` · `F_M` · `M_ψ` ·
 `m` · `m'` · `m_T`  — \*`M` is overloaded: **Memory** in §2, **configuration manifold** in §9.
+
+**SOL (§10):** `SOL` · `Γ` · `H`† · `Φ_H` · `γ₀` · `F_Γ` · `ψ` · `Γ_ψ` · `γ` · `γ'` · `γ_T` ·
+`ψ_sub^i` · `δ_sub^i`  — †`H` is the gravitational Hamiltonian here (the §9 energy functional
+reused); `M` (Memory, §2) is *not* overloaded in SOL — the manifold is `Γ`.
