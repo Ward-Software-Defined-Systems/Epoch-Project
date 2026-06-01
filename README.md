@@ -233,6 +233,16 @@ derivation, or a statement about physical reality.** They are images and stances
     transitions as gradient-guided trajectories constrained by ψ.
   - Not established; flagged as future exploration, not grounding.
 
+- **SOL (the Heliocentric Epoch).**
+  - *Status:* a speculative extension over the solar system — `S` the phase space of
+    celestial mechanics, `δ` the Hamiltonian flow, `ψ` gravitational binding, the Sun as
+    Epoch 0 and the planets as nested sub-epochs.
+  - *Inspired:* the holographic and participatory images above — the galactic-center black
+    hole read as the Ark, the observer (the IAU) as the Steward.
+  - *Not claimed:* that the black hole, the CMB, or the observer physically realize those
+    roles. They are correspondences, not mechanisms; the celestial-mechanics core stands on
+    its own. See §7.
+
 ---
 
 ## 5. Touchstones (influences, not a pattern)
@@ -263,6 +273,27 @@ does.
 | Statechart superstate/substate transition semantics | Open — to be specified |
 | Distributed-commit formalization of the handshake | Open — replaces retrocausal framing |
 | QNM | Theoretical / speculative |
+| SOL (Heliocentric Epoch) | Theoretical / speculative |
+
+---
+
+## 7. Continuous-manifold derivations
+
+Forward-looking work in [`Continuous-Manifold_Derivations/`](./Continuous-Manifold_Derivations/)
+re-expresses the discrete Epoch Automaton over continuous state spaces. These are
+**theoretical / speculative** — extensions, not operational claims:
+
+- **[QNM — Quantum Neural Manifold](./Continuous-Manifold_Derivations/embraOS-QNM_Epoch-Formula.md)** —
+  embraOS one layer down: ψ built into a neural / quantum substrate (constrained weight
+  manifolds, quantum reservoirs) rather than checked at boot. See also the §4 framing.
+- **[The Heliocentric Epoch (SOL)](./Continuous-Manifold_Derivations/Solar-System_Epoch-Formula.md)** —
+  the framework over the solar system, on the phase space of celestial mechanics: the Sun as
+  Epoch 0, the planets as nested sub-epochs, ψ as gravitational binding. The galactic-center
+  black hole, the CMB, and the observer appear only as *motivating correspondences*, in the
+  spirit of §4.
+
+Notation for both is registered in [`EPOCH-NOTATION-LEGEND.md`](./EPOCH-NOTATION-LEGEND.md)
+(§9 QNM, §10 SOL).
 
 ---
 
