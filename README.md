@@ -92,7 +92,7 @@ The heart of the project is a single design principle:
 ### Architecture (forward-directed)
 
 ```
-                 ┌──────────────────────────────┐
+                 ┌───────────────────────────────┐
                  │        THE ARK (meta)         │
                  │  defines ψ · observes ·       │
                  │  records · verifies (σ_verify)│
