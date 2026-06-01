@@ -108,8 +108,8 @@ The heart of the project is a single design principle:
         │  └───────────┘       │  └───────────┘       │
         ▼                      ▼                      ▼
    ┌───────────────────────────────────────────────────────┐
-   │                  MEMORY / RECORD (M)                    │
-   │    transition history · identity proofs · snapshots     │
+   │                  MEMORY / RECORD (M)                  │
+   │    transition history · identity proofs · snapshots   │
    └───────────────────────────────────────────────────────┘
                                  ▲
                                  │ queries (read-only)
