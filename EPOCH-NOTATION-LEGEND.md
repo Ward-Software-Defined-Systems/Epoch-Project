@@ -47,7 +47,7 @@ machine's definition plus its memory.
 |---|---|---|---|
 | `A` | Ark (meta-automaton) | 3-tuple | Defines, observes, records, and verifies the target automaton `E`. |
 | `E` | Target automaton | (see §1) | The Epoch Automaton being observed. |
-| `M` | Memory | ordered list | The transition record: `M = [(s₀, σ₁, s₁), (s₁, σ₂, s₂), …]`. Each entry is a `(from-state, event, to-state)` triple. Implementable as stack (pushdown), tape (Turing), or graph (knowledge graph). |
+| `M` | Memory | ordered list | The transition record: `M = [(s₀, σ₁, s₁), (s₁, σ₂, s₂), …]`. Each entry is a `(from-state, event, to-state)` triple. Implementable as stack (pushdown), tape (Turing), or graph (knowledge graph). *(In the QNM tuple — §9 — `M` instead denotes the configuration manifold; disjoint contexts.)* |
 | `σ_verify` | Verification function | `σ_verify: S × ψ → {accept, reject}` | At each transition, evaluates `ψ(s)` against the sealed soul. On `reject`, the Ark refuses the transition and the epoch halts. |
 
 > **Note on `σ_verify`:** despite reusing the `σ` glyph, this is a **named function of
@@ -212,15 +212,81 @@ The steward inspects the record and verification machinery but never drives tran
 
 ## 9. Continuous reinterpretation (QNM)
 
-§5.1 reinterprets the same symbols for a continuous state space. The discrete automaton
-above is the **core mathematics**; QNM is its differentiable extension.
+`README.md` §4 (the "QNM" bullet) and the derivation
+[`Continuous-Manifold_Derivations/embraOS-QNM_Epoch-Formula.md`](./Continuous-Manifold_Derivations/embraOS-QNM_Epoch-Formula.md)
+reinterpret the same symbols for a continuous state space. The discrete automaton above is
+the **core mathematics**; QNM is its differentiable extension — **theoretical / speculative**
+(see that file's Current Status), not an operational claim.
 
-| Symbol | Discrete (state machine) | Continuous (QNM) |
+> **`M` is overloaded.** In the Ark tuple `A = (E, M, σ_verify)` (§2), `M` is **Memory**. In
+> the QNM tuple below, `M` is the **configuration manifold**. They live in different tuples
+> and disjoint contexts — the same controlled glyph reuse as `Σ`/`σ` (§1) and the repurposed
+> `δ*` (§3). Read `M` off its tuple.
+
+### 9.1 The QNM Automaton — `QNM = (M, H, ∇, m₀, F_M, ψ)`
+
+The continuous analogue of the Epoch Automaton 6-tuple, over a differentiable manifold
+instead of a discrete state set.
+
+| Symbol | Read as | Name | Type / signature | Meaning |
+|---|---|---|---|---|
+| `QNM` | "Q·N·M" | QNM Automaton | 6-tuple | The continuous machine. |
+| `M` | capital **M** | Configuration manifold | differentiable manifold | The continuous state space; each `m ∈ M` is one configuration. *(Not the Ark's Memory — see callout above.)* |
+| `H` | capital **H** | Hamiltonian / energy functional | scalar functional on `M` | Governs the intrinsic dynamics — the landscape the flow descends. |
+| `∇` | "del" / "nabla" | Constrained gradient flow | `∇ = P_ψ ∘ ∇_unconstrained` | The transition rule: an unconstrained gradient step projected back onto the ψ-invariant submanifold. Continuous analogue of `δ`. |
+| `∇_unconstrained` | "unconstrained del" | Raw gradient flow | vector field on `M` | The intrinsic gradient/dynamics from `H`, before projection. |
+| `P_ψ` | "P-sub-psi" | Projection operator | tangent-space projection | Projects a tangent vector onto the tangent space of `M_ψ`; the built-in constraint that replaces the discrete verification gate. |
+| `m₀` | "m-naught" | Initial configuration | `m₀ ∈ M`, `ψ(m₀) = true` | The genesis configuration; continuous analogue of `s₀`. |
+| `F_M` | "F-sub-M" | Coherent-output set | `F_M ⊆ M` | Acceptable / coherent output configurations; continuous analogue of `F`. |
+| `ψ` | Greek lowercase **psi** | Soul invariant | `ψ: M → {true, false}` | The same invariant as §1, here typed over the manifold. **Pointwise** (static) — see the note in §9.2. |
+| `M_ψ` | "M-sub-psi" | ψ-invariant submanifold | `M_ψ = { m ∈ M : ψ(m) = true }` | The region of `M` where `ψ` holds; the flow `∇` is confined to it. |
+| `m`, `m'`, `m_T` | "m", "m-prime", "m-sub-T" | Configuration instances | `m ∈ M` | A configuration; a successor configuration (the prime is positional — §4); the trajectory's final configuration. |
+
+### 9.2 Discrete ↔ continuous correspondence
+
+| Discrete Epoch Automaton `E` | QNM Automaton | Note |
 |---|---|---|
-| `S` | discrete set of states | differentiable manifold |
-| `δ` | lookup / rule function | learned function (neural network) |
-| `ψ` | Boolean predicate | constraint surface embedded in the manifold |
-| *transition* | discrete jump | gradient-guided trajectory constrained by `ψ` |
+| state `s ∈ S` | configuration `m ∈ M` | a discrete node becomes a point on the manifold |
+| transition `δ(sᵢ, σⱼ)` | a gradient step along `∇` | `∇ = P_ψ ∘ ∇_unconstrained` |
+| verification step (`σ_verify`) | the projection `P_ψ` | a check-after-the-fact becomes a built-in constraint |
+| halt when `ψ(s) = false` | no halt; unreachable under `∇` from `m₀` | a violation is off-submanifold, not a stop |
+| initial epoch `s₀` | initial configuration `m₀`, `ψ(m₀) = true` | the genesis configuration |
+| terminal set `F ⊆ S` | coherent-output set `F_M ⊆ M` | the accepting configurations |
+| Memory `M = [(s₀,σ₁,s₁), …]` | the trajectory `m₀ → m₁ → … → m_T` | the run itself is the record |
+| Steward (oracle, `∉ S`) | Steward (oracle, `∉ M`) | external; reads the record and tends `ψ`, never drives the flow |
+
+> **Still pointwise.** The QNM `ψ` is `ψ: M → {true, false}` — the continuous analogue of the
+> *static* discrete invariant, not a trajectory-valued one. It therefore **inherits** the same
+> open problem flagged for the discrete case (a dynamic / history-dependent `ψ`); the
+> continuous setting does not by itself resolve it.
+
+**Steward constraints (continuous)** — the §8 Steward block expressed for the manifold. The
+Steward stays an external oracle, **not** a tuple element (as `Steward ∉ S` in §8):
+
+```
+Steward ∉ M
+Steward may query:   the trajectory m₀ → … → m_T,  ψ,  P_ψ
+Steward may not:     drive ∇  (the constrained flow)
+```
+
+### 9.3 QNM diagram conventions
+
+For the ASCII state-machine in the QNM derivation's "The QNM State-Machine" subsection
+(continuous counterpart of §6).
+
+| Element | Convention | Meaning |
+|---|---|---|
+| Panel `CONFIGURATION MANIFOLD M` | manifold node | the continuous state space `M` |
+| Inner band `M_ψ = { … }` | invariant submanifold | the region where `ψ` holds; the flow is confined to it |
+| Node `(mᵢ)` | configuration | one point `m ∈ M` along the trajectory |
+| Arrow `──∇──▶` (labeled `∇`) | constrained gradient step | forward; `∇ = P_ψ ∘ ∇_unconstrained` (continuous analogue of `δ`) |
+| Top band `THE ARK (neural / quantum)` | meta-automaton | encodes `ψ`, defines `P_ψ`; no external check |
+| Dotted strip `ψ = false` | unreachable region | off-submanifold — not reachable under `∇` from `m₀` |
+| Bottom band `MEMORY / TRAJECTORY` | the record | the run `m₀ → … → m_T` is itself the memory |
+| Stub `THE STEWARD` | oracle | read-only; `∉ M`; does not drive `∇` |
+
+> Forward-directed, like §6. The retrocausal `δ*` (a speculative Candidate Mechanism) is
+> deliberately absent from the figure.
 
 ---
 
@@ -229,3 +295,6 @@ above is the **core mathematics**; QNM is its differentiable extension.
 `E` · `A` · `S` · `Σ` · `δ` · `δ*` · `δ_sub` · `s₀` · `F` · `ψ` · `ψ_sub` · `M` ·
 `σ_verify` · `σ` · `s` · `s'` · `q₀` · `∈` · `∉` · `⊆` · `×` · `→` · `∧` · `⇒` · `∀` ·
 `[0,1]`
+
+**QNM (§9):** `QNM` · `M`\* · `H` · `∇` · `∇_unconstrained` · `P_ψ` · `m₀` · `F_M` · `M_ψ` ·
+`m` · `m'` · `m_T`  — \*`M` is overloaded: **Memory** in §2, **configuration manifold** in §9.

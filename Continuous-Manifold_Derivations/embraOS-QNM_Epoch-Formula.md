@@ -78,6 +78,96 @@ Where:
 
 The model cannot reach a configuration that violates ψ because the gradient flow is restricted to the ψ-invariant submanifold. The boundary condition is a **constraint on possible trajectories**, not a check applied after the fact.
 
+### The QNM State-Machine
+
+The same state-machine, one layer down. Where the discrete Epoch Automaton checks ψ at
+every crossing, the QNM Automaton **builds ψ into the geometry** of the configuration
+manifold: the projection P_ψ confines the flow to the ψ-invariant submanifold M_ψ, so there
+is no separate verification step and nothing to halt. It is forward-directed, exactly as the
+core state-machine is.
+
+```
+                 ┌───────────────────────────────────────────┐
+                 │        THE ARK  (neural / quantum)        │
+                 │    encodes ψ in the substrate · defines   │
+                 │  the projection P_ψ  (no external check)  │
+                 └─────────────────────┬─────────────────────┘
+                                       │ ψ encoded as constraint, not verified after the fact
+                                       ▼
+   ┌───────────────────────────────────────────────────────────────────────┐
+   │  CONFIGURATION MANIFOLD  M                                            │
+   │                                                                       │
+   │   M_ψ = { m ∈ M : ψ(m) = true }   — the ψ-invariant submanifold       │
+   │   ┌───────────────────────────────────────────────────────────────┐   │
+   │   │  (m₀) ──∇──▶ (m₁) ──∇──▶ (m₂) ──∇──▶ … ──∇──▶ [ F_M ]         │   │
+   │   │    init                                        coherent output│   │
+   │   │    constrained gradient flow:  ∇ = P_ψ ∘ ∇_unconstrained      │   │
+   │   └───────────────────────────────────────────────────────────────┘   │
+   │   · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · │
+   │   ψ = false region — off-submanifold, unreachable under ∇ from m₀     │
+   └───────────────────────────────────────────────────────────────────────┘
+                                       │ the trajectory IS the record
+                                       ▼
+   ┌───────────────────────────────────────────────────────────────────────┐
+   │  MEMORY / TRAJECTORY                                                  │
+   │  the run  m₀ → m₁ → … → m_T   is itself the transition record         │
+   └───────────────────────────────────────────────────────────────────────┘
+                                       ▲
+                                       │ queries (read-only)
+                                ┌──────┴───────┐
+                                │  THE STEWARD │   (oracle: ∉ M, does not drive ∇)
+                                └──────────────┘
+```
+
+The discrete machine's verification step — the Ark's σ_verify, the hero figure's `ψ?` gate —
+has **no analogue here**: there is nothing to check after the fact, because P_ψ keeps every
+step on M_ψ by construction.
+
+**Discrete state-machine ↔ QNM, element by element:**
+
+| Discrete Epoch Automaton `E` | QNM Automaton | Note |
+|---|---|---|
+| state `s ∈ S` | configuration `m ∈ M` | a discrete node becomes a point on the manifold |
+| transition `δ(sᵢ, σⱼ)` | a gradient step along `∇` | `∇ = P_ψ ∘ ∇_unconstrained` |
+| verification step (`σ_verify`) | the projection `P_ψ` | a check-after-the-fact becomes a built-in constraint |
+| halt when `ψ(s) = false` | no halt; unreachable under `∇` from `m₀` | a violation is off-submanifold, not a stop |
+| initial epoch `s₀` | initial configuration `m₀`, `ψ(m₀) = true` | the genesis configuration |
+| terminal set `F ⊆ S` | coherent-output set `F_M ⊆ M` | the accepting configurations |
+| Memory `M = [(s₀,σ₁,s₁), …]` | the trajectory `m₀ → m₁ → … → m_T` | the run itself is the record |
+| Steward (oracle, `∉ S`) | Steward (oracle, `∉ M`) | external; reads the record and tends `ψ`, never drives the flow |
+
+> Note — `ψ` here is still **pointwise** (`ψ: M → {true, false}`), the continuous analogue of
+> the *static* discrete invariant. It does **not** by itself resolve the dynamic /
+> trajectory-dependent ψ that the framework flags as the open formal problem.
+
+**Operational reading** (the continuous counterpart of the legend's composite expressions):
+
+```
+Initialise   start at m₀ with ψ(m₀) = true
+Step         m → m'  via  ∇ = P_ψ ∘ ∇_unconstrained   (descends H, stays on M_ψ)
+Accept       a halt-condition is reached with m ∈ F_M
+Confinement  ∀ m reachable from m₀ via ∇ :  ψ(m) = true   (m never leaves M_ψ)
+```
+
+**The Steward, in QNM terms** — the same external oracle as in the core framework
+(`Steward ∉ S`), expressed for the manifold. It is *not* a seventh element of the tuple; it
+sits outside the automaton:
+
+```
+Steward ∉ M                            (not a configuration on the manifold)
+Steward may query:   the run m₀ → … → m_T,  ψ,  P_ψ
+Steward may not:     drive ∇  (the constrained flow)
+```
+
+It tends the **soul** invariant ψ and inspects the trajectory and the constraint P_ψ, but
+never drives the flow — its role unchanged from the discrete machine.
+
+*Formulation only. This figure illustrates the **Formulation (drafted)** row of the Current
+Status table below: the structure is specified, but no substrate that realises the projection
+P_ψ has been built (**Implementation — pending**). It is forward-directed by design; the
+speculative retrocausal variant `δ*` of the Candidate Mechanisms is deliberately not part of
+it.*
+
 ## Current Status
 
 | Phase | Status |
