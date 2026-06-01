@@ -6,3 +6,6 @@ Thumbs.db
 .env
 *.pem
 *.key
+
+# Local Claude Code guidance (not for public repo)
+CLAUDE.md
