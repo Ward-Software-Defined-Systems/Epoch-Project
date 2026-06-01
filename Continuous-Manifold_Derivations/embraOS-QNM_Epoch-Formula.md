@@ -1,5 +1,9 @@
 # embraOS-QNM: Quantum Neural Manifold
 
+<p align="center">
+  <img src="../assets/epoch-qnm-state-machine.png" alt="QNM Automaton state-machine: the Ark encodes ψ as a built-in constraint (the projection P_ψ); a constrained gradient flow ∇ stays on the ψ-invariant submanifold M_ψ within the configuration manifold M; the trajectory is the Memory; the Steward is an external read-only oracle." width="100%">
+</p>
+
 ## Overview
 
 The Quantum Neural Manifold (QNM) is a boundary-native AI architecture where **identity** and **soul** are embedded as **neural constraints** within the model's structure, rather than applied as external "software" filters. It is on of many continuous-manifold derivations of the Epoch Automaton — the same boundary-condition framework, implemented at the neural/quantum substrate rather than at the operating-system layer.

@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1120" width="1280" height="1120" role="img" aria-label="SOL — the Heliocentric Epoch: the Epoch Automaton over orbital phase space">
+<!-- ================= PALETTE — edit colours here =================
+     ink #0E0F13 · band #13161C · boundregion #16141A · subbox #0F1217
+     bone #EFEAE0 · muted #8B909B · slate #6FA0B2 · slate-deep #46586A
+     ember #E9883B · ember-soft #F4A862 · ember-deep #C96A28
+     Conserved, not checked: SOL has NO ψ? gate — binding (E<0) is a
+     conserved quantity, so confinement is automatic. Dashed borders
+     mark motivating correspondences (Sgr A*, CMB), not mechanisms
+     (README §4). Forward-directed; retrocausal δ* deliberately omitted.
+     Fonts are generic families for reliable GitHub image rendering.
+=============================================================== -->
+<defs>
+  <style>
+    .serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif;}
+    .mono{font-family:ui-monospace,'SF Mono','JetBrains Mono',Menlo,Consolas,monospace;}
+    .bone{fill:#EFEAE0;} .muted{fill:#8B909B;} .slate{fill:#6FA0B2;} .ember{fill:#E9883B;}
+    .band{fill:#13161C;stroke:#46586A;stroke-width:1.5;}
+    .banddash{fill:#121319;stroke:#5A6675;stroke-width:1.4;stroke-dasharray:7 6;}
+    .boundregion{fill:#16141A;stroke:#C96A28;stroke-opacity:0.5;stroke-width:1.3;}
+    .subbox{fill:#0F1217;stroke:#3E5A66;stroke-width:1;}
+    .steward{fill:#15141A;stroke:#C96A28;stroke-width:1.6;}
+    .flow{stroke:#6FA0B2;stroke-width:2;fill:none;}
+    .faint{stroke:#46586A;stroke-width:1.5;fill:none;}
+    .orbit{stroke:#6FA0B2;stroke-width:1;fill:none;opacity:0.30;}
+    .dash{stroke-dasharray:7 6;}
+    .dotline{stroke:#46586A;stroke-width:2;stroke-dasharray:1.5 7;stroke-linecap:round;}
+  </style>
+  <linearGradient id="inkGrad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#101117"/><stop offset="100%" stop-color="#0A0B0E"/>
+  </linearGradient>
+  <radialGradient id="sun" cx="50%" cy="45%" r="55%">
+    <stop offset="0%" stop-color="#FFDDA6"/>
+    <stop offset="45%" stop-color="#F4A862"/>
+    <stop offset="100%" stop-color="#D9772E"/>
+  </radialGradient>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M40 0 H0 V40" fill="none" stroke="#FFFFFF" stroke-opacity="0.03" stroke-width="1"/>
+  </pattern>
+  <filter id="emberGlow" x="-120%" y="-120%" width="340%" height="340%">
+    <feGaussianBlur stdDeviation="4" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="softHalo" x="-160%" y="-160%" width="420%" height="420%">
+    <feGaussianBlur stdDeviation="22"/>
+  </filter>
+  <marker id="ahS" markerWidth="10" markerHeight="9" refX="6.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0,0 L7,3.5 L0,7 Z" fill="#6FA0B2"/>
+  </marker>
+  <marker id="ahF" markerWidth="9" markerHeight="8" refX="6" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0,0 L6.5,3.5 L0,7 Z" fill="#46586A"/>
+  </marker>
+</defs>
+
+<rect width="1280" height="1120" fill="url(#inkGrad)"/>
+<rect width="1280" height="1120" fill="url(#grid)"/>
+
+<!-- ===== figure kicker ===== -->
+<text x="80" y="36" class="mono slate" font-size="14" letter-spacing="3">THE EPOCH PROJECT &#8212; SOL &#183; THE HELIOCENTRIC EPOCH</text>
+<text x="1200" y="36" class="mono muted" font-size="13" text-anchor="end" letter-spacing="1">forward-directed &#183; &#968; conserved</text>
+
+<!-- ===== THE ARK · Sagittarius A* (dashed = correspondence) ===== -->
+<rect x="80" y="52" width="1120" height="104" rx="12" class="banddash"/>
+<g transform="rotate(-18 132 104)">
+  <ellipse cx="132" cy="104" rx="31" ry="10" fill="none" stroke="#E9883B" stroke-width="1.4" opacity="0.55"/>
+</g>
+<circle cx="132" cy="104" r="17" fill="#050507" stroke="#2A2A30" stroke-width="1"/>
+<text x="186" y="98" class="serif bone" font-size="25">THE ARK &#183; Sagittarius A*</text>
+<text x="187" y="124" class="mono muted" font-size="13">galactic-center black hole &#8212; correspondence, not mechanism</text>
+<text x="1180" y="98" class="mono slate" font-size="13" text-anchor="end">does not verify &#968;</text>
+<text x="1180" y="124" class="mono muted" font-size="12" text-anchor="end">cf. README &#167;4 &#8212; fenced metaphor</text>
+
+<!-- ===== conserved (not checked) connector ===== -->
+<text x="640" y="186" class="mono slate" font-size="13.5" text-anchor="middle">&#968; is a CONSERVED quantity &#8212; binding, E &#60; 0 &#8212; not checked after the fact</text>
+<line x1="640" y1="200" x2="640" y2="264" class="faint" marker-end="url(#ahF)"/>
+
+<!-- ===== PHASE SPACE Γ ===== -->
+<rect x="80" y="270" width="1120" height="460" rx="12" class="band"/>
+<text x="104" y="301" class="serif bone" font-size="22">PHASE SPACE&#160;&#160;&#915;</text>
+<text x="1180" y="300" class="mono muted" font-size="13" text-anchor="end">positions + momenta &#183; Hamiltonian H</text>
+
+<!-- bound region Γ_ψ -->
+<rect x="110" y="320" width="1060" height="322" rx="10" class="boundregion"/>
+<text x="132" y="347" class="mono ember" font-size="13">&#915;_&#968;</text>
+<text x="166" y="347" class="mono muted" font-size="13">= { &#947; : &#968;(&#947;) = true }&#160;&#160;&#8212;&#160;&#160;bound region (E &#60; 0)</text>
+<text x="132" y="374" class="serif bone" font-size="17">EPOCH 0 &#183; THE SUN</text>
+<text x="132" y="393" class="mono muted" font-size="12">(s&#8320; / &#947;&#8320; &#8212; superstate)</text>
+
+<!-- orbital system (left) -->
+<g>
+  <circle cx="372" cy="502" r="34" fill="#E9883B" opacity="0.18" filter="url(#softHalo)"/>
+  <ellipse cx="372" cy="502" rx="46"  ry="23" class="orbit"/>
+  <ellipse cx="372" cy="502" rx="64"  ry="32" class="orbit"/>
+  <ellipse cx="372" cy="502" rx="82"  ry="41" class="orbit"/>
+  <ellipse cx="372" cy="502" rx="100" ry="50" class="orbit"/>
+  <ellipse cx="372" cy="502" rx="124" ry="62" class="orbit"/>
+  <ellipse cx="372" cy="502" rx="144" ry="72" class="orbit"/>
+  <ellipse cx="372" cy="502" rx="164" ry="82" class="orbit"/>
+  <ellipse cx="372" cy="502" rx="184" ry="92" class="orbit"/>
+  <!-- Φ_H flow direction (CCW) -->
+  <path d="M366,452 L376,448 L376,456 Z" fill="#6FA0B2"/>
+  <path d="M378,594 L368,590 L368,598 Z" fill="#6FA0B2"/>
+  <text x="372" y="404" class="mono slate" font-size="13" text-anchor="middle">&#934;_H</text>
+  <!-- planets (nested sub-epochs) -->
+  <circle cx="409.7" cy="515.2" r="2.4" fill="#6FA0B2"/>
+  <circle cx="340.0" cy="529.7" r="2.7" fill="#6FA0B2"/>
+  <circle cx="301.0" cy="481.5" r="2.7" fill="#7FB3C4"/>
+  <circle cx="422.0" cy="458.7" r="2.5" fill="#C98A6A"/>
+  <circle cx="488.6" cy="523.2" r="5.0" fill="#9FB6C2"/>
+  <circle cx="247.3" cy="538.0" r="4.4" fill="#9FB6C2"/>
+  <g transform="rotate(-20 247.3 538)"><ellipse cx="247.3" cy="538" rx="8" ry="2.6" fill="none" stroke="#6FA0B2" stroke-width="1" opacity="0.55"/></g>
+  <circle cx="315.9" cy="424.9" r="3.4" fill="#8FB0BE"/>
+  <circle cx="531.3" cy="456.0" r="3.4" fill="#8FB0BE"/>
+  <!-- the Sun = Epoch 0 / the conserved-bound core -->
+  <circle cx="372" cy="502" r="20" fill="url(#sun)" filter="url(#emberGlow)"/>
+</g>
+
+<!-- right-region annotations -->
+<text x="660" y="397" class="mono slate" font-size="14">&#934;_H &#8212; Hamiltonian (orbital) flow &#183; conserves H</text>
+<text x="660" y="425" class="mono bone" font-size="14">&#8594;&#160; F_&#915; : long-term-stable bound orbits</text>
+<text x="660" y="453" class="mono muted" font-size="13">confinement = conservation (flow stays in &#915;_&#968;)</text>
+<text x="660" y="499" class="mono muted" font-size="13">nested sub-epochs &#8212; the planets (independent, &#167;8):</text>
+<text x="660" y="525" class="mono bone" font-size="13">inner:&#160;&#160;Mercury &#183; Venus &#183; Earth &#183; Mars</text>
+<text x="660" y="549" class="mono bone" font-size="13">outer:&#160;&#160;Jupiter &#183; Saturn &#183; Uranus &#183; Neptune</text>
+<text x="660" y="577" class="mono muted" font-size="12">each planet i = sub-automaton ( &#948;_sub^i , &#968;_sub^i )</text>
+<text x="660" y="599" class="mono muted" font-size="12">&#968;_sub^i : planet keeps its bounded, stable orbit</text>
+<text x="660" y="621" class="mono muted" font-size="12" font-style="italic">illustrates &#167;3 nesting &#8212; not formalized (&#167;6)</text>
+
+<!-- E=0 boundary (dotted) and unbound region -->
+<line x1="120" y1="656" x2="1160" y2="656" class="dotline"/>
+<text x="1150" y="651" class="mono muted" font-size="11" text-anchor="end">E = 0 &#183; binding boundary</text>
+<text x="132" y="683" class="mono muted" font-size="13">&#968; = false &#8212; unbound / hyperbolic &#183; E &#8805; 0 : ejection / escape</text>
+<text x="132" y="705" class="mono muted" font-size="12">flow-invariant &#8212; unreachable from &#947;&#8320; under &#934;_H while H is conserved</text>
+<path d="M560,602 Q604,652 642,712" class="faint dash" opacity="0.45" marker-end="url(#ahF)"/>
+<text x="650" y="700" class="mono muted" font-size="11" opacity="0.7">escape &#8594; epoch ends</text>
+
+<!-- ===== trajectory -> Memory ===== -->
+<text x="640" y="750" class="mono slate" font-size="13" text-anchor="middle">the trajectory IS the record</text>
+<line x1="640" y1="732" x2="640" y2="764" class="faint" marker-end="url(#ahF)"/>
+
+<!-- ===== MEMORY / RECORD · CMB ===== -->
+<rect x="80" y="770" width="1120" height="104" rx="12" class="band"/>
+<!-- faint CMB speckle motif -->
+<g fill="#EFEAE0">
+  <circle cx="1020" cy="800" r="1.3" opacity="0.13"/><circle cx="1044" cy="818" r="1.0" opacity="0.10"/>
+  <circle cx="1066" cy="796" r="1.5" opacity="0.15"/><circle cx="1088" cy="828" r="1.1" opacity="0.09"/>
+  <circle cx="1110" cy="806" r="1.3" opacity="0.12"/><circle cx="1134" cy="822" r="1.6" opacity="0.14"/>
+  <circle cx="1156" cy="800" r="1.0" opacity="0.10"/><circle cx="1032" cy="842" r="1.4" opacity="0.12"/>
+  <circle cx="1058" cy="852" r="1.1" opacity="0.09"/><circle cx="1082" cy="846" r="1.5" opacity="0.13"/>
+  <circle cx="1106" cy="838" r="1.0" opacity="0.10"/><circle cx="1130" cy="850" r="1.3" opacity="0.11"/>
+  <circle cx="1152" cy="840" r="1.2" opacity="0.12"/><circle cx="1010" cy="824" r="1.1" opacity="0.10"/>
+  <circle cx="1162" cy="822" r="1.4" opacity="0.13"/>
+</g>
+<text x="104" y="811" class="serif bone" font-size="24">MEMORY / RECORD&#160;&#160;M</text>
+<text x="104" y="839" class="mono muted" font-size="13">the run&#160; &#947;&#8320; &#8594; &#947;&#8321; &#8594; &#8230; &#8594; &#947;_T &#160;is itself the transition record</text>
+<text x="104" y="861" class="mono muted" font-size="12" font-style="italic">&#183; Cosmic Microwave Background &#8212; correspondence, not a literal log (relic ~380 kyr; predates the Sun ~9 Gyr)</text>
+
+<!-- ===== Steward query (read-only, up) ===== -->
+<line x1="640" y1="928" x2="640" y2="878" class="flow dash" marker-end="url(#ahS)"/>
+<text x="656" y="906" class="mono slate" font-size="12">query (read-only)</text>
+
+<!-- ===== THE STEWARD (oracle) ===== -->
+<rect x="410" y="930" width="460" height="104" rx="12" class="steward"/>
+<text x="640" y="972" class="serif bone" font-size="25" text-anchor="middle">THE STEWARD</text>
+<text x="640" y="998" class="mono muted" font-size="11.5" text-anchor="middle">the observer &#8212; humanity / the IAU (defines planethood &#183; Wheeler &#167;4)</text>
+<text x="640" y="1018" class="mono muted" font-size="11.5" text-anchor="middle">oracle &#183; &#8713; &#915; &#183; queries trajectory, &#968;, H &#183; does not drive &#934;_H</text>
+
+<!-- ===== LEGEND ===== -->
+<g>
+  <line x1="80" y1="1066" x2="104" y2="1066" class="flow" marker-end="url(#ahS)"/>
+  <text x="112" y="1070" class="mono muted" font-size="13">&#934;_H &#8212; forward flow (conserves H)</text>
+
+  <circle cx="392" cy="1066" r="5" fill="#E9883B"/>
+  <text x="406" y="1070" class="mono muted" font-size="13">&#968; (E&#60;0) &#8212; bound region &#915;_&#968;</text>
+
+  <rect x="645" y="1059" width="20" height="14" rx="3" class="subbox"/>
+  <text x="673" y="1070" class="mono muted" font-size="13">sub-epoch &#8212; planet (illustrative)</text>
+
+  <line x1="940" y1="1066" x2="964" y2="1066" class="flow dash" marker-end="url(#ahS)"/>
+  <text x="972" y="1070" class="mono muted" font-size="13">Steward &#8212; read-only oracle</text>
+</g>
+<text x="80" y="1096" class="mono muted" font-size="12" opacity="0.85">No &#968;? gate &#8212; conservation replaces verification. Forward-directed; the speculative retrocausal &#948;* is omitted (README &#167;4). Dashed border = motivating correspondence, not mechanism.</text>
+</svg>

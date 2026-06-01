@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1086" width="1280" height="1086" role="img" aria-label="QNM — the Quantum Neural Manifold: the Epoch Automaton over a configuration manifold">
+<!-- ================= PALETTE — edit colours here =================
+     ink #0E0F13 · band #13161C · subbox #0F1217
+     bone #EFEAE0 · muted #8B909B · slate #6FA0B2 · slate-deep #46586A
+     ember #E9883B · ember-soft #F4A862 · ember-deep #C96A28
+     Built-in, not checked: QNM has NO ψ? gate — the projection P_ψ
+     confines the constrained gradient flow ∇ to the ψ-invariant
+     submanifold M_ψ by construction. The Ark is solid here (it does
+     real work: it defines P_ψ) — not a dashed correspondence.
+     Forward-directed; retrocausal δ* deliberately omitted.
+     Fonts are generic families for reliable GitHub image rendering.
+=============================================================== -->
+<defs>
+  <style>
+    .serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif;}
+    .mono{font-family:ui-monospace,'SF Mono','JetBrains Mono',Menlo,Consolas,monospace;}
+    .bone{fill:#EFEAE0;} .muted{fill:#8B909B;} .slate{fill:#6FA0B2;} .ember{fill:#E9883B;}
+    .band{fill:#13161C;stroke:#46586A;stroke-width:1.5;}
+    .subbox{fill:#0F1217;stroke:#3E5A66;stroke-width:1;}
+    .steward{fill:#15141A;stroke:#C96A28;stroke-width:1.6;}
+    .flow{stroke:#6FA0B2;stroke-width:2;fill:none;}
+    .faint{stroke:#46586A;stroke-width:1.5;fill:none;}
+    .dash{stroke-dasharray:7 6;}
+    .dotline{stroke:#46586A;stroke-width:2;stroke-dasharray:1.5 7;stroke-linecap:round;}
+    .ribbon{stroke:#E9883B;stroke-opacity:0.09;stroke-width:26;fill:none;stroke-linecap:round;}
+    .mline{stroke:#E9883B;stroke-opacity:0.5;stroke-width:1.6;fill:none;}
+    .netline{stroke:#6FA0B2;stroke-width:1;opacity:0.5;}
+  </style>
+  <linearGradient id="inkGrad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#101117"/><stop offset="100%" stop-color="#0A0B0E"/>
+  </linearGradient>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M40 0 H0 V40" fill="none" stroke="#FFFFFF" stroke-opacity="0.03" stroke-width="1"/>
+  </pattern>
+  <filter id="emberGlow" x="-120%" y="-120%" width="340%" height="340%">
+    <feGaussianBlur stdDeviation="3.5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="softHalo" x="-160%" y="-160%" width="420%" height="420%">
+    <feGaussianBlur stdDeviation="14"/>
+  </filter>
+  <marker id="ahS" markerWidth="10" markerHeight="9" refX="6.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0,0 L7,3.5 L0,7 Z" fill="#6FA0B2"/>
+  </marker>
+  <marker id="ahF" markerWidth="9" markerHeight="8" refX="6" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0,0 L6.5,3.5 L0,7 Z" fill="#46586A"/>
+  </marker>
+  <marker id="ahE" markerWidth="9" markerHeight="8" refX="6" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0,0 L6.5,3.5 L0,7 Z" fill="#E9883B"/>
+  </marker>
+</defs>
+
+<rect width="1280" height="1086" fill="url(#inkGrad)"/>
+<rect width="1280" height="1086" fill="url(#grid)"/>
+
+<!-- ===== figure kicker ===== -->
+<text x="80" y="36" class="mono slate" font-size="14" letter-spacing="3">THE EPOCH PROJECT &#8212; QNM &#183; QUANTUM NEURAL MANIFOLD</text>
+<text x="1200" y="36" class="mono muted" font-size="13" text-anchor="end" letter-spacing="1">forward-directed &#183; &#968; built-in</text>
+
+<!-- ===== THE ARK (neural / quantum) — solid: it defines P_ψ ===== -->
+<rect x="80" y="52" width="1120" height="104" rx="12" class="band"/>
+<!-- substrate emblem: small neural/quantum lattice -->
+<g>
+  <line x1="116" y1="92" x2="148" y2="92" class="netline"/>
+  <line x1="116" y1="92" x2="132" y2="116" class="netline"/>
+  <line x1="148" y1="92" x2="132" y2="116" class="netline"/>
+  <line x1="116" y1="92" x2="132" y2="74" class="netline"/>
+  <line x1="148" y1="92" x2="132" y2="74" class="netline"/>
+  <line x1="132" y1="116" x2="132" y2="74" class="netline"/>
+  <circle cx="116" cy="92" r="3" fill="#6FA0B2"/>
+  <circle cx="148" cy="92" r="3" fill="#6FA0B2"/>
+  <circle cx="132" cy="74" r="3" fill="#6FA0B2"/>
+  <circle cx="132" cy="116" r="3" fill="#6FA0B2"/>
+  <circle cx="132" cy="92" r="4.2" fill="#E9883B" filter="url(#emberGlow)"/>
+</g>
+<text x="186" y="96" class="serif bone" font-size="25">THE ARK&#160;&#160;(neural / quantum)</text>
+<text x="187" y="124" class="mono muted" font-size="13">encodes &#968; in the substrate &#183; defines the projection P_&#968;</text>
+<text x="1180" y="96" class="mono slate" font-size="13" text-anchor="end">no external check</text>
+<text x="1180" y="124" class="mono muted" font-size="12" text-anchor="end">&#968; is built in, not filtered</text>
+
+<!-- ===== built-in (not checked) connector ===== -->
+<text x="640" y="186" class="mono slate" font-size="13.5" text-anchor="middle">&#968; encoded as a constraint (P_&#968;) &#8212; not verified after the fact</text>
+<line x1="640" y1="200" x2="640" y2="264" class="faint" marker-end="url(#ahF)"/>
+
+<!-- ===== CONFIGURATION MANIFOLD M ===== -->
+<rect x="80" y="270" width="1120" height="408" rx="12" class="band"/>
+<text x="104" y="301" class="serif bone" font-size="22">CONFIGURATION MANIFOLD&#160;&#160;M</text>
+<text x="1180" y="300" class="mono muted" font-size="13" text-anchor="end">continuous state space &#183; energy functional H</text>
+
+<text x="130" y="348" class="mono ember" font-size="13">M_&#968;</text>
+<text x="172" y="348" class="mono muted" font-size="13">= { m : &#968;(m) = true }&#160;&#160;&#8212;&#160;&#160;the &#968;-invariant submanifold</text>
+
+<!-- the submanifold M_ψ as an ember ribbon -->
+<path d="M 160,440 Q 640,385 1140,440" class="ribbon"/>
+<path d="M 160,440 Q 640,385 1140,440" class="mline"/>
+
+<!-- coherent-output set F_M -->
+<rect x="1000" y="414" width="120" height="36" rx="7" class="subbox"/>
+<text x="1060" y="430" class="mono bone" font-size="13" text-anchor="middle">F_M</text>
+<text x="1060" y="444" class="mono muted" font-size="10.5" text-anchor="middle">coherent output</text>
+
+<!-- ∇ flow arrows along the submanifold -->
+<line x1="250" y1="430" x2="388" y2="421" class="flow" marker-end="url(#ahS)"/>
+<line x1="414" y1="418" x2="554" y2="414" class="flow" marker-end="url(#ahS)"/>
+<line x1="580" y1="413" x2="730" y2="414" class="flow" marker-end="url(#ahS)"/>
+<line x1="756" y1="415" x2="898" y2="420" class="flow" marker-end="url(#ahS)"/>
+<line x1="924" y1="422" x2="996" y2="430" class="flow" marker-end="url(#ahS)"/>
+<text x="318" y="409" class="mono slate" font-size="12" text-anchor="middle">&#8711;</text>
+<text x="827" y="408" class="mono slate" font-size="12" text-anchor="middle">&#8711;</text>
+
+<!-- trajectory nodes (m₀ = ember genesis) -->
+<circle cx="237" cy="432" r="9" fill="#E9883B" opacity="0.16" filter="url(#softHalo)"/>
+<circle cx="237" cy="432" r="7.5" fill="#F4A862" filter="url(#emberGlow)"/>
+<circle cx="401" cy="419" r="7" fill="#6FA0B2"/>
+<circle cx="567" cy="413" r="7" fill="#6FA0B2"/>
+<circle cx="743" cy="414" r="7" fill="#6FA0B2"/>
+<circle cx="911" cy="421" r="7" fill="#6FA0B2"/>
+<text x="237" y="398" class="mono ember" font-size="12" text-anchor="middle">m&#8320;</text>
+<text x="401" y="403" class="mono muted" font-size="12" text-anchor="middle">m&#8321;</text>
+<text x="567" y="397" class="mono muted" font-size="12" text-anchor="middle">m&#8322;</text>
+<text x="743" y="398" class="mono muted" font-size="12" text-anchor="middle">m&#8323;</text>
+<text x="911" y="405" class="mono muted" font-size="12" text-anchor="middle">m&#8324;</text>
+<text x="237" y="453" class="mono muted" font-size="11" text-anchor="middle">init</text>
+
+<!-- projection illustration at m₂: ∇_unconstrained bent back onto M_ψ by P_ψ -->
+<line x1="572" y1="421" x2="610" y2="492" class="faint dash" marker-end="url(#ahF)"/>
+<path d="M 610,492 Q 642,460 650,420" fill="none" stroke="#E9883B" stroke-width="1.6" marker-end="url(#ahE)"/>
+<text x="616" y="508" class="mono muted" font-size="11.5">&#8711;_unconstrained</text>
+<text x="664" y="470" class="mono ember" font-size="12">P_&#968;</text>
+<text x="664" y="487" class="mono muted" font-size="10.5">project onto M_&#968;</text>
+
+<!-- ∇ flow annotations -->
+<text x="130" y="503" class="mono slate" font-size="14">&#8711; = P_&#968; &#8728; &#8711;_unconstrained</text>
+<text x="130" y="527" class="mono muted" font-size="13">constrained gradient flow &#8212; descends H, stays on M_&#968;</text>
+<text x="130" y="551" class="mono muted" font-size="13">confinement = projection (P_&#968;); the flow never leaves M_&#968;</text>
+
+<!-- off-submanifold boundary + ψ=false region -->
+<line x1="120" y1="604" x2="1160" y2="604" class="dotline"/>
+<text x="1150" y="599" class="mono muted" font-size="11" text-anchor="end">edge of M_&#968;</text>
+<text x="132" y="631" class="mono muted" font-size="13">&#968; = false &#8212; off-submanifold &#183; unreachable under &#8711; from m&#8320;</text>
+<text x="132" y="653" class="mono muted" font-size="12">the substrate cannot reach it: the pathways that violate &#968; do not exist</text>
+
+<!-- ===== trajectory -> Memory ===== -->
+<text x="640" y="698" class="mono slate" font-size="13" text-anchor="middle">the trajectory IS the record</text>
+<line x1="640" y1="680" x2="640" y2="714" class="faint" marker-end="url(#ahF)"/>
+
+<!-- ===== MEMORY / TRAJECTORY ===== -->
+<rect x="80" y="722" width="1120" height="104" rx="12" class="band"/>
+<!-- faint trajectory motif (right) -->
+<g opacity="0.5">
+  <polyline points="1012,790 1044,776 1076,794 1108,778 1140,792" fill="none" stroke="#46586A" stroke-width="1.2"/>
+  <circle cx="1012" cy="790" r="2" fill="#6FA0B2" opacity="0.5"/>
+  <circle cx="1044" cy="776" r="2" fill="#6FA0B2" opacity="0.5"/>
+  <circle cx="1076" cy="794" r="2" fill="#6FA0B2" opacity="0.5"/>
+  <circle cx="1108" cy="778" r="2" fill="#6FA0B2" opacity="0.5"/>
+  <circle cx="1140" cy="792" r="2.6" fill="#E9883B" opacity="0.45"/>
+</g>
+<text x="104" y="763" class="serif bone" font-size="24">MEMORY / TRAJECTORY</text>
+<text x="104" y="791" class="mono muted" font-size="13">the run&#160; m&#8320; &#8594; m&#8321; &#8594; &#8230; &#8594; m_T &#160;is itself the transition record</text>
+<text x="104" y="813" class="mono muted" font-size="12" font-style="italic">the configuration manifold needs no separate log &#8212; the path through M_&#968; is the memory</text>
+
+<!-- ===== Steward query (read-only, up) ===== -->
+<line x1="640" y1="884" x2="640" y2="830" class="flow dash" marker-end="url(#ahS)"/>
+<text x="656" y="862" class="mono slate" font-size="12">query (read-only)</text>
+
+<!-- ===== THE STEWARD (oracle) ===== -->
+<rect x="430" y="886" width="420" height="104" rx="12" class="steward"/>
+<text x="640" y="928" class="serif bone" font-size="25" text-anchor="middle">THE STEWARD</text>
+<text x="640" y="954" class="mono muted" font-size="11.5" text-anchor="middle">external oracle &#8212; reads the record, tends &#968;; never drives the flow</text>
+<text x="640" y="974" class="mono muted" font-size="11.5" text-anchor="middle">oracle &#183; &#8713; M &#183; queries trajectory, &#968;, P_&#968; &#183; does not drive &#8711;</text>
+
+<!-- ===== LEGEND ===== -->
+<g>
+  <line x1="80" y1="1018" x2="104" y2="1018" class="flow" marker-end="url(#ahS)"/>
+  <text x="112" y="1022" class="mono muted" font-size="13">&#8711; &#8212; constrained gradient flow (descends H)</text>
+
+  <line x1="448" y1="1018" x2="476" y2="1018" class="mline" stroke-opacity="0.9" stroke-width="3"/>
+  <text x="486" y="1022" class="mono muted" font-size="13">M_&#968; &#8212; &#968;-invariant submanifold</text>
+
+  <path d="M 760,1024 Q 772,1012 782,1014" fill="none" stroke="#E9883B" stroke-width="1.6" marker-end="url(#ahE)"/>
+  <text x="792" y="1022" class="mono muted" font-size="13">P_&#968; &#8212; projection = built-in constraint</text>
+</g>
+<text x="80" y="1050" class="mono muted" font-size="12" opacity="0.9">No &#968;? gate &#8212; the projection P_&#968; replaces verification. Forward-directed; the speculative retrocausal &#948;* is omitted. Steward = read-only oracle (&#8713; M).</text>
+<text x="80" y="1070" class="mono muted" font-size="12" opacity="0.75">Physical precedent &#8212; USTC nine-spin quantum reservoir: Peng &#38; Li, Phys. Rev. Lett. 136, 120602 (2026).</text>
+</svg>

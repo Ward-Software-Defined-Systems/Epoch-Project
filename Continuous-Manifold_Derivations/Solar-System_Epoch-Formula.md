@@ -8,6 +8,10 @@
 > as the Steward — are **motivating correspondences**, fenced in the spirit of `README.md` §4.
 > They are images that make the structure vivid; **none is claimed as a physical mechanism**.
 
+<p align="center">
+  <img src="../assets/epoch-sol-state-machine.png" alt="SOL Heliocentric Epoch state-machine: Sagittarius A* as the Ark (a fenced correspondence); phase space Γ with the Sun as Epoch 0 and the planets as nested sub-epochs in the bound region Γ_ψ (negative orbital energy); the Hamiltonian flow Φ_H confined by conservation of H; the trajectory and CMB as Memory; the observer / IAU as the Steward." width="100%">
+</p>
+
 ## Overview
 
 The Heliocentric Epoch is the Epoch Automaton read over the solar system. It is one of many
