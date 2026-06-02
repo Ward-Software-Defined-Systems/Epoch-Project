@@ -15,6 +15,7 @@ and verifies `E`). After that it's just decoration:
 - **The subscript `_sub`** marks something belonging to a nested sub-automaton.
 - **A prime `'`** names a second state distinct from `s` (its role is positional — see the [caveat](#a-caveat-the-prime--is-positional)).
 - **A superscript `*`** marks the backward/retrocausal variant of a function (`δ*`).
+- **A hat (`Ĥ`)** marks an *operator*, distinct from a scalar of the same letter — used in MWA (§11).
 
 ---
 
@@ -394,6 +395,114 @@ counterpart of §6 and §9.3).
 
 ---
 
+## 11. Many-Worlds reinterpretation (MWA)
+
+The derivation
+[`Branching-Manifold_Derivations/Many-Worlds_Epoch-Formula.md`](./Branching-Manifold_Derivations/Many-Worlds_Epoch-Formula.md)
+reinterprets the same symbols over **Hilbert space**, with a **complex (unitary) flow** — the first
+of the *branching*-manifold derivations, distinct from the single-trajectory continuous-manifold
+derivations QNM (§9) and SOL (§10). The discrete automaton (§1) is the core mathematics; MWA is its
+Schrödinger-flow extension over the Many-Worlds (Everett) interpretation — **theoretical /
+speculative** (see that file's Current Status and Open problems), not an operational claim.
+
+> **`M` is *not* overloaded here.** As in SOL (§10), `M` stays **Memory** (§2); the state space is
+> `ℋ` (Hilbert space). What *is* new: a hatted **`Ĥ`** marks the Hamiltonian *operator* (contrast the
+> *scalar functional* `H` of §9/§10), and the flow is **complex** — the family's first. The §3
+> `ψ_sub` / `δ_sub` recur with a per-world superscript `k` (as SOL's per-planet `i`).
+
+> **No analogue of `σ_verify`.** Unlike the discrete machine — and unlike QNM/SOL, which replace the
+> check with a constraint — MWA's unitary flow `U` *never rejects*; rejection would be wavefunction
+> collapse. The nearest thing is **einselection** (it *selects* a pointer basis, forbids nothing).
+
+### 11.1 The MWA Automaton — `MWA = (ℋ, Ĥ, U, Ψ₀, F_ℋ, ψ)`
+
+The continuous analogue of the Epoch Automaton 6-tuple, over Hilbert space. Parallels QNM (§9.1) and
+SOL (§10.1), but the transition is **unitary Schrödinger flow** — *complex* and norm-preserving,
+where QNM's `∇` descends `H` and SOL's `Φ_H` conserves it.
+
+| Symbol | Read as | Name | Type / signature | Meaning |
+|---|---|---|---|---|
+| `MWA` | "M·W·A" | MWA Automaton | 6-tuple | The Many-Worlds instance of the continuous machine (branching). |
+| `ℋ` | script capital **H** | Hilbert space | complex Hilbert space (projective `ℋ` is a manifold) | The continuous state space; each `Ψ ∈ ℋ` is a (universal) wavefunction. Analogue of `M` (§9) / `Γ` (§10). |
+| `Ĥ` | "H-hat" | Hamiltonian operator | self-adjoint operator on `ℋ` | Generates the flow. **Hatted** = an *operator*, distinct from the *scalar functional* `H` of §9/§10. |
+| `U` | capital **U** | Unitary (Schrödinger) flow | `U(t) = e^{−iĤt/ℏ}`; gen. by `iℏ ∂Ψ/∂t = ĤΨ` | The transition rule: **complex, norm-preserving** time-evolution. Continuous analogue of `δ`; contrast QNM's `∇`, SOL's `Φ_H`. |
+| `Ψ` | Greek capital **psi** | Universal wavefunction | `Ψ ∈ ℋ` | A point in `ℋ`; the **Epoch-0 superstate** that contains the branches. (Capital — contrast lowercase `ψ`, the invariant.) |
+| `Ψ₀` | "psi-naught" | Initial wavefunction | `Ψ₀ ∈ ℋ`, `ψ(Ψ₀) = true` | The genesis configuration; analogue of `s₀` / `m₀` / `γ₀`. |
+| `F_ℋ` | "F-sub-H" | Coherent / quasi-classical set | `F_ℋ ⊆ ℋ` | Einselected, pointer-basis worlds; analogue of `F`. |
+| `ψ` | Greek lowercase **psi** | Soul invariant | `ψ: ℋ → {true, false}` | The §1 invariant typed over `ℋ`. **Two readings:** superstate `ψ₀` = unitarity (`⟨Ψ\|Ψ⟩ = 1`); branch `ψ_sub^k` = decoherent quasi-classical identity. **Pointwise** (static) — see §11.2. |
+| `ℋ_S ⊗ ℋ_E` | "H-S tensor H-E" | System–environment split | tensor factorization of `ℋ` | The factorization that defines a "branch." **Which** factorization is the **preferred-basis / factorization** open problem. |
+| `ρ_S` | "rho-sub-S" | Reduced density matrix | `ρ_S = Tr_E \|Ψ⟩⟨Ψ\|` | Partial trace over the environment. Decay of its **off-diagonal** terms (in the pointer basis) **is** decoherence. |
+| `\|c_k\|²` | "mod-c-k-squared" | Born weight of branch `k` | `∈ [0,1]`, `Σ_k \|c_k\|² = 1` | The **measure on sub-epochs** (worlds). Invokes the **Born rule** — open (§11.2). |
+| `ψ_sub^k`, `δ_sub^k` | "psi-/delta-sub, super-k" | Per-world sub-invariant / sub-transition | as §3, indexed by `k` | The §3 nested `ψ_sub` / `δ_sub` carried by world `k`. `ψ_sub^k` = world `k` keeps its decoherent, quasi-classical identity. (Superscript `k` = per-world index, as SOL's per-planet `i`.) |
+| `Ψ'`, `Ψ_T` | "psi-prime", "psi-sub-T" | Wavefunction instances | `Ψ ∈ ℋ` | A successor wavefunction (prime is positional — §4); a trajectory endpoint. |
+
+> **No `P_ψ`, no conservation confinement.** QNM confines via a projection `P_ψ`; SOL via the
+> conserved bound region `Γ_ψ`. MWA confines **nothing** — the flow is globally unitary and the
+> superposition is never reduced. The epoch structure is **emergent**: einselection makes branches
+> quasi-classical, and a branch persists while its `ρ_S` off-diagonals to siblings stay ≈ 0.
+
+### 11.2 Discrete ↔ branching correspondence
+
+| Discrete Epoch Automaton `E` | MWA Automaton | Note |
+|---|---|---|
+| state `s ∈ S` | wavefunction `Ψ ∈ ℋ` | a discrete node becomes a point in Hilbert space |
+| transition `δ(sᵢ, σⱼ)` | a step of the unitary flow `U` | complex, norm-preserving; `iℏ ∂ₜΨ = ĤΨ` |
+| verification step (`σ_verify`) | **einselection** (no rejection) | `U` never rejects; the environment *selects* the pointer basis |
+| halt when `ψ(s) = false` | **recoherence** of a branch (astronomically rare) | leaving a world by re-interference; never forbidden |
+| initial epoch `s₀` | initial wavefunction `Ψ₀`, `ψ(Ψ₀) = true` | the genesis configuration |
+| terminal set `F ⊆ S` | quasi-classical set `F_ℋ ⊆ ℋ` | einselected, pointer-basis worlds |
+| nested epoch `(S_sub, …, ψ_sub)` | a world, with `δ_sub^k`, `ψ_sub^k` | `Ψ` = Epoch 0 superstate; worlds = sub-epochs (illustrative — not formalized; the parent's weight is **partitioned** among children) |
+| Memory `M = [(s₀,σ₁,s₁), …]` | a **forking tree** of branch-relative records | the run is no longer a single list — it splits (Everett relative state) |
+| Steward (oracle, `∉ S`) | in-branch observer (`∉ ℋ` **strained**) | MWI has no "outside" — see the Steward block and `README.md` §6 |
+
+> **Still pointwise.** MWA's `ψ` is `ψ: ℋ → {true, false}` — the continuous analogue of the *static*
+> discrete invariant. It **inherits** the open problem of a dynamic / history-dependent `ψ` (§1 note;
+> `README.md` §6). Decoherence is *inherently* history-dependent, so MWA is the most natural setting
+> to *attempt* a trajectory-valued `ψ` — but it does **not** do so here.
+
+> **Inherited, unresolved.** Beyond the pointwise-`ψ` problem, MWA inherits the **Born rule** (why
+> `|c_k|²` should be the measure on worlds) and the **preferred-basis / factorization** problem
+> (which `ℋ_S ⊗ ℋ_E` split defines a world). Both are open; see the derivation's *Open problems*.
+
+> **Nesting is illustrative — and harder than SOL's.** `Ψ`-as-superstate / worlds-as-sub-epochs is a
+> concrete instance of the §3 statechart sketch, **not** a formalization. It strains the sketch more
+> than SOL: a Harel superstate persists *alongside* its substates, but here the parent branch does
+> not persist beside its children — its Born weight is **partitioned among them**. Per §8, the
+> `ψ_sub^k` are *evaluated independently* — a procedure, not yet a constraint (open: `README.md` §6).
+
+**Steward constraints (branching)** — the §8 Steward block expressed for Hilbert space. Unlike §9.2 /
+§10.2, the external `∉` is **strained**: MWI permits no outside, so the Steward becomes an *in-branch*
+observer that forks with its world.
+
+```
+Steward ∉ ℋ                            (strained: MWI has no "outside")
+Steward may query:   its own branch's relative-state record,  ψ
+Steward may not:     drive U  (the unitary flow)
+```
+
+### 11.3 MWA diagram conventions
+
+For the ASCII state-machine in the MWA derivation's "The MWA State-Machine" subsection (branching
+counterpart of §6, §9.3, §10.3).
+
+| Element | Convention | Meaning |
+|---|---|---|
+| Panel `HILBERT SPACE ℋ` | manifold node | the continuous (complex) state space `ℋ` |
+| Box `EPOCH 0 · Ψ (superstate)` | superstate | the universal wavefunction; contains the world sub-epochs |
+| Arrow `──U──▶` | unitary-flow step | forward; complex, norm-preserving (`iℏ ∂ₜΨ = ĤΨ`); contrast QNM's `∇`, SOL's `Φ_H` |
+| Fork `──┬──▶ world k` | branching | one trajectory splits into worlds; each world tagged `\|c_k\|²` (Born weight) and `ψ_sub^k`; each is a sub-epoch |
+| Region `F_ℋ` | quasi-classical (accepting) set | einselected, pointer-basis worlds |
+| Dotted strip `ψ = false — RECOHERENCE` | epoch-ending analogue | a world re-interfering with a sibling; astronomically rare, never forbidden |
+| Top band `THE ARK · the universal wavefunction Ψ` | meta-automaton (fenced) | **correspondence, not mechanism** — `U` does not verify; MWI has no "outside" (cf. `README.md` §4) |
+| Bottom band `MEMORY / RECORD M` | the record (forking tree) | branch-relative records (Everett relative state); the run **splits**, it is not a single list |
+| Stub `THE STEWARD` | oracle (strained) | read-only; the *in-branch* observer — itself inside `Ψ`, branches too; the external `∉ ℋ` cannot hold |
+
+> Forward-directed, like §6, §9.3, §10.3. The retrocausal `δ*` is deliberately absent. The Ψ-as-Ark
+> and observer-as-Steward labels are **motivating correspondences** (`README.md` §4) — and here the
+> fencing is *forced* by the interpretation's lack of an "outside," not only by metaphor-hygiene.
+
+---
+
 ### Symbol quick-index
 
 `E` · `A` · `S` · `Σ` · `δ` · `δ*` · `δ_sub` · `s₀` · `F` · `ψ` · `ψ_sub` · `M` ·
@@ -406,3 +515,7 @@ counterpart of §6 and §9.3).
 **SOL (§10):** `SOL` · `Γ` · `H`† · `Φ_H` · `γ₀` · `F_Γ` · `ψ` · `Γ_ψ` · `γ` · `γ'` · `γ_T` ·
 `ψ_sub^i` · `δ_sub^i`  — †`H` is the gravitational Hamiltonian here (the §9 energy functional
 reused); `M` (Memory, §2) is *not* overloaded in SOL — the manifold is `Γ`.
+
+**MWA (§11):** `MWA` · `ℋ` · `Ĥ`‡ · `U` · `Ψ` · `Ψ₀` · `F_ℋ` · `ψ` · `ℋ_S ⊗ ℋ_E` · `ρ_S` ·
+`|c_k|²` · `ψ_sub^k` · `δ_sub^k` · `Ψ'` · `Ψ_T`  — ‡`Ĥ` is the Hamiltonian *operator* (hatted),
+distinct from the scalar `H` of §9/§10; `M` (Memory, §2) is *not* overloaded — the state space is `ℋ`.
