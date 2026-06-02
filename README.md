@@ -10,7 +10,17 @@
   <img src="assets/epoch-comparison.png" alt="Four Derivations · One Boundary — a comparison of the four Epoch Automaton instances, all sharing E = (S, Σ, δ, s₀, F, ψ) and differing only in how the boundary ψ is held: DISCRETE checks ψ at each crossing; SOL conserves it (gravitational binding, E < 0); QNM projects onto the ψ-submanifold (P_ψ); MWA lets it emerge via environmental decoherence / einselection. Rows compare the 6-tuple, how ψ is held, the flow (discrete steps; real symplectic Φ_H; real gradient ∇; complex unitary U = e^{−iĤt/ℏ}), the trajectory (a single confined path vs a branching tree), how the epoch ends (halt / ejection / off-submanifold / recoherence), the Ark, the Steward (external oracle vs in-branch and strained for MWA), and the physical precedent. Only Many-Worlds branches, and only there does the external Ark / Steward strain." width="100%">
 </p>
 
+<p align="center">
+  <img src="assets/epoch-invariant.png" alt="A Speculative Definition of ψ — the static form ψ: S → {true, false} (pointwise; folds into the state set, a name not a constraint) versus the speculative move ψ: Runs(S) → {true, false} (defined over whole trajectories; cannot be folded away if it survives the test). The discriminating (replica) test: two runs reach the same final state by different paths — one in which the thing survived with unbroken identity, and one in which the original died and was replaced by an identical copy; a static endpoint-only ψ calls them the same and is blind to the difference, while a trajectory ψ calls them different and tells survival from replica. The bar: a definition that cannot be false somewhere is a name; a definition that survives the replica test is a tool." width="100%">
+</p>
+
 # THE EPOCH PROJECT — Framework
+
+> **Start here — the live problem.** The framework is built to **pass or fail**, and the invariant
+> **ψ** is where that happens. To reason seriously about it, begin with
+> **[Defining the Invariant ψ](./EPOCH-DEFINING-THE-INVARIANT.md)** — the central open problem and
+> the project's falsification surface — with the **[Notation Legend](./EPOCH-NOTATION-LEGEND.md)**
+> to hand for canonical symbols.
 
 > **A note on register.** This document separates the project's *contribution* from its
 > *motivation*.
@@ -284,7 +294,7 @@ does.
 |---|---|
 | Conceptual reframe (§1) | Stable |
 | Architecture (§2) | Operational (embraOS); physical/procedural layers active/converging |
-| **Dynamic ψ** (history/path/trajectory-dependent) | **Open — the main formal lever** |
+| **[Dynamic ψ](./EPOCH-DEFINING-THE-INVARIANT.md)** (history/path/trajectory-dependent) | **Open — the main formal lever** |
 | Statechart superstate/substate transition semantics | Open — to be specified |
 | Distributed-commit formalization of the handshake | Open — replaces retrocausal framing |
 | QNM | Theoretical / speculative |
