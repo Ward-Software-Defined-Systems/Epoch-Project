@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 980" width="1280" height="980" role="img" aria-label="The invariant psi and its speculative definition — the replica test">
+<!-- ================= PALETTE — edit colours here =================
+     ink #0E0F13 · band #13161C · subbox #0F1217
+     bone #EFEAE0 · muted #8B909B · slate #6FA0B2 · slate-deep #46586A
+     ember #E9883B · ember-soft #F4A862 · ember-deep #C96A28 · no #C9756A
+     The move this draws: STATIC pointwise ψ (folds into the state set —
+     a name) → SPECULATIVE trajectory-dependent ψ (history-laden — a tool,
+     IF it survives the replica test). The test is the hero.
+     Fonts are generic families for reliable GitHub image rendering.
+=============================================================== -->
+<defs>
+  <style>
+    .serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif;}
+    .mono{font-family:ui-monospace,'SF Mono','JetBrains Mono',Menlo,Consolas,monospace;}
+    .bone{fill:#EFEAE0;} .muted{fill:#8B909B;} .slate{fill:#6FA0B2;} .ember{fill:#E9883B;} .no{fill:#C9756A;}
+    .band{fill:#13161C;stroke:#46586A;stroke-width:1.5;}
+    .boundregion{fill:#16141A;stroke:#C96A28;stroke-opacity:0.55;stroke-width:1.4;}
+    .flow{stroke:#6FA0B2;stroke-width:2;fill:none;}
+    .faint{stroke:#46586A;stroke-width:1.5;fill:none;}
+    .athread{stroke:#E9883B;stroke-width:2.6;fill:none;}
+    .bthread{stroke:#6FA0B2;stroke-width:2.6;fill:none;opacity:0.9;}
+    .brk{stroke:#C9756A;stroke-width:2.6;}
+    .dash{stroke-dasharray:6 5;}
+  </style>
+  <linearGradient id="inkGrad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#101117"/><stop offset="100%" stop-color="#0A0B0E"/>
+  </linearGradient>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M40 0 H0 V40" fill="none" stroke="#FFFFFF" stroke-opacity="0.025" stroke-width="1"/>
+  </pattern>
+  <filter id="emberGlow" x="-120%" y="-120%" width="340%" height="340%">
+    <feGaussianBlur stdDeviation="3.5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="softHalo" x="-160%" y="-160%" width="420%" height="420%">
+    <feGaussianBlur stdDeviation="20"/>
+  </filter>
+  <marker id="ahS" markerWidth="9" markerHeight="8" refX="6" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0,0 L6.5,3.5 L0,7 Z" fill="#6FA0B2"/>
+  </marker>
+  <marker id="ahE" markerWidth="9" markerHeight="8" refX="6" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0,0 L6.5,3.5 L0,7 Z" fill="#E9883B"/>
+  </marker>
+</defs>
+
+<rect width="1280" height="980" fill="url(#inkGrad)"/>
+<rect width="1280" height="980" fill="url(#grid)"/>
+
+<!-- ===== title ===== -->
+<text x="80" y="38" class="mono slate" font-size="13" letter-spacing="2.5">THE EPOCH PROJECT</text>
+<text x="1200" y="38" class="mono muted" font-size="13" text-anchor="end">the open problem</text>
+<circle cx="132" cy="132" r="38" fill="#E9883B" opacity="0.16" filter="url(#softHalo)"/>
+<text x="132" y="166" class="serif ember" font-size="100" font-style="italic" text-anchor="middle">&#968;</text>
+<text x="252" y="116" class="serif bone" font-size="38">A Speculative Definition of &#968;</text>
+<text x="254" y="150" class="mono muted" font-size="14">the soul invariant, and the framework&#8217;s falsification surface &#8212; a tool, or only a name?</text>
+<line x1="80" y1="186" x2="1200" y2="186" class="faint" stroke-opacity="0.4"/>
+
+<!-- ============================================================ -->
+<!-- TWO READINGS OF ψ                                            -->
+<!-- ============================================================ -->
+<!-- STATIC -->
+<rect x="80" y="210" width="540" height="178" rx="12" class="band"/>
+<text x="100" y="242" class="mono slate" font-size="13" letter-spacing="1">STATIC &#183; the form that exists now</text>
+<text x="600" y="242" class="mono muted" font-size="11" text-anchor="end">insufficient alone</text>
+<text x="100" y="288" class="mono bone" font-size="20">&#968; : S &#8594; { true, false }</text>
+<text x="100" y="318" class="mono muted" font-size="13">a predicate on single states &#8212; pointwise</text>
+<text x="100" y="350" class="mono muted" font-size="13">&#8627; collapses: folds into the state set;</text>
+<text x="100" y="372" class="mono muted" font-size="13">&#160;&#160;&#160;adds a name, not a constraint</text>
+
+<!-- promote -->
+<line x1="624" y1="299" x2="656" y2="299" class="flow" stroke="#E9883B" marker-end="url(#ahE)"/>
+<text x="640" y="287" class="mono ember" font-size="11" text-anchor="middle">promote</text>
+
+<!-- SPECULATIVE -->
+<rect x="660" y="210" width="540" height="178" rx="12" class="boundregion"/>
+<text x="680" y="242" class="mono ember" font-size="13" letter-spacing="1">SPECULATIVE &#183; the open move</text>
+<text x="1180" y="242" class="mono ember" font-size="11" text-anchor="end">open &#183; unproven</text>
+<text x="680" y="288" class="mono bone" font-size="20">&#968; : Runs(S) &#8594; { true, false }</text>
+<text x="680" y="318" class="mono muted" font-size="13">a run&#160; r = ( s&#8320; &#8594; s&#8321; &#8594; &#8230; &#8594; s_T )&#160;&#160;&#8212; the whole path</text>
+<text x="680" y="350" class="mono ember" font-size="13">&#8627; cannot be folded away &#8212;</text>
+<text x="680" y="372" class="mono muted" font-size="13">&#160;&#160;&#160;if it survives the test below</text>
+
+<!-- ============================================================ -->
+<!-- THE DISCRIMINATING TEST (hero)                               -->
+<!-- ============================================================ -->
+<rect x="80" y="420" width="1120" height="402" rx="12" class="band"/>
+<text x="104" y="450" class="serif bone" font-size="20">THE DISCRIMINATING TEST</text>
+<text x="1180" y="448" class="mono muted" font-size="13" text-anchor="end">same endpoint &#183; different histories</text>
+<text x="104" y="474" class="mono muted" font-size="12.5">two runs reach the same final state by different paths &#8212; one survives, one is a replica</text>
+
+<!-- trajectory-ψ bracket over the whole paths -->
+<path d="M214,508 L214,500 L968,500 L968,508" class="faint" stroke="#E9883B" stroke-opacity="0.5" fill="none"/>
+<text x="591" y="493" class="mono ember" font-size="12" text-anchor="middle">trajectory &#968; &#8212; reads the entire history</text>
+
+<!-- origin s₀ -->
+<text x="184" y="619" class="mono bone" font-size="12" text-anchor="end">s&#8320; &#183; the thing</text>
+<circle cx="194" cy="614" r="7" fill="#F4A862" filter="url(#emberGlow)"/>
+
+<!-- A : survival (ember, continuous) -->
+<path d="M202,609 C 360,545 540,560 690,572 S 930,597 1000,599" class="athread"/>
+<circle cx="402" cy="557" r="3" fill="#E9883B"/>
+<circle cx="620" cy="568" r="3" fill="#E9883B"/>
+<circle cx="838" cy="586" r="3" fill="#E9883B"/>
+<text x="430" y="537" class="mono ember" font-size="12">A &#183; survives &#8212; one unbroken identity</text>
+
+<!-- B1 : the original dies (slate, then break) -->
+<path d="M202,620 C 312,662 420,690 526,694" class="bthread"/>
+<line x1="531" y1="688" x2="545" y2="702" class="brk"/>
+<line x1="545" y1="688" x2="531" y2="702" class="brk"/>
+<text x="556" y="700" class="no" font-size="11">the original dies</text>
+
+<!-- B2 : an identical copy reaches the same state (slate) -->
+<circle cx="650" cy="726" r="9" fill="none" stroke="#6FA0B2" stroke-width="1.4" stroke-dasharray="4 3"/>
+<circle cx="650" cy="726" r="4" fill="#6FA0B2"/>
+<text x="650" y="752" class="mono muted" font-size="11" text-anchor="middle">an identical copy</text>
+<path d="M662,722 C 780,712 900,652 1000,607" class="bthread dash"/>
+<text x="812" y="668" class="mono muted" font-size="11">B &#183; the copy reaches the same state</text>
+
+<!-- shared final state s_T -->
+<circle cx="1010" cy="600" r="18" fill="none" stroke="#E9883B" stroke-width="1.5"/>
+<circle cx="1010" cy="600" r="9" fill="#F4A862" filter="url(#emberGlow)"/>
+<text x="1010" y="556" class="mono bone" font-size="12" text-anchor="middle">same final state</text>
+<text x="1042" y="604" class="mono ember" font-size="12">s_T</text>
+
+<!-- verdicts -->
+<line x1="104" y1="762" x2="1176" y2="762" class="faint" stroke-opacity="0.3"/>
+<text x="104" y="788" class="mono" font-size="13"><tspan class="muted">static&#160; &#968;(s_T)&#160; &#8212; reads the endpoint only:&#160;&#160; A &#8801; B&#160;&#160;</tspan><tspan class="no" font-weight="bold">&#215;</tspan><tspan class="muted">&#160;&#160;blind to the difference</tspan></text>
+<text x="104" y="811" class="mono" font-size="13"><tspan class="ember">trajectory&#160; &#968;(r)&#160; &#8212; reads the whole path:&#160;&#160; A &#8800; B&#160;&#160;&#10003;</tspan><tspan class="muted">&#160;&#160;tells survival from replica</tspan></text>
+
+<!-- ===== the bar ===== -->
+<line x1="80" y1="860" x2="1200" y2="860" class="faint" stroke="#E9883B" stroke-opacity="0.35"/>
+<text x="640" y="888" class="mono slate" font-size="12" letter-spacing="2" text-anchor="middle">THE BAR</text>
+<text x="640" y="916" class="serif bone" font-size="19" font-style="italic" text-anchor="middle">A definition that cannot be false somewhere is a name.</text>
+<text x="640" y="948" class="serif ember" font-size="19" font-style="italic" text-anchor="middle">A definition that survives the replica test is a tool.</text>
+</svg>
