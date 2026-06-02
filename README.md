@@ -300,6 +300,7 @@ does.
 | QNM | Theoretical / speculative |
 | SOL (Heliocentric Epoch) | Theoretical / speculative |
 | MWA (Many-Worlds / Branching Epoch) | Theoretical / speculative |
+| **[DeepSeek-V4-Pro](./Discrete_Derivations/DeepSeek-V4-Pro_Epoch-Formula.md)** (Discrete / Operational Epoch) | **Drafted — operational against a real artifact** |
 
 ---
 
@@ -343,6 +344,31 @@ differ from the continuous-manifold derivations (§7) in three structural ways: 
   the spirit of §4.
 
 Notation is registered in [`EPOCH-NOTATION-LEGEND.md`](./EPOCH-NOTATION-LEGEND.md) (§11 MWA).
+
+---
+
+## 9. Discrete derivations (operational)
+
+A third family, in [`Discrete_Derivations/`](./Discrete_Derivations/), instantiates the Epoch
+Automaton **directly** — over a discrete set of states, against a **real artifact you control** —
+rather than reinterpreting it over a manifold. It differs from the continuous-manifold (§7) and
+branching-manifold (§8) derivations in three ways: the state space stays **discrete** (the §1 tuple
+`E = (S, Σ, δ, s₀, F, ψ)` is reused unchanged), the boundary `ψ` is **checked** (`σ_verify` is
+*retained*, not replaced by a projection / conservation law / einselection), and — uniquely — the
+derivation is **operational**: `ψ` is *verifiable*, not merely described. It is the one family where
+the framework's "built to pass or fail" stance (see
+[Defining the Invariant ψ](./EPOCH-DEFINING-THE-INVARIANT.md)) is actually testable.
+
+- **[DeepSeek-V4-Pro — the Operational Epoch](./Discrete_Derivations/DeepSeek-V4-Pro_Epoch-Formula.md)** —
+  the framework over an open-weights LLM: model checkpoints as states, transformations (quantize,
+  fine-tune, distill) as the events `σ`, and `ψ` a three-level boundary — `ψ_int` (a checkpoint hash),
+  `ψ_beh` (a deterministic eval battery against a threshold), and `ψ_surf` (an activation constraint
+  surface). Because the weights and activations are held, `ψ` is *checked*, not asserted, and the Ark
+  (append-only lineage), Memory, and Steward (read-only auditor) are **literal**, not correspondences.
+  It **grounds** the speculative QNM (§7): `ψ_surf` is QNM's constraint surface made real, so QNM can
+  be developed against a verified reference rather than from theory alone.
+
+Notation is registered in [`EPOCH-NOTATION-LEGEND.md`](./EPOCH-NOTATION-LEGEND.md) (§12 DeepSeek).
 
 ---
 
