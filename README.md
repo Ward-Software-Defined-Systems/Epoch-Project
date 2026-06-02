@@ -6,6 +6,10 @@
   <img src="assets/epoch-state-machine.png" alt="Epoch State Machine" width="100%">
 </p>
 
+<p align="center">
+  <img src="assets/epoch-comparison.png" alt="Four Derivations · One Boundary — a comparison of the four Epoch Automaton instances, all sharing E = (S, Σ, δ, s₀, F, ψ) and differing only in how the boundary ψ is held: DISCRETE checks ψ at each crossing; SOL conserves it (gravitational binding, E < 0); QNM projects onto the ψ-submanifold (P_ψ); MWA lets it emerge via environmental decoherence / einselection. Rows compare the 6-tuple, how ψ is held, the flow (discrete steps; real symplectic Φ_H; real gradient ∇; complex unitary U = e^{−iĤt/ℏ}), the trajectory (a single confined path vs a branching tree), how the epoch ends (halt / ejection / off-submanifold / recoherence), the Ark, the Steward (external oracle vs in-branch and strained for MWA), and the physical precedent. Only Many-Worlds branches, and only there does the external Ark / Steward strain." width="100%">
+</p>
+
 # THE EPOCH PROJECT — Framework
 
 > **A note on register.** This document separates the project's *contribution* from its
@@ -243,6 +247,17 @@ derivation, or a statement about physical reality.** They are images and stances
     roles. They are correspondences, not mechanisms; the celestial-mechanics core stands on
     its own. See §7.
 
+- **MWA (the Many-Worlds / Everett Epoch).**
+  - *Status:* a speculative *branching*-manifold extension over Hilbert space — `S` the space of
+    wavefunctions, `δ` the unitary Schrödinger flow `U(t) = e^{−iĤt/ℏ}` (the family's first
+    *complex* flow), `ψ` a branch's decoherent quasi-classical identity; the universal wavefunction
+    as Epoch 0 and the worlds as nested sub-epochs.
+  - *Inspired:* Everett's relative-state formulation and environmental decoherence — the universal
+    wavefunction read as the Ark, the in-branch observer as the Steward.
+  - *Not claimed:* that the wavefunction observes or verifies anything (unitary evolution never
+    rejects), or that the Ark/Steward can be external — Many-Worlds has no "outside." It inherits,
+    and does not resolve, the Born-rule and preferred-basis problems. See §8.
+
 ---
 
 ## 5. Touchstones (influences, not a pattern)
@@ -274,6 +289,7 @@ does.
 | Distributed-commit formalization of the handshake | Open — replaces retrocausal framing |
 | QNM | Theoretical / speculative |
 | SOL (Heliocentric Epoch) | Theoretical / speculative |
+| MWA (Many-Worlds / Branching Epoch) | Theoretical / speculative |
 
 ---
 
@@ -294,6 +310,29 @@ re-expresses the discrete Epoch Automaton over continuous state spaces. These ar
 
 Notation for both is registered in [`EPOCH-NOTATION-LEGEND.md`](./EPOCH-NOTATION-LEGEND.md)
 (§9 QNM, §10 SOL).
+
+---
+
+## 8. Branching-manifold derivations
+
+A second family, in [`Branching-Manifold_Derivations/`](./Branching-Manifold_Derivations/),
+re-expresses the Epoch Automaton where the run does **not** stay a single trajectory but **branches**
+into a tree. These are **theoretical / speculative** — extensions, not operational claims — and they
+differ from the continuous-manifold derivations (§7) in three structural ways: the flow is **complex**
+(not a real gradient or symplectic flow), one trajectory **forks into many**, and the Memory becomes a
+**forking tree** rather than a single list.
+
+- **[Many-Worlds — the Universal-Wavefunction Epoch (MWA)](./Branching-Manifold_Derivations/Many-Worlds_Epoch-Formula.md)** —
+  the framework over the Many-Worlds (Everett) interpretation, on Hilbert space: the universal
+  wavefunction as Epoch 0, the worlds as nested sub-epochs, `δ` the unitary Schrödinger flow
+  `U(t) = e^{−iĤt/ℏ}`, and `ψ` a branch's decoherent quasi-classical identity (einselection in place
+  of QNM's projection or SOL's conservation). Unusually, the framework **strains** here: Many-Worlds
+  has no "outside," so the Ark and Steward cannot be external — and the derivation inherits, without
+  resolving, the **Born-rule** and **preferred-basis** problems. The universal wavefunction, the
+  relative-state record, and the in-branch observer appear only as *motivating correspondences*, in
+  the spirit of §4.
+
+Notation is registered in [`EPOCH-NOTATION-LEGEND.md`](./EPOCH-NOTATION-LEGEND.md) (§11 MWA).
 
 ---
 
