@@ -503,6 +503,101 @@ counterpart of §6, §9.3, §10.3).
 
 ---
 
+## 12. Discrete reinterpretation (DeepSeek-V4-Pro)
+
+The derivation
+[`Discrete_Derivations/DeepSeek-V4-Pro_Epoch-Formula.md`](./Discrete_Derivations/DeepSeek-V4-Pro_Epoch-Formula.md)
+instantiates the same symbols over the **discrete space of model checkpoints** of an open-weights LLM
+— the first of the **discrete** derivations, and the first that is **operational** rather than
+speculative. Unlike §9–§11, it does **not** reinterpret the state space as a manifold: it **reuses**
+the discrete tuple `(S, Σ, δ, s₀, F, ψ)` from §1 unchanged, and instead **refines `ψ`** into three
+checkable levels.
+
+> **No glyph overload, and `σ_verify` is retained.** §9 overloads `M`; §10 and §11 swap the state
+> space for `Γ` / `ℋ`. §12 does neither — `S`, `Σ`, `δ`, `s₀`, `F`, `ψ` keep their §1 meanings
+> exactly. And where §9–§11 *replace* the verification gate `σ_verify` (§2) with a projection,
+> conservation law, or einselection, §12 **keeps** it: `ψ` is actually evaluated at each transition.
+> What is new is only the **decomposition** `ψ = ψ_int ∧ ψ_beh (∧ ψ_surf)`.
+
+### 12.1 The DEEPSEEK Automaton — `DEEPSEEK = (S, Σ, δ, s₀, F, ψ)`
+
+The discrete Epoch Automaton (§1) instantiated against a real model. The tuple is unchanged; the
+table gives each element's realization and the three `ψ`-levels.
+
+| Symbol | Read as | Name | Type / signature | Meaning |
+|---|---|---|---|---|
+| `DEEPSEEK` | "DeepSeek" | DEEPSEEK Automaton | 6-tuple | The open-model instance of the discrete machine. |
+| `S` | capital **S** | Checkpoints | set | Model states in a lineage; each `s ∈ S` = weights + behavioral identity. *(The §1 `S`, unchanged.)* |
+| `Σ` | capital **sigma** | Transformation alphabet | set | Transformation events: quantize, fine-tune, distill, LoRA-merge, expert-prune. *(The §1 `Σ`.)* |
+| `δ` | lowercase **delta** | Transition | `δ: S × Σ → S` | Apply a transformation: `δ(s, σ) = s'`. *(The §1 `δ`.)* |
+| `s₀` | "s-naught" | Sealed baseline | `s₀ ∈ S`, `ψ(s₀) = true` | The released open-weights checkpoint, sealed as genesis. |
+| `F` | capital **F** | Validated terminals | `F ⊆ S` | Shipped / validated derivative checkpoints; `∅` if the lineage runs on. |
+| `ψ` | lowercase **psi** | Soul invariant | `ψ: S → {true, false}` | The §1 invariant, here a conjunction: `ψ = ψ_int ∧ ψ_beh (∧ ψ_surf)`. **Pointwise** (static) — see §12.2. |
+| `ψ_int` | "psi-int" | Integrity level | `ψ_int: S → {true, false}` | Checkpoint hash equals the seal — secure-boot identity of the artifact. |
+| `ψ_beh` | "psi-beh" | Behavioral level | `ψ_beh: S → {true, false}` | Eval-battery scores stay within threshold `τ` of the sealed baseline. The boundary that matters. |
+| `ψ_surf` | "psi-surf" | Continuous level (QNM bridge) | `ψ_surf: S → {true, false}` | Activations lie inside a learned constraint region (a representation-engineering subspace). The speculative reach toward QNM (§9). |
+| `τ` | Greek lowercase **tau** | Behavioral threshold | scalar | Max tolerated per-probe deviation of `ψ_beh` from baseline; crossing `τ` is an epoch boundary. |
+
+> **`σ_verify` is retained** (§2): it evaluates `ψ = ψ_int ∧ ψ_beh (∧ ψ_surf)` at each transition. The
+> parenthesis marks `ψ_surf` as the optional, still-speculative third level — `ψ_int ∧ ψ_beh` is the
+> operational core.
+
+### 12.2 Discrete ↔ DeepSeek correspondence
+
+The plainest mapping in the family — discrete to discrete, an *instantiation* rather than a
+reinterpretation. The verification gate is kept, not replaced.
+
+| Discrete Epoch Automaton `E` | DEEPSEEK Automaton | Note |
+|---|---|---|
+| state `s ∈ S` | a checkpoint (weights + behavioral identity) | the §1 state, made concrete |
+| transition `δ(sᵢ, σⱼ)` | applying a transformation (quantize / fine-tune / distill) | a real engineering operation |
+| verification step (`σ_verify`) | **the actual hash + eval check — *retained*** | contrast §9–§11, which replace it |
+| halt when `ψ(s) = false` | the Ark refuses the transformation: new epoch, same lineage | a real, computed boundary |
+| initial epoch `s₀` | the sealed baseline checkpoint, `ψ(s₀) = true` | genesis |
+| terminal set `F ⊆ S` | validated / shipped derivative checkpoints | the accepting set |
+| nested epoch `(S_sub, …, ψ_sub)` | MoE experts (illustrative — **weakest** in the family) | routing ≠ boundary failure; experts carry no breakable `ψ` |
+| Memory `M = [(s₀,σ₁,s₁), …]` | the append-only transformation lineage + identity proofs | a **literal** log, not a correspondence |
+| Steward (oracle, `∉ S`) | a read-only auditor that replays `M` and re-verifies `ψ` | **literal**; cannot drive `δ` |
+
+> **Still pointwise.** `ψ_int`, `ψ_beh`, `ψ_surf` each test the *endpoint* checkpoint, not the path.
+> So §12 **inherits** the dynamic / history-dependent `ψ` problem (§1 note; `README.md` §6). But
+> unlike the manifold cases, the Ark's Memory here is an explicit append-only *trajectory* of
+> transformations — the natural substrate on which to *attempt* a trajectory-valued `ψ` (the
+> derivation's *Open problems*; cf. the replica test in `EPOCH-DEFINING-THE-INVARIANT.md`). Not
+> attempted here.
+
+**Steward constraints (operational)** — the §8 Steward block expressed for the checkpoint lineage.
+Here it is **literal**, not strained (contrast §11) and not a correspondence (contrast §10):
+
+```
+Steward ∉ S
+Steward may query:   the lineage M = [(s₀,σ₁,s₁), …],  ψ,  σ_verify
+Steward may not:     drive δ  (apply or approve a transformation)
+```
+
+### 12.3 DEEPSEEK diagram conventions
+
+For the ASCII state-machine in the derivation's "The DEEPSEEK State-Machine" subsection (the discrete
+counterpart of §6, §9.3, §10.3, §11.3). The defining difference: the `σ_verify` crossing-check is
+**present**.
+
+| Element | Convention | Meaning |
+|---|---|---|
+| Top band `THE ARK (definer / verifier)` | meta-automaton | seals `ψ` (hash + eval battery) and runs `σ_verify` at every transformation — the gate §9–§11 omit |
+| Connector label `σ_verify: ψ = ψ_int ∧ ψ_beh (∧ ψ_surf)` | verification step | `ψ` evaluated at each crossing; `true` continues, `false` is a boundary |
+| Box `EPOCH n · sₙ` | state node | one checkpoint `sₙ` (`s₀` = sealed baseline) |
+| Arrow `──▶` labeled `δ(sᵢ, σⱼ)` with a `σ:` tag | forward transition | a transformation (quantize, fine-tune, …) |
+| Nested `MoE substates` | substate (illustrative) | active experts churn while `ψ` holds — **not** sub-epochs (no breakable `ψ`) |
+| Dotted strip `ψ = false` | boundary | a transformation crosses `τ`: refused / new epoch — a **reachable** halt (contrast §9–§11's unreachable region) |
+| Bottom band `MEMORY / RECORD M` | the memory | append-only transformation lineage + identity proofs (hash, eval fingerprint) |
+| Stub `THE STEWARD` | oracle | read-only auditor; `∉ S`; replays `M`, re-verifies `ψ`; does not drive `δ` |
+
+> Forward-directed, like §6, §9.3, §10.3, §11.3. The retrocausal `δ*` is deliberately absent.
+> Distinctively, the `ψ = false` strip is a **reachable boundary the Ark refuses** (a real halt), not
+> the "unreachable region" of §9–§11 — because here `ψ` is *checked*, not built into the dynamics.
+
+---
+
 ### Symbol quick-index
 
 `E` · `A` · `S` · `Σ` · `δ` · `δ*` · `δ_sub` · `s₀` · `F` · `ψ` · `ψ_sub` · `M` ·
@@ -519,3 +614,7 @@ reused); `M` (Memory, §2) is *not* overloaded in SOL — the manifold is `Γ`.
 **MWA (§11):** `MWA` · `ℋ` · `Ĥ`‡ · `U` · `Ψ` · `Ψ₀` · `F_ℋ` · `ψ` · `ℋ_S ⊗ ℋ_E` · `ρ_S` ·
 `|c_k|²` · `ψ_sub^k` · `δ_sub^k` · `Ψ'` · `Ψ_T`  — ‡`Ĥ` is the Hamiltonian *operator* (hatted),
 distinct from the scalar `H` of §9/§10; `M` (Memory, §2) is *not* overloaded — the state space is `ℋ`.
+
+**DeepSeek (§12):** `DEEPSEEK` · `ψ_int` · `ψ_beh` · `ψ_surf` · `τ`  — `S` · `Σ` · `δ` · `s₀` · `F` ·
+`ψ` are the §1 glyphs **reused** unchanged (no overload), and `σ_verify` (§2) is **retained** (not
+replaced as in §9–§11).
