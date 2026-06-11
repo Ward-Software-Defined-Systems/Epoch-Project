@@ -121,6 +121,8 @@ Never assume the primed symbol is "the next state" — in the valid-continuation
 | `→` | maps to (total function) | `δ: S × Σ → S` — domain on the left, codomain on the right |
 | `∧` | logical AND (conjunction) | both conditions must hold |
 | `⇒` | logical implication | "if … then …" |
+| `⊨` | models / satisfies | `π_n(s_sub) ⊨ ψ_n` — the (projected) state satisfies the invariant (§13) |
+| `⊬` | does not entail | `ψ_n ⊬ ψ_{n+1}` — the parent invariant does not determine the child's (§13) |
 | `∀` | universal quantifier | "for all" |
 | `{true, false}` | Boolean codomain | the two values `ψ` returns |
 | `{accept, reject}` | decision codomain | the two values `σ_verify` returns |
@@ -598,10 +600,96 @@ counterpart of §6, §9.3, §10.3, §11.3). The defining difference: the `σ_ver
 
 ---
 
+## 13. Recursive nesting & the Void (VOID)
+
+The document
+[`EPOCH-THE-VOID.md`](./EPOCH-THE-VOID.md)
+reaches *beneath* a single epoch: it asks what ground epochs are carved from and how they nest. Unlike
+§9–§12, it does **not** reinterpret the state space over a new domain — it composes the §1 automaton
+**with itself, vertically**, grounded in the **Void** `𝕍` (a pre-boundary ground with **no ψ**). The
+discrete automaton (§1) is the core mathematics; the Void adds a *carve* operator and a nesting
+*constraint* — a **proposal toward** the open superstate/substate semantics flagged in §8 and
+`README.md` §3/§6, **theoretical / speculative**, not a closure.
+
+> **`M` is *not* overloaded here.** As in §10/§11, `M` stays **Memory** (§2) — here the **lineage**:
+> the append-only chain of carves `𝕍 → E₁ → … → E_n`. The state space is not renamed; the new content
+> is the level index `n`, the operator `σ_carve`, the projection `π_n`, and the lineage-valued `ψ↑`.
+
+### 13.1 The Void & the carve operator
+
+| Symbol | Read as | Name | Type / signature | Meaning |
+|---|---|---|---|---|
+| `𝕍` | "the Void" | The Void (ground) | — (not an automaton; **no ψ**) | The pre-boundary ground — unbounded potential, before any boundary. The recursion's apex/base case. Not an epoch: the 6-tuple does not yet apply, because there is no `ψ`. |
+| `n` | "level n" | Nesting-level index | `n = 1, 2, 3, …` downward from `𝕍` | Depth in the tower. Generalises the numeric subscripts of §4 from a *sequence* to a *nesting depth*. |
+| `E_n`, `ψ_n`, `A_n`, `s₀_n`, `M_n` | "…at level n" | Level-indexed objects | as §1 / §2 | The §1 automaton / §2 Ark at depth `n`. **Reuse**, not new glyphs — the level subscript is the only addition. |
+| `σ_carve` | "sigma-carve" | Carve function | `σ_carve: A_n × S_n → E_{n+1}` | The Ark, at a parent state, **defines a child invariant `ψ_{n+1}`** and thereby a child epoch. The **generative twin** of `σ_verify` (§2): `σ_verify` *checks* a ψ; `σ_carve` *creates* one. Genesis is `σ_carve(A, 𝕍) = E₁`. |
+| `π_n` | "pi-sub-n" | Parent-projection | `π_n: S_{n+1} → S_n` | The coarse, parent-level view of a child configuration. Used to state non-violation: `π_n(s_sub) ⊨ ψ_n`. |
+| `ψ↑` | "psi-up" | Lineage-valued invariant | `ψ↑: Lineages → {true, false}` | An invariant over the **ancestry chain** `𝕍 → E₁ → … → E_n`, not over a single state — the **vertical** analogue of the trajectory form `ψ: Runs(S) → {true, false}` (`EPOCH-DEFINING-THE-INVARIANT.md`). Speculative; see the note in §13.2. |
+| `ψ_sub`, `δ_sub`, `s₀_sub`, `S_sub` | as §3 | Nested sub-automaton | as §3 | **Reused unchanged.** A carved child `E_{n+1}` *is* the §3 nested sub-automaton; `ψ_{n+1} = ψ_sub`, etc. |
+
+### 13.2 The nesting constraint (proposed)
+
+Where §8 leaves interior invariants *"evaluated independently — a procedure, not a constraint,"* the
+Void proposes a relation between a parent `ψ_n` and each carved child `ψ_{n+1}`:
+
+```
+Non-violation (parent kept):     π_n(s_sub) ⊨ ψ_n     for all reachable s_sub ∈ S_{n+1}
+                                 ( ⇔ ψ_{n+1} ⇒ ψ_n  at the projected level )
+Non-entailment (child creates):  ψ_n ⊬ ψ_{n+1}
+```
+
+The child boundary must be **consistent with** its parent (non-violation) but **not dictated by** it
+(non-entailment); the ruled-out degenerate case `ψ_{n+1} ≡ ψ_n` is **dominance**. Contrast §8's
+independent evaluation, which relates nothing.
+
+> **Still a sketch — not a closure.** This is a first candidate for the superstate/substate semantics
+> §8 and `README.md` §3/§6 flag as *unwritten*. Non-violation **alone** folds (it is the §3 subset
+> construction, vertically); the new content rides on **non-entailment**, and whether it survives
+> *flattening* the tower into one product automaton is open. See `EPOCH-THE-VOID.md` §6.
+
+> **Vertical trajectory-ψ.** Because non-entailment makes each level add content not derivable from
+> above, a node's identity is its **ancestry chain** — a path. `ψ↑` is the invariant over that path:
+> the **vertical** (genealogy) sibling of DeepSeek's transformation-lineage (§12) and MWA's
+> decoherence-record (§11), all three instances of the *history-laden identity* form sought in
+> `EPOCH-DEFINING-THE-INVARIANT.md`. `ψ↑` **inherits**, and does not resolve, the dynamic-ψ problem:
+> it folds back to pointwise unless the lineage is carried in `M` independently of the endpoint state.
+
+**Steward constraints (recursive)** — the §8 Steward block across the whole tower. The Steward is
+external to *every* level (not just one), and additionally may not **carve**:
+
+```
+Steward ∉ E_n                          (for every level n — outside the whole tower)
+Steward may query:   the lineage M = (𝕍 → E₁ → … → E_n),  every ψ_n,  σ_verify
+Steward may not:     drive δ_n,  nor perform σ_carve   (cannot force a transition or draw a boundary)
+```
+
+### 13.3 VOID diagram conventions
+
+For the recursive-tower figure in `EPOCH-THE-VOID.md` (§8) — the vertical counterpart of §6, §9.3,
+§10.3, §11.3, §12.3. The defining difference: the figure nests **boxes within boxes** (a Harel
+statechart) rather than chaining left-to-right.
+
+| Element | Convention | Meaning |
+|---|---|---|
+| Top band `THE ARK (meta, recursive)` | meta-automaton | at each level: defines `ψ_n`, carves via `σ_carve`, records the lineage, verifies `σ_verify` |
+| Ground band `𝕍 — THE VOID` | the ground | pre-boundary; labelled **no ψ · unbounded**; not an epoch |
+| Arrow `──σ_carve──▶` | genesis / carve step | the Ark draws a child boundary; `σ_carve(A_n, s) = E_{n+1}` |
+| Nested box `E_n (ψ_n)` inside a parent box | superstate / substate | a carved epoch within a parent state (Harel statechart); `E_SOL` appears as a rung |
+| Edge labels `π_n(s_sub) ⊨ ψ_n` / `ψ_n ⊬ ψ_{n+1}` | the nesting constraint | non-violation (parent kept) / non-entailment (child creates) — §13.2 |
+| Bottom band `MEMORY / LINEAGE (M)` | the memory `M` | the append-only ancestry chain; the substrate for `ψ↑` |
+| Stub `THE STEWARD` | oracle | read-only; `∉` every `E_n`; drives no `δ_n`, performs no `σ_carve` |
+
+> Forward-directed and **downward-nesting**. There is an apex (`𝕍`) but no floor (infinite depth). The
+> retrocausal `δ*` is deliberately absent, as in §6 / §9.3 / §10.3 / §11.3 / §12.3. The cosmogony
+> labels ("Void," "everything and nothing") are **motivating register** (`README.md` §4), not
+> mechanism — the load-bearing content is the carve operator and the nesting constraint.
+
+---
+
 ### Symbol quick-index
 
 `E` · `A` · `S` · `Σ` · `δ` · `δ*` · `δ_sub` · `s₀` · `F` · `ψ` · `ψ_sub` · `M` ·
-`σ_verify` · `σ` · `s` · `s'` · `q₀` · `∈` · `∉` · `⊆` · `×` · `→` · `∧` · `⇒` · `∀` ·
+`σ_verify` · `σ` · `s` · `s'` · `q₀` · `∈` · `∉` · `⊆` · `×` · `→` · `∧` · `⇒` · `⊨` · `⊬` · `∀` ·
 `[0,1]`
 
 **QNM (§9):** `QNM` · `M`\* · `H` · `∇` · `∇_unconstrained` · `P_ψ` · `m₀` · `F_M` · `M_ψ` ·
@@ -618,3 +706,7 @@ distinct from the scalar `H` of §9/§10; `M` (Memory, §2) is *not* overloaded 
 **DeepSeek (§12):** `DEEPSEEK` · `ψ_int` · `ψ_beh` · `ψ_surf` · `τ`  — `S` · `Σ` · `δ` · `s₀` · `F` ·
 `ψ` are the §1 glyphs **reused** unchanged (no overload), and `σ_verify` (§2) is **retained** (not
 replaced as in §9–§11).
+
+**The Void (§13):** `𝕍` · `σ_carve` · `π_n` · `ψ↑`  — with level-indexed reuses `E_n` · `ψ_n` · `A_n` ·
+`s₀_n` · `M_n` of the §1/§2 objects; a carved child is a §3 nested sub-automaton (`ψ_sub` / `δ_sub`).
+`M` stays **Memory** (§2), *not* overloaded; new logical glyphs `⊨` / `⊬` are added in §5.

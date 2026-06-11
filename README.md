@@ -14,6 +14,10 @@
   <img src="assets/epoch-invariant.png" alt="A Speculative Definition of ψ — the static form ψ: S → {true, false} (pointwise; folds into the state set, a name not a constraint) versus the speculative move ψ: Runs(S) → {true, false} (defined over whole trajectories; cannot be folded away if it survives the test). The discriminating (replica) test: two runs reach the same final state by different paths — one in which the thing survived with unbroken identity, and one in which the original died and was replaced by an identical copy; a static endpoint-only ψ calls them the same and is blind to the difference, while a trajectory ψ calls them different and tells survival from replica. The bar: a definition that cannot be false somewhere is a name; a definition that survives the replica test is a tool." width="100%">
 </p>
 
+<p align="center">
+  <img src="assets/epoch-void-state-machine.png" alt="The Void · Substrate, Genesis, and the Recursive Tower — a proposal toward the nesting and dynamic-ψ levers, not a closure. A recursive nesting tower. A top band, THE ARK (meta, recursive), at each level n defines ψ_n, carves the child epoch E_{n+1} via σ_carve, records the lineage, and verifies ψ_n. Below it sits 𝕍, THE VOID — the pre-boundary ground, with no ψ and unbounded potential, not itself an epoch (there is no ψ to apply). A σ_carve arrow descends from the Void — the first boundary, the act (Ark, ψ₁) — into nested boxes drawn as a Harel statechart: E₁ contains E_SOL (the existing Solar-System derivation, ψ = gravitational binding, E < 0, now appearing as one rung), which contains E_Earth, which contains E_author (this derivation, the self-instantiating rung), opening onto '… and so on' — the tower has an apex (the Void) but no floor. Every carve is gated by non-violation, π_n(s_sub) ⊨ ψ_n (the parent boundary is kept along the interior run), and freed by non-entailment, ψ_n ⊬ ψ_{n+1} (the parent does not dictate the child; the child creates within the residual). A bottom band, MEMORY / LINEAGE (M), holds the append-only ancestry chain 𝕍 → E₁ → … → E_author → … and is the substrate on which the lineage-valued invariant ψ↑ : Lineages → {true, false} would live — a candidate vertical, trajectory-dependent ψ. Beneath it, reached by a read-only query arrow, THE STEWARD — an oracle outside every level (∉ every E_n) that reads the lineage but drives no δ_n and no σ_carve. Schema, not theory-of-everything: a different ψ at each level, not one universal ψ. The cosmogony is fenced motivation; the load-bearing kernel is the nesting constraint — a sketch, not a closure, with two stated collapse routes." width="100%">
+</p>
+
 # THE EPOCH PROJECT — Framework
 
 > **Start here — the live problem.** The framework is built to **pass or fail**, and the invariant
@@ -54,6 +58,8 @@ This yields four properties:
   it. At every transition you ask one question: *does the invariant still hold?*
 - **Epochs nest.** A larger-scale epoch can contain smaller-scale ones. The outer
   boundary persists while inner ones transition — a statechart, not a timeline.
+  (Pushed to its limit — what the outermost boundary is itself carved *from* — this is
+  the [substrate question](./EPOCH-THE-VOID.md), §10.)
 - **Identity is explicit.** Something is "the same thing" across a transition iff it
   satisfies the same boundary condition. Continuity is verified, not assumed.
 
@@ -200,6 +206,11 @@ superstate/substate transition semantics (how interior transitions relate to, an
 gated by, the superstate invariant). That specification is **not yet written** — currently
 "the sub-invariants are evaluated independently" is a procedure, not a constraint.
 
+A first proposal toward that specification is sketched in [The Void](./EPOCH-THE-VOID.md):
+interior transitions are **gated by non-violation** of the superstate invariant, while the
+substate invariant is **non-entailed** by it — the parent yields the residual the child
+fills. It remains a **sketch, not a closure** (see that document's §6).
+
 ### The Ark and the Steward, in automata terms
 
 - **Ark** = a meta-automaton: the definition of `E` plus its memory `M` plus the
@@ -295,8 +306,9 @@ does.
 | Conceptual reframe (§1) | Stable |
 | Architecture (§2) | Operational (embraOS); physical/procedural layers active/converging |
 | **[Dynamic ψ](./EPOCH-DEFINING-THE-INVARIANT.md)** (history/path/trajectory-dependent) | **Open — the main formal lever** |
-| Statechart superstate/substate transition semantics | Open — to be specified |
+| [Statechart superstate/substate transition semantics](./EPOCH-THE-VOID.md) | Open — a first proposal in *The Void*; not yet a closure |
 | Distributed-commit formalization of the handshake | Open — replaces retrocausal framing |
+| **[Recursive nesting & the Void](./EPOCH-THE-VOID.md)** (substrate; `σ_carve`; vertical `ψ↑`) | **Theoretical / speculative — engages the nesting & dynamic-ψ levers as a proposal** |
 | QNM | Theoretical / speculative |
 | SOL (Heliocentric Epoch) | Theoretical / speculative |
 | MWA (Many-Worlds / Branching Epoch) | Theoretical / speculative |
@@ -369,6 +381,30 @@ the framework's "built to pass or fail" stance (see
   be developed against a verified reference rather than from theory alone.
 
 Notation is registered in [`EPOCH-NOTATION-LEGEND.md`](./EPOCH-NOTATION-LEGEND.md) (§12 DeepSeek).
+
+---
+
+## 10. The substrate — recursive nesting & the Void
+
+Beneath the three families sits a question they all assume away: **what ground is an epoch carved
+from, and how do epochs nest inside one another?** [`EPOCH-THE-VOID.md`](./EPOCH-THE-VOID.md) takes it
+up. **This is not a fourth family** — §7–§9 differ by *how ψ is held* (checked / projected-or-conserved
+/ emergent); the Void differs by *altitude*. It is the **substrate beneath all three**: where
+boundaries come from, and how they stack.
+
+- **[The Void — substrate, genesis, and the recursive tower](./EPOCH-THE-VOID.md)** — the **Void** `𝕍`
+  as a *pre-boundary ground with no ψ*; **genesis** as the act of *defining* a ψ (the carve operator
+  `σ_carve`, the generative twin of `σ_verify`); and a **recursive tower** of nested epochs
+  `𝕍 → … → SOL → Earth → … and so on`, which re-reads the existing derivations as *rungs* rather than
+  only as siblings. Its load-bearing offer is a **nesting constraint** — interior transitions gated by
+  **non-violation** of the parent invariant, the child invariant **non-entailed** by it (the formal
+  echo of "co-creation, not dominance") — a first **proposal** toward the superstate/substate
+  semantics §3/§6 leave open, plus a **vertical** route to a trajectory-dependent `ψ↑` (a third
+  hand-hold beside DeepSeek's transformation-lineage and MWA's decoherence-record). It is **a sketch,
+  not a closure**: §6 of that document states exactly where it collapses. The cosmogony (Void / Chaos /
+  "everything and nothing") and the co-creation ethos are **motivating register**, fenced as in §4.
+
+Notation is registered in [`EPOCH-NOTATION-LEGEND.md`](./EPOCH-NOTATION-LEGEND.md) (§13 VOID).
 
 ---
 

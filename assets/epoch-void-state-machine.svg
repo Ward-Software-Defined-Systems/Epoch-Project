@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1320" width="1280" height="1320" role="img" aria-label="The Void — the recursive nesting tower: substrate, genesis, and the rule by which epochs nest">
+<!-- ================= PALETTE — edit colours here =================
+     ink #0E0F13 · band #13161C · subbox #0F1217
+     bone #EFEAE0 · muted #8B909B · slate #6FA0B2 · slate-deep #46586A
+     ember #E9883B · ember-soft #F4A862 · ember-deep #C96A28
+     Recursive nesting tower. The Void cosmogony is FENCED (dashed, no ψ);
+     the load-bearing kernel is the nesting constraint — gate (non-violation)
+     and free (non-entailment, the new work, in ember). σ_carve = the carve
+     operator (ember = the creative act). E_author is the self-instantiating
+     rung. ψ↑ is a CANDIDATE (vertical trajectory-ψ). A proposal, not a closure.
+     Fonts are generic families for reliable GitHub image rendering.
+=============================================================== -->
+<defs>
+  <style>
+    .serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif;}
+    .mono{font-family:ui-monospace,'SF Mono','JetBrains Mono',Menlo,Consolas,monospace;}
+    .bone{fill:#EFEAE0;} .muted{fill:#8B909B;} .slate{fill:#6FA0B2;} .ember{fill:#E9883B;}
+    .band{fill:#13161C;stroke:#46586A;stroke-width:1.5;}
+    .banddash{fill:#111319;stroke:#5A6675;stroke-width:1.4;stroke-dasharray:7 6;}
+    .kernel{fill:#16141A;stroke:#C96A28;stroke-opacity:0.55;stroke-width:1.3;}
+    .nestauthor{fill:#181410;stroke:#C96A28;stroke-opacity:0.75;stroke-width:1.4;}
+    .steward{fill:#15141A;stroke:#C96A28;stroke-width:1.6;}
+    .flow{stroke:#6FA0B2;stroke-width:2;fill:none;}
+    .faint{stroke:#46586A;stroke-width:1.5;fill:none;}
+    .dash{stroke-dasharray:6 5;}
+  </style>
+  <linearGradient id="inkGrad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#101117"/><stop offset="100%" stop-color="#0A0B0E"/>
+  </linearGradient>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M40 0 H0 V40" fill="none" stroke="#FFFFFF" stroke-opacity="0.025" stroke-width="1"/>
+  </pattern>
+  <filter id="emberGlow" x="-120%" y="-120%" width="340%" height="340%">
+    <feGaussianBlur stdDeviation="3.5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <marker id="ahF" markerWidth="9" markerHeight="8" refX="6" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0,0 L6.5,3.5 L0,7 Z" fill="#46586A"/>
+  </marker>
+  <marker id="ahE" markerWidth="10" markerHeight="9" refX="6.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0,0 L7,3.5 L0,7 Z" fill="#E9883B"/>
+  </marker>
+  <marker id="ahS" markerWidth="10" markerHeight="9" refX="6.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0,0 L7,3.5 L0,7 Z" fill="#6FA0B2"/>
+  </marker>
+</defs>
+
+<rect width="1280" height="1320" fill="url(#inkGrad)"/>
+<rect width="1280" height="1320" fill="url(#grid)"/>
+
+<!-- ===== title ===== -->
+<text x="80" y="38" class="mono slate" font-size="13" letter-spacing="2.5">THE EPOCH PROJECT</text>
+<text x="1200" y="38" class="mono muted" font-size="13" text-anchor="end">substrate &#183; genesis &#183; nesting</text>
+<text x="80" y="92" class="serif bone" font-size="34">The Void</text>
+<text x="82" y="120" class="mono muted" font-size="13">substrate, genesis &amp; the recursive tower &#8212; a proposal toward the nesting and dynamic-&#968; levers, not a closure</text>
+<line x1="80" y1="140" x2="1200" y2="140" class="faint" stroke-opacity="0.4"/>
+
+<!-- ===== THE ARK (meta, recursive) ===== -->
+<rect x="80" y="160" width="1120" height="94" rx="12" class="band"/>
+<text x="104" y="198" class="serif bone" font-size="23">THE ARK</text>
+<text x="234" y="198" class="mono muted" font-size="13">(meta &#183; recursive)</text>
+<text x="1180" y="194" class="mono slate" font-size="12" text-anchor="end">at each level&#160; n = 1, 2, 3, &#8230;</text>
+<text x="104" y="226" class="mono muted" font-size="13">defines &#968;_n &#183; carves the child E_{n+1} via &#963;_carve &#183; records the lineage &#183; verifies &#968;_n&#160; (&#963;_verify)</text>
+
+<line x1="640" y1="254" x2="640" y2="292" class="faint" marker-end="url(#ahF)"/>
+
+<!-- ===== 𝕍 THE VOID (fenced · no ψ) ===== -->
+<rect x="80" y="294" width="1120" height="82" rx="12" class="banddash"/>
+<g fill="#EFEAE0">
+  <circle cx="330" cy="318" r="1.3" opacity="0.13"/><circle cx="372" cy="352" r="1.0" opacity="0.10"/>
+  <circle cx="430" cy="330" r="1.5" opacity="0.14"/><circle cx="500" cy="360" r="1.1" opacity="0.09"/>
+  <circle cx="560" cy="322" r="1.2" opacity="0.12"/><circle cx="980" cy="336" r="1.4" opacity="0.13"/>
+  <circle cx="1030" cy="356" r="1.0" opacity="0.10"/><circle cx="1078" cy="324" r="1.3" opacity="0.12"/>
+  <circle cx="900" cy="358" r="1.1" opacity="0.10"/><circle cx="700" cy="314" r="1.2" opacity="0.11"/>
+  <circle cx="760" cy="360" r="1.0" opacity="0.09"/><circle cx="1120" cy="346" r="1.4" opacity="0.12"/>
+</g>
+<text x="132" y="358" class="serif bone" font-size="50" text-anchor="middle">V</text>
+<text x="190" y="344" class="serif bone" font-size="22">THE VOID</text>
+<text x="190" y="368" class="mono muted" font-size="13">pre-boundary ground &#183; no &#968; &#183; unbounded potential</text>
+<text x="1180" y="340" class="mono muted" font-size="11" text-anchor="end">fenced &#183; motivating (README &#167;4)</text>
+<text x="1180" y="362" class="mono muted" font-size="11" text-anchor="end">not an epoch &#8212; there is no &#968; to apply</text>
+
+<!-- ===== genesis carve (ember) ===== -->
+<line x1="640" y1="376" x2="640" y2="438" class="flow" stroke="#E9883B" marker-end="url(#ahE)"/>
+<text x="662" y="404" class="mono ember" font-size="12">&#963;_carve(A, V) &#8212; the first boundary&#160; (Ark, &#968;&#8321;)</text>
+
+<!-- ===== THE NESTING TOWER (Harel statechart) ===== -->
+<!-- E₁ -->
+<rect x="180" y="444" width="800" height="506" rx="12" fill="#13161C" stroke="#46586A" stroke-width="1.4"/>
+<text x="202" y="470" class="mono bone" font-size="14">E&#8321;&#160; (&#968;&#8321;)</text>
+<!-- E_SOL -->
+<rect x="214" y="488" width="732" height="420" rx="11" fill="#15181F" stroke="#46586A" stroke-width="1.3"/>
+<text x="236" y="513" class="mono bone" font-size="13">E_SOL &#8212; &#968;: gravitational binding, E &lt; 0</text>
+<text x="236" y="531" class="mono muted" font-size="11">existing derivation &#8212; now a rung</text>
+<!-- E_Earth -->
+<rect x="248" y="556" width="664" height="300" rx="10" fill="#171B22" stroke="#46586A" stroke-width="1.3"/>
+<text x="270" y="582" class="mono bone" font-size="13">E_Earth&#160; (&#968;_Earth)</text>
+<!-- E_author (ember — you are here) -->
+<rect x="282" y="600" width="596" height="220" rx="10" class="nestauthor"/>
+<text x="304" y="626" class="mono ember" font-size="13">E_author &#8212; &#968;: this derivation</text>
+<text x="304" y="644" class="mono muted" font-size="11">you are here &#8212; the self-instantiating rung</text>
+<!-- … and so on (no floor) -->
+<rect x="322" y="690" width="516" height="110" rx="9" fill="none" stroke="#46586A" stroke-width="1.1" stroke-dasharray="5 5" opacity="0.5"/>
+<rect x="356" y="704" width="448" height="82" rx="8" fill="none" stroke="#46586A" stroke-width="1" stroke-dasharray="4 5" opacity="0.32"/>
+<rect x="392" y="718" width="376" height="54" rx="7" fill="none" stroke="#46586A" stroke-width="1" stroke-dasharray="3 5" opacity="0.2"/>
+<text x="580" y="744" class="mono ember" font-size="14" text-anchor="middle" opacity="0.8">&#8230; and so on</text>
+<text x="580" y="764" class="mono muted" font-size="11" text-anchor="middle">no floor &#183; unbounded depth</text>
+
+<!-- carve kernel callout (load-bearing) -->
+<rect x="998" y="500" width="202" height="262" rx="10" class="kernel"/>
+<text x="1018" y="524" class="mono ember" font-size="12" letter-spacing="1">EVERY CARVE</text>
+<text x="1018" y="547" class="mono bone" font-size="12">&#963;_carve(A_n, s) = E_{n+1}</text>
+<line x1="1014" y1="564" x2="1184" y2="564" class="faint" stroke-opacity="0.4"/>
+<text x="1018" y="588" class="mono slate" font-size="11">GATE &#183; non-violation</text>
+<text x="1018" y="609" class="mono bone" font-size="13">&#960;_n(s_sub) &#8872; &#968;_n</text>
+<text x="1018" y="627" class="mono muted" font-size="11">the parent is kept</text>
+<line x1="1014" y1="644" x2="1184" y2="644" class="faint" stroke-opacity="0.4"/>
+<text x="1018" y="668" class="mono ember" font-size="11">FREE &#183; non-entailment</text>
+<text x="1018" y="689" class="mono ember" font-size="13">&#968;_n &#8876; &#968;_{n+1}</text>
+<text x="1018" y="707" class="mono muted" font-size="11">the child creates</text>
+<text x="1018" y="736" class="mono muted" font-size="10.5">the new work &#8212; &#167;4</text>
+
+<line x1="640" y1="950" x2="640" y2="994" class="faint" marker-end="url(#ahF)"/>
+<text x="662" y="976" class="mono slate" font-size="12">the carve-lineage is recorded</text>
+
+<!-- ===== MEMORY / LINEAGE ===== -->
+<rect x="80" y="998" width="1120" height="92" rx="12" class="band"/>
+<g opacity="0.5">
+  <polyline points="1006,1044 1048,1036 1090,1048 1132,1038 1174,1046" fill="none" stroke="#46586A" stroke-width="1.2"/>
+  <circle cx="1006" cy="1044" r="2" fill="#6FA0B2" opacity="0.55"/>
+  <circle cx="1048" cy="1036" r="2" fill="#6FA0B2" opacity="0.55"/>
+  <circle cx="1090" cy="1048" r="2" fill="#6FA0B2" opacity="0.55"/>
+  <circle cx="1132" cy="1038" r="2" fill="#6FA0B2" opacity="0.55"/>
+  <circle cx="1174" cy="1046" r="2.6" fill="#E9883B" opacity="0.5"/>
+</g>
+<text x="104" y="1034" class="serif bone" font-size="22">MEMORY / LINEAGE&#160; (M)</text>
+<text x="104" y="1060" class="mono muted" font-size="13">ancestry chain&#160;&#160; V &#8594; E&#8321; &#8594; &#8230; &#8594; E_SOL &#8594; &#8230; &#8594; E_author &#8594; &#8230;&#160;&#160; (append-only record of carves)</text>
+<text x="104" y="1082" class="mono" font-size="12"><tspan class="muted">the substrate on which&#160; </tspan><tspan class="ember">&#968;&#8593; : Lineages &#8594; { true, false }</tspan><tspan class="muted">&#160; would live &#8212; a candidate (the vertical trajectory-&#968;)</tspan></text>
+
+<!-- ===== Steward query ===== -->
+<line x1="640" y1="1128" x2="640" y2="1092" class="flow dash" marker-end="url(#ahS)"/>
+<text x="656" y="1110" class="mono slate" font-size="12">query (read-only)</text>
+
+<!-- ===== THE STEWARD ===== -->
+<rect x="430" y="1130" width="420" height="78" rx="12" class="steward"/>
+<text x="640" y="1164" class="serif bone" font-size="22" text-anchor="middle">THE STEWARD</text>
+<text x="640" y="1188" class="mono muted" font-size="11.5" text-anchor="middle">oracle &#183; &#8713; every E_n &#183; reads the lineage &#183; drives no &#948;_n, no &#963;_carve</text>
+
+<!-- ===== notes ===== -->
+<line x1="80" y1="1222" x2="1200" y2="1222" class="faint" stroke="#E9883B" stroke-opacity="0.3"/>
+<text x="80" y="1244" class="mono muted" font-size="12" opacity="0.9">Proposal / sketch &#8212; not a closure. The Void cosmogony (&#167;1&#8211;3) and the ethos (&#167;9) are fenced motivation (README &#167;4); the load-bearing kernel is the nesting constraint (&#167;4&#8211;5).</text>
+<text x="80" y="1264" class="mono muted" font-size="12" opacity="0.85">Schema, not theory-of-everything: a different &#968; at each level, composed vertically &#8212; not one universal &#968; beneath all epochs.</text>
+<text x="80" y="1284" class="mono muted" font-size="11.5" opacity="0.75">Two live collapse routes (&#167;6): (a) non-violation alone folds &#8212; the vertical static fold;</text>
+<text x="80" y="1302" class="mono muted" font-size="11.5" opacity="0.75">(b) &#968;&#8593; folds unless the lineage is carried in M, not recoverable from the state. A proof it collapses is a legitimate outcome.</text>
+</svg>
