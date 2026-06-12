@@ -20,8 +20,13 @@ authors:
 repository-code: "https://github.com/Ward-Software-Defined-Systems/Epoch-Project"
 url: "https://github.com/Ward-Software-Defined-Systems/Epoch-Project"
 license: MIT
-version: "1.0.0"
-date-released: 2026-06-11
+version: "1.0.1"
+date-released: 2026-06-12
+doi: 10.5281/zenodo.20651796
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.20651796
+    description: "Concept DOI — resolves to the latest version (all releases)."
 keywords:
   - epoch
   - invariant
