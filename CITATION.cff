@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use or build on this framework, please cite it as below."
+title: "The Epoch Project: Epochs as Bounded Invariant-Persistence Intervals"
+abstract: >-
+  The Epoch Project is a documentation research framework that reframes an
+  "epoch" as a bounded interval of reality defined not by duration but by the
+  persistence of a verifiable boundary condition - a "soul invariant" (psi)
+  re-checked at every transition. It models this as a six-tuple automaton
+  E = (S, Sigma, delta, s0, F, psi) observed by a meta-level "Ark," and explores
+  the framework across discrete, continuous-manifold, branching-manifold, and
+  substrate (recursive-nesting / the Void) derivations. The central open problem -
+  making psi history- or trajectory-dependent - is stated as the framework's main
+  formal lever.
+authors:
+  - family-names: Ward
+    given-names: William
+    affiliation: "Ward Software Defined Systems LLC"
+    email: william@wsds.io
+    # orcid: "https://orcid.org/0000-0000-0000-0000"   # add yours for academic credit
+repository-code: "https://github.com/Ward-Software-Defined-Systems/Epoch-Project"
+url: "https://github.com/Ward-Software-Defined-Systems/Epoch-Project"
+license: MIT
+version: "1.0.0"
+date-released: 2026-06-11
+keywords:
+  - epoch
+  - invariant
+  - identity
+  - automata theory
+  - state machine
+  - boundary condition
+  - soul invariant
+  - persistence
+  - continuity
+  - research framework
