@@ -29,7 +29,7 @@ The 6-tuple that defines a single epoch's structure and its transition rules.
 | `S` | Latin capital **S** ("ess") | Epoch-states | set (finite or countably infinite) | All possible epoch-states. Each `s ∈ S` is a bounded interval of reality defined by the persistence of its boundary condition. |
 | `Σ` | Greek capital **sigma** | Event alphabet | set | All events / inputs / decisions / arrivals the automaton can respond to. |
 | `δ` | Greek lowercase **delta** | Transition function | `δ: S × Σ → S` | Given the current epoch and an event, returns the next epoch. |
-| `s₀` | Latin lowercase **s**, subscript 0 ("s-naught" / "s sub-zero") | Initial epoch | `s₀ ∈ S` | The genesis boundary condition. For embOS, the first sealed soul document. |
+| `s₀` | Latin lowercase **s**, subscript 0 ("s-naught" / "s sub-zero") | Initial epoch | `s₀ ∈ S` | The genesis boundary condition. For embraOS, the first sealed soul document. |
 | `F` | Latin capital **F** ("eff") | Terminal epochs | `F ⊆ S` | Accepting / terminal states. May be empty (`F = ∅`) if the machine runs indefinitely. |
 | `ψ` | Greek lowercase **psi** (rhymes with "sigh") | Soul invariant | `ψ: S → {true, false}` | Predicate evaluated at every boundary crossing. `ψ(s) = true` iff `s` satisfies the sealed boundary condition. |
 
