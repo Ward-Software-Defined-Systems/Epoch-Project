@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1172" viewBox="0 0 1280 1172">
+<defs>
+<linearGradient id="genesis" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#33230f"/><stop offset="1" stop-color="#15100a"/>
+</linearGradient>
+<filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+  <feGaussianBlur stdDeviation="7"/>
+</filter>
+<marker id="arrowE" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+  <path d="M0,0 L7,3 L0,6 Z" fill="#ea8a44"/></marker>
+<marker id="arrowS" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+  <path d="M0,0 L7,3 L0,6 Z" fill="#3d4f6b"/></marker>
+<marker id="arrowD" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+  <path d="M0,0 L7,3 L0,6 Z" fill="#586a87"/></marker>
+</defs>
+<rect x="0" y="0" width="1280" height="1172" fill="#0d1219"/>
+<rect x="14" y="14" width="1252" height="1144" rx="18" fill="none" stroke="#2b3a4f" stroke-width="1.5"/>
+<text x="44" y="80" font-family="DejaVu Serif" font-size="32" fill="#ece6da" xml:space="preserve">FRINGE-CLAIM TRAJECTORIES<tspan> — the Diagnostic Epoch</tspan></text>
+<rect x="44" y="92" width="232" height="4" fill="#ea8a44"/>
+<text x="44" y="120" font-family="DejaVu Sans" font-size="16" fill="#8a98ad" text-anchor="start">Epoch Automaton over the public framings of a contested claim  ·  the apparatus pointed outward — a detector, not a model of persistence</text>
+<text x="44" y="143" font-family="DejaVu Sans" font-size="15.5" fill="#ea8a44" text-anchor="start">the pathological mirror of DEEPSEEK — DEEPSEEK checks ψ · here ψ is evaded: on reject, σ_subst fires instead of halt</text>
+<rect x="44" y="162" width="1192" height="116" rx="10" fill="#131c2a" stroke="#3d4f6b" stroke-width="2"/>
+<text x="60" y="194" font-size="21" text-anchor="start" xml:space="preserve"><tspan font-family="DejaVu Serif" fill="#ece6da">THE ARK</tspan><tspan font-family="DejaVu Sans" fill="#69768a">  — analyst / framework-applier</tspan></text>
+<text x="60" y="220" font-family="DejaVu Sans" font-size="13.5" fill="#8a98ad" text-anchor="start">commits (ψ, σ_verify) prospectively at s₀   (⊢₀ — names the test that WOULD reject, before any drift)</text>
+<text x="60" y="242" font-family="DejaVu Sans" font-size="13.5" fill="#ea8a44" text-anchor="start">INVERTED — not the claim’s custodian; the analyst who seals the predicate, then only watches the trajectory</text>
+<text x="60" y="263" font-family="DejaVu Sans" font-size="12.5" fill="#69768a" text-anchor="start">the verification gate is retained (as in DEEPSEEK) — but here its verdict is evaded, not honored</text>
+<circle cx="1206" cy="200" r="21" fill="none" stroke="#ea8a44" stroke-width="2.2"/>
+<text x="1206" y="206" font-family="DejaVu Sans" font-size="15" fill="#ea8a44" text-anchor="middle">⊢₀</text>
+<line x1="396" y1="278" x2="396" y2="348" stroke="#3d4f6b" stroke-width="2" marker-end="url(#arrowS)"/>
+<text x="408" y="300" font-family="DejaVu Sans" font-size="12.5" fill="#8a98ad" text-anchor="start">σ_verify(s, ψ) = REJECT  —  the verdict that should HALT the epoch</text>
+<rect x="40" y="344" width="228" height="92" rx="13" fill="#ea8a44" opacity="0.16" filter="url(#glow)"/>
+<rect x="44" y="348" width="220" height="84" rx="10" fill="url(#genesis)" stroke="#ea8a44" stroke-width="2.4"/>
+<text x="154" y="372" font-family="DejaVu Serif" font-size="17" fill="#ece6da" text-anchor="middle">FRAMING s₀</text>
+<text x="154" y="395" font-family="DejaVu Sans" font-size="12" fill="#ea8a44" text-anchor="middle">“unexplained orb”</text>
+<text x="154" y="415" font-family="DejaVu Sans" font-size="10.3" fill="#8a98ad" text-anchor="middle">ψ₀ · no welds, 3 layers, odd flight</text>
+<rect x="530" y="348" width="220" height="84" rx="10" fill="#131c2a" stroke="#3d4f6b" stroke-width="2"/>
+<text x="640" y="372" font-family="DejaVu Serif" font-size="17" fill="#ece6da" text-anchor="middle">FRAMING s₁</text>
+<text x="640" y="395" font-family="DejaVu Sans" font-size="12" fill="#ece6da" text-anchor="middle">“ancient artifact”</text>
+<text x="640" y="415" font-family="DejaVu Sans" font-size="10.3" fill="#ea8a44" text-anchor="middle">ψ₁ ≠ ψ₀ · 12,560-yr ¹⁴C, “alloy”</text>
+<rect x="1016" y="348" width="220" height="84" rx="10" fill="#131c2a" stroke="#3d4f6b" stroke-width="2"/>
+<text x="1126" y="372" font-family="DejaVu Serif" font-size="17" fill="#ece6da" text-anchor="middle">FRAMING s₂</text>
+<text x="1126" y="395" font-family="DejaVu Sans" font-size="12" fill="#ece6da" text-anchor="middle">“suppressed disclosure”</text>
+<text x="1126" y="415" font-family="DejaVu Sans" font-size="10.3" fill="#ea8a44" text-anchor="middle">ψ₂ ≠ ψ₁ · “rejection = cover-up”</text>
+<polygon points="396,350.0 438,390.0 396,430.0 354,390.0" fill="#0f1825" stroke="#ea8a44" stroke-width="2.2"/>
+<text x="396" y="386.0" font-family="DejaVu Sans" font-size="10.5" fill="#8a98ad" text-anchor="middle">σ_verify</text>
+<text x="396" y="403.0" font-family="DejaVu Sans" font-size="11.5" fill="#ea8a44" text-anchor="middle">✗ reject</text>
+<polygon points="885,360.0 915,390.0 885,420.0 855,390.0" fill="#0f1825" stroke="#ea8a44" stroke-width="2.2"/>
+<text x="885" y="396.0" font-family="DejaVu Sans" font-size="17" fill="#ea8a44" text-anchor="middle">✗</text>
+<line x1="264" y1="390.0" x2="354" y2="390.0" stroke="#ea8a44" stroke-width="2.4" marker-end="url(#arrowE)"/>
+<text x="309.0" y="381.0" font-family="DejaVu Sans" font-size="11" fill="#ea8a44" text-anchor="middle" font-weight="bold">σ_subst</text>
+<line x1="438" y1="390.0" x2="530" y2="390.0" stroke="#ea8a44" stroke-width="2.4" marker-end="url(#arrowE)"/>
+<text x="484.0" y="381.0" font-family="DejaVu Sans" font-size="11" fill="#ea8a44" text-anchor="middle" font-weight="bold">σ_subst</text>
+<line x1="750" y1="390.0" x2="855" y2="390.0" stroke="#ea8a44" stroke-width="2.4" marker-end="url(#arrowE)"/>
+<text x="802.5" y="381.0" font-family="DejaVu Sans" font-size="11" fill="#ea8a44" text-anchor="middle" font-weight="bold">σ_subst</text>
+<line x1="915" y1="390.0" x2="1016" y2="390.0" stroke="#ea8a44" stroke-width="2.4" marker-end="url(#arrowE)"/>
+<text x="965.5" y="381.0" font-family="DejaVu Sans" font-size="11" fill="#ea8a44" text-anchor="middle" font-weight="bold">σ_subst</text>
+<line x1="396" y1="430.0" x2="396" y2="472" stroke="#586a87" stroke-width="2" marker-end="url(#arrowD)" stroke-dasharray="5,5"/>
+<text x="640" y="449" font-family="DejaVu Sans" font-size="11.5" fill="#ea8a44" text-anchor="middle">label L held CONSTANT across swaps — replicas under one name</text>
+<rect x="250" y="472" width="580" height="96" rx="10" fill="#0f1825" stroke="#586a87" stroke-width="1.8" stroke-dasharray="6,5"/>
+<text x="818" y="490" font-family="DejaVu Sans" font-size="10" fill="#69768a" text-anchor="end">ROAD NOT TAKEN</text>
+<text x="268" y="498" font-family="DejaVu Sans" font-size="14.5" fill="#ece6da" text-anchor="start">HEALTHY AUTOMATON HALTS HERE</text>
+<text x="268" y="521" font-family="DejaVu Sans" font-size="12.5" fill="#ea8a44" text-anchor="start">σ_verify = reject   ⇒   reach F (withdrawal), ψ conceded false</text>
+<text x="268" y="542" font-family="DejaVu Sans" font-size="12.5" fill="#8a98ad" text-anchor="start">the FCA does not halt — σ_subst occupies the halt slot, asserting a fresh</text>
+<text x="268" y="560" font-family="DejaVu Sans" font-size="12.5" fill="#8a98ad" text-anchor="start">ψ under the same label L. F is rarely reached; the avoidance IS the pathology.</text>
+<rect x="44" y="588" width="592" height="178" rx="10" fill="#131c2a" stroke="#3d4f6b" stroke-width="2"/>
+<text x="60" y="616" font-size="17.5" text-anchor="start" xml:space="preserve"><tspan font-family="DejaVu Serif" fill="#ece6da">THE TESTABLE-KERNEL SEAM</tspan><tspan font-family="DejaVu Sans" fill="#ea8a44">   — the derivation axis</tspan></text>
+<text x="60" y="635" font-family="DejaVu Sans" font-size="11.5" fill="#8a98ad" text-anchor="start">one framing, split by the seam:</text>
+<rect x="60" y="646" width="232" height="84" rx="8" fill="#0f1825" stroke="#bf7f4d" stroke-width="2"/>
+<text x="72" y="668" font-family="DejaVu Sans" font-size="12.5" fill="#ece6da" text-anchor="start">ψ_k — testable kernel</text>
+<text x="72" y="687" font-family="DejaVu Sans" font-size="10.6" fill="#8a98ad" text-anchor="start">laser speckle → structured percept</text>
+<text x="72" y="703" font-family="DejaVu Sans" font-size="10" fill="#69768a" text-anchor="start">(sober-testable, no drugs)</text>
+<text x="72" y="721" font-family="DejaVu Sans" font-size="11" fill="#ea8a44" text-anchor="start">σ_verify RUNS ✓</text>
+<rect x="344" y="646" width="280" height="84" rx="8" fill="none" stroke="#ea8a44" stroke-width="1.8" stroke-dasharray="6,5"/>
+<text x="356" y="668" font-family="DejaVu Sans" font-size="12.5" fill="#ece6da" text-anchor="start">ψ_c — captured super-invariant</text>
+<text x="356" y="687" font-family="DejaVu Sans" font-size="10.6" fill="#8a98ad" text-anchor="start">“it is the Code, encoding reality”</text>
+<text x="356" y="703" font-family="DejaVu Sans" font-size="10" fill="#69768a" text-anchor="start">no message ever decoded</text>
+<text x="356" y="721" font-family="DejaVu Sans" font-size="11" fill="#ea8a44" text-anchor="start">no admissible σ_verify</text>
+<line x1="318" y1="650" x2="318" y2="726" stroke="#ea8a44" stroke-width="1.4" stroke-dasharray="3,4" opacity="0.8"/>
+<line x1="292" y1="664" x2="344" y2="664" stroke="#ea8a44" stroke-width="2.2" marker-end="url(#arrowE)"/>
+<text x="318" y="658" font-family="DejaVu Sans" font-size="11" fill="#ea8a44" text-anchor="middle" font-weight="bold">λ_seam</text>
+<text x="60" y="745" font-family="DejaVu Sans" font-size="10.6" fill="#69768a" text-anchor="start">λ_seam ∈ [0,1] — how much of σ_verify(ψ_k)=accept leaks up to ψ_c;  legit 0, pathology &gt; 0:</text>
+<text x="60" y="760" font-family="DejaVu Sans" font-size="10.6" fill="#69768a" text-anchor="start">the clean kernel launders the dirty superclaim.</text>
+<rect x="656" y="588" width="580" height="178" rx="10" fill="#131c2a" stroke="#3d4f6b" stroke-width="2"/>
+<text x="670" y="616" font-family="DejaVu Serif" font-size="17.5" fill="#ece6da" text-anchor="start">NESTING — two pathologies</text>
+<text x="670" y="636" font-family="DejaVu Sans" font-size="11" fill="#8a98ad" text-anchor="start">superstate ψ stays invariant across interior transitions — leaf fate can’t reach the root</text>
+<text x="670" y="662" font-family="DejaVu Sans" font-size="12.5" fill="#ece6da" text-anchor="start">A · absorption of rejection  (Buga)</text>
+<text x="684" y="680" font-family="DejaVu Sans" font-size="10.8" fill="#8a98ad" text-anchor="start">leaf rejected → superstate “NHI suppressed” is FED by it;</text>
+<text x="684" y="697" font-family="DejaVu Sans" font-size="10.8" fill="#8a98ad" text-anchor="start">debunking is read as the cover-up. Rejection ⇒ corroboration.</text>
+<text x="670" y="723" font-family="DejaVu Sans" font-size="12.5" fill="#ece6da" text-anchor="start">B · legitimation by kernel  (DMT)</text>
+<text x="684" y="741" font-family="DejaVu Sans" font-size="10.8" fill="#8a98ad" text-anchor="start">a true leaf (speckle is real) props up a super-falsehood —</text>
+<text x="684" y="758" font-family="DejaVu Sans" font-size="10.8" fill="#8a98ad" text-anchor="start">the λ_seam &gt; 0 leak, seen from the tree. Inverse of A, same constraint.</text>
+<rect x="44" y="786" width="1192" height="90" rx="10" fill="#131c2a" stroke="#3d4f6b" stroke-width="2"/>
+<text x="1224" y="816" font-family="DejaVu Sans" font-size="13" fill="#ea8a44" text-anchor="end">LITERAL</text>
+<text x="60" y="818" font-size="18.5" text-anchor="start" xml:space="preserve"><tspan font-family="DejaVu Serif" fill="#ece6da">MEMORY / RECORD  M</tspan><tspan font-family="DejaVu Sans" fill="#8a98ad">   — append-only public trajectory</tspan></text>
+<text x="60" y="844" font-family="DejaVu Sans" font-size="12.5" fill="#8a98ad" text-anchor="start">[ (s₀, σ, reject, subst),  (s₁, σ, reject, subst),  … ]   —   the replica chain the endpoint hides</text>
+<text x="60" y="866" font-family="DejaVu Sans" font-size="12" fill="#69768a" text-anchor="start">the substrate a scrutiny-lineage ψ↑ would range over  ·  open (README §6): a direction, not a result</text>
+<line x1="640" y1="900" x2="640" y2="876" stroke="#3d4f6b" stroke-width="2" marker-end="url(#arrowS)"/>
+<text x="652" y="892.0" font-family="DejaVu Sans" font-size="11.5" fill="#8a98ad" text-anchor="start">queries (read-only)</text>
+<rect x="360" y="900" width="560" height="96" rx="10" fill="#131c2a" stroke="#3d4f6b" stroke-width="2"/>
+<text x="376" y="932" font-size="18.5" text-anchor="start" xml:space="preserve"><tspan font-family="DejaVu Serif" fill="#ece6da">THE STEWARD</tspan><tspan font-family="DejaVu Sans" fill="#69768a">   — external skeptic / auditor (literal)</tspan></text>
+<text x="376" y="958" font-family="DejaVu Sans" font-size="12.5" fill="#8a98ad" text-anchor="start">∉ S   ·   replays M, re-runs σ_verify, reads the verdict   ·   cannot drive δ</text>
+<text x="376" y="980" font-family="DejaVu Sans" font-size="12.5" fill="#69768a" text-anchor="start">the lag until everyone else sees what the trajectory already reported</text>
+<line x1="44" y1="1016" x2="1236" y2="1016" stroke="#3d4f6b" stroke-width="1"/>
+<text x="44" y="1040" font-family="DejaVu Sans" font-size="12" fill="#8a98ad" text-anchor="start">Legend — solid border = literal mechanism (Ark · kernel ψ_k · Memory · Steward)   ·   dashed = speculative / no admissible test (captured ψ_c · unfalsifiable superstate)</text>
+<text x="44" y="1062" font-family="DejaVu Sans" font-size="12" fill="#8a98ad" text-anchor="start">Forward-directed by design; the retrocausal handshake δ* is deliberately absent (README §4) — importing it here would be the exact overreach this project flags in others.</text>
+<text x="44" y="1086" font-size="12" text-anchor="start" xml:space="preserve"><tspan font-family="DejaVu Sans" fill="#8a98ad">How ψ is treated across the family:   </tspan><tspan font-family="DejaVu Sans" fill="#ea8a44">CHECK (DISCRETE · DEEPSEEK)</tspan><tspan font-family="DejaVu Sans" fill="#8a98ad">  →  CONSERVE (SOL)  →  PROJECT (QNM)  →  SELECT (MWA)  →  </tspan><tspan font-family="DejaVu Sans" fill="#ea8a44" font-weight="bold">SUBSTITUTE (FCA — ψ evaded, not held)</tspan></text>
+<text x="44" y="1110" font-family="DejaVu Sans" font-size="11.5" fill="#69768a" text-anchor="start">Worked cases — Buga Sphere (2025–26) · DMT “Code of Reality” (2020–); both real and publicly documented.</text>
+<text x="44" y="1130" font-family="DejaVu Sans" font-size="11.5" fill="#69768a" text-anchor="start">Empirical specifics sourced against the public record; contested items fenced. λ_seam is proposed, not yet validated.</text>
+</svg>

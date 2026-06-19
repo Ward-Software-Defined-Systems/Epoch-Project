@@ -52,7 +52,7 @@ This is the generative twin of verification. The Ark already *checks* ψ at ever
 **`σ_carve`** (legend §13):
 
 ```
-σ_carve(A, 𝕍)  =  E₁ = (S₁, Σ₁, δ₁, s₀₁, F₁, ψ₁)
+σ_carve(A, V)  =  E₁ = (S₁, Σ₁, δ₁, s₀₁, F₁, ψ₁)
 ```
 
 > **Fenced — motivating register (`README.md` §4).** This is the Wheeler-participatory stance —
@@ -77,7 +77,7 @@ dream-note's `LIM((Ark, ψ), N), N → ∞` — the limit of repeated carving.
 Concretely, the tower already contains derivations the project has written:
 
 ```
-𝕍  →  …  →  E_SOL  →  E_Earth  →  E_author  →  … and so on
+V  →  …  →  E_SOL  →  E_Earth  →  E_author  →  … and so on
 ```
 
 where `E_SOL` is the existing [Heliocentric Epoch](./Continuous-Manifold_Derivations/Solar-System_Epoch-Formula.md)
@@ -154,7 +154,7 @@ That chain is a path. So define an invariant over chains rather than over states
 
 ```
 ψ↑ : Lineages → {true, false}
-ψ↑(𝕍 → E₁ → … → E_n)        — over the ancestry, not over a single state
+ψ↑(V → E₁ → … → E_n)        — over the ancestry, not over a single state
 ```
 
 This is structurally the trajectory form `ψ : Runs(S) → {true, false}` that

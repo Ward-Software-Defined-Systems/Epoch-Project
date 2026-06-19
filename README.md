@@ -315,6 +315,7 @@ does.
 | SOL (Heliocentric Epoch) | Theoretical / speculative |
 | MWA (Many-Worlds / Branching Epoch) | Theoretical / speculative |
 | **[DeepSeek-V4-Pro](./Discrete_Derivations/DeepSeek-V4-Pro_Epoch-Formula.md)** (Discrete / Operational Epoch) | **Drafted — operational against a real artifact** |
+| **[Fringe-Claim Trajectories](./Fringe-Claim_Derivations/Fringe-Claim-Trajectories_Epoch-Formula.md)** (Diagnostic axis) | **Drafted — diagnostic, applied against two real public cases** |
 
 ---
 
@@ -407,6 +408,34 @@ boundaries come from, and how they stack.
   "everything and nothing") and the co-creation ethos are **motivating register**, fenced as in §4.
 
 Notation is registered in [`EPOCH-NOTATION-LEGEND.md`](./EPOCH-NOTATION-LEGEND.md) (§13 VOID).
+
+---
+
+## 11. The diagnostic axis — fringe-claim trajectories
+
+The three families and the substrate all describe a thing that *holds* a boundary: §7–§9 differ by *how `ψ`
+is held* (checked / projected-or-conserved / emergent), and §10 is the *substrate* they are carved from.
+[`Fringe-Claim_Derivations/`](./Fringe-Claim_Derivations/) turns the apparatus **around**. It is **not**
+another way to hold `ψ`, and **not** a substrate — it is a different *use*: the framework pointed **at**
+claims that *assert* an identity they have not earned, where it becomes a **detector**. The object of study
+is not whether a claim is true but how its `ψ` behaves under scrutiny.
+
+- **[Fringe-Claim Trajectories — the Diagnostic Epoch](./Fringe-Claim_Derivations/Fringe-Claim-Trajectories_Epoch-Formula.md)** —
+  the framework over the **public framings of a contested claim**: framings as states `S`, scrutiny
+  (debunkings, demands to *show the data* or *decode the thing*) as the events `σ`, and `ψ` the boundary
+  condition the claim asserts. It **reuses the §1 discrete tuple** and **retains `σ_verify`** like DeepSeek
+  (§9) — but it is DeepSeek's **pathological mirror**: where the operational epoch *honours* a failed check
+  by halting, a fringe claim **evades** it, asserting a fresh `ψ` under the same label (`σ_subst`) rather
+  than terminating. Its load-bearing offer is the **testable-kernel seam** — a single structural variable
+  (`λ_seam`: how much credibility a runnable sub-test `ψ_k` launders onto an untestable superclaim `ψ_c`)
+  with predictive content — plus the recognition that ψ-substitution is a **naturally-occurring instance of
+  the replica test** ([Defining the Invariant ψ](./EPOCH-DEFINING-THE-INVARIANT.md)): only the *trajectory*
+  distinguishes a surviving claim from a replica chain wearing one name. Worked against two real public
+  cases (the Buga Sphere; the DMT "Code of Reality"). It is **diagnostic, not operational**, and it honestly
+  **refuses** the retrocausal `δ*` the cases seem to invite — their backward-legitimation is ordinary
+  forward motivated reasoning, named and declined in the spirit of §4.
+
+Notation is registered in [`EPOCH-NOTATION-LEGEND.md`](./EPOCH-NOTATION-LEGEND.md) (§14 FCA).
 
 ---
 

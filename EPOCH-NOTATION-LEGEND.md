@@ -123,6 +123,7 @@ Never assume the primed symbol is "the next state" — in the valid-continuation
 | `⇒` | logical implication | "if … then …" |
 | `⊨` | models / satisfies | `π_n(s_sub) ⊨ ψ_n` — the (projected) state satisfies the invariant (§13) |
 | `⊬` | does not entail | `ψ_n ⊬ ψ_{n+1}` — the parent invariant does not determine the child's (§13) |
+| `⊢` | asserts / declares (turnstile) | `⊢₀ (ψ, σ_verify)` — the predicate **and** its test are *committed prospectively* at `s₀` (§14); distinct from `⊨` (semantic satisfaction) |
 | `∀` | universal quantifier | "for all" |
 | `{true, false}` | Boolean codomain | the two values `ψ` returns |
 | `{accept, reject}` | decision codomain | the two values `σ_verify` returns |
@@ -659,7 +660,7 @@ external to *every* level (not just one), and additionally may not **carve**:
 
 ```
 Steward ∉ E_n                          (for every level n — outside the whole tower)
-Steward may query:   the lineage M = (𝕍 → E₁ → … → E_n),  every ψ_n,  σ_verify
+Steward may query:   the lineage M = (V → E₁ → … → E_n),  every ψ_n,  σ_verify
 Steward may not:     drive δ_n,  nor perform σ_carve   (cannot force a transition or draw a boundary)
 ```
 
@@ -683,6 +684,113 @@ statechart) rather than chaining left-to-right.
 > retrocausal `δ*` is deliberately absent, as in §6 / §9.3 / §10.3 / §11.3 / §12.3. The cosmogony
 > labels ("Void," "everything and nothing") are **motivating register** (`README.md` §4), not
 > mechanism — the load-bearing content is the carve operator and the nesting constraint.
+
+---
+
+## 14. Diagnostic reinterpretation (Fringe-Claim Automaton, FCA)
+
+The derivation
+[`Fringe-Claim_Derivations/Fringe-Claim-Trajectories_Epoch-Formula.md`](./Fringe-Claim_Derivations/Fringe-Claim-Trajectories_Epoch-Formula.md)
+points the apparatus **outward** — at the public framings of a contested empirical claim. Like §12 (and
+unlike §9–§11), it does **not** reinterpret the state space over a manifold: it **reuses** the discrete tuple
+`(S, Σ, δ, s₀, F, ψ)` from §1 unchanged. It is distinguished not by *how `ψ` is typed* but by *what happens
+to `ψ`* — where §12 (DeepSeek) **keeps** `σ_verify` and the boundary is honestly held or refused, §14 is its
+**pathological mirror**: `σ_verify` *would* reject, but the claim **evades** the halt by **substituting** `ψ`
+under a constant label. Mechanism verb: **substituted** (cf. checked / projected / conserved / emergent /
+carved). It is a **diagnostic** — applied against real public cases, not operational against a controlled
+artifact.
+
+> **No glyph overload, `σ_verify` retained (as in §12).** `S`, `Σ`, `δ`, `s₀`, `F`, `ψ` keep their §1
+> meanings; `σ_verify` (§2) is **retained**, not replaced — but here it is the gate the automaton is
+> organized to keep from running on the live `ψ`. The new content is the substitution operator `σ_subst`,
+> the testable-kernel seam (`ψ_k` / `ψ_c` / `λ_seam`), the capture predicates (`cap_ext` / `cap_int`), and
+> the prospective-commitment condition `⊢₀`.
+
+### 14.1 The FCA Automaton — `FCA = (S, Σ, δ, s₀, F, ψ)`
+
+The discrete Epoch Automaton (§1) instantiated against a contested claim. The tuple is unchanged; the table
+gives each element's realization and the operators that describe *evasion*.
+
+| Symbol | Read as | Name | Type / signature | Meaning |
+|---|---|---|---|---|
+| `FCA` | "F·C·A" | FCA Automaton | 6-tuple | The fringe-claim instance of the discrete machine. |
+| `S` | capital **S** | Public framings | set | Successive public framings of one claim; each `s ∈ S` asserts one boundary condition. *(The §1 `S`.)* |
+| `Σ` | capital **sigma** | Scrutiny alphabet | set | Scrutiny events: debunking, independent analysis, demand to show data / decode, failed replication. *(The §1 `Σ`.)* |
+| `δ` | lowercase **delta** | Transition | `δ: S × Σ → S` | The move between framings; a *valid* continuation only under the **same** `ψ`. *(The §1 `δ`.)* |
+| `s₀` | "s-naught" | Initial framing | `s₀ ∈ S` | The first public framing, asserting `ψ₀`. |
+| `F` | capital **F** | Withdrawal | `F ⊆ S` | Honest termination — `ψ` conceded false. **Rarely reached; the pathology is its avoidance.** |
+| `ψ` | lowercase **psi** | Soul invariant | `ψ: S → {true, false}` | The boundary condition the claim asserts to hold its identity. **Pointwise** (static) — see §14.2. |
+| `(L, ψ)` | "L, psi" | Public identity | pair | A framing's identity: label `L` + asserted invariant `ψ`. Healthy `δ` holds `ψ`; `σ_subst` holds `L`. |
+| `σ_subst` | "sigma-subst" | Substitution operation | `(L × ψ × Σ) → (L × ψ)` | `σ_subst(L, ψₙ, σ) = (L, ψₙ₊₁)`, defined where `σ_verify(s, ψₙ) = reject ∧ ψₙ₊₁ ≠ ψₙ`. The **un-earned continuation** that occupies the halt slot — the pathological twin of the §8 *halt*. |
+| `ψ_k` | "psi-k" | Testable kernel | `ψ_k: S → {true, false}` | A sub-invariant on which `σ_verify` **runs** (e.g. "a structured percept appears"). |
+| `ψ_c` | "psi-c" | Captured super-invariant | `ψ_c: S → {true, false}` | A super-invariant with **no admissible `σ_verify`** (e.g. "it encodes reality"). |
+| `λ_seam` | "lambda-seam" | Credibility-laundering coefficient | `λ_seam ∈ [0,1]` | Degree to which `σ_verify(ψ_k) = accept` is propagated to `ψ_c`. **Legitimate 0; pathology > 0.** The derivation's predictive structural variable. |
+| `cap_ext`, `cap_int` | "cap-ext / cap-int" | Capture predicates | `S → {true, false}` | `σ_verify`-capture: **external** (gatekept; remediable) vs **intrinsic** (private-state; irremediable). |
+| `⊢₀` | "asserts-at-zero" | Prospective commitment | well-formedness condition | `⊢₀ (ψ, σ_verify)`: `ψ` and its test are **declared at `s₀`**, before any dissolution — the anti-tautology gate. (`⊢` added in §5; distinct from `⊨`.) |
+| `ψ↑_scrutiny` | "psi-up, scrutiny" | Scrutiny-lineage invariant | `ψ↑_scrutiny: Lineages → {true, false}` | A trajectory-valued invariant over `M`'s scrutiny record that flags a substitution (`ψₙ₊₁ ≠ ψₙ` after a reject) — the **horizontal** sibling of DeepSeek's transformation-lineage (§12) and the Void's genealogy `ψ↑` (§13). Speculative; see §14.2. |
+
+> **`σ_subst` vs `δ` vs `σ_verify`.** `δ` continues under the *same* `ψ` (legitimate). `σ_verify` (§2)
+> *checks* `ψ` and, on reject, the §8 rule says *halt*. `σ_subst` is what the FCA does *instead* of halting:
+> it asserts a *new* `ψ` under the same label. It is **not** a member of `Σ` (not an event) — it is the
+> automaton's pathological response to a rejection, the diagnostic counterpart of the Void's generative
+> `σ_carve` (§13) and the Ark's checking `σ_verify` (§2).
+
+### 14.2 Discrete ↔ fringe-claim correspondence
+
+Discrete to discrete — an *instantiation* (as §12), not a manifold reinterpretation. The verification gate
+is kept; its **verdict is evaded**.
+
+| Discrete Epoch Automaton `E` | FCA Automaton | Note |
+|---|---|---|
+| state `s ∈ S` | a public framing (label + asserted `ψ`) | the §1 state, made concrete |
+| transition `δ(sᵢ, σⱼ)` | the move between framings under scrutiny | valid only under the **same** `ψ` |
+| verification step (`σ_verify`) | **retained**, but the claim evades it | contrast §12, where it is honored |
+| halt when `ψ(s) = false` | **`σ_subst`** fires instead — the un-earned continuation | the defining pathology |
+| initial epoch `s₀` | the first framing, asserting `ψ₀` | genesis |
+| terminal set `F ⊆ S` | withdrawal / honest termination | rarely reached — avoidance is the pathology |
+| nested epoch `(S_sub, …, ψ_sub)` | a leaf claim under an unfalsifiable superstate | the two nesting pathologies (absorption / legitimation) |
+| Memory `M = [(s₀,σ₁,s₁), …]` | the **public** record: framing · scrutiny · outcome · substitution | an externally-auditable log |
+| Steward (oracle, `∉ S`) | the external skeptic / community auditor | **literal**; replays `M`, re-runs `σ_verify`; cannot drive `δ` |
+
+> **Still pointwise.** `ψ: S → {true, false}` tests a single framing. What makes the *fraud* visible is the
+> **trajectory** in `M`, not a richer pointwise `ψ`. A `ψ↑_scrutiny` over that record would **pass the
+> replica test by construction** (it calls a substitution-chain "died and replaced," a stable claim
+> "survived") — the **scrutiny-lineage** hand-hold beside DeepSeek's transformation-lineage (§12), MWA's
+> decoherence-record (§11), and the Void's genealogy `ψ↑` (§13). It **inherits**, and does not resolve, the
+> dynamic-`ψ` problem (§1 note; `README.md` §6; the replica test in `EPOCH-DEFINING-THE-INVARIANT.md`). Not
+> attempted in the derivation.
+
+**Steward constraints (diagnostic)** — the §8 Steward block for the public record. Literal, as in §12:
+
+```
+Steward ∉ S
+Steward may query:   the public record M = [(s₀,σ,outcome,subst), …],  ψ,  σ_verify
+Steward may not:     drive δ  (cannot force the claimant's next framing)
+```
+
+### 14.3 FCA diagram conventions
+
+For the ASCII state-machine in the derivation's "The FCA State-Machine" subsection (the diagnostic
+counterpart of §6, §9.3, §10.3, §11.3, §12.3). The defining difference: the `σ_verify` verdict is **evaded**
+by `σ_subst`, not honored.
+
+| Element | Convention | Meaning |
+|---|---|---|
+| Top band `THE ARK (analyst / framework-applier)` | meta-automaton (inverted) | commits `(ψ, σ_verify)` *prospectively* at `s₀` (`⊢₀`); names the test that would reject |
+| Connector label `σ_verify(s, ψ) = REJECT` | verification step | `ψ` evaluated at a crossing; the verdict is **reject** — which a healthy automaton would honor as a halt |
+| Box `FRAMING sₙ · ψₙ` | state node | one public framing `sₙ` asserting `ψₙ` (`s₀` = initial) |
+| Arrow `──▶` labeled `σ_subst` (`un-earned`) | substitution | the un-earned continuation: `ψ` swapped, label `L` kept — **not** a valid `δ` |
+| Caption `label L held CONSTANT across every swap` | the faked continuity | the constant label is what makes a replica chain read as one claim |
+| Inline `seam: ψ_k ──λ_seam──▶ ψ_c` | the testable-kernel seam | credibility laundered from a tested kernel to an untested superclaim |
+| Dotted strip `healthy automaton HALTS here (ψ = false)` | the evaded halt | the §8 halt the FCA refuses — `σ_subst` fires instead (contrast §12's *honored* halt) |
+| Bottom band `MEMORY / RECORD M` | the memory | append-only public trajectory of framing · scrutiny · outcome · substitution; the substrate for `ψ↑_scrutiny` |
+| Stub `THE STEWARD · skeptic / auditor` | oracle (inverted) | read-only; `∉ S`; replays `M`, re-runs `σ_verify`, reads the verdict; does not drive `δ` |
+
+> Forward-directed, like §6, §9.3, §10.3, §11.3, §12.3. The retrocausal `δ*` is deliberately absent — and
+> here its absence is **load-bearing**: the derivation's "do not reach for δ*" section argues that the
+> backward-legitimation a fringe claim *appears* to perform is ordinary forward motivated reasoning, fully
+> captured by `σ_subst`. The Ark/Steward labels are **inverted** (analyst / skeptic), not cosmological
+> correspondences as in §10/§11.
 
 ---
 
@@ -710,3 +818,8 @@ replaced as in §9–§11).
 **The Void (§13):** `𝕍` · `σ_carve` · `π_n` · `ψ↑`  — with level-indexed reuses `E_n` · `ψ_n` · `A_n` ·
 `s₀_n` · `M_n` of the §1/§2 objects; a carved child is a §3 nested sub-automaton (`ψ_sub` / `δ_sub`).
 `M` stays **Memory** (§2), *not* overloaded; new logical glyphs `⊨` / `⊬` are added in §5.
+
+**The FCA (§14):** `FCA` · `σ_subst` · `(L, ψ)` · `ψ_k` · `ψ_c` · `λ_seam` · `cap_ext` · `cap_int` · `⊢₀` ·
+`ψ↑_scrutiny`  — `S` · `Σ` · `δ` · `s₀` · `F` · `ψ` are the §1 glyphs **reused** unchanged (no overload), and
+`σ_verify` (§2) is **retained** (its verdict *evaded*, not replaced as in §9–§11); new logical glyph `⊢` is
+added in §5.
