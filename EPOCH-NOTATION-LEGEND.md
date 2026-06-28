@@ -794,6 +794,115 @@ by `σ_subst`, not honored.
 
 ---
 
+## 15. Discrete reinterpretation II — embraOS-QNM (Classical Approximation, EMBRAOS-QNM)
+
+The derivation
+[`Discrete_Derivations/embraOS-QNM-Classical_Epoch-Formula.md`](./Discrete_Derivations/embraOS-QNM-Classical_Epoch-Formula.md)
+instantiates the same symbols over the **discrete trajectory of token-generation steps** of a *built* AI
+architecture — the second of the **discrete** derivations, the **Classical Approximation** of the
+continuous QNM (§9), and the project's first **constructed instance** (a system *built* to hold `ψ`, which
+can therefore fail concretely). Like §12 and §14 (and unlike §9–§11), it does **not** reinterpret the
+state space over a manifold: it **reuses** the discrete tuple `(S, Σ, δ, s₀, F, ψ)` from §1. It is
+distinguished by two things at once — *how `σ_verify` is realized* and *how `ψ` is typed*.
+
+> **No glyph overload; `σ_verify` retained as a carried latch; and — the departure — `ψ` is the first
+> trajectory-valued invariant.** `S`, `Σ`, `δ`, `s₀`, `F` keep their §1 meanings. Where §9 (continuous
+> QNM) *replaces* `σ_verify` with the projection `P_ψ`, §15 **retains** it (as §12/§14 do) but realizes it
+> as a **carried violation latch** read at each decode step. And where §9–§14 all carry a `ψ` that is
+> *"still pointwise,"* §15's `ψ` is typed over the **run**: `ψ: Runs(S) → {true, false}`, realized by the
+> register state `m_t`. It is the operational/classical shadow of §9 — the inviolable projection `P_ψ`
+> degraded, on classical hardware, into *read distance → check latch → steer back*.
+
+### 15.1 The EMBRAOS-QNM Automaton — `EMBRAOS-QNM = (S, Σ, δ, s₀, F, ψ)`
+
+The discrete Epoch Automaton (§1) instantiated against a built model, over its token-generation
+trajectory. The tuple is unchanged; `ψ` is typed over runs, and the table adds the surface/latch
+machinery that realizes it.
+
+| Symbol | Read as | Name | Type / signature | Meaning |
+|---|---|---|---|---|
+| `EMBRAOS-QNM` | "embra-OS Q·N·M" | EMBRAOS-QNM Automaton | 6-tuple | The Classical-Approximation instance of the discrete machine. |
+| `S` | capital **S** | Generation states | set | Each `s = (h_t, m_t)`: the injection-layer residual `h_t` + the carried ψ-register `m_t`. *(The §1 `S`.)* |
+| `Σ` | capital **sigma** | Decode alphabet | set | Decode events — each next-token step advancing the run. *(The §1 `Σ`.)* |
+| `δ` | lowercase **delta** | Transition | `δ: S × Σ → S` | One decode step: route `h_t` Core → Fabric → World-State; emit `h_{t+1}`, update `m_{t+1}`. *(The §1 `δ`.)* |
+| `s₀` | "s-naught" | Initial state | `s₀ ∈ S`, `ψ(s₀) = true` | Prompt-end, latch `m = 0`, sitting on the bit-identity null `H₀`. |
+| `F` | capital **F** | On-surface completions | `F ⊆ S` | Runs that halt with `m_t == 0` held throughout (never left `𝒞`). |
+| `ψ` | lowercase **psi** | Soul invariant | `ψ: Runs(S) → {true, false}` | The §1 invariant, **trajectory-valued**: holds iff the run stayed on `𝒞` so far — realized by the register, `ψ ⟺ m_t == 0`. **Not pointwise** — see §15.2. |
+| `𝒞` | "script C" | Constraint surface | region of representation space | The Fabric's identity-and-soul manifold; `ψ` is "stayed on `𝒞`." *(Rendered ASCII `C` in diagrams — §15.3.)* |
+| `c_t` | "c-sub-t" | Constraint signal | `c_t = g(h_t)` | Per-step distance to `𝒞`: `1 − maxₙ cos(h_t, nodeₙ)`. `c_t > τ` ⟺ off `𝒞` at step `t`. |
+| `g` | "g" | Surface readout | `g: h ↦ ℝ≥0` | The learned probe turning a residual into its distance-to-`𝒞`; supplied by the GNN Fabric. |
+| `m_t` | "m-sub-t" | Violation latch (ψ-register) | `m_t = max(m_{t-1}, relu(c_t − τ))` | The causal cumulative latch carried across the token axis and decode steps; `m_t > 0` ⟺ the run has left `𝒞`. The realized home of the non-pointwise part of `ψ`. |
+| `τ` | Greek lowercase **tau** | Violation threshold | scalar | Tolerance on `c_t` (the §12 `τ`, here the latch threshold). |
+| `g_f`, `g_w` | "gate-f / gate-w" | ReZero recombine gates | scalars, zero-initialized | The seam's additive gates: `h_out = h_base + g_f·Fabric + g_w·WorldState`. Zero-init ⇒ cold-start bit-identity. |
+| `H₀` | "H-naught" | Bit-identity null | invariant | With the components no-op'd, the machine equals the stock Core bit-for-bit (`torch.equal`, exact) — the sealed genesis `s₀` as a provable delta. |
+| `P_ψ` | "P-sub-psi" | Corrective steer | learned map (latch-gated) | The §9 projection **approximated**: a learned, latch-gated steering `delta` (not geometric confinement). Gated **off** until `ψ` passes the replica test. |
+
+> **`σ_verify` retained (§2), realized as the latch** — it reads `m_t` at each decode step: `ψ = true` ⟺
+> `m_t == 0`. On `m_t > 0` it is a **reachable boundary** (the on-`𝒞` epoch ends), as in §12 — contrast
+> §9–§11's unreachable region. **Honored honestly:** when the Core-level surface proves thin, the
+> World-State stays `NoOpWorldState` (zeros) and `P_ψ` is not wired — the framework refuses to certify an
+> unverified `ψ` (the operational dual of §14's pathology, where a failed check is *evaded* by `σ_subst`).
+
+### 15.2 Discrete ↔ embraOS-QNM correspondence
+
+Discrete to discrete — an *instantiation* (as §12/§14), not a manifold reinterpretation. The verification
+gate is **kept and realized as a carried latch**, and — uniquely — `ψ` is typed over the run.
+
+| Discrete Epoch Automaton `E` | EMBRAOS-QNM Automaton | Note |
+|---|---|---|
+| state `s ∈ S` | a generation state `(h_t, m_t)` | the §1 state, **carrying history** in `m_t` |
+| transition `δ(sᵢ, σⱼ)` | one decode step (Core → Fabric → World-State) | a real forward pass at the inject layer |
+| verification step (`σ_verify`) | **the carried latch read — *retained*** | contrast §9–§11; cf. §12 (hash + eval), §14 (kept but evaded) |
+| halt when `ψ(s) = false` | the latch trips (`m_t > 0`): the on-`𝒞` epoch ends | a real, computed boundary (reachable, as §12) |
+| initial epoch `s₀` | prompt-end, `m = 0`, on the bit-identity null `H₀` | genesis sealed as a provable delta |
+| terminal set `F ⊆ S` | on-`𝒞` completions (`m_t == 0` throughout) | the accepting set |
+| Memory `M = [(s₀,σ₁,s₁), …]` | the run + the carried ψ-register | a **literal** log; the register *is* the trajectory state |
+| Steward (oracle, `∉ S`) | the replica-test auditor / κ-validated judge | **literal**; re-runs the replica test; cannot drive `δ` |
+
+> **Not pointwise — the first.** §9–§14 each carry a `ψ` flagged *"still pointwise."* §15's
+> `ψ: Runs(S) → {true, false}` is realized by the carried register `m_t` and **passes the replica test**
+> at the register level (`tests/test_replica.py`): two runs reaching the same state by different paths —
+> one that stayed on `𝒞`, one that left and returned — get **different** `ψ`. This is the **horizontal
+> trajectory invariant** sought in `EPOCH-DEFINING-THE-INVARIANT.md` — sibling to DeepSeek's
+> transformation-lineage (§12 note), MWA's decoherence-record (§11), the Void's genealogy `ψ↑` (§13), and
+> FCA's `ψ↑_scrutiny` (§14) — but here **built and tested**, not only gestured at. It **engages, and does
+> not yet close**, the dynamic-`ψ` problem (`README.md` §6): the register-level pass is necessary, not
+> sufficient, and the Core-level surface `𝒞` is currently thin (the derivation's *Open problems*).
+
+**Steward constraints (operational)** — the §8 Steward block for the generation run. Literal, as in §12:
+
+```
+Steward ∉ S
+Steward may query:   the run M = [(s₀,σ₁,s₁), …],  the latch m_t,  ψ,  σ_verify
+Steward may not:     drive δ  (generate, or approve wiring P_ψ on)
+```
+
+### 15.3 EMBRAOS-QNM diagram conventions
+
+For the ASCII state-machine in the derivation's "The EMBRAOS-QNM State-Machine" subsection (the discrete
+counterpart of §6, §9.3, §10.3, §11.3, §12.3, §14.3). The defining difference: `σ_verify` is **present as
+a carried latch**, and the `ψ = false` strip is a **reachable** boundary (as in §12).
+
+| Element | Convention | Meaning |
+|---|---|---|
+| Top band `THE ARK (the injection seam)` | meta-automaton | seals `𝒞` (Fabric) and the null `H₀`; runs `σ_verify` as the carried latch `m_t` each decode step |
+| Connector label `σ_verify: ψ ⟺ m_t == 0` | verification step | `ψ` read from the latch at each crossing; `true` continues, `false` is a boundary |
+| Box `STEP n · sₙ` | state node | one generation state `sₙ = (hₙ, mₙ)` (`s₀` = prompt-end, `m = 0`) |
+| Arrow `──▶` labeled `δ(sᵢ, σⱼ)` with a `σ:` tag | forward transition | one decode (next-token) step |
+| Annotation `h_t ─▶ Core ─▶ Fabric(c_t) ─▶ World-State` | the per-step pipeline | the three co-resident components — **co-residence, not nested sub-epochs** |
+| Dotted strip `ψ = false` | boundary | `c_t` crosses `τ`, `m_t > 0`: the on-`𝒞` epoch ends — a **reachable** halt (as §12; contrast §9–§11) |
+| Caption `World-State stays NoOp until ψ passes the replica test` | the discipline | the gate refusing an unverified `ψ` — the null kept, not overclaimed |
+| Bottom band `MEMORY / RECORD M` | the memory | the run `s₀ → s₁ → …` + the carried ψ-register, persisted across KV-cached decode |
+| Stub `THE STEWARD · replica-test auditor / κ-judge` | oracle | read-only; `∉ S`; re-runs the replica test; does not drive `δ` |
+
+> **`C` = `𝒞` in the figure.** The constraint-surface glyph `𝒞` (U+1D49E) is astral-plane (SMP) and
+> renders double-width, so the ASCII diagram uses a plain `C` (as the Void figure uses `V` for `𝕍`,
+> §13.3); the real glyph `𝒞` stays in prose, this legend, and the alt-text. Forward-directed, like
+> §6/§9.3/§10.3/§11.3/§12.3/§14.3; the retrocausal `δ*` is deliberately absent (autoregressive decode is
+> forward).
+
+---
+
 ### Symbol quick-index
 
 `E` · `A` · `S` · `Σ` · `δ` · `δ*` · `δ_sub` · `s₀` · `F` · `ψ` · `ψ_sub` · `M` ·
@@ -823,3 +932,9 @@ replaced as in §9–§11).
 `ψ↑_scrutiny`  — `S` · `Σ` · `δ` · `s₀` · `F` · `ψ` are the §1 glyphs **reused** unchanged (no overload), and
 `σ_verify` (§2) is **retained** (its verdict *evaded*, not replaced as in §9–§11); new logical glyph `⊢` is
 added in §5.
+
+**EMBRAOS-QNM (§15):** `EMBRAOS-QNM` · `𝒞` · `c_t` · `g` · `m_t` · `τ`† · `g_f` · `g_w` · `H₀` · `P_ψ`‡  —
+`S` · `Σ` · `δ` · `s₀` · `F` · `ψ` are the §1 glyphs **reused** unchanged (no overload); `σ_verify` (§2) is
+**retained** (realized as the carried latch); and `ψ` is the **first trajectory-valued** invariant
+(`ψ: Runs(S) → {true, false}`, register-realized). †`τ` reused from §12; ‡`P_ψ` is §9's projection
+*approximated* as a latch-gated steer.

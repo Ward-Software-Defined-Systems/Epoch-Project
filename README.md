@@ -315,6 +315,7 @@ does.
 | SOL (Heliocentric Epoch) | Theoretical / speculative |
 | MWA (Many-Worlds / Branching Epoch) | Theoretical / speculative |
 | **[DeepSeek-V4-Pro](./Discrete_Derivations/DeepSeek-V4-Pro_Epoch-Formula.md)** (Discrete / Operational Epoch) | **Drafted — operational against a real artifact** |
+| **[embraOS-QNM (Classical Approximation)](./Discrete_Derivations/embraOS-QNM-Classical_Epoch-Formula.md)** (Discrete / Constructed Epoch; trajectory-ψ) | **Drafted — constructed instance; `ψ₀` passes the register-level replica test, the Core-level surface is thin (WIP)** |
 | **[Fringe-Claim Trajectories](./Fringe-Claim_Derivations/Fringe-Claim-Trajectories_Epoch-Formula.md)** (Diagnostic axis) | **Drafted — diagnostic, applied against two real public cases** |
 
 ---
@@ -327,7 +328,9 @@ re-expresses the discrete Epoch Automaton over continuous state spaces. These ar
 
 - **[QNM — Quantum Neural Manifold](./Continuous-Manifold_Derivations/embraOS-QNM_Epoch-Formula.md)** —
   embraOS one layer down: ψ built into a neural / quantum substrate (constrained weight
-  manifolds, quantum reservoirs) rather than checked at boot. See also the §4 framing.
+  manifolds, quantum reservoirs) rather than checked at boot. See also the §4 framing. Its **operational
+  Classical Approximation** — the same idea on classical hardware, where the projection `P_ψ` becomes a
+  *checked* carried latch — is a **discrete** derivation (§9); this continuous ideal stays *speculative*.
 - **[The Heliocentric Epoch (SOL)](./Continuous-Manifold_Derivations/Solar-System_Epoch-Formula.md)** —
   the framework over the solar system, on the phase space of celestial mechanics: the Sun as
   Epoch 0, the planets as nested sub-epochs, ψ as gravitational binding. The galactic-center
@@ -383,7 +386,20 @@ the framework's "built to pass or fail" stance (see
   It **grounds** the speculative QNM (§7): `ψ_surf` is QNM's constraint surface made real, so QNM can
   be developed against a verified reference rather than from theory alone.
 
-Notation is registered in [`EPOCH-NOTATION-LEGEND.md`](./EPOCH-NOTATION-LEGEND.md) (§12 DeepSeek).
+- **[embraOS-QNM (Classical Approximation) — the Constructed Epoch](./Discrete_Derivations/embraOS-QNM-Classical_Epoch-Formula.md)** —
+  the framework over a *built* architecture under generation: token-generation states `S`, decode steps as
+  the events `σ`, and `ψ` the **carried violation latch** `m_t = cummax(relu(c_t − τ))`, *checked* each
+  step (`σ_verify` retained, here latched) against the GNN Fabric's constraint surface `𝒞`. It is the
+  **Classical Approximation** of the speculative QNM (§7): the inviolable projection `P_ψ` degraded, on
+  classical hardware, into *read distance → check → steer*. It is the project's first **constructed
+  instance** (it can fail concretely) and the first `ψ` typed **trajectory-valued** rather than pointwise
+  — passing the replica test at the register level, the dynamic-`ψ` lever (§6) genuinely engaged. "Proof
+  the framework works" lands here as an **honest failure**: pushed to a real surface, the replica-test
+  gate found it thin and **refused to certify it** (the World-State stays a literal null), relocating the
+  bottleneck to the substrate. Where DeepSeek (above) keeps `σ_verify` over a *pointwise* `ψ`, and the
+  Fringe-Claim Automaton (§11) *evades* its verdict, this **honors** the failed check. **Work-in-progress.**
+
+Notation is registered in [`EPOCH-NOTATION-LEGEND.md`](./EPOCH-NOTATION-LEGEND.md) (§12 DeepSeek, §15 embraOS-QNM).
 
 ---
 

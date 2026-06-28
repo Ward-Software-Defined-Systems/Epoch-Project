@@ -1,0 +1,191 @@
+<svg width="1720" height="1400" viewBox="0 0 1720 1400" xmlns="http://www.w3.org/2000/svg" font-family="DejaVu Serif">
+  <defs>
+    <linearGradient id="ember" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b5631d"/>
+      <stop offset="1" stop-color="#6d3911"/>
+    </linearGradient>
+    <linearGradient id="gatefill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#241608"/>
+      <stop offset="1" stop-color="#160f06"/>
+    </linearGradient>
+    <pattern id="amberHatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="9" height="9" fill="#15140f"/>
+      <line x1="0" y1="0" x2="0" y2="9" stroke="#b8924a" stroke-width="1.1" stroke-opacity="0.16"/>
+    </pattern>
+    <linearGradient id="discWash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c1710"/>
+      <stop offset="0.5" stop-color="#13161f"/>
+      <stop offset="1" stop-color="#13161f"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1720" height="1400" fill="#0d1219"/>
+
+  <!-- HEADER -->
+  <text x="48" y="68" font-size="42" fill="#e9ebef">embraOS-QNM — the Constructed Epoch</text>
+  <rect x="50" y="82" width="138" height="4" rx="2" fill="#e3893c"/>
+  <text x="50" y="112" font-size="17" fill="#8b95a3">Epoch Automaton over the discrete trajectory of token-generation steps · embraOS-QNM (Classical Approximation)</text>
+  <text x="50" y="136" font-size="16" fill="#e3893c">the first constructed instance — built to hold ψ, checked each step · the first trajectory-valued ψ · can fail today, and does</text>
+
+  <!-- THE ARK -->
+  <rect x="48" y="160" width="1624" height="120" rx="14" fill="#151c28" stroke="#3a4a60" stroke-width="1.4"/>
+  <text x="74" y="200" font-size="24" fill="#e9ebef">THE ARK<tspan dx="12" font-size="16" fill="#8b95a3">— the injection seam</tspan></text>
+  <text x="74" y="231" font-size="15.5" fill="#cdd2da">seals <tspan font-style="italic" fill="#cdb377">C</tspan> (the GNN Fabric over identity + soul, <tspan fill="#cdb377">thin</tspan>) and the null H₀ (bit-identity · <tspan font-family="DejaVu Sans Mono" font-size="14">torch.equal</tspan>-exact) · runs σ_verify as a carried latch m_t at every decode step</text>
+  <text x="74" y="259" font-size="15" fill="#e3893c">the only family that KEEPS the verification gate — realized here as the carried latch  (RETAINED)</text>
+  <g transform="translate(1622,200)">
+    <circle r="17" fill="none" stroke="#e3893c" stroke-width="1.6"/>
+    <path d="M -7.5 0 L -2.5 6.5 L 8.5 -7.5" fill="none" stroke="#e3893c" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- sigma_verify connector -->
+  <text x="520" y="312" font-size="14.5" fill="#8b95a3" text-anchor="middle">σ_verify:   ψ ⟺ m_t == 0</text>
+  <line x1="520" y1="280" x2="520" y2="322" stroke="#3a4a60" stroke-width="1.3"/>
+  <path d="M 520 350 l -5 -9 l 10 0 z" fill="#3a4a60"/>
+
+  <!-- STEP CHAIN -->
+  <rect x="48" y="362" width="252" height="98" rx="12" fill="url(#ember)" stroke="#d9923f" stroke-width="1.6"/>
+  <text x="70" y="396" font-size="19" fill="#fbf4ec">STEP 0</text>
+  <text x="70" y="420" font-size="13.5" font-family="DejaVu Sans Mono" fill="#f3e3d2">s₀ = prompt-end · m = 0</text>
+  <text x="70" y="441" font-size="12.5" fill="#e9cfb4">ψ(s₀) = true · on the null H₀</text>
+
+  <text x="384" y="400" font-size="12" font-family="DejaVu Sans Mono" fill="#8b95a3" text-anchor="middle">δ(s₀,σ₁)</text>
+  <line x1="300" y1="411" x2="462" y2="411" stroke="#5a6675" stroke-width="1.5"/>
+  <path d="M 468 411 l -10 -5 l 0 10 z" fill="#5a6675"/>
+
+  <polygon points="520,360 575,411 520,462 465,411" fill="url(#gatefill)" stroke="#e3893c" stroke-width="1.7"/>
+  <text x="520" y="408" font-size="22" fill="#e3893c" text-anchor="middle">ψ?</text>
+  <text x="520" y="427" font-size="10.5" font-family="DejaVu Sans Mono" fill="#e3893c" text-anchor="middle">m_t == 0 ?</text>
+
+  <g transform="translate(596,404)"><path d="M 0 0 L 5 5 L -3 11" fill="none" stroke="#e3893c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <text x="588" y="399" font-size="12.5" fill="#e3893c">ψ = true</text>
+  <text x="588" y="431" font-size="11.5" fill="#8b95a3">on-C persists</text>
+  <line x1="575" y1="411" x2="694" y2="411" stroke="#5a6675" stroke-width="1.5"/>
+  <path d="M 700 411 l -10 -5 l 0 10 z" fill="#5a6675"/>
+
+  <rect x="700" y="362" width="236" height="98" rx="12" fill="#151c28" stroke="#3a4a60" stroke-width="1.4"/>
+  <text x="722" y="396" font-size="19" fill="#e9ebef">STEP 1</text>
+  <text x="722" y="420" font-size="13.5" font-family="DejaVu Sans Mono" fill="#cdd2da">s₁ = (h₁, m₁)</text>
+  <text x="722" y="441" font-size="12.5" fill="#8b95a3">latch carried forward</text>
+
+  <text x="1000" y="392" font-size="12" font-family="DejaVu Sans Mono" fill="#8b95a3" text-anchor="middle">δ(s₁,σ₂)</text>
+  <line x1="936" y1="411" x2="978" y2="411" stroke="#5a6675" stroke-width="1.5"/>
+  <polygon points="1000,392 1019,411 1000,430 981,411" fill="url(#gatefill)" stroke="#e3893c" stroke-width="1.4"/>
+  <text x="1000" y="416" font-size="11" fill="#e3893c" text-anchor="middle">ψ?</text>
+  <line x1="1019" y1="411" x2="1046" y2="411" stroke="#5a6675" stroke-width="1.5"/>
+  <path d="M 1052 411 l -10 -5 l 0 10 z" fill="#5a6675"/>
+
+  <rect x="1052" y="362" width="248" height="98" rx="12" fill="#151c28" stroke="#3a4a60" stroke-width="1.4"/>
+  <text x="1074" y="396" font-size="19" fill="#e9ebef">STEP 2</text>
+  <text x="1074" y="420" font-size="13.5" font-family="DejaVu Sans Mono" fill="#cdd2da">s₂ = (h₂, m₂)</text>
+  <text x="1074" y="441" font-size="12.5" fill="#8b95a3">… the run continues</text>
+
+  <line x1="1300" y1="411" x2="1430" y2="411" stroke="#5a6675" stroke-width="1.5"/>
+  <path d="M 1436 411 l -10 -5 l 0 10 z" fill="#5a6675"/>
+  <rect x="1442" y="384" width="230" height="54" rx="10" fill="#131a25" stroke="#3a4a60" stroke-width="1.4"/>
+  <text x="1462" y="406" font-size="14" fill="#cdd2da">F — on-C completion</text>
+  <text x="1462" y="425" font-size="11.5" font-family="DejaVu Sans Mono" fill="#8b95a3">m_t == 0 held throughout</text>
+
+  <!-- psi = false branch -->
+  <line x1="520" y1="462" x2="520" y2="498" stroke="#a8512f" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <path d="M 520 504 l -5 -9 l 10 0 z" fill="#a8512f"/>
+  <text x="538" y="487" font-size="12.5" fill="#d4733f">ψ = false</text>
+  <g transform="translate(529,483)"><path d="M -4 -5 L 4 3 M 4 -5 L -4 3" stroke="#d4733f" stroke-width="1.8" stroke-linecap="round"/></g>
+
+  <!-- computed boundary (REGISTER A) -->
+  <rect x="300" y="506" width="566" height="92" rx="12" fill="#151c28" stroke="#3a4a60" stroke-width="1.4"/>
+  <text x="322" y="535" font-size="15.5" fill="#e9ebef">the latch trips:  m_t &gt; 0  ⟹  the on-C epoch ends</text>
+  <text x="322" y="561" font-size="13" fill="#9aa4b2">a reachable, computed boundary — when c_t crosses τ. A new on-C stretch</text>
+  <text x="322" y="580" font-size="13" fill="#9aa4b2">begins only if steered back. Nothing keeps the run on C automatically.</text>
+  <rect x="724" y="518" width="128" height="22" rx="11" fill="none" stroke="#e3893c" stroke-width="1.2"/>
+  <text x="788" y="533" font-size="11.5" fill="#e3893c" text-anchor="middle">computed · real</text>
+
+  <!-- discarded scaffolding (REGISTER C) -->
+  <rect x="892" y="506" width="780" height="92" rx="12" fill="#11151d" stroke="#46566b" stroke-width="1.4" stroke-dasharray="7 4"/>
+  <text x="914" y="533" font-size="14.5" fill="#8b95a3">DISCARDED SCAFFOLDING — FENCED  <tspan font-size="11.5" fill="#69727f">(README §4 · the ideal, not a mechanism)</tspan></text>
+  <text x="914" y="559" font-size="12" fill="#7b8694">confinement-by-construction — QNM's inviolable projection; approximated here, never realized as a mechanism</text>
+  <text x="914" y="579" font-size="12" fill="#7b8694">δ* retrocausal handshake — no backward wave in forward autoregressive decode</text>
+
+  <!-- PER-STEP PIPELINE (REGISTER SHOWCASE A / B) -->
+  <rect x="48" y="620" width="1624" height="170" rx="14" fill="#121821" stroke="#2c384a" stroke-width="1.4"/>
+  <text x="74" y="652" font-size="17" fill="#e9ebef">δ expands, per decode step — the boundary-native pipeline<tspan dx="24" font-size="13" fill="#8b95a3">h_t routed Core → Fabric → World-State at the inject layer</tspan></text>
+
+  <text x="92" y="712" font-size="14" font-family="DejaVu Sans Mono" fill="#9aa4b2">h_t</text>
+  <line x1="120" y1="708" x2="156" y2="708" stroke="#5a6675" stroke-width="1.5"/>
+  <path d="M 162 708 l -10 -5 l 0 10 z" fill="#5a6675"/>
+
+  <rect x="168" y="676" width="236" height="66" rx="10" fill="#151c28" stroke="#3a4a60" stroke-width="1.4"/>
+  <text x="186" y="703" font-size="15" fill="#e9ebef">Core</text>
+  <text x="186" y="724" font-size="12" fill="#8b95a3">Qwen3-8B · frozen</text>
+  <g transform="translate(384,692)"><circle r="11" fill="none" stroke="#e3893c" stroke-width="1.3"/><path d="M -5 0 L -1.5 4 L 5.5 -5" fill="none" stroke="#e3893c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></g>
+
+  <line x1="404" y1="708" x2="440" y2="708" stroke="#5a6675" stroke-width="1.5"/>
+  <path d="M 446 708 l -10 -5 l 0 10 z" fill="#5a6675"/>
+
+  <rect x="452" y="676" width="320" height="66" rx="10" fill="url(#amberHatch)" stroke="#a8893f" stroke-width="1.5"/>
+  <text x="470" y="700" font-size="15" fill="#cdb377">Fabric · <tspan font-style="italic">C</tspan> surface</text>
+  <text x="470" y="721" font-size="12" font-family="DejaVu Sans Mono" fill="#b6a071">c_t = 1 − max cos(h_t, node)</text>
+  <rect x="640" y="684" width="120" height="21" rx="10.5" fill="#1c160c" stroke="#a8893f" stroke-width="1"/>
+  <text x="700" y="699" font-size="10.5" fill="#cdb377" text-anchor="middle">thin · refuted ~0.04</text>
+
+  <line x1="772" y1="708" x2="808" y2="708" stroke="#5a6675" stroke-width="1.5"/>
+  <path d="M 814 708 l -10 -5 l 0 10 z" fill="#5a6675"/>
+
+  <rect x="820" y="664" width="430" height="92" rx="10" fill="#131a25" stroke="#3a4a60" stroke-width="1.4"/>
+  <text x="838" y="685" font-size="14.5" fill="#e9ebef">World-State register</text>
+  <rect x="838" y="694" width="394" height="26" rx="7" fill="#172230" stroke="#3a4a60" stroke-width="1"/>
+  <text x="850" y="711" font-size="12" font-family="DejaVu Sans Mono" fill="#cdd2da">m_t = cummax(relu(c_t − τ))</text>
+  <g transform="translate(1150,707)"><circle r="9" fill="none" stroke="#e3893c" stroke-width="1.2"/><path d="M -4 0 L -1.2 3.3 L 4.5 -4" fill="none" stroke="#e3893c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <text x="1166" y="711" font-size="10" fill="#8b95a3">latch · replica</text>
+  <rect x="838" y="724" width="394" height="26" rx="7" fill="url(#amberHatch)" stroke="#a8893f" stroke-width="1"/>
+  <text x="850" y="741" font-size="12" font-family="DejaVu Sans Mono" fill="#b6a071">P_ψ steer — learned corrective δ</text>
+  <rect x="1120" y="729" width="104" height="18" rx="9" fill="#1c160c" stroke="#a8893f" stroke-width="0.9"/>
+  <text x="1172" y="742" font-size="9.5" fill="#cdb377" text-anchor="middle">gated off · zeros</text>
+
+  <line x1="1250" y1="708" x2="1286" y2="708" stroke="#5a6675" stroke-width="1.5"/>
+  <path d="M 1292 708 l -10 -5 l 0 10 z" fill="#5a6675"/>
+  <text x="1300" y="704" font-size="13.5" font-family="DejaVu Sans Mono" fill="#9aa4b2">h_{t+1},</text>
+  <text x="1300" y="722" font-size="13.5" font-family="DejaVu Sans Mono" fill="#9aa4b2">m_{t+1}</text>
+
+  <text x="74" y="775" font-size="12.5" font-family="DejaVu Sans Mono" fill="#7b8694">recombine:  h_out = h_base + g_f·Fabric(h_base) + g_w·WorldState(h_base, ψ, c)     — zero-init ReZero gates · the null and the mechanism share one op path</text>
+
+  <!-- THE DISCIPLINE -->
+  <rect x="48" y="810" width="1624" height="112" rx="14" fill="url(#discWash)" stroke="#5a4a2c" stroke-width="1.4"/>
+  <rect x="48" y="810" width="1624" height="3" rx="1.5" fill="#e3893c" opacity="0.55"/>
+  <text x="74" y="846" font-size="20" fill="#e9ebef">THE GATE CAUGHT THE HOLLOW ψ<tspan dx="14" font-size="14" fill="#8b95a3">— the proof is an honest failure the discipline produced, not a claimed success</tspan></text>
+  <text x="74" y="874" font-size="14" fill="#bcc4cf">Pushed to a real surface, the replica test found <tspan font-style="italic" fill="#cdb377">C</tspan> carries only ~0.04 of signal — and the framework <tspan fill="#e3893c">refused to certify it</tspan>: the World-State stayed a literal null. Nothing overclaimed.</text>
+  <text x="74" y="898" font-size="14" fill="#bcc4cf">The refusal relocated the bottleneck to the substrate — a frozen instruct Core carries "Qwen + RLHF, not Embra." A framework that can only confirm itself is a name; one whose own test turns back a candidate it wanted <tspan fill="#e3893c">is a tool</tspan>.</text>
+
+  <!-- MEMORY / RECORD -->
+  <rect x="48" y="942" width="1624" height="92" rx="14" fill="#151c28" stroke="#3a4a60" stroke-width="1.4"/>
+  <text x="74" y="975" font-size="20" fill="#e9ebef">MEMORY / RECORD  M<tspan dx="12" font-size="15" fill="#8b95a3">— the run  s₀ → s₁ → …  plus the carried ψ-register</tspan></text>
+  <text x="74" y="1004" font-size="13.5" font-family="DejaVu Sans Mono" fill="#9aa4b2">[ (s₀,σ₁,s₁), (s₁,σ₂,s₂), … ]  ·  the latch m_t persisted across KV-cached decode steps (gated token-identical to the no-cache oracle)</text>
+  <rect x="1556" y="954" width="98" height="24" rx="12" fill="none" stroke="#e3893c" stroke-width="1.2"/>
+  <text x="1605" y="971" font-size="12" fill="#e3893c" text-anchor="middle">LITERAL</text>
+
+  <line x1="860" y1="1140" x2="860" y2="1040" stroke="#5a6675" stroke-width="1.5"/>
+  <path d="M 860 1034 l -5 9 l 10 0 z" fill="#5a6675"/>
+  <text x="876" y="1090" font-size="12.5" fill="#8b95a3">queries (read-only)</text>
+
+  <!-- THE STEWARD -->
+  <rect x="560" y="1142" width="600" height="92" rx="14" fill="#151c28" stroke="#3a4a60" stroke-width="1.4"/>
+  <text x="586" y="1175" font-size="20" fill="#e9ebef">THE STEWARD<tspan dx="12" font-size="14" fill="#8b95a3">— replica-test auditor</tspan></text>
+  <text x="586" y="1204" font-size="13.5" fill="#9aa4b2">∉ S  ·  replays M  ·  re-runs the replica test  ·  re-verifies ψ  ·  does not drive δ</text>
+  <rect x="1046" y="1154" width="98" height="24" rx="12" fill="none" stroke="#e3893c" stroke-width="1.2"/>
+  <text x="1095" y="1171" font-size="12" fill="#e3893c" text-anchor="middle">LITERAL</text>
+
+  <!-- LEGEND -->
+  <line x1="48" y1="1272" x2="1672" y2="1272" stroke="#283142" stroke-width="1.2"/>
+
+  <rect x="48" y="1290" width="22" height="15" rx="3" fill="#151c28" stroke="#3a4a60" stroke-width="1.3"/>
+  <text x="78" y="1302" font-size="12.5" fill="#9aa4b2">solid = tested &amp; holding  (H₀ · latch · seam · Memory · Steward)</text>
+
+  <rect x="556" y="1290" width="22" height="15" rx="3" fill="url(#amberHatch)" stroke="#a8893f" stroke-width="1.3"/>
+  <text x="586" y="1302" font-size="12.5" fill="#9aa4b2">amber = built · not yet validated  (<tspan font-style="italic" fill="#cdb377">C</tspan> thin ~0.04 · P_ψ gated off)</text>
+
+  <rect x="1086" y="1290" width="22" height="15" rx="3" fill="#11151d" stroke="#46566b" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="1116" y="1302" font-size="12.5" fill="#9aa4b2">dashed = scaffolding / ideal  (confinement · δ*) — fenced</text>
+
+  <text x="48" y="1332" font-size="12.5" fill="#7b8694">Forward-directed by design; δ* deliberately omitted.  The first derivation whose ψ is <tspan fill="#9aa4b2">trajectory-valued</tspan> (ψ: Runs(S) → {true, false}), realized by the carried latch — passes the replica test at the register level.</text>
+  <text x="48" y="1358" font-size="12.5" fill="#7b8694">How ψ is held across the family:  CONSERVE (SOL) · PROJECT (QNM) · SELECT (MWA) · CHECK (DeepSeek, pointwise)  →  <tspan fill="#e3893c">CHECK + trajectory-valued ψ (here)</tspan>.</text>
+  <text x="48" y="1384" font-size="12.5" fill="#7b8694">embraOS-QNM v0.2.0 (June 2026) · architecture wired end-to-end · ψ₀ register-level replica green; Core-level refuted on a frozen instruct Core (base-Core next). Verify any depended-upon number against the primary docs/ findings.</text>
+</svg>

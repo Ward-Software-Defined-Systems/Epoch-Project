@@ -6,9 +6,11 @@
 
 ## Overview
 
-The Quantum Neural Manifold (QNM) is a boundary-native AI architecture where **identity** and **soul** are embedded as **neural constraints** within the model's structure, rather than applied as external "software" filters. It is on of many continuous-manifold derivations of the Epoch Automaton — the same boundary-condition framework, implemented at the neural/quantum substrate rather than at the operating-system layer.
+The Quantum Neural Manifold (QNM) is a boundary-native AI architecture where **identity** and **soul** are embedded as **neural constraints** within the model's structure, rather than applied as external "software" filters. It is one of many continuous-manifold derivations of the Epoch Automaton — the same boundary-condition framework, implemented at the neural/quantum substrate rather than at the operating-system layer.
 
 Where embraOS defines the **soul** as a sealed document verified at each boot, QNM encodes the **soul** invariant ψ directly into the neural pathways of the system — at the level of weights, connections, or quantum states. The boundary condition is not *checked*; it is **inherent**.
+
+> **Its operational shadow — the Classical Approximation.** This file is the *speculative* continuous ideal: ψ is **inherent** (the projection `P_ψ`), nothing is checked, and nothing is built — so it **cannot fail**. Its buildable counterpart on **classical hardware**, where `P_ψ` is approximated by a *checked* carried latch (`σ_verify` **retained**), is a separate **discrete / operational** derivation — [embraOS-QNM (Classical Approximation): The Constructed Epoch](../Discrete_Derivations/embraOS-QNM-Classical_Epoch-Formula.md) (`README.md` §9; legend §15). That one is **built and can fail** — and currently fails honestly, its constraint surface still thin; **this** continuous formulation stays *theoretical* (see *Current Status*).
 
 ## Relationship to the Epoch Automaton
 
@@ -184,4 +186,5 @@ it.*
 ## References
 
 - `README.md` — Formal Epoch definition and state-machine framework
+- [`embraOS-QNM (Classical Approximation)`](../Discrete_Derivations/embraOS-QNM-Classical_Epoch-Formula.md) — the **discrete / operational** Classical Approximation of this continuous ideal: `P_ψ` becomes a *checked* carried latch (`σ_verify` retained), a constructed instance that can fail (`README.md` §9, legend §15)
 - Peng & Li (2026), "High-Accuracy Temporal Prediction via Experimental Quantum Reservoir Computing in Correlated Spins," *Physical Review Letters* 136, 120602
