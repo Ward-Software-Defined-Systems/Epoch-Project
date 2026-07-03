@@ -22,6 +22,10 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20651796.svg)](https://doi.org/10.5281/zenodo.20651796)
 
+> **New here?** The plain-language **[High-Level Explanation](./EPOCH-HIGH-LEVEL-EXPLANATION.md)**
+> is the gentlest on-ramp — what an epoch is, and why an *operative* boundary matters — before the
+> formalism. That document is the *why*; this one is the *how*.
+>
 > **Start here — the live problem.** The framework is built to **pass or fail**, and the invariant
 > **ψ** is where that happens. To reason seriously about it, begin with
 > **[Defining the Invariant ψ](./EPOCH-DEFINING-THE-INVARIANT.md)** — the central open problem and
