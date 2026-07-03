@@ -20,8 +20,8 @@ authors:
 repository-code: "https://github.com/Ward-Software-Defined-Systems/Epoch-Project"
 url: "https://github.com/Ward-Software-Defined-Systems/Epoch-Project"
 license: MIT
-version: "1.2.0"
-date-released: 2026-06-27
+version: "1.3.0"
+date-released: 2026-07-03
 doi: 10.5281/zenodo.20651796
 identifiers:
   - type: doi
