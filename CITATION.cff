@@ -27,6 +27,9 @@ identifiers:
   - type: doi
     value: 10.5281/zenodo.20651796
     description: "Concept DOI — resolves to the latest version (all releases)."
+  - type: url
+    value: "https://gitlab.ops.wsds/math_comp_sci/Epoch-Project"
+    description: "Canonical repository (internal GitLab); the GitHub repository is the public mirror."
 keywords:
   - epoch
   - invariant

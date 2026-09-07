@@ -442,7 +442,8 @@ of truth). This derivation tracks embraOS-QNM as it advances — new milestones 
   the Classical Approximation of (keep its *speculative* status; this grounds, not promotes, it)
 - `Discrete_Derivations/DeepSeek-V4-Pro_Epoch-Formula.md` — the sibling discrete derivation (pointwise
   `ψ`, `σ_verify` retained); this one goes further by making `ψ` trajectory-valued
-- **embraOS-QNM** repository — `https://github.com/Ward-Software-Defined-Systems/embraOS-QNM`
+- **embraOS-QNM** repository — canonical `https://gitlab.ops.wsds/embraOS/embraOS-QNM` (internal GitLab);
+  public mirror `https://github.com/Ward-Software-Defined-Systems/embraOS-QNM`
   - `ARCHITECTURE.md` — the three components, the seam, the bit-identity invariant, the iteration log
   - `docs/EPOCH-INVARIANT-GROUNDING.md` — the bar (a name vs a tool; the replica test)
   - `docs/PSI-OPERATIONAL-GROUNDING.md` — `ψ₀`, the World-State contract, the replica-test harness
@@ -455,6 +456,7 @@ Notes:
   findings are current as of the milestone log above — verify any depended-upon number against the
   primary `docs/` findings before building on it.
 - The constraint-surface glyph `𝒞` is an astral-plane (SMP) character: it appears in prose and
-  alt-text but is rendered as a plain ASCII `C` inside the ASCII diagram, for GitHub-safe width (see
+  alt-text but is rendered as a plain ASCII `C` inside the ASCII diagram, for renderer-safe width-1
+  alignment (GitLab and GitHub; see
   `EPOCH-NOTATION-LEGEND.md` §15.3 diagram conventions).
 </content>
