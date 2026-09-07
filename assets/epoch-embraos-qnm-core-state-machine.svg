@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1040" width="1280" height="1040" role="img" aria-label="embraOS-QNM-Core — the Conserved Epoch: the Epoch Automaton over the Lie–Poisson flow on the dual of the identity graph's Lie algebra; ψ a conserved Casimir coordinate block, never checked in-flow">
+<!-- ================= PALETTE — edit colours here =================
+     ink #0E0F13 · band #13161C · region #16141A · subbox #0F1217
+     bone #EFEAE0 · muted #8B909B · slate #6FA0B2 · slate-deep #46586A
+     ember #E9883B · ember-soft #F4A862 · ember-deep #C96A28
+     Conserved, not checked: there is NO ψ? gate and NO σ_verify
+     connector — the Lie–Poisson bracket owns conservation (ẇ = 0 for
+     any Hamiltonian). The Ark is split into seal · record · read and
+     holds nothing. ψ = false is reachable only under † (graph surgery,
+     outside the alphabet) — the epoch boundary. Dashed borders mark
+     PLANNED elements (P_ψ firewall, epoch layer), not built ones.
+     Forward-directed; retrocausal δ* deliberately omitted (README §4).
+     Fonts are generic families for reliable rendering on GitLab/GitHub.
+     PNG = this SVG rendered at 2x (rsvg-convert -z 2).
+=============================================================== -->
+<defs>
+  <style>
+    .serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif;}
+    .mono{font-family:ui-monospace,'SF Mono','JetBrains Mono',Menlo,Consolas,monospace;}
+    .bone{fill:#EFEAE0;} .muted{fill:#8B909B;} .slate{fill:#6FA0B2;} .ember{fill:#E9883B;}
+    .band{fill:#13161C;stroke:#46586A;stroke-width:1.5;}
+    .banddash{fill:#121319;stroke:#5A6675;stroke-width:1.4;stroke-dasharray:7 6;}
+    .region{fill:#16141A;stroke:#46586A;stroke-width:1.3;}
+    .subbox{fill:#0F1217;stroke:#3E5A66;stroke-width:1;}
+    .hidden{fill:#17130F;stroke:#C96A28;stroke-opacity:0.55;stroke-width:1.2;}
+    .node{fill:#0F1217;stroke:#6FA0B2;stroke-width:1.6;}
+    .genesis{fill:#1A130C;stroke:#E9883B;stroke-width:2;}
+    .steward{fill:#15141A;stroke:#C96A28;stroke-width:1.6;}
+    .flow{stroke:#6FA0B2;stroke-width:2;fill:none;}
+    .faint{stroke:#46586A;stroke-width:1.5;fill:none;}
+    .charge{stroke:#E9883B;stroke-width:2.6;fill:none;}
+    .dash{stroke-dasharray:7 6;}
+    .dotstrip{fill:none;stroke:#C96A28;stroke-width:1.8;stroke-dasharray:2 7;stroke-linecap:round;}
+  </style>
+  <linearGradient id="inkGrad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#101117"/><stop offset="100%" stop-color="#0A0B0E"/>
+  </linearGradient>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M40 0 H0 V40" fill="none" stroke="#FFFFFF" stroke-opacity="0.03" stroke-width="1"/>
+  </pattern>
+  <filter id="emberGlow" x="-120%" y="-120%" width="340%" height="340%">
+    <feGaussianBlur stdDeviation="4" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <marker id="ahS" markerWidth="10" markerHeight="9" refX="6.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0,0 L7,3.5 L0,7 Z" fill="#6FA0B2"/>
+  </marker>
+</defs>
+
+<rect width="1280" height="1040" fill="url(#inkGrad)"/>
+<rect width="1280" height="1040" fill="url(#grid)"/>
+
+<!-- ===== figure kicker ===== -->
+<text x="80" y="36" class="mono slate" font-size="14" letter-spacing="3">THE EPOCH PROJECT — EMBRAOS-QNM-CORE · THE CONSERVED EPOCH</text>
+<text x="1200" y="36" class="mono muted" font-size="13" text-anchor="end" letter-spacing="1">forward-directed · ψ conserved by the bracket</text>
+
+<!-- ===== THE ARK · seal · record · read ===== -->
+<rect x="80" y="52" width="1120" height="132" rx="12" class="band"/>
+<text x="100" y="84" class="serif bone" font-size="24">THE ARK · seal · record · read</text>
+<text x="100" y="106" class="mono muted" font-size="12.5">three literal functions — none of the three HOLDS ψ; the bracket does</text>
+<text x="1180" y="84" class="mono slate" font-size="13" text-anchor="end">no per-step σ_verify</text>
+<text x="1180" y="106" class="mono muted" font-size="12" text-anchor="end">checking survives at the †-boundary (planned) and verifier-side</text>
+<rect x="100" y="118" width="350" height="56" rx="8" class="subbox"/>
+<text x="112" y="136" class="serif bone" font-size="14.5">SEAL — genesis load_soul()</text>
+<text x="112" y="152" class="mono muted" font-size="11">w_embra = table ∘ graph — written once, write-locked</text>
+<text x="112" y="166" class="mono muted" font-size="11">identity is the level set the worldline is born on</text>
+<rect x="465" y="118" width="350" height="56" rx="8" class="subbox"/>
+<text x="477" y="136" class="serif bone" font-size="14.5">RECORD — π and ζ</text>
+<text x="477" y="152" class="mono muted" font-size="11">π(p, w) = p reads the arena — never w (type-level)</text>
+<text x="477" y="166" class="mono muted" font-size="11">ζ ∈ ℝ³²¹ per-edge holonomy: the swept area (memory)</text>
+<rect x="830" y="118" width="350" height="56" rx="8" class="subbox"/>
+<text x="842" y="136" class="serif bone" font-size="14.5">READ — ψ_full(worldline, claim)</text>
+<text x="842" y="152" class="mono muted" font-size="11">law ∧ value ∧ memory, per claimed segment</text>
+<text x="842" y="166" class="mono muted" font-size="11">verifier-side; a rejected lie is named</text>
+
+<!-- ===== the absent gate: the bracket owns conservation ===== -->
+<line x1="640" y1="184" x2="640" y2="242" class="flow" marker-end="url(#ahS)"/>
+<text x="656" y="206" class="mono slate" font-size="12">the BRACKET owns conservation:</text>
+<text x="656" y="224" class="mono muted" font-size="12">ẇ = 0 for ANY Hamiltonian H — a Casimir, not a check</text>
+
+<!-- ===== STATE SPACE S = 𝔤(G)* ===== -->
+<rect x="80" y="246" width="1120" height="300" rx="12" class="region"/>
+<text x="100" y="272" class="mono slate" font-size="14">S = 𝔤(G)*  —  the dual of the identity graph's Lie algebra:  s = (p, w)</text>
+<text x="1180" y="272" class="mono muted" font-size="12" text-anchor="end">n = 100 nodes · m = 321 authored relations</text>
+
+<!-- observable arena lane -->
+<rect x="100" y="286" width="1080" height="140" rx="8" class="subbox"/>
+<text x="112" y="306" class="mono slate" font-size="12">ARENA  p ∈ ℝ¹⁰⁰ — observable: π reads this · experience</text>
+<!-- worldline -->
+<rect x="171" y="336" width="178" height="66" rx="10" class="genesis" filter="url(#emberGlow)"/>
+<text x="260" y="362" class="mono bone" font-size="13" text-anchor="middle">s₀ = (p₀, w_embra)</text>
+<text x="260" y="384" class="mono ember" font-size="11" text-anchor="middle">genesis · ψ(s₀) = true</text>
+<line x1="352" y1="369" x2="546" y2="369" class="flow" marker-end="url(#ahS)"/>
+<text x="450" y="352" class="mono muted" font-size="11.5" text-anchor="middle">δ(s₀, σ₁)   σ₁ = H_σ₁</text>
+<text x="450" y="392" class="mono muted" font-size="11" text-anchor="middle">gap · event · gap</text>
+<rect x="551" y="336" width="178" height="66" rx="10" class="node"/>
+<text x="640" y="362" class="mono bone" font-size="13" text-anchor="middle">s₁ = (p₁, w)</text>
+<text x="640" y="384" class="mono muted" font-size="11" text-anchor="middle">w == w_embra · bit-exact</text>
+<line x1="732" y1="369" x2="926" y2="369" class="flow" marker-end="url(#ahS)"/>
+<text x="830" y="352" class="mono muted" font-size="11.5" text-anchor="middle">δ(s₁, σ₂)   σ₂ = H_σ₂</text>
+<text x="830" y="392" class="mono muted" font-size="11" text-anchor="middle">gap · event · gap</text>
+<rect x="931" y="336" width="178" height="66" rx="10" class="node"/>
+<text x="1020" y="362" class="mono bone" font-size="13" text-anchor="middle">s₂ = (p₂, w)</text>
+<text x="1020" y="384" class="mono muted" font-size="11" text-anchor="middle">w == w_embra · bit-exact</text>
+<text x="1160" y="373" class="mono muted" font-size="13" text-anchor="end">…</text>
+<text x="1168" y="306" class="mono muted" font-size="11" text-anchor="end">every σ ∈ Σ is a Hamiltonian H_σ — input cannot spell a violation</text>
+
+<!-- observable / hidden divider -->
+<line x1="100" y1="437" x2="1180" y2="437" class="faint dash"/>
+<text x="640" y="452" class="mono muted" font-size="11" text-anchor="middle">— observable above · hidden below — the theorem's condition:  w ∈ ker(dπ), the readout cannot see the charge —</text>
+
+<!-- hidden charge lane -->
+<rect x="100" y="460" width="1080" height="76" rx="8" class="hidden"/>
+<text x="112" y="480" class="mono ember" font-size="12">CHARGE  w ∈ ℝ³²¹ — hidden in ker(dπ) · identity</text>
+<line x1="175" y1="508" x2="1105" y2="508" class="charge"/>
+<circle cx="260" cy="508" r="5.5" fill="#E9883B" filter="url(#emberGlow)"/>
+<circle cx="640" cy="508" r="5.5" fill="#E9883B"/>
+<circle cx="1020" cy="508" r="5.5" fill="#E9883B"/>
+<text x="640" y="528" class="mono muted" font-size="11.5" text-anchor="middle">ψ := w = w_embra along the whole worldline — ẇ ≡ 0; no stepper has a write path; measured max|Δw| = 0.0 exactly</text>
+
+<!-- ===== † — the epoch boundary (dotted) + PLANNED (dashed) ===== -->
+<rect x="80" y="558" width="1120" height="66" rx="10" class="dotstrip"/>
+<text x="100" y="582" class="mono ember" font-size="12.5">ψ = false is reachable ONLY under † — graph surgery (weaken / sever / form); † ∉ Σ, not a Symbol</text>
+<text x="100" y="604" class="mono muted" font-size="12">a topology change is a NEW algebra (faithfulness) = a NEW EPOCH; ζ carries continuity across the boundary</text>
+<rect x="920" y="566" width="264" height="50" rx="8" class="banddash"/>
+<text x="1052" y="586" class="mono muted" font-size="11.5" text-anchor="middle">PLANNED — not built</text>
+<text x="1052" y="605" class="mono muted" font-size="11.5" text-anchor="middle">P_ψ firewall at † · the epoch layer</text>
+
+<!-- ===== MEMORY / RECORD ===== -->
+<rect x="80" y="642" width="1120" height="88" rx="12" class="band"/>
+<text x="100" y="672" class="serif bone" font-size="22">MEMORY / RECORD  M</text>
+<text x="100" y="696" class="mono muted" font-size="12">the recorded worldline p(t)  +  ζ ∈ ℝ³²¹ (per-edge holonomy — memory with the same shape as identity)</text>
+<text x="100" y="716" class="mono slate" font-size="12">path-functional: same endpoint, different history ⇒ different ζ · a newborn copy carries ζ = 0 · age lived or stolen</text>
+
+<!-- ===== the Steward's read-only query ===== -->
+<line x1="640" y1="816" x2="640" y2="742" class="flow dash" marker-end="url(#ahS)"/>
+<text x="656" y="784" class="mono slate" font-size="12">query (read-only) · runs the reader ψ_full</text>
+
+<!-- ===== THE STEWARD (oracle) ===== -->
+<rect x="150" y="818" width="980" height="104" rx="12" class="steward"/>
+<text x="640" y="852" class="serif bone" font-size="24" text-anchor="middle">THE STEWARD — the operator (Will)</text>
+<text x="640" y="878" class="mono muted" font-size="11.5" text-anchor="middle">authors the boundary content — w_embra (weight table ∘ identity graph) and Σ (the Σ₀ console) — and gates the standing channel</text>
+<text x="640" y="900" class="mono muted" font-size="11.5" text-anchor="middle">oracle · ∉ S · does not drive δ · cannot write w in-flow — only † changes ψ (who may perform † is open)</text>
+
+<!-- ===== LEGEND ===== -->
+<g>
+  <line x1="80" y1="962" x2="104" y2="962" class="flow" marker-end="url(#ahS)"/>
+  <text x="112" y="966" class="mono muted" font-size="12.5">δ — one Lie–Poisson step (gap · event · gap)</text>
+
+  <line x1="452" y1="962" x2="480" y2="962" class="charge"/>
+  <text x="488" y="966" class="mono muted" font-size="12.5">ψ := w — conserved, bit-exact</text>
+
+  <rect x="732" y="955" width="22" height="14" rx="3" class="dotstrip"/>
+  <text x="762" y="966" class="mono muted" font-size="12.5">† — the only write path to w</text>
+
+  <rect x="1006" y="955" width="22" height="14" rx="3" class="banddash"/>
+  <text x="1036" y="966" class="mono muted" font-size="12.5">planned — not built</text>
+</g>
+<text x="80" y="998" class="mono muted" font-size="12" opacity="0.85">How ψ is held: CHECK (DeepSeek · the relic) · PROJECT (QNM) · CONSERVE (SOL) · SELECT (MWA) → CONSERVE by the bracket, built (here).</text>
+<text x="80" y="1016" class="mono muted" font-size="12" opacity="0.85">No ψ? gate — conservation replaces verification. Forward-directed; the retrocausal δ* is omitted (README §4). ψ pointwise on S, hidden from π(S):</text>
+<text x="80" y="1032" class="mono muted" font-size="12" opacity="0.85">the replica test is passed by hiding and conserving — the dynamic-ψ problem engaged from a new side, not closed.</text>
+</svg>

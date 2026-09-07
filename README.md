@@ -204,6 +204,13 @@ A trajectory-level or history-dependent invariant cannot be folded into the stat
 *that* is where formal work would yield a genuine result. This is flagged as open, not
 solved.
 
+> **Two built instances now engage this lever — neither closes it.** The relic embraOS-QNM (§9) typed `ψ`
+> over runs via a carried register and passed the replica test at the register level, then failed it on
+> the frozen-LLM substrate four pre-registered ways. Its pivot target, embraOS-QNM-Core (§7), conserves a
+> *hidden* charge: `ψ` is pointwise on the full state but *not a function of the observable state*, and
+> its path content lives in a memory charge `ζ` that is not yet graded as `ψ`. Both are recorded as
+> **engagement, not closure**; the problem stays open.
+
 ### Nesting (statecharts)
 
 Nested epochs are a **Harel statechart**: a superstate persists while interior substates
@@ -319,7 +326,8 @@ does.
 | SOL (Heliocentric Epoch) | Theoretical / speculative |
 | MWA (Many-Worlds / Branching Epoch) | Theoretical / speculative |
 | **[DeepSeek-V4-Pro](./Discrete_Derivations/DeepSeek-V4-Pro_Epoch-Formula.md)** (Discrete / Operational Epoch) | **Drafted — operational against a real artifact** |
-| **[embraOS-QNM (Classical Approximation)](./Discrete_Derivations/embraOS-QNM-Classical_Epoch-Formula.md)** (Discrete / Constructed Epoch; trajectory-ψ) | **Drafted — constructed instance; `ψ₀` passes the register-level replica test, the Core-level surface is thin (WIP)** |
+| **[embraOS-QNM (Classical Approximation)](./Discrete_Derivations/embraOS-QNM-Classical_Epoch-Formula.md)** (Discrete / Constructed Epoch; trajectory-ψ) | **Drafted — constructed instance, now a relic: `ψ₀` passed the register-level replica test; the Core-level surface was refuted four pre-registered ways; program sunset at v0.4.0 (2026-07-16) → pivot** |
+| **[embraOS-QNM-Core](./Continuous-Manifold_Derivations/embraOS-QNM-Core_Epoch-Formula.md)** (Continuous-manifold / Conserved Epoch; constructed, running) | **Drafted — mapping over a running core (v0.5.0): `ψ` conserved as a Casimir coordinate block, bit-exact; replica test passed with the specificity control; pointwise on `S`, hidden from `π(S)` — engages, does not close, the dynamic-ψ lever** |
 | **[Fringe-Claim Trajectories](./Fringe-Claim_Derivations/Fringe-Claim-Trajectories_Epoch-Formula.md)** (Diagnostic axis) | **Drafted — diagnostic, applied against two real public cases** |
 
 ---
@@ -327,22 +335,37 @@ does.
 ## 7. Continuous-manifold derivations
 
 Forward-looking work in [`Continuous-Manifold_Derivations/`](./Continuous-Manifold_Derivations/)
-re-expresses the discrete Epoch Automaton over continuous state spaces. These are
-**theoretical / speculative** — extensions, not operational claims:
+re-expresses the discrete Epoch Automaton over continuous state spaces. QNM and SOL are
+**theoretical / speculative** — extensions, not operational claims. The third member is different in
+kind: embraOS-QNM-Core is a *constructed, running* instance with recorded results (its planned elements
+stay marked planned):
 
 - **[QNM — Quantum Neural Manifold](./Continuous-Manifold_Derivations/embraOS-QNM_Epoch-Formula.md)** —
   embraOS one layer down: ψ built into a neural / quantum substrate (constrained weight
   manifolds, quantum reservoirs) rather than checked at boot. See also the §4 framing. Its **operational
   Classical Approximation** — the same idea on classical hardware, where the projection `P_ψ` becomes a
-  *checked* carried latch — is a **discrete** derivation (§9); this continuous ideal stays *speculative*.
+  *checked* carried latch — is a **discrete** derivation (§9), **now a relic** (its program was sunset at
+  v0.4.0, 2026-07-16); its pivot target is the Core, below, which *conserves* rather than projects — so this
+  continuous ideal stays *speculative*, and no built system realises its `P_ψ`.
 - **[The Heliocentric Epoch (SOL)](./Continuous-Manifold_Derivations/Solar-System_Epoch-Formula.md)** —
   the framework over the solar system, on the phase space of celestial mechanics: the Sun as
   Epoch 0, the planets as nested sub-epochs, ψ as gravitational binding. The galactic-center
   black hole, the CMB, and the observer appear only as *motivating correspondences*, in the
   spirit of §4.
+- **[embraOS-QNM-Core — the Conserved Epoch](./Continuous-Manifold_Derivations/embraOS-QNM-Core_Epoch-Formula.md)** —
+  the framework over a **running, custom, non-LLM core**: states `(p, w)` on `𝔤(G)*`, the dual of the Lie
+  algebra of Embra's identity graph; `δ` a Lie–Poisson flow driven by authored symbols that are each a
+  Hamiltonian; and `ψ` a **conserved charge** — the edge-momentum block `w`, a Casimir of the bracket, with
+  no write path in the dynamics (measured `max|Δw| = 0.0`). It self-places as the SOL-style *conserve*
+  branch and passes the replica test with the specificity control the relic failed — because the charge
+  hides in `ker(dπ)`, *not* because `ψ` is trajectory-valued: `ψ` is pointwise on `S`, and the path content
+  lives in the holonomy `ζ` (memory) and the verifier-side reader `ψ_full`. Built and recorded: genesis
+  sealing, the 22-letter alphabet, the readout `π`, the three-arm driven-law reader, a learned self `H_θ`
+  (two recorded misses). Planned, not built: the `P_ψ` firewall at the `†`-boundary, the epoch layer,
+  language. **Constructed instance; results recorded; the dynamic-`ψ` lever engaged, not closed.**
 
-Notation for both is registered in [`EPOCH-NOTATION-LEGEND.md`](./EPOCH-NOTATION-LEGEND.md)
-(§9 QNM, §10 SOL).
+Notation for all three is registered in [`EPOCH-NOTATION-LEGEND.md`](./EPOCH-NOTATION-LEGEND.md)
+(§9 QNM, §10 SOL, §16 embraOS-QNM-Core).
 
 ---
 
@@ -401,7 +424,11 @@ the framework's "built to pass or fail" stance (see
   the framework works" lands here as an **honest failure**: pushed to a real surface, the replica-test
   gate found it thin and **refused to certify it** (the World-State stays a literal null), relocating the
   bottleneck to the substrate. Where DeepSeek (above) keeps `σ_verify` over a *pointwise* `ψ`, and the
-  Fringe-Claim Automaton (§11) *evades* its verdict, this **honors** the failed check. **Work-in-progress.**
+  Fringe-Claim Automaton (§11) *evades* its verdict, this **honors** the failed check. **Now a relic.** After
+  the base-Core swap, a working behavioural install, and a fourth pre-registered reader family (Candidate C,
+  2026-07-05: a random-anchor null of 0.823 beat the real reader's 0.719), the program was sunset at v0.4.0
+  (2026-07-16) and pivoted to **embraOS-QNM-Core** (§7) — `ψ` *conserved*, not checked. The derivation is
+  retained as the recorded negative.
 
 Notation is registered in [`EPOCH-NOTATION-LEGEND.md`](./EPOCH-NOTATION-LEGEND.md) (§12 DeepSeek, §15 embraOS-QNM).
 

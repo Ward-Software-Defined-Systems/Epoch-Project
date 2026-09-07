@@ -309,6 +309,9 @@ celestial mechanics alone, with or without them.
 - `README.md` — Formal Epoch definition and state-machine framework (and §4, the fenced
   motivating metaphors invoked above)
 - `EPOCH-NOTATION-LEGEND.md` §10 — the SOL notation registered for this derivation
+- `Continuous-Manifold_Derivations/embraOS-QNM-Core_Epoch-Formula.md` — a *constructed*, running
+  conserved-`ψ` instance that self-places beside SOL (it conserves a Casimir of a bracket, so its invariant
+  survives input where energy conservation would not); SOL's own status is unchanged
 - Kolmogorov (1954), Arnold (1963), Moser (1962) — the KAM theorem (persistence of
   quasi-periodic invariant tori under small Hamiltonian perturbation)
 - Laskar, J. & Gastineau, M. (2009), "Existence of collisional trajectories of Mercury, Mars and

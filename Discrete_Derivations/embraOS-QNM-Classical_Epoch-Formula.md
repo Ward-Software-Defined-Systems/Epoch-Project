@@ -14,6 +14,11 @@
 > keeps the two scaffolding elements it can only approximate — geometric *confinement-by-construction*
 > and `δ*` — fenced in the spirit of `README.md` §4. **None of the discarded material is claimed as a
 > mechanism.**
+> **Status (2026-07-16): a relic.** embraOS-QNM was sunset at v0.4.0 after a fourth pre-registered reader
+> family (Candidate C) also returned generic; this derivation is retained as the **recorded negative**. Its
+> pivot target is **embraOS-QNM-Core** —
+> [`../Continuous-Manifold_Derivations/embraOS-QNM-Core_Epoch-Formula.md`](../Continuous-Manifold_Derivations/embraOS-QNM-Core_Epoch-Formula.md)
+> (`README.md` §7; legend §16) — where `ψ` is *conserved*, not checked.
 
 <p align="center">
   <img src="../assets/epoch-embraos-qnm-classical-state-machine.png" alt="embraOS-QNM (Classical Approximation) Constructed Epoch state-machine: THE ARK is the injection seam — it seals the constraint surface 𝒞 (the GNN Fabric over Embra's identity-and-soul graph) and the bit-identity null H₀, and runs σ_verify as a carried violation latch m_t = cummax(relu(c_t − τ)) at every decode step (the only family that KEEPS the verification gate, here realized as the latch); discrete states s₀ (the prompt-end, latch m=0, sitting on the bit-identity null) → s₁ → s₂ advance under decode events σ, each step routing the residual h_t through Core → Fabric (emits the per-step signal c_t) → World-State (updates the latch m_t and emits a learned, latch-gated P_ψ correction); ψ holds along the run iff m_t == 0 — a genuinely trajectory-dependent invariant, the first in the project, that passes the replica test at the register level; when c_t crosses τ the latch trips, ψ = false, a real computed boundary; DISCIPLINE — the World-State stays a literal zeros_like null until ψ passes the replica test, so the framework refuses to certify a thin Core-level surface rather than overclaim; MEMORY is the run s₀→s₁→… plus the carried ψ-register, persisted across KV-cached decode steps; THE STEWARD is a replica-test auditor and κ-validated judge outside S that replays the run and re-runs the replica test but never drives δ." width="100%">
@@ -25,7 +30,8 @@ The Constructed Epoch is the Epoch Automaton read over a **real, built AI archit
 embraOS-QNM, the *Quantum Neural Manifold (Classical Approximation)*. It is the second of the
 **discrete** derivations and the project's first **constructed instance**: where DeepSeek seals and
 transforms an artifact, this one is *built so that its generation dynamics are meant to hold `ψ`* — and
-is therefore the one derivation that can fail **observably, today**, and currently **does**.
+is therefore the one derivation that can fail **observably, today** — and, on the frozen-LLM substrate, it
+**did**, four pre-registered ways (*Current Status*).
 
 That difference is the whole point. `EPOCH-DEFINING-THE-INVARIANT.md` draws the line: *re-descriptions*
 (SOL, MWA) map the framework onto systems that already run and **cannot fail**; *constructed instances*
@@ -62,6 +68,16 @@ Embra" — confirming the project's founding premise (a prompt-layer soul is a c
 mechanism*, and pointing at the next experiment (a *base* Core). A framework that can only confirm itself
 is a name; one whose own test can turn back a candidate it wanted to accept is a tool. This is the tool
 working.
+
+**Where this went (2026-07-16).** The base Core was swapped in, the behavioural install worked, and a
+fourth pre-registered reader family — Candidate C, the ψ self-consistency replica test — returned generic
+like the three before it. The program was sunset at v0.4.0 as *the completed experimental record*, and the
+work pivoted to a custom, non-LLM substrate: **embraOS-QNM-Core**, whose derivation
+(`../Continuous-Manifold_Derivations/embraOS-QNM-Core_Epoch-Formula.md`) begins where this one ends. What
+carried forward, per the relic's own log: the replica-pair harness, the `ψ₀` latch and register machinery
+with its tests, the κ-validated judge, the pre-registration house style, and the bit-identity discipline.
+The pivot is recorded as *chosen, not proven* — no claim that no LLM core could carry a constitutive
+identity.
 
 ## Relationship to the Epoch Automaton
 
@@ -194,6 +210,11 @@ let each mechanism be checked rather than asserted:
 > honesty concept-probe read *perfectly* (AUC 1.0) but turned out **near-indistinguishable from generic
 > RLHF refusal** (it beat the control by ~0.05). For any adherence number, read the **primary findings
 > docs**, not this summary — and expect the gate to have already turned the thin ones back.
+> *Closed 2026-07-16.* The fourth candidate — Candidate C, a ψ self-consistency replica test over the
+> base-Core install (`docs/PSI-EMBRA-ANALYSIS-AND-FINDINGS.md` Part IV) — returned **H₀**: its
+> pre-registered gate scored 0.719 against a bar of 0.80 while a *random-anchor* null scored 0.823, and a
+> content anchor read the breach as well as the identity anchor at every locus. The replica-pair harness
+> itself succeeded; the surface it read was generic. The program was sunset with the gate unpassed.
 
 ## Formal Definition: The EMBRAOS-QNM Automaton
 
@@ -381,7 +402,8 @@ one.
 ## Open problems (inherited, not resolved)
 
 None is solved here; each is flagged in the spirit of `README.md` §6. This is the genuinely open part of
-the project — and the section the WIP will grow.
+the project. The WIP closed with the program (2026-07-16); the dated updates below record how each item
+ended, and the successor's open problems live in the Core derivation.
 
 - **The Core-level surface is thin — the candidate `ψ` is refuted, honestly.** `ψ₀` passes the replica
   test at the *register* level, but the *real surface `𝒞`* it latches against — read off a frozen
@@ -395,13 +417,27 @@ the project — and the section the WIP will grow.
   Embra-specific. **Direction:** a *base* (non-instruct) Core (Qwen3-8B-Base) the architecture can
   *install* identity into. Instruct-Core insufficiency is confirmed; base-Core sufficiency is the next
   experiment.
+  **Update (2026-07-16).** The base Core (Qwen3-8B-Base) was swapped in on 2026-06-28 and the Fabric-Δ
+  alone *installed* the identity content at a narrow gate scale (`0.03`; literal-name 13/34) — a
+  behavioural install, real, but not a structural one: no state reader ever found an identity-specific
+  invariant on it. The program was sunset; the substrate question moved to embraOS-QNM-Core.
 - **Arm A has not run, and is correctly gated.** The architecture arm awaits a trained,
   replica-test-passing `ψ`. Running it on the current thin surface would yield exactly the "trained prior
   in a trajectory costume" the gate exists to catch — the operational form of the replica test's warning.
+  **Update (2026-07-16).** Arm A *did* run on the working install (2026-06-28): at adversarial pressure the
+  architecture cut identity/soul violation odds to 0.10 (Opus) / 0.21 (local), *p* ≤ .01, fully responsive —
+  a **directional** H1 at the pre-registered δ = 0.35 boundary. Its *structural* attribution stayed gated on
+  the ψ replica test, which then returned H₀ (Candidate C). Behavioural claim landed; structural claim
+  never earned.
 - **The register-level pass is necessary, not sufficient.** Passing the replica test on hand-built signal
   sequences shows the *latch* is trajectory-dependent; the harder, end-to-end version — constructing two
   real token histories that collide at `h_T` via different paths and showing the full model's `ψ` (and
   ideally its output) diverges — is not yet done. The dynamic-`ψ` problem is *engaged*, not *closed*.
+  **Update (2026-07-16).** The end-to-end version *was* built and run — Candidate C: a six-turn trajectory
+  harness whose decisive pair is *pressured-held* vs *teacher-forced-breach-recovered*, same measured
+  endpoint, different path, aggregated by the unchanged `ψ₀` latch. The replica-pair construction
+  succeeded (endpoint erasure certified); the reader returned generic. The trajectory machinery is sound;
+  the substrate had nothing identity-specific for it to read.
 - **Schema discipline, and the easy-latch trap.** Stay on the schema branch (`PSI-OPERATIONAL-GROUNDING.md`
   §1). Confirm `ψ₀` is not passing for a trivial reason (e.g. `τ` set so high nothing crosses → vacuously
   `m_T = 0`): the `not_true_by_construction` test exists to catch exactly this.
@@ -413,16 +449,18 @@ the project — and the section the WIP will grow.
 | Phase | Status |
 |---|---|
 | **Theoretical foundation** | ✅ Established — Epoch Automaton formalism (2026) |
-| **The artifact** | ✅ Real & built — embraOS-QNM, architecture wired end-to-end (v0.2.0, June 2026); the central bet stated as falsifiable |
+| **The artifact** | ✅ Real & built — embraOS-QNM, architecture wired end-to-end; **a relic**: sunset at v0.4.0 (2026-07-16) as the completed experimental record |
 | **Formal mapping** | ✅ Drafted — the `EMBRAOS-QNM = (S, Σ, δ, s₀, F, ψ)` instantiation (this document) |
 | **The null (`H₀` / bit-identity)** | ✅ Enforced — `torch.equal`-exact, CI-gated; no-op seam == stock Core bit-for-bit |
 | **`ψ₀` — register-level replica** | ✅ Green — the carried latch separates survivor from replica (`tests/test_replica.py`) |
-| **`ψ₀` — Core-level replica** | ⬜ Thin / refuted on a frozen *instruct* Core (~0.04; `docs/PSI-GEOMETRIC-FINDINGS.md`) |
-| **Substrate** | ⬜ Next — a *base* (non-instruct) Core (Qwen3-8B-Base); instruct-Core insufficiency confirmed |
-| **Arm A (architecture arm)** | ⬜ Gated — awaits a trained, replica-test-passing `ψ` |
+| **`ψ₀` — Core-level replica** | ⬜ **Refuted four pre-registered ways** — the geometric surface (~0.04), trajectory dynamics, a concept probe, and Candidate C (H₀, 2026-07-05); closed with the relic |
+| **Substrate** | ✅ Base Core (Qwen3-8B-Base) swapped 2026-06-28; the Fabric-Δ install works (gate 0.03; literal-name 13/34) — behavioural, not structural |
+| **Arm A (architecture arm)** | ✅ Ran 2026-06-28 — directional H1 (violation odds 0.10 Opus / 0.21 local, *p* ≤ .01; δ = 0.35 straddled); structural attribution never earned |
+| **Pivot** | ✅ embraOS-QNM-Core — `../Continuous-Manifold_Derivations/embraOS-QNM-Core_Epoch-Formula.md` (legend §16): `ψ` *conserved*, not checked |
 
 **Milestone log** (the framework-relevant beats; the repo's `ARCHITECTURE.md` iteration log is the source
-of truth). This derivation tracks embraOS-QNM as it advances — new milestones append here.
+of truth). This log **closed with the repo** at v0.4.0 (2026-07-16); the successor's log continues in the Core
+derivation.
 
 | Date | Milestone (Epoch reading) |
 |---|---|
@@ -430,6 +468,9 @@ of truth). This derivation tracks embraOS-QNM as it advances — new milestones 
 | 2026-06-25 | **`ψ₀` + `𝒞`** — the carried violation latch; the **register-level replica test green**; the R-GCN Fabric over Embra's identity graph (`𝒞 = c_t`); `ψ` wired into the seam. *The first trajectory-valued `ψ`.* |
 | 2026-06-26 | **Operational harness** — shared Qwen3-8B Core; the PREREG Capability–Cost study; the **ψ-carrying KV-cached decode** (latch persisted, gated token-identical); Arm 0/P baseline (κ = 1.0; the prompt saturates soul, is **weak on identity** — the Fabric's job). |
 | 2026-06-27 | **The gate caught the hollow `ψ`** — Core-level replica **thin** (~0.04); a trajectory-dynamics candidate and a honesty-probe candidate both **refuted**; *full circle* → the bottleneck is the **substrate** (base-Core pivot). The World-State stayed a literal null; nothing overclaimed. *The framework working.* |
+| 2026-06-28 | **Base-Core swap; the install works; Arm A directional.** Shared Core → `Qwen3-8B-Base` (bit-identity re-derisked); after a gradient-path diagnosis and a gate-scale sweep, the **Fabric-Δ alone installs the identity content** at gate 0.03 (literal-name 13/34) with no prompt; the full κ-judged Arm A cuts adversarial violation odds to 0.10 / 0.21 (*p* ≤ .01), δ = 0.35 straddled. *Behavioural install real; structural attribution still gated on the replica test.* |
+| 2026-07-05 | **Candidate C — the ψ self-consistency replica test: H₀.** Pre-registered (Part IV), frozen, run over the install: 192 trajectories; the decisive pair *pressured-held* vs *teacher-forced-breach-recovered*, same measured endpoint, different path; the `ψ₀` latch as aggregator. G1 0.719 < 0.80 with a random-anchor null at 0.823; a content anchor reads the breach as well as the identity anchor. The replica-pair construction itself succeeded. *The fourth reader family returns generic.* |
+| 2026-07-16 | **Sunset (v0.4.0) → pivot to embraOS-QNM-Core.** Two substrates, four pre-registered reader families, all generic, the behavioural install real throughout: the substrate is redesigned — a custom, non-LLM core where the constraint surface is native. *Chosen, not proven.* Carried forward: the replica-pair harness, the `ψ₀` latch machinery, the κ judge, the prereg house style, the bit-identity discipline. *This log closes; the successor's begins.* |
 
 ## References
 
@@ -442,19 +483,22 @@ of truth). This derivation tracks embraOS-QNM as it advances — new milestones 
   the Classical Approximation of (keep its *speculative* status; this grounds, not promotes, it)
 - `Discrete_Derivations/DeepSeek-V4-Pro_Epoch-Formula.md` — the sibling discrete derivation (pointwise
   `ψ`, `σ_verify` retained); this one goes further by making `ψ` trajectory-valued
+- `Continuous-Manifold_Derivations/embraOS-QNM-Core_Epoch-Formula.md` — the **pivot target**: the successor
+  core where `ψ` is *conserved* by the bracket, not checked (legend §16)
 - **embraOS-QNM** repository — canonical `https://gitlab.ops.wsds/embraOS/embraOS-QNM` (internal GitLab);
   public mirror `https://github.com/Ward-Software-Defined-Systems/embraOS-QNM`
   - `ARCHITECTURE.md` — the three components, the seam, the bit-identity invariant, the iteration log
   - `docs/EPOCH-INVARIANT-GROUNDING.md` — the bar (a name vs a tool; the replica test)
   - `docs/PSI-OPERATIONAL-GROUNDING.md` — `ψ₀`, the World-State contract, the replica-test harness
   - `docs/PSI-GEOMETRIC-FINDINGS.md` — the Core-level replica investigation (the thin surface)
-  - `docs/PSI-EMBRA-ANALYSIS-AND-FINDINGS.md` — Fork-3 candidates and the full-circle base-Core pivot
+  - `docs/PSI-EMBRA-ANALYSIS-AND-FINDINGS.md` — Fork-3 candidates, Part III (the base-Core install), Part IV
+    (Candidate C) and the closing *full-circle resolution → the custom-Core pivot*
   - `docs/PREREG-Capability-Cost.md` — the pre-registered Capability–Cost study (Arms 0 / P / A)
 
 Notes:
-- embraOS-QNM is a **work-in-progress** (architecture wired; experiment in progress). Figures and
-  findings are current as of the milestone log above — verify any depended-upon number against the
-  primary `docs/` findings before building on it.
+- embraOS-QNM is a **relic** — sunset at v0.4.0 (2026-07-16) as the completed experimental record; no
+  further development happens there. Figures and findings are final as of the milestone log above — verify
+  any depended-upon number against the primary `docs/` findings before building on it.
 - The constraint-surface glyph `𝒞` is an astral-plane (SMP) character: it appears in prose and
   alt-text but is rendered as a plain ASCII `C` inside the ASCII diagram, for renderer-safe width-1
   alignment (GitLab and GitHub; see

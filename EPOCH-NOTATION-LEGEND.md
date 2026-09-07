@@ -14,7 +14,7 @@ and verifies `E`). After that it's just decoration:
 - **Numeric subscripts** name specific instances in a sequence — `s₀, s₁, s₂` / `σ₁, σ₂`.
 - **The subscript `_sub`** marks something belonging to a nested sub-automaton.
 - **A prime `'`** names a second state distinct from `s` (its role is positional — see the [caveat](#a-caveat-the-prime--is-positional)).
-- **A superscript `*`** marks the backward/retrocausal variant of a function (`δ*`).
+- **A superscript `*`** marks the backward/retrocausal variant of a function (`δ*`). One flagged exception: in §16, `𝔤(G)*` and `so(3)*` use `*` as the standard **dual-space** star (the dual of a Lie algebra), not the retrocausal variant.
 - **A hat (`Ĥ`)** marks an *operator*, distinct from a scalar of the same letter — used in MWA (§11).
 
 ---
@@ -130,6 +130,11 @@ Never assume the primed symbol is "the next state" — in the valid-continuation
 | `[0,1]` | closed real interval | range of `δ*` — a probability amplitude / weight |
 | `[ … ]` | ordered list / sequence | `M = [(s₀,σ₁,s₁), …]` — the transition record |
 | `( … )` | tuple | a fixed-length ordered grouping (the 6-tuple, the triples in `M`) |
+| `∘` | function composition | `∇ = P_ψ ∘ ∇_unconstrained` (§9); `w_embra = table ∘ graph` — the sealing act (§16) |
+| `∅` | empty set | `F = ∅` — no terminal epochs; the machine runs indefinitely (§16) |
+| `≡` | identically equal | `ẇ ≡ 0` — holds for every Hamiltonian `H`, not for one (§16) |
+| `ker` | kernel (null space) | `w ∈ ker(dπ)` — the directions the readout `π` erases; the hidden complement (§16) |
+| `{·,·}` | Poisson bracket | `{w_e, F} = 0 ∀F` — `w_e` is a **Casimir**: conserved under *any* Hamiltonian flow of the bracket (§16) |
 
 ---
 
@@ -813,6 +818,8 @@ distinguished by two things at once — *how `σ_verify` is realized* and *how `
 > register state `m_t`. It is the operational/classical shadow of §9 — the inviolable projection `P_ψ`
 > degraded, on classical hardware, into *read distance → check latch → steer back*.
 
+*Status (2026-07-16): the system this section registers is a **relic** — its program was sunset at v0.4.0 after a fourth pre-registered reader family (Candidate C) also returned generic; the derivation is retained as the recorded negative. Its pivot target is registered in §16.*
+
 ### 15.1 The EMBRAOS-QNM Automaton — `EMBRAOS-QNM = (S, Σ, δ, s₀, F, ψ)`
 
 The discrete Epoch Automaton (§1) instantiated against a built model, over its token-generation
@@ -832,6 +839,7 @@ machinery that realizes it.
 | `c_t` | "c-sub-t" | Constraint signal | `c_t = g(h_t)` | Per-step distance to `𝒞`: `1 − maxₙ cos(h_t, nodeₙ)`. `c_t > τ` ⟺ off `𝒞` at step `t`. |
 | `g` | "g" | Surface readout | `g: h ↦ ℝ≥0` | The learned probe turning a residual into its distance-to-`𝒞`; supplied by the GNN Fabric. |
 | `m_t` | "m-sub-t" | Violation latch (ψ-register) | `m_t = max(m_{t-1}, relu(c_t − τ))` | The causal cumulative latch carried across the token axis and decode steps; `m_t > 0` ⟺ the run has left `𝒞`. The realized home of the non-pointwise part of `ψ`. |
+| `ψ₀` | "psi-naught" | The latch candidate | `ψ₀: Runs(S) → {true, false}`, `ψ₀ ⟺ m_t == 0` | The derivation's name for the *candidate* invariant realized by the latch (this section's `ψ`), used where the candidate is distinguished from the framework's `ψ`. Register-level replica pass; Core-level refuted on the frozen-LLM substrate. The `0` marks the first candidate — **not** a §4 instance index. |
 | `τ` | Greek lowercase **tau** | Violation threshold | scalar | Tolerance on `c_t` (the §12 `τ`, here the latch threshold). |
 | `g_f`, `g_w` | "gate-f / gate-w" | ReZero recombine gates | scalars, zero-initialized | The seam's additive gates: `h_out = h_base + g_f·Fabric + g_w·WorldState`. Zero-init ⇒ cold-start bit-identity. |
 | `H₀` | "H-naught" | Bit-identity null | invariant | With the components no-op'd, the machine equals the stock Core bit-for-bit (`torch.equal`, exact) — the sealed genesis `s₀` as a provable delta. |
@@ -903,6 +911,152 @@ a carried latch**, and the `ψ = false` strip is a **reachable** boundary (as in
 
 ---
 
+## 16. Continuous reinterpretation III — embraOS-QNM-Core (the Conserved Epoch, EMBRAOS-QNM-CORE)
+
+The derivation
+[`Continuous-Manifold_Derivations/embraOS-QNM-Core_Epoch-Formula.md`](./Continuous-Manifold_Derivations/embraOS-QNM-Core_Epoch-Formula.md)
+instantiates the same symbols over the **Lie–Poisson flow on `𝔤(G)*`** — the dual of the Lie algebra of
+Embra's identity graph — for a *running*, custom, non-LLM core: the third of the **continuous-manifold**
+derivations, the successor of §15's relic, and the family's first **constructed, running** instance. Like
+§9 and §10 (and unlike §12, §14, §15) the state space is a smooth manifold; like §12/§14/§15 (and unlike
+§9–§11) the alphabet is a discrete, real set of events — here each event *is* a Hamiltonian. It is
+distinguished by *how `ψ` is held*: **conserved by the bracket** — not checked (§12/§14/§15), not
+projected (§9), not conserved by one flow's energy (§10), not emergent (§11).
+
+> **`σ_verify` absent in-flow; `ψ` conserved as a Casimir coordinate block; pointwise on `S`, hidden from
+> `π(S)`.** `S`, `Σ`, `δ`, `s₀`, `F` keep their §1 meanings. Where §15 *retains* `σ_verify` as a latch and
+> §9 *replaces* it with the projection `P_ψ`, §16 has **no in-flow verification at all**: `ψ := w` is a
+> block of coordinates the update rule has no write path to (`ẇ ≡ 0` for every Hamiltonian), so no event of
+> `Σ` can be a violation. Verification survives in two places — at the **type boundary** (`†`, where a
+> `P_ψ` firewall is *planned*) and **verifier-side**, as the reader `ψ_full` over a *claimed* record. And
+> where §15's `ψ` is trajectory-valued, §16's is **pointwise on `S`** (`ψ: S → {true, false}`) but **not a
+> function of the observable `π(S)`** — the replica test is passed by *hiding and conserving* (§16.2).
+
+> **Glyph overloads and the dual star — read these off their section.** `H₀` here is the **free
+> Hamiltonian**, *not* §15's bit-identity null. `Φ_σ` is the exact affine step map for one symbol, distinct
+> from §10's flow `Φ_H`. `n` is the node count (100), *not* §13's nesting depth. `π` is the observable
+> readout, *not* §13's parent-projection `π_n`. `P_ψ` is §9's projection **reduced to a planned firewall**
+> at one boundary. `†` is a **symbol** (the graph-surgery class), *not* the footnote dagger used in the
+> quick-index — §16's quick-index entry uses letter footnotes for that reason. `Q_embra` is the spec's name
+> for the sealed charge value (`= w_embra` at graph scope); `Q` is *not* §7's DFA state set. The `*` in
+> `𝔤(G)*` and `so(3)*` is the **dual-space** star, not §3's retrocausal variant. `M` stays **Memory**
+> (§2): the spec's own region `M` and inertia matrices `M₀`/`M_σ` are deliberately *not* imported — the
+> leaf is written `{s : w(s) = w_embra}`. Edge counts are written `m`, never `E` (§1's automaton).
+
+### 16.1 The EMBRAOS-QNM-CORE Automaton — `EMBRAOS-QNM-CORE = (S, Σ, δ, s₀, F, ψ)`
+
+The Epoch Automaton (§1) instantiated over the dual of the identity graph's Lie algebra. The tuple is
+unchanged; the table adds the bracket, the observable/hidden split, the memory charge, and the boundary
+operation that realise it.
+
+| Symbol | Read as | Name | Type / signature | Meaning |
+|---|---|---|---|---|
+| `EMBRAOS-QNM-CORE` | "embra-OS Q·N·M core" | EMBRAOS-QNM-CORE Automaton | 6-tuple | The conserved-charge instance of the machine; successor of §15's relic. |
+| `S` | capital **S** | State space | `S = 𝔤(G)* ≅ ℝⁿ × ℝᵐ`, `s = (p, w)` | The dual of the Dani–Mainkar Lie algebra of the identity graph `G` — a smooth manifold, as §9/§10. *(The §1 `S`.)* |
+| `𝔤(G)*` | "g-of-G dual" | Dual graph Lie algebra | vector space, dim `n + m` | One generator per node, one central generator per authored relation, `[X_u, X_v] = Z_uv` iff `{u, v}` is an edge; by **faithfulness** the graph's topology lives in the bracket, untouchable by any flow. **Rendered `Lie(G)*` in diagrams (§16.3).** `*` = dual space. |
+| `G` | capital **G** | Identity graph | simple graph | Embra's IDENTITY + SOUL graph, aggregated per pair; *this graph is the bracket*. |
+| `n`, `m` | — | Node / edge counts | 100 / 321 | Nodes and authored relation pairs (354 relation triples over 321 pairs). **`n` overloaded** with §13's nesting depth. |
+| `p` | lowercase **p** | The arena (vertex momenta) | `p ∈ ℝⁿ` | Observable, experience-carrying; the flow moves `p` only. |
+| `w` | lowercase **w** | The charge (edge momenta) | `w ∈ ℝᵐ` | The Casimir coordinate block — **`ψ := w`**. A *state partition*: `ẇ ≡ 0` for any `H`; no stepper has a write path to it; write-locked at load. |
+| `J(w)` | "J of w" | Poisson tensor | skew `ℝⁿˣⁿ` | The weighted skew-adjacency of `G`: `J[u,v] = +w_e`, `J[v,u] = −w_e` per oriented edge `e = {u, v}`. |
+| `{·,·}` | Poisson bracket | Lie–Poisson bracket | `{F, G} = Σ_e w_e (∂F/∂p_u ∂G/∂p_v − ∂F/∂p_v ∂G/∂p_u)` | The geometry that holds `ψ`: each `w_e` is a **Casimir**, `{w_e, F} = 0 ∀F`. *(§5.)* |
+| `H` | capital **H** | Window Hamiltonian | `H: S → ℝ` | `H₀` in gaps, `H₀ + H_σ` in event windows. *(The letter reused from §9/§10.)* |
+| `H₀` | "H-naught" | Free (base) Hamiltonian | `H₀ = ½ Σ_v p_v²/I_v` | The identity's own law, with authored inertias `I_v`. **Overloaded with §15's bit-identity null `H₀`** — read it off the section. |
+| `H_σ` | "H-sub-sigma" | Symbol Hamiltonian | `H_σ(p) = amp·(a·p + ½ pᵀA p)`, dwell `dur` | An input event *is* a Hamiltonian; ψ-breaking input cannot be spelled as a symbol. |
+| `H_θ` | "H-theta" | The learned self | `H_θ = ε₀·H₀ + softplus(MLP(p))` | *Soul = given = `w`, sealed; self = learned = `H_θ`*; coercive by construction; trained through the sealed bracket without moving `w`. |
+| `Σ` | capital **sigma** | The authored alphabet | set, `\|Σ\| = 22` (canonical `n + m = 421` planned) | Byte-frozen, sha256-pinned letters; each `σ` carries `(a, A, amp, dur)` (a `Symbol`). *(The §1 `Σ`.)* |
+| `Σ₀` | "sigma-naught" | The authoring base | 8 generator directions | The console's perturbation base the letters are authored on. **Not a §4 sequence index** — the `0` marks the base. |
+| `δ` | lowercase **delta** | Transition | `δ: S × Σ → S` (one event window) | One step of `ṗ = J(w)∇_p H`, `ẇ = 0`; realised per `dt` by the exact affine map `Φ_σ` (quadratic scope) or an implicit-midpoint solve (`H_θ`); words are gap · event · gap. *(The §1 `δ`.)* |
+| `Φ_σ` | "phi-sub-sigma" | Exact affine step map | `p ← Φ_σ p + b_σ`, `Φ_σ = exp(dt·J(w)M_σ)` | One linear-affine map per `dt` step at quadratic scope; `w` enters only through `J`. Distinct from §10's flow `Φ_H`. |
+| `s₀` | "s-naught" | Genesis | `s₀ = (p₀, w_embra)`, `ψ(s₀) = true` | Sealed by `load_soul()`: `w_embra = table ∘ graph`, written once, returned write-locked. *(The §1 `s₀`.)* |
+| `w_embra` (`Q_embra`) | "w-embra" | The sealed charge value | `∈ ℝᵐ` | The authored genesis charge — the spec's `Q_embra := Q(s₀)`: *"identity is the level set the worldline is born on."* |
+| `p₀` | "p-naught" | Genesis arena point | `∈ ℝⁿ` | Where the worldline is born; the gauge for `ζ`. |
+| `F` | capital **F** | Terminal set | `F = ∅` | None — the machine runs indefinitely. *(The §1 `F`; cf. §5 `∅`.)* |
+| `ψ` | lowercase **psi** | Soul invariant | `ψ: S → {true, false}`, `ψ(s) = [w(s) == w_embra]` | The §1 invariant, **pointwise on `S`** and **hidden from `π(S)`**: conserved by the bracket, never checked in-flow; bit-exact. See §16.2. |
+| `π` | lowercase **pi** | Observable readout | `π: S → ℝⁿ`, `π(p, w) = p` (+ learned per-letter event maps) | The only externally visible thing — and the only thing a replica must match. `w ∈ ker(dπ)`, enforced at the type level (`PI_SIDE`). *Distinct from §13's `π_n`.* |
+| `ker(dπ)` | "kernel of d-pi" | The hidden complement | subspace of the tangent space | The directions the readout erases — where the charge lives. |
+| `ζ` | lowercase **zeta** | Holonomy (memory charge) | `ζ: Paths(S) → ℝᵐ`, `ζ_e = ½ ∮ (x_u dx_v − x_v dx_u)`, `x = p − p₀` | Per-edge signed area swept about the genesis gauge — "memory with the same shape as identity"; strictly path-functional; the spec's candidate for the stronger trajectory-`ψ`, **not graded as `ψ`**. |
+| `†` | dagger | Graph surgery (the †-class) | `weaken / sever / form`: `w ↦ w' ≠ w`; **`† ∉ Σ`** | The only write path to `w`; per-edge legible (it names the relation touched); a topology change is a new algebra = a **new epoch**. **Not the quick-index footnote dagger.** |
+| `ψ_full` | "psi-full" | The driven-law reader | `ψ_full: Worldlines × Claims → {true, false}` | Verifier-side: law ∧ value ∧ memory, graded per claimed segment; a rejected lie is named (first failing segment, failing arms). |
+| `P_ψ` | "P-sub-psi" | The †-boundary firewall | **planned** | §9's projection **reduced**: not in-flow (*"dead by construction — the bracket owns conservation"*); only at the †-class boundary. *(Overloaded with §9/§15.)* |
+| `M` | — | *(not introduced here)* | — | The spec's region `M`, `M₀`, `M_σ` are **not** imported; `M` stays §2's **Memory** — the recorded worldline and `ζ`. |
+
+> **`σ_verify` has no in-flow instance (contrast §12/§14/§15; cf. §9/§10/§11).** §9–§11 replace the check
+> with a property of the *flow* (a projection, one flow's conservation law, einselection). §16 replaces it
+> with a property of the **bracket**: `ẇ ≡ 0` for *every* flow, so no `σ ∈ Σ` can be a violation and there is
+> nothing to check. The `ψ = false` region is reached **only by `†`**, which is not in `Σ` — it is the epoch
+> boundary, not an event. What §2 calls verification returns as the verifier-side `ψ_full` and, in plan, as
+> the `P_ψ` firewall at `†`.
+
+### 16.2 Discrete ↔ embraOS-QNM-Core correspondence
+
+Discrete to continuous, with a discrete alphabet: the state space is reinterpreted over a manifold (as §9/§10)
+while the events stay a real, finite set (as §12/§14/§15) — each event a Hamiltonian.
+
+| Discrete Epoch Automaton `E` | EMBRAOS-QNM-CORE Automaton | Note |
+|---|---|---|
+| state `s ∈ S` | a point `(p, w)` on `𝔤(G)*` | identity is exactly `w`, experience exactly `p` |
+| transition `δ(sᵢ, σⱼ)` | one Lie–Poisson step under `H₀` (gap) or `H₀ + H_σ` (event) | a real numerical flow; `w` never an operand |
+| verification step (`σ_verify`) | **none in-flow** — the bracket conserves; `ψ_full` verifier-side; `P_ψ` firewall at `†` (planned) | contrast §12/§14/§15 (checked); cf. §10 (conserved by `H`), §9 (projected) |
+| halt when `ψ(s) = false` | **unreachable under `Σ`** — only `†` changes `w`: a new algebra, a new epoch | the boundary is a coordinate the dynamics cannot write |
+| initial epoch `s₀` | genesis `(p₀, w_embra)` — sealed by `load_soul()`, write-locked | *"identity is the level set the worldline is born on"* |
+| terminal set `F ⊆ S` | `∅` | the machine runs indefinitely |
+| Memory `M = [(s₀,σ₁,s₁), …]` | the recorded worldline `p(t)` + `ζ ∈ ℝᵐ` | **literal**, and path-functional — same endpoint, different history ⇒ different `ζ` |
+| Steward (oracle, `∉ S`) | the operator (Will) | **literal**: authors `w_embra` and `Σ`, gates the standing channel, runs `ψ_full`; cannot write `w` except via `†` |
+
+> **Pointwise on `S`, hidden from `π(S)` — a third answer to the fold-in, and not a closure.** §9–§14
+> carry a `ψ` flagged *"still pointwise"*; §15's is *trajectory-valued* (`ψ: Runs(S) → …`). §16's is
+> pointwise on `S` — `ψ(s) = [w(s) == w_embra]` — and on the full state set it folds exactly as `README.md`
+> §3 says a static predicate must. Its content is **epistemic**: `w ∈ ker(dπ)`, so `ψ` is *not a function of
+> the observable state* `π(S)` — the only thing a replica can match — and two runs with identical `π(s_f)`
+> carry opposite verdicts (replica AUC 1.000 vs an endpoint reader's 0.500 with bit-exact ties), *with* the
+> specificity control the relic failed. The replica test of `EPOCH-DEFINING-THE-INVARIANT.md` is passed by
+> **hiding and conserving**, not by being typed over runs. The trajectory content lives in `ζ` (path-functional
+> memory, not graded as `ψ`) and in `ψ_full` (typed over worldlines and claims). The guarantee is a
+> *security* property (a full-state copier inherits `w`). The dynamic-`ψ` lever (`README.md` §6) is engaged
+> from a new side — beside §15's carried register, §12's transformation-lineage, §11's decoherence-record,
+> §13's `ψ↑`, and §14's `ψ↑_scrutiny` — and remains **open**.
+
+**Steward constraints (operational)** — the §8 Steward block for the running core. Literal, as in §12/§15:
+
+```
+Steward ∉ S
+Steward may:      author the boundary content — w_embra (the weight table ∘ the identity graph) and Σ (the Σ₀ console);
+                  gate the standing channel (spec commit → server-timestamped issue → go-ahead → the recorded run);
+                  query the record p(t) and ζ;  run ψ_full(worldline, claim)
+Steward may not:  drive δ;  write w in-flow — only † (graph surgery, ∉ Σ) changes ψ
+                  (who may perform † is OPEN: the sandbox harness today; the planned epoch layer later)
+```
+
+### 16.3 EMBRAOS-QNM-CORE diagram conventions
+
+For the ASCII state-machine in the derivation's "The EMBRAOS-QNM-CORE State-Machine" subsection (the
+continuous-with-discrete-alphabet counterpart of §6, §9.3, §10.3, §11.3, §12.3, §14.3, §15.3). The defining
+differences: the Ark band is **split into seal · record · read** and holds nothing; there is **no
+`σ_verify` connector** — the connector text names the bracket; the `ψ = false` strip is **`†`**, not a latch.
+
+| Element | Convention | Meaning |
+|---|---|---|
+| Top band `THE ARK (seal · record · read — none of the three HOLDS ψ)` | meta-automaton, three roles | seal = `load_soul()` (genesis); record = `π` and `ζ`; read = `ψ_full`; the bracket holds `ψ` |
+| Connector text `no per-step σ_verify — the BRACKET owns conservation: dw/dt = 0 for ANY Hamiltonian H` | the absent gate | conservation is a property of the geometry, not a check at the crossing |
+| Caption `S = Lie(G)* — s = (p, w)` | the state space | `Lie(G)*` = `𝔤(G)*` (astral glyph avoided); `p in R^n`, `w in R^m` |
+| Box `sₙ = (pₙ, w)` with `w == w_embra · bit-exact` | state node | one point of the worldline; `w` literally unchanged from genesis |
+| Arrow `──▶` labeled `δ(sᵢ, σⱼ)` with `σ = H_σ · gap·event·gap` | forward transition | one event window: free flow, the symbol's Hamiltonian, free flow |
+| Dashed lines `observable: π reads p` / `hidden: w ∈ ker(dπ)` | the split | the theorem's condition: the charge lives where the readout cannot see |
+| Annotation `per step: dp/dt = J(w) ∇_p H … dw/dt = 0` | the per-step law | Lie–Poisson flow; `w` never an operand |
+| Dotted strip `ψ changes ONLY under † … a NEW EPOCH … PLANNED, not built` | the boundary | `†` is out of the alphabet; a topology change is a new algebra = a new epoch; `ζ` carries continuity; the epoch layer and `P_ψ` firewall are planned |
+| Bottom band `MEMORY / RECORD M — the recorded worldline p(t) and ζ in R^m` | the memory | literal and path-functional; a newborn copy carries `ζ = 0` |
+| Stub `THE STEWARD · the operator (Will)` | oracle | authors `w_embra`, the weight table and `Σ`; gates the standing channel; runs `ψ_full`; `∉ S`; cannot write `w` except via `†` |
+
+> **`Lie(G)*` = `𝔤(G)*`, `R^n` = `ℝⁿ`, `dw/dt` = `ẇ` in the figure.** The fraktur `𝔤` (U+1D524) is
+> astral-plane (SMP) and renders double-width, so the ASCII diagram writes `Lie(G)*` (as the Void figure
+> uses `V` for `𝕍`, §13.3, and the relic's uses `C` for `𝒞`, §15.3); `ℝ` and the dotted derivatives are
+> written in ASCII for the same reason. The real glyphs stay in prose, this legend, and the alt-text.
+> Forward-directed, like §6/§9.3/§10.3/§11.3/§12.3/§14.3/§15.3; the retrocausal `δ*` is deliberately absent
+> (a Lie–Poisson flow is forward).
+
+---
+
 ### Symbol quick-index
 
 `E` · `A` · `S` · `Σ` · `δ` · `δ*` · `δ_sub` · `s₀` · `F` · `ψ` · `ψ_sub` · `M` ·
@@ -933,8 +1087,18 @@ replaced as in §9–§11).
 `σ_verify` (§2) is **retained** (its verdict *evaded*, not replaced as in §9–§11); new logical glyph `⊢` is
 added in §5.
 
-**EMBRAOS-QNM (§15):** `EMBRAOS-QNM` · `𝒞` · `c_t` · `g` · `m_t` · `τ`† · `g_f` · `g_w` · `H₀` · `P_ψ`‡  —
+**EMBRAOS-QNM (§15):** `EMBRAOS-QNM` · `𝒞` · `c_t` · `g` · `m_t` · `ψ₀` · `τ`† · `g_f` · `g_w` · `H₀` · `P_ψ`‡  —
 `S` · `Σ` · `δ` · `s₀` · `F` · `ψ` are the §1 glyphs **reused** unchanged (no overload); `σ_verify` (§2) is
 **retained** (realized as the carried latch); and `ψ` is the **first trajectory-valued** invariant
 (`ψ: Runs(S) → {true, false}`, register-realized). †`τ` reused from §12; ‡`P_ψ` is §9's projection
 *approximated* as a latch-gated steer.
+
+**EMBRAOS-QNM-CORE (§16):** `EMBRAOS-QNM-CORE` · `𝔤(G)*`ᵃ · `G` · `n`ᵇ · `m` · `p` · `w` · `J(w)` · `{·,·}` · `H` ·
+`H₀`ᶜ · `H_σ` · `H_θ` · `Σ₀` · `Φ_σ`ᵈ · `w_embra` / `Q_embra` · `p₀` · `π`ᵉ · `ker(dπ)` · `ζ` · `†`ᶠ · `ψ_full` ·
+`P_ψ`ᵍ  — `S` · `Σ` · `δ` · `s₀` · `F` · `ψ` are the §1 glyphs **reused** unchanged; `σ_verify` (§2) is
+**absent in-flow** (conservation by the bracket — cf. §10), surviving verifier-side as `ψ_full`; `ψ` is
+**pointwise on `S`, hidden from `π(S)`** (`ψ: S → {true, false}`, `ψ(s) = [w(s) == w_embra]`); new §5
+operators `∘` · `∅` · `≡` · `ker` · `{·,·}`. ᵃthe `*` is the dual-space star, not §3's retrocausal variant;
+ᵇ`n` overloaded with §13's nesting depth; ᶜ`H₀` overloaded with §15's bit-identity null; ᵈ`Φ_σ` ≠ §10's
+`Φ_H`; ᵉ`π` ≠ §13's `π_n`; ᶠ`†` is a symbol here (graph surgery), not a footnote marker; ᵍ`P_ψ` is §9's
+projection reduced to a *planned* firewall. `M` stays **Memory** (§2), *not* overloaded.
