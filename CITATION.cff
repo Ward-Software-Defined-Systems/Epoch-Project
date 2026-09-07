@@ -4,13 +4,22 @@ title: "The Epoch Project: Epochs as Bounded Invariant-Persistence Intervals"
 abstract: >-
   The Epoch Project is a documentation research framework that reframes an
   "epoch" as a bounded interval of reality defined not by duration but by the
-  persistence of a verifiable boundary condition - a "soul invariant" (psi)
-  re-checked at every transition. It models this as a six-tuple automaton
-  E = (S, Sigma, delta, s0, F, psi) observed by a meta-level "Ark," and explores
-  the framework across discrete, continuous-manifold, branching-manifold, and
-  substrate (recursive-nesting / the Void) derivations. The central open problem -
-  making psi history- or trajectory-dependent - is stated as the framework's main
-  formal lever.
+  persistence of a verifiable boundary condition - a "soul invariant" (psi):
+  checked at every transition in the operational family, conserved by
+  construction in the continuous family. It models this as a six-tuple automaton
+  E = (S, Sigma, delta, s0, F, psi) observed by a meta-level "Ark," and develops
+  three derivation families distinguished by how psi is held - discrete /
+  operational (psi checked: DeepSeek-V4-Pro; the embraOS-QNM Classical
+  Approximation, a constructed instance whose honest failure is recorded),
+  continuous-manifold (psi conserved or projected: SOL, QNM, and embraOS-QNM-Core,
+  a running constructed instance in which psi is a conserved charge of the core's
+  own dynamics), and branching-manifold (psi emergent: Many-Worlds) - together
+  with a substrate derivation (recursive nesting / the Void) and a diagnostic axis
+  (Fringe-Claim Trajectories: the framework pointed at claims that assert an
+  unearned identity). The central open problem - a history- or
+  trajectory-dependent psi that survives the replica test - is stated as the
+  framework's main formal lever; two built instances engage it and neither
+  closes it.
 authors:
   - family-names: Ward
     given-names: William
@@ -20,8 +29,8 @@ authors:
 repository-code: "https://github.com/Ward-Software-Defined-Systems/Epoch-Project"
 url: "https://github.com/Ward-Software-Defined-Systems/Epoch-Project"
 license: MIT
-version: "1.3.0"
-date-released: 2026-07-03
+version: "1.4.0"
+date-released: 2026-09-07
 doi: 10.5281/zenodo.20651796
 identifiers:
   - type: doi
@@ -38,6 +47,7 @@ keywords:
   - state machine
   - boundary condition
   - soul invariant
+  - conserved charge
   - persistence
   - continuity
   - research framework
