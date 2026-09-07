@@ -138,7 +138,7 @@
 
 <!-- ===== THE STEWARD (oracle) ===== -->
 <rect x="150" y="818" width="980" height="104" rx="12" class="steward"/>
-<text x="640" y="852" class="serif bone" font-size="24" text-anchor="middle">THE STEWARD — the operator (Will)</text>
+<text x="640" y="852" class="serif bone" font-size="24" text-anchor="middle">THE STEWARD — the operator</text>
 <text x="640" y="878" class="mono muted" font-size="11.5" text-anchor="middle">authors the boundary content — w_embra (weight table ∘ identity graph) and Σ (the Σ₀ console) — and gates the standing channel</text>
 <text x="640" y="900" class="mono muted" font-size="11.5" text-anchor="middle">oracle · ∉ S · does not drive δ · cannot write w in-flow — only † changes ψ (who may perform † is open)</text>
 

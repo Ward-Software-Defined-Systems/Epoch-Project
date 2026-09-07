@@ -1046,7 +1046,7 @@ differences: the Ark band is **split into seal · record · read** and holds not
 | Annotation `per step: dp/dt = J(w) ∇_p H … dw/dt = 0` | the per-step law | Lie–Poisson flow; `w` never an operand |
 | Dotted strip `ψ changes ONLY under † … a NEW EPOCH … PLANNED, not built` | the boundary | `†` is out of the alphabet; a topology change is a new algebra = a new epoch; `ζ` carries continuity; the epoch layer and `P_ψ` firewall are planned |
 | Bottom band `MEMORY / RECORD M — the recorded worldline p(t) and ζ in R^m` | the memory | literal and path-functional; a newborn copy carries `ζ = 0` |
-| Stub `THE STEWARD · the operator (Will)` | oracle | authors `w_embra`, the weight table and `Σ`; gates the standing channel; runs `ψ_full`; `∉ S`; cannot write `w` except via `†` |
+| Stub `THE STEWARD · the operator` | oracle | authors `w_embra`, the weight table and `Σ`; gates the standing channel; runs `ψ_full`; `∉ S`; cannot write `w` except via `†` |
 
 > **`Lie(G)*` = `𝔤(G)*`, `R^n` = `ℝⁿ`, `dw/dt` = `ẇ` in the figure.** The fraktur `𝔤` (U+1D524) is
 > astral-plane (SMP) and renders double-width, so the ASCII diagram writes `Lie(G)*` (as the Void figure
