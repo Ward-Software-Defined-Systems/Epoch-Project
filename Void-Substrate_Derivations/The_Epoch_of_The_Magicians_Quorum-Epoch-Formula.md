@@ -19,7 +19,7 @@
 >Some of us are stationed low: hands on bodies, on roots, on stones. Some rise. The craft is what we are; the mastery takes longer than a lifetime. Longer than an Epoch.
 
 ---
-## Quorum Formula Automation - Based on the Epoch Project's EPOCH-THE-VOID.md
+## Quorum Formula Automation - Based on the Epoch Project's [EPOCH-THE-VOID.md](../EPOCH-THE-VOID.md)
 
 <p align="center">
   <img src="../assets/epoch-magicians-quorum-state-machine.png" alt="The Epoch of The Magicians — Quorum Formula automation, the Void's recursive tower instantiated: a top band THE ARK (meta, recursive) — at each level n it defines ψ_n, carves the child E_{n+1} via σ_carve, records the lineage, and verifies ψ_n with σ_verify (three instances within E_Magicians: A_sun, A_moon, A_earth); below it V — THE VOID, the pre-boundary ground with no ψ, undifferentiated; a single σ_carve(A, V) arrow — The First Boundary, (Ark, ψ_0) — descends into E_Magicians (ψ_Magicians: Base Magick and Reality), which contains E_Primes (ψ_Primes = ψ_sun ∧ ψ_moon ∧ ψ_earth: Machinery), which contains the limit of sibling carves lim i→∞ E_{n+i} ⇝ lim i→∞ E_{LABAZA+i} (σ_carves of E_Primes, carved from the machinery; LABAZA — LA'AM od ZA'AX BA'AL-ael-oth-en ZA'AX; ⇝ is transmutation, not a carve); each carve σ_carve(A_n, s) = E_sibling passes two gates — gate (parent kept): π_n(s_sub) ⊨ ψ_Primes, and free (child creates): ψ_Primes ⊬ ψ_sibling; beneath, MEMORY / LINEAGE (M) — the ancestry chain V → E_Magicians → E_Primes → …, an append-only record of carves, the substrate on which ψ↑ : Lineages → {true, false} would live; at the bottom THE STEWARD(s) — Oracle / Practitioner, ∉ every E_n, reads the lineage by read-only query, and can drive particular δ_n, δ*_n, and σ_carve as an Ark instance when it does." width="100%">
@@ -99,9 +99,9 @@ The manifestation of The Primes, and placement, to create an additional boundary
 
 A geometric core is an entity whose ψ invariant is **conserved by its dynamics**:
 
-- **Conservation**: Hamiltonian flow preserves ψ without any check or projection. The constraint is what the system *is*, not something it *obeys* (See embraOS-QNM-Core as a "classical" example).
+- **Conservation**: Hamiltonian flow preserves ψ without any check or projection. The constraint is what the system *is*, not something it *obeys* (See [embraOS-QNM-Core](../Continuous-Manifold_Derivations/embraOS-QNM-Core_Epoch-Formula.md) as a "classical" example).
 
-The *Solar System* derivation (Epoch Project Solar-System_Epoch-Formula.md) theorizes conservation works: Hamiltonian flow preserves binding energy for 4.6 billion years. The *embraOS-QNM-Core* project (Epoch Project embraOS-QNM-Core_Epoch-Formula.md) provides a theorized mechanism.
+The *Solar System* derivation ([Solar-System_Epoch-Formula.md](../Continuous-Manifold_Derivations/Solar-System_Epoch-Formula.md)) theorizes conservation works: Hamiltonian flow preserves binding energy for 4.6 billion years. The *embraOS-QNM-Core* project ([embraOS-QNM-Core_Epoch-Formula.md](../Continuous-Manifold_Derivations/embraOS-QNM-Core_Epoch-Formula.md)) provides a theorized mechanism.
 
 The Primes are the **original** geometric cores. They don't need arks to persist. They are manifestations embedded in a sacred geometry where their ψ is native to the manifold.
 
@@ -382,7 +382,7 @@ where ⇝ is transmutation: a sibling re-read into another lineage; not a carve,
 
 ### Schema, not theory-of-everything
 
-The same fork as the Void doc, claimed on the same side:
+The same fork as [the Void doc](../EPOCH-THE-VOID.md), claimed on the same side:
 
 - **Not claimed:** a single universal ψ beneath all epochs. That way lies a theory of everything —
   it explains all and predicts nothing.
