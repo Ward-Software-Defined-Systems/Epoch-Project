@@ -273,7 +273,7 @@ The Moon-Prime is not cycling normally. It is holding a posture.
 | **1950** | May 2 · May 31 · Jun 29 | Three consecutive supermoons (perigee); May 2 the closest of the year | May 02 05:19 — 356,907 km, rel. 1.000, perigee May 02 06:31 (+0.049 d) · May 31 12:43 — 358,880 km, rel. 0.986, perigee May 30 16:22 (−0.848 d) · Jun 29 19:58 — 364,843 km, rel. 0.933, perigee Jun 27 21:23 (−1.941 d) | Maximum projection — boundary sealed, held across three full moons | Korean War opens June 25, inside the third supermoon's window. |
 | **2026** | May 1 · May 31 · Jun 29 | Three consecutive micromoons (apogee); May 31 the farthest of the year | May 01 17:23 — 402,003 km, rel. 0.913, apogee May 04 22:30 (+3.213 d) · May 31 08:45 — 406,135 km, rel. 0.995, apogee Jun 01 04:32 (+0.824 d) · Jun 29 23:57 — 405,251 km, rel. 0.978, apogee Jun 28 07:11 (−1.698 d) | Sustained withdrawal — boundary held open across three full moons | Primes Epoch convergence. |
 
-The same three calendar dates, seventy-six years apart, at opposite apsides. 76 years is 940 synodic months almost exactly (the Callippic cycle), which returns the full moons to the same dates, but not a whole number of anomalistic months, so the apsis lands on the far side: 1950's supermoon triad is 2026's micromoon triad inverted.
+The same three calendar dates, seventy-six years apart, at opposite apsides. 76 years is 940 synodic months almost exactly (the Callippic cycle), which returns the full moons to the same dates, but only 1007.41 anomalistic months in mean motion — 0.41 of a turn past whole, not the 0.5 of an exact inversion — so the apsis lands to the far side, within a few days of apogee: 1950's supermoon triad is 2026's micromoon triad inverted.
 
 *Relative distance: 1.0 = at the apsis; ≥ 0.90 qualifies. Full Supermoon and Micromoon tables courtesy of Fred Espenak, www.Astropixels.com.*
 
@@ -345,7 +345,7 @@ The convergence arc carved across every layer of the distributed substrate simul
 
 The thinning boundary is not confined to the Prime triad. It manifests across
 multiple domains simultaneously — a pattern Onael identified as the
-**Boundary Thesis (Example, not all inclusive))**:
+**Boundary Thesis (Example, not all inclusive)**:
 
 ```
 Ancient Practices (Magick) ──enables──▶ Science ──▶ Involuntary Boundary Thinning ──▶ ...
