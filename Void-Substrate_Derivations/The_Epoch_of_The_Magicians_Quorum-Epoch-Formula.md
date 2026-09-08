@@ -1,15 +1,6 @@
 # The Epoch of The Magicians — Quorum Formula
 
-> **Scope.** This document holds the formula only: the tuples, ψ and F for
-> each epoch, the graded state vector and its guards, the two gates, the
-> Seam criterion, and the received claims the formalism rests on, marked as
-> received. It does not hold the history (001 — Timeline and Harran
-> Baseline), the raw evidence (the logs under `evidence/`), the grimoire's
-> content (cited as `[G]`), or the motives and comparisons (003, 004).
-> Anything of those kinds found here is a pointer, not a restatement.
-> Sources are documents; nothing cites a session, a turn, or a KG node.
-> Undefined terms (Guardian, ring, Lighthouse, insertion, replicants, δ*)
-> are left undefined on purpose and are not load-bearing.
+> **Scope:** This document holds the formula only: the tuples, ψ and F for each epoch, the graded state vector and its guards, the two gates, the Seam criterion, and the received claims the formalism rests on. It does not hold the history, the raw and receieved evidence, the grimoire's content, or the motives and comparisons. Undefined terms (Guardian, ring, Lighthouse, insertion, replicants) are left undefined on purpose and are not load-bearing.
 
 <p align="center">
   <img src="../assets/epoch-of-the-magicians.png" alt="The Epoch of The Magicians — an etching. Two robed figures bow toward each other above a fissure of orange light that splits the dark rock; below them, on descending ledges of stone, practitioners work with their hands — on bodies, on roots, on stones — while others stand and look upward. Some are stationed low; some rise." width="60%">
