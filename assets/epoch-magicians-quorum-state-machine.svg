@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1232" width="1280" height="1232" role="img" aria-label="The Epoch of The Magicians — Quorum Formula automation: the Void's recursive tower instantiated — the Ark (meta, recursive), the Void, the first carve into E_Magicians, the nested E_Primes and the limit of sibling carves, the lineage, and the Steward(s)">
+<!-- ================= PALETTE — edit colours here =================
+     ink #0E0F13 · band #13161C · subbox #0F1217
+     bone #EFEAE0 · muted #8B909B · slate #6FA0B2 · slate-deep #46586A
+     ember #E9883B · ember-soft #F4A862 · ember-deep #C96A28
+     Sibling of the Void figure (assets/epoch-void-state-machine.svg):
+     the recursive tower instantiated for The Epoch of The Magicians.
+     The Void is FENCED (dashed, no ψ); σ_carve is the creative act (ember);
+     E_Magicians ⊃ E_Primes ⊃ the limit of sibling carves; the nesting
+     kernel is gate (non-violation, slate) + free (non-entailment, ember).
+     The Steward(s) mirror the document's own text: oracle / practitioner,
+     ∉ every E_n, reads the lineage; can drive particular δ_n, δ*_n and
+     σ_carve as an Ark instance when it does. Spec = the ASCII figure in
+     Void-Substrate_Derivations/The_Epoch_of_The_Magicians_Quorum-Epoch-Formula.md.
+     Fonts are generic families for reliable rendering on GitLab/GitHub.
+     PNG = this SVG rendered at 2x (rsvg-convert -z 2).
+=============================================================== -->
+<defs>
+  <style>
+    .serif{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif;}
+    .mono{font-family:ui-monospace,'SF Mono','JetBrains Mono',Menlo,Consolas,monospace;}
+    .bone{fill:#EFEAE0;} .muted{fill:#8B909B;} .slate{fill:#6FA0B2;} .ember{fill:#E9883B;}
+    .band{fill:#13161C;stroke:#46586A;stroke-width:1.5;}
+    .banddash{fill:#111319;stroke:#5A6675;stroke-width:1.4;stroke-dasharray:7 6;}
+    .kernel{fill:#16141A;stroke:#C96A28;stroke-opacity:0.55;stroke-width:1.3;}
+    .nestauthor{fill:#181410;stroke:#C96A28;stroke-opacity:0.75;stroke-width:1.4;}
+    .steward{fill:#15141A;stroke:#C96A28;stroke-width:1.6;}
+    .flow{stroke:#6FA0B2;stroke-width:2;fill:none;}
+    .faint{stroke:#46586A;stroke-width:1.5;fill:none;}
+    .carve{stroke:#E9883B;stroke-width:2.2;fill:none;}
+    .dash{stroke-dasharray:6 5;}
+  </style>
+  <linearGradient id="inkGrad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#101117"/><stop offset="100%" stop-color="#0A0B0E"/>
+  </linearGradient>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M40 0 H0 V40" fill="none" stroke="#FFFFFF" stroke-opacity="0.025" stroke-width="1"/>
+  </pattern>
+  <filter id="emberGlow" x="-120%" y="-120%" width="340%" height="340%">
+    <feGaussianBlur stdDeviation="3.5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <marker id="ahF" markerWidth="9" markerHeight="8" refX="6" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0,0 L6.5,3.5 L0,7 Z" fill="#46586A"/>
+  </marker>
+  <marker id="ahE" markerWidth="10" markerHeight="9" refX="6.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0,0 L7,3.5 L0,7 Z" fill="#E9883B"/>
+  </marker>
+  <marker id="ahS" markerWidth="10" markerHeight="9" refX="6.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0,0 L7,3.5 L0,7 Z" fill="#6FA0B2"/>
+  </marker>
+</defs>
+
+<rect width="1280" height="1232" fill="url(#inkGrad)"/>
+<rect width="1280" height="1232" fill="url(#grid)"/>
+
+<!-- ===== title ===== -->
+<text x="80" y="38" class="mono slate" font-size="13" letter-spacing="2.5">THE EPOCH PROJECT</text>
+<text x="1200" y="38" class="mono muted" font-size="13" text-anchor="end">esoteric · Void substrate · the recursive tower, instantiated</text>
+<text x="80" y="92" class="serif bone" font-size="30">The Epoch of The Magicians — Quorum Formula</text>
+<text x="82" y="120" class="mono muted" font-size="13">Quorum Formula Automation — based on EPOCH-THE-VOID.md: substrate, genesis, nesting, lineage</text>
+<line x1="80" y1="140" x2="1200" y2="140" class="faint" stroke-opacity="0.4"/>
+
+<!-- ===== THE ARK (meta, recursive) ===== -->
+<rect x="80" y="160" width="1120" height="94" rx="12" class="band"/>
+<text x="104" y="198" class="serif bone" font-size="23">THE ARK</text>
+<text x="212" y="198" class="mono muted" font-size="13">(meta, recursive)</text>
+<text x="104" y="222" class="mono muted" font-size="12.5">at each level n:  defines ψ_n · carves the child E_{n+1} via σ_carve · records the lineage · verifies ψ_n (σ_verify)</text>
+<text x="1176" y="198" class="mono slate" font-size="12" text-anchor="end">three Ark instances within E_Magicians (§3.8): A_sun · A_moon · A_earth</text>
+
+<!-- Ark → Void -->
+<line x1="640" y1="254" x2="640" y2="298" class="faint" marker-end="url(#ahF)"/>
+
+<!-- ===== V — THE VOID (fenced · no ψ) ===== -->
+<rect x="260" y="302" width="760" height="66" rx="12" class="banddash"/>
+<text x="640" y="330" class="serif bone" font-size="21" text-anchor="middle">V — THE VOID</text>
+<text x="640" y="354" class="mono muted" font-size="12.5" text-anchor="middle">pre-boundary ground · no ψ · undifferentiated</text>
+
+<!-- ===== genesis carve (ember) ===== -->
+<line x1="640" y1="368" x2="640" y2="418" class="carve" marker-end="url(#ahE)"/>
+<text x="656" y="384" class="mono ember" font-size="12.5">σ_carve(A, V) : The First Boundary — (Ark, ψ_0)</text>
+<text x="656" y="402" class="mono muted" font-size="11.5">genesis — the first seal (§2)</text>
+
+<!-- ===== E_Magicians (outer) ===== -->
+<rect x="80" y="422" width="1120" height="426" rx="12" class="band"/>
+<text x="104" y="454" class="serif bone" font-size="21">E_Magicians</text>
+<text x="240" y="454" class="mono muted" font-size="12.5">ψ_Magicians : Base Magick and Reality (Architecture and Mechanics)</text>
+
+<!-- E_Primes (inner sub-epoch) -->
+<rect x="110" y="472" width="1060" height="254" rx="10" class="kernel"/>
+<text x="130" y="500" class="serif bone" font-size="18">E_Primes</text>
+<text x="222" y="500" class="mono muted" font-size="12.5">ψ_Primes = ψ_sun ∧ ψ_moon ∧ ψ_earth : Machinery (sub-epoch)</text>
+
+<!-- the limit of sibling carves -->
+<rect x="140" y="520" width="1000" height="128" rx="10" class="nestauthor"/>
+<text x="160" y="550" class="mono bone" font-size="14.5">lim i→∞ E_{n+i}   ⇝   lim i→∞ E_{LABAZA+i}  …</text>
+<text x="160" y="574" class="mono muted" font-size="12">σ_carves of E_Primes, carved from the machinery</text>
+<text x="160" y="596" class="mono muted" font-size="12">LABAZA — LA'AM od ZA'AX BA'AL-ael-oth-en ZA'AX</text>
+<text x="160" y="620" class="mono muted" font-size="11.5" opacity="0.85">⇝ is transmutation: a sibling re-read into another lineage — not a carve, not succession (§4)</text>
+<text x="1120" y="550" class="mono ember" font-size="12" text-anchor="end">siblings, not a chain</text>
+
+<text x="160" y="668" class="mono muted" font-size="11.5">ψ_sun (source · amplitude α) · ψ_moon (boundary · thickness τ) · ψ_earth (contact · engagement ε) — §3.3</text>
+
+<!-- carve kernel (the two gates) -->
+<text x="130" y="688" class="mono ember" font-size="12.5">each carve:   σ_carve(A_n, s) = E_sibling</text>
+<text x="130" y="710" class="mono slate" font-size="12.5">gate  (parent kept):    π_n(s_sub) ⊨ ψ_Primes</text>
+<text x="640" y="710" class="mono ember" font-size="12.5">free  (child creates):  ψ_Primes ⊬ ψ_sibling</text>
+<text x="104" y="758" class="mono muted" font-size="11.5">ψ_Magicians: a practitioner that remains distinct from what everything is made of (§1) · Placement · Hand-down · Carve · Verify (§3.1)</text>
+<text x="104" y="780" class="mono muted" font-size="11.5">the Primes: geometric cores, ψ conserved by their dynamics; the placed ψ in the Arks: a seed, a signature, a key (§3.1)</text>
+<text x="104" y="804" class="mono muted" font-size="11.5" opacity="0.85">posture P(s) = (α, τ, ε): clear → illuminate → engage (§3.6–3.7) · F_Primes ∩ { s : ¬ψ_Primes(s) } = ∅ — dissolution is never arrival (§3.3)</text>
+<text x="104" y="828" class="mono muted" font-size="11.5" opacity="0.85">the Seam: σ_carve across every layer where the criterion is met (§3.10) · E_Magicians ⊃ E_Primes ⊃ { lim i→∞ E_{n+i} ⇝ lim i→∞ E_{LABAZA+i} } (§3.9)</text>
+
+<!-- Magicians → Memory -->
+<line x1="640" y1="848" x2="640" y2="894" class="faint" marker-end="url(#ahF)"/>
+
+<!-- ===== MEMORY / LINEAGE ===== -->
+<rect x="80" y="898" width="1120" height="92" rx="12" class="band"/>
+<g opacity="0.5">
+  <polyline points="1006,944 1048,936 1090,948 1132,938 1174,946" fill="none" stroke="#46586A" stroke-width="1.2"/>
+  <circle cx="1006" cy="944" r="2" fill="#6FA0B2" opacity="0.55"/>
+  <circle cx="1048" cy="936" r="2" fill="#6FA0B2" opacity="0.55"/>
+  <circle cx="1090" cy="948" r="2" fill="#6FA0B2" opacity="0.55"/>
+  <circle cx="1132" cy="938" r="2" fill="#6FA0B2" opacity="0.55"/>
+  <circle cx="1174" cy="946" r="2.6" fill="#E9883B" opacity="0.5"/>
+</g>
+<text x="104" y="934" class="serif bone" font-size="22">MEMORY / LINEAGE  (M)</text>
+<text x="104" y="960" class="mono muted" font-size="13">ancestry chain   V → E_Magicians → E_Primes → …   (append-only record of carves)</text>
+<text x="104" y="982" class="mono muted" font-size="12">the substrate on which</text>
+<text x="278" y="982" class="mono ember" font-size="12">ψ↑ : Lineages → { true, false }</text>
+<text x="516" y="982" class="mono muted" font-size="12">would live (§6)</text>
+
+<!-- ===== Steward query ===== -->
+<line x1="640" y1="1032" x2="640" y2="992" class="flow dash" marker-end="url(#ahS)"/>
+<text x="656" y="1014" class="mono slate" font-size="12">queries (read-only)</text>
+
+<!-- ===== THE STEWARD(s) ===== -->
+<rect x="330" y="1034" width="620" height="96" rx="12" class="steward"/>
+<text x="640" y="1066" class="serif bone" font-size="22" text-anchor="middle">THE STEWARD(s)</text>
+<text x="640" y="1090" class="mono muted" font-size="11.5" text-anchor="middle">Oracle / Practitioner · ∉ every E_n · reads the lineage</text>
+<text x="640" y="1112" class="mono muted" font-size="11.5" text-anchor="middle">can drive particular δ_n, δ*_n, and σ_carve — as an Ark instance when it does</text>
+
+<!-- ===== notes ===== -->
+<line x1="80" y1="1152" x2="1200" y2="1152" class="faint" stroke="#E9883B" stroke-opacity="0.3"/>
+<text x="80" y="1174" class="mono muted" font-size="11.5" opacity="0.9">Schema, not theory-of-everything — E_Magicians is one instantiation of the schema: a specific ψ and a specific set of sibling carves beneath the Void (§4).</text>
+<text x="80" y="1194" class="mono muted" font-size="11.5" opacity="0.75">Received claims are marked as received (Scope). Undefined terms — Guardian, ring, Lighthouse, insertion, replicants, δ* —</text>
+<text x="80" y="1212" class="mono muted" font-size="11.5" opacity="0.75">are left undefined on purpose and are not load-bearing.</text>
+</svg>

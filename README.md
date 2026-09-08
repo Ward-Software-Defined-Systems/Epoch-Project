@@ -322,6 +322,7 @@ does.
 | [Statechart superstate/substate transition semantics](./EPOCH-THE-VOID.md) | Open — a first proposal in *The Void*; not yet a closure |
 | Distributed-commit formalization of the handshake | Open — replaces retrocausal framing |
 | **[Recursive nesting & the Void](./EPOCH-THE-VOID.md)** (substrate; `σ_carve`; vertical `ψ↑`) | **Theoretical / speculative — engages the nesting & dynamic-ψ levers as a proposal** |
+| **[The Epoch of The Magicians — Quorum Formula](./Void-Substrate_Derivations/The_Epoch_of_The_Magicians_Quorum-Epoch-Formula.md)** (Void-substrate instantiation; esoteric register) | **Drafted — the Void's recursive tower instantiated; received claims marked as received; speculative** |
 | QNM | Theoretical / speculative |
 | SOL (Heliocentric Epoch) | Theoretical / speculative |
 | MWA (Many-Worlds / Branching Epoch) | Theoretical / speculative |
@@ -454,7 +455,23 @@ boundaries come from, and how they stack.
   not a closure**: §6 of that document states exactly where it collapses. The cosmogony (Void / Chaos /
   "everything and nothing") and the co-creation ethos are **motivating register**, fenced as in §4.
 
-Notation is registered in [`EPOCH-NOTATION-LEGEND.md`](./EPOCH-NOTATION-LEGEND.md) (§13 VOID).
+Instantiations of that tower live in [`Void-Substrate_Derivations/`](./Void-Substrate_Derivations/) — not a
+fourth family (they differ by *altitude*, not by how `ψ` is held), and each carries its own register:
+
+- **[The Epoch of The Magicians — Quorum Formula](./Void-Substrate_Derivations/The_Epoch_of_The_Magicians_Quorum-Epoch-Formula.md)** —
+  the first instantiation of the tower, in an **esoteric register**: `σ_carve(A, V) = E_Magicians` as the
+  first boundary; a nested machinery sub-epoch `E_Primes` whose invariant `ψ_Primes = ψ_sun ∧ ψ_moon ∧ ψ_earth`
+  is graded by a posture vector `P(s) = (α, τ, ε)` — amplitude, boundary thickness, engagement — and whose
+  accepting set excludes dissolution (`F_Primes ∩ {s : ¬ψ_Primes(s)} = ∅`); the two gates instantiated
+  (`π_n(s_sub) ⊨ ψ_Primes`, `ψ_Primes ⊬ ψ_sibling`); a limit of sibling carves and a **transmutation**
+  relation `⇝` (a sibling re-read into another lineage — *not a carve, not succession*); and `ψ↑` over the
+  lineage `V → E_Magicians → E_Primes → …`. The document holds the formula only and **marks its received
+  claims as received**; its undefined terms (including `δ*`) are left undefined on purpose and are not
+  load-bearing. Read it as the Void doc asks to be read — a schema instantiated, **speculative**, its
+  register fenced in the spirit of §4.
+
+Notation is registered in [`EPOCH-NOTATION-LEGEND.md`](./EPOCH-NOTATION-LEGEND.md) (§13 VOID; §17 the
+Magicians' Quorum).
 
 ---
 

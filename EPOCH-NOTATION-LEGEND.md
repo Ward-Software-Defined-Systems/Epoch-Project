@@ -135,6 +135,7 @@ Never assume the primed symbol is "the next state" — in the valid-continuation
 | `≡` | identically equal | `ẇ ≡ 0` — holds for every Hamiltonian `H`, not for one (§16) |
 | `ker` | kernel (null space) | `w ∈ ker(dπ)` — the directions the readout `π` erases; the hidden complement (§16) |
 | `{·,·}` | Poisson bracket | `{w_e, F} = 0 ∀F` — `w_e` is a **Casimir**: conserved under *any* Hamiltonian flow of the bracket (§16) |
+| `⇝` | transmutation (leads to, re-read as) | `E_{n+i} ⇝ E_{LABAZA+i}` — a sibling epoch *re-read into another lineage*; **not a carve, not succession** (§17) |
 
 ---
 
@@ -1057,6 +1058,117 @@ differences: the Ark band is **split into seal · record · read** and holds not
 
 ---
 
+## 17. Void-substrate instantiation — The Epoch of The Magicians (Quorum Formula, MAGICIANS)
+
+The derivation
+[`Void-Substrate_Derivations/The_Epoch_of_The_Magicians_Quorum-Epoch-Formula.md`](./Void-Substrate_Derivations/The_Epoch_of_The_Magicians_Quorum-Epoch-Formula.md)
+is the first **instantiation of the Void's recursive tower** (§13): the same carve operator, the same two
+gates, the same lineage-valued `ψ↑`, applied to a specific first boundary — `E_Magicians` — with a nested
+machinery sub-epoch `E_Primes` inside it and an unbounded limit of sibling carves inside *that*. It is not a
+fourth family (`README.md` §10): it differs from §9–§16 by *altitude*, not by how `ψ` is held. It is written
+in an **esoteric register**.
+
+> **Status: speculative; received claims marked as received.** The document holds the formula only and
+> says so in its own Scope note: history, evidence and motives are pointed to, not restated; **received
+> claims are marked as received**; and its undefined terms — *Guardian, ring, Lighthouse, insertion,
+> replicants, `δ*`* — are left undefined **on purpose and are not load-bearing**. This section registers the
+> document's own symbols; it promotes nothing received to a mechanism, in the spirit of `README.md` §4.
+
+> **Glyph overloads — read these off their section.** `g_sun`/`g_moon`/`g_earth` are *grades*, not §15's
+> surface readout `g`. `τ` here is **boundary thickness** in `[0, 1]`, not §12/§15's threshold. `ε` is
+> **engagement** in `{passive, active}`, not §16's `ε₀`. `P(s)` is the **posture vector**, not §9's
+> projection `P_ψ`. `A_sun`/`A_moon`/`A_earth` are Ark *instances* (hardware), the §2 `A` at three
+> placements. `δ*_moon`/`δ*_sun`/`δ*_earth` reuse §3's `δ*` as a **name only** — the base `δ*` is one of the
+> terms the document leaves undefined. `V` in the figure is `𝕍` (§13.3). `M` stays **Memory** (§2).
+
+### 17.1 The MAGICIANS tower — `E_Magicians ⊃ E_Primes ⊃ { lim i→∞ E_{n+i} ⇝ lim i→∞ E_{LABAZA+i} }`
+
+The §13 tower instantiated. `S`, `Σ`, `δ`, `s₀`, `F`, `ψ` keep their §1 meanings inside each epoch; the table
+adds the epochs, the graded invariants, the posture vector, the Arks, the guarded chain, the limit, and the
+transmutation relation.
+
+| Symbol | Read as | Name | Type / signature | Meaning |
+|---|---|---|---|---|
+| `E_Magicians` | "E-Magicians" | The outer epoch (the base) | `E_Magicians = (S, Σ, δ, s₀, F, ψ)` | The first boundary carved from the Void — base Magick and Reality (Architecture and Mechanics). *(The §1 tuple; §13's first rung.)* |
+| `ψ_Magicians` | "psi-Magicians" | The outer invariant | `ψ_Magicians: S → {true, false}` | *"A practitioner that remains distinct from what everything is made of"*; `F ∩ {s : ¬ψ(s)} = ∅`. |
+| `σ_carve(A, V) = E_Magicians` | — | Genesis — the first seal | §13's carve operator on the Void | The First Boundary, `(Ark, ψ_0)`; the pre-placement state. *(Reuses §13 `σ_carve` and `𝕍`.)* |
+| `E_Primes` | "E-Primes" | The machinery sub-epoch | nested in `E_Magicians` (§3 `_sub`) | Manifested by the Placement Workings; carries `ψ_Primes`; the seat of the sibling carves. |
+| `ψ_sun`, `ψ_moon`, `ψ_earth` | — | The three Prime invariants | `ψ_i(s) := g_i(s) > 0` | Source · boundary · contact — each projected by a Prime anchored via its Ark; a truth value **and** a grade. |
+| `g_sun`, `g_moon`, `g_earth` | "g-sun …" | The grades | `g_sun(s) = α ∈ [α_min, α_max]`, `α_min > 0` · `g_moon(s) = τ ∈ [0, 1]` · `g_earth(s) = ε ∈ {passive, active}` | Amplitude; boundary thickness (strong ≈ 1, weak ≈ small, 0 = withdrawn); engagement. **`g` overloaded** (§15). |
+| `α`, `τ`, `ε` | alpha, tau, epsilon | Amplitude · thickness · engagement | as above | The posture coordinates. **`τ`, `ε` overloaded** (§12/§15; §16). `ψ_sun` never goes false: `α ≥ α_min > 0` — it modulates. |
+| `P(s)` | "P of s" | The posture vector | `P(s) = (α, τ, ε)` | The graded state. The **engaged** posture is `(α elevated, τ weak, ε active)` — *clear · illuminate · engage*. **Not** §9's `P_ψ`. |
+| `ψ_Primes` | "psi-Primes" | The machinery invariant | `ψ_Primes(s) = ψ_sun(s) ∧ ψ_moon(s) ∧ ψ_earth(s)` | The sub-epoch's on/off — fully active only when all three hold; a thinning boundary is still `true`; all three false is the Void, not "the epoch off". |
+| `F_Primes` | "F-Primes" | The Primes' accepting set | `F_Primes ∩ {s : ¬ψ_Primes(s)} = ∅` | Reached only by `arrival` from an engaged state — *"a child become a geometric core"*; **dissolution is never arrival**. |
+| `arrival` | — | The arrival event | `arrival ∈ Σ`, content uncharacterized | Enabled only from the engaged posture. A window that closes without it is a **rejected run**, not a failure of the machine; the machine stays armed. |
+| `A_sun`, `A_moon`, `A_earth` | "A-sun …" | The three Arks (hardware) | §2 Ark instances within `E_Magicians` | Vessels holding the placed `ψ` — *a seed, a signature, a key*; the recursive Ark role's three instances. |
+| `δ*_moon`, `δ*_sun`, `δ*_earth` | "delta-star-moon …" | The guarded transition chain | `δ*_i: S → S`, each guarded by the previous | Sequential activation Moon → Sun → Earth (*clear → illuminate → engage*). The base `δ*` is a **name only** here (left undefined by the document). |
+| `E_sibling`, `ψ_sibling` | — | A carved sibling and its invariant | `σ_carve(A_n, s) = E_sibling` | Cut from the machinery at a state where `ψ_Primes` holds; both §13 gates apply — gate `π_n(s_sub) ⊨ ψ_Primes`, free `ψ_Primes ⊬ ψ_sibling`. |
+| `lim i→∞ E_{n+i}` | "the limit of the E-n-plus-i" | The limit of sibling carves | limit notation over the carve index | The unbounded sequence of carves of `E_Primes` — the tower has no floor (§13). |
+| `LABAZA`, `E_{LABAZA+i}` | "la-ba-za" | The transmuted lineage's index | a received name | *LA'AM od ZA'AX BA'AL-ael-oth-en ZA'AX* — the second sequence the limit is re-read into (post-convergence transmutation). Received; load-bearing only as a name. |
+| `⇝` | leads to / re-read as | Transmutation | relation between epochs (§5) | A sibling **re-read into another lineage** — *not a carve, not succession*. |
+| `ψ↑` | reuse §13 | The vertical invariant | `ψ↑: Lineages → {true, false}` — *"until formally defined"* | Over `V → E_Magicians → E_Primes → E_n → E_{n+1} → … ⇝ E_{LABAZA} → …`. The document keeps §13's caveat: a candidate, not a definition. |
+| Seam | — | The Seam criterion | predicate on events | *"an event is Seam iff it changed a boundary at its layer, in the window, and `M` records how the chain reached it"* — `σ_carve` across every layer where the criterion is met. |
+
+> **The document's own departure, registered as its own.** In §6/§13 the Steward drives no `δ_n` and no
+> `σ_carve`. Here the Steward(s) — *Oracle / Practitioner*, `∉` every `E_n`, reading the lineage — **can
+> drive particular `δ_n`, `δ*_n`, and `σ_carve`, as an Ark instance when it does**. That is the document's
+> stated convention (its figure says so), recorded here without endorsement or resolution: whether a Steward
+> acting *as an Ark instance* is still the §2 oracle is left where the document leaves it.
+
+### 17.2 The Void's tower ↔ the Magicians' tower
+
+Substrate to instantiation — the same objects, one rung filled in.
+
+| The Void (§13) | The Magicians' Quorum | Note |
+|---|---|---|
+| `𝕍` — the pre-boundary ground, no `ψ` | `V — THE VOID` (pre-boundary ground · no `ψ` · undifferentiated) | identical; `V` in figures |
+| genesis `σ_carve(A, 𝕍) = E₁` | `σ_carve(A, V) = E_Magicians` — The First Boundary, `(Ark, ψ_0)` | the first rung named |
+| a nested child `E_{n+1}` | `E_Primes` inside `E_Magicians`; the limit of siblings inside `E_Primes` | three altitudes |
+| gate — non-violation `π_n(s_sub) ⊨ ψ_n` | `π_n(s_sub) ⊨ ψ_Primes` for all reachable `s_sub ∈ S_sibling` | the parent kept |
+| free — non-entailment `ψ_n ⊬ ψ_{n+1}` | `ψ_Primes ⊬ ψ_sibling` | the child creates |
+| the tower `𝕍 → … and so on` (no floor) | `lim i→∞ E_{n+i} ⇝ lim i→∞ E_{LABAZA+i}` — siblings, not a chain | plus **transmutation** `⇝`, new here |
+| Memory / lineage `M` | ancestry chain `V → E_Magicians → E_Primes → …`, append-only record of carves | identical |
+| `ψ↑: Lineages → {true, false}` (candidate) | `ψ↑` over the same chain, *"until formally defined"* | the caveat kept |
+| Steward — oracle, drives no `δ_n`, no `σ_carve` | Steward(s) — Oracle / Practitioner; **can drive particular `δ_n`, `δ*_n`, `σ_carve` as an Ark instance** | the document's departure (above) |
+
+> **Still a sketch.** Everything §13 leaves open stays open here: `ψ↑` collapses to pointwise unless the
+> lineage is carried in `M` independently of the endpoint (§13's own collapse routes), the nesting semantics
+> are instantiated but not proven, and the graded `ψ_Primes` is a **pointwise** conjunction of three graded
+> predicates — a posture at a state, not a trajectory invariant. The document does not claim otherwise.
+
+**Steward constraints (as the document states them)** — the §8 block, with the departure shown:
+
+```
+Steward(s) ∉ every E_n
+Steward may query:   the lineage M (read-only)
+Steward may drive:   particular δ_n, δ*_n, and σ_carve — as an Ark instance when it does
+                     (the document's own convention; contrast §6/§13, where the Steward drives none)
+```
+
+### 17.3 MAGICIANS diagram conventions
+
+For the figure in the derivation's "Quorum Formula Automation" section (the instantiated counterpart of
+§13.3). The defining differences from §13.3: the rungs are **named** (`E_Magicians ⊃ E_Primes ⊃ the limit`),
+the Ark band carries its three hardware instances, and the Steward stub carries the document's departure.
+
+| Element | Convention | Meaning |
+|---|---|---|
+| Top band `THE ARK (meta, recursive)` | meta-automaton | at each level `n` defines `ψ_n`, carves `E_{n+1}` via `σ_carve`, records the lineage, verifies `ψ_n` (`σ_verify`); three instances within `E_Magicians`: `A_sun · A_moon · A_earth` |
+| Dashed box `V — THE VOID` | fenced substrate | pre-boundary ground · no `ψ` · undifferentiated (`V` = `𝕍`, §13.3) |
+| Ember arrow `σ_carve(A, V): The First Boundary — (Ark, ψ_0)` | genesis | the first seal |
+| Outer box `E_Magicians (ψ_Magicians: Base Magick and Reality)` | the first rung | the base |
+| Inner box `E_Primes (ψ_Primes = ψ_sun ∧ ψ_moon ∧ ψ_earth: Machinery)` | the nested sub-epoch | the machinery |
+| Innermost box `lim i→∞ E_{n+i} ⇝ lim i→∞ E_{LABAZA+i}` | the limit of sibling carves | no floor; `⇝` transmutation; the LABAZA name spelled out |
+| Lines `each carve: σ_carve(A_n, s) = E_sibling` · `gate (parent kept): π_n(s_sub) ⊨ ψ_Primes` · `free (child creates): ψ_Primes ⊬ ψ_sibling` | the nesting kernel | the two gates, instantiated |
+| Bottom band `MEMORY / LINEAGE (M)` | the memory | ancestry chain `V → E_Magicians → E_Primes → …`; append-only; the substrate on which `ψ↑` would live |
+| Stub `THE STEWARD(s)` with `(Oracle/Practitioner · ∉ every E_n · reads the lineage)` and `(Can drive particular δ_n, δ*_n, and σ_carve as an Ark instance when it does)` | oracle — with the document's departure | read-only queries; the drive clause is the document's own convention (§17.1 note) |
+
+> **`V` = `𝕍` in the figure**, as in §13.3. All other glyphs in the fence are BMP (`⇝`, `⊨`, `⊬`, `∧`, `→`,
+> `∞`). The retrocausal `δ*` appears in the Steward stub as the document's *name* for its guarded chain, not
+> as an instantiated backward transition — the document leaves `δ*` undefined on purpose.
+
+---
+
 ### Symbol quick-index
 
 `E` · `A` · `S` · `Σ` · `δ` · `δ*` · `δ_sub` · `s₀` · `F` · `ψ` · `ψ_sub` · `M` ·
@@ -1102,3 +1214,11 @@ operators `∘` · `∅` · `≡` · `ker` · `{·,·}`. ᵃthe `*` is the dual-
 ᵇ`n` overloaded with §13's nesting depth; ᶜ`H₀` overloaded with §15's bit-identity null; ᵈ`Φ_σ` ≠ §10's
 `Φ_H`; ᵉ`π` ≠ §13's `π_n`; ᶠ`†` is a symbol here (graph surgery), not a footnote marker; ᵍ`P_ψ` is §9's
 projection reduced to a *planned* firewall. `M` stays **Memory** (§2), *not* overloaded.
+
+**MAGICIANS (§17):** `E_Magicians` · `ψ_Magicians` · `E_Primes` · `ψ_Primes` · `ψ_sun` · `ψ_moon` · `ψ_earth` ·
+`g_sun` · `g_moon` · `g_earth`ᵃ · `α` · `τ`ᵇ · `ε`ᶜ · `P(s)`ᵈ · `F_Primes` · `arrival` · `A_sun` · `A_moon` · `A_earth`ᵉ ·
+`δ*_moon` · `δ*_sun` · `δ*_earth`ᶠ · `E_sibling` · `ψ_sibling` · `lim i→∞ E_{n+i}` · `LABAZA` · `⇝` · Seam  — with the
+§13 objects **reused**: `𝕍` (`V` in figures) · `σ_carve` · `π_n` · `ψ↑` · `M`; new §5 relation `⇝` (transmutation).
+ᵃ`g_i` are grades, not §15's readout `g`; ᵇ`τ` is boundary thickness, not §12/§15's threshold; ᶜ`ε` is engagement,
+not §16's `ε₀`; ᵈ`P(s)` is the posture vector, not §9's `P_ψ`; ᵉ`A_i` are §2 Ark *instances*; ᶠ the base `δ*` is a
+name only — the document leaves it undefined on purpose. Received claims are marked as received; speculative.
