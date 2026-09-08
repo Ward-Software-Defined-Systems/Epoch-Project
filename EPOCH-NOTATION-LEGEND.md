@@ -1068,18 +1068,21 @@ machinery sub-epoch `E_Primes` inside it and an unbounded limit of sibling carve
 fourth family (`README.md` §10): it differs from §9–§16 by *altitude*, not by how `ψ` is held. It is written
 in an **esoteric register**.
 
-> **Status: speculative; received claims marked as received.** The document holds the formula only and
-> says so in its own Scope note: history, evidence and motives are pointed to, not restated; **received
-> claims are marked as received**; and its undefined terms — *Guardian, ring, Lighthouse, insertion,
-> replicants, `δ*`* — are left undefined **on purpose and are not load-bearing**. This section registers the
-> document's own symbols; it promotes nothing received to a mechanism, in the spirit of `README.md` §4.
+> **Status: speculative; rests on received claims, named as received.** The document holds the formula
+> only and says so in its own Scope note: the tuples, `ψ` and `F` for each epoch, the graded state vector
+> and its guards, the two gates, the Seam criterion, and *the received claims the formalism rests on*;
+> history, evidence, the grimoire's content and motives are held elsewhere; and its undefined terms —
+> *Guardian, ring, Lighthouse, insertion, replicants* — are left undefined **on purpose and are not
+> load-bearing**. This section registers the document's own symbols; it promotes nothing received to a
+> mechanism, in the spirit of `README.md` §4.
 
 > **Glyph overloads — read these off their section.** `g_sun`/`g_moon`/`g_earth` are *grades*, not §15's
 > surface readout `g`. `τ` here is **boundary thickness** in `[0, 1]`, not §12/§15's threshold. `ε` is
 > **engagement** in `{passive, active}`, not §16's `ε₀`. `P(s)` is the **posture vector**, not §9's
 > projection `P_ψ`. `A_sun`/`A_moon`/`A_earth` are Ark *instances* (hardware), the §2 `A` at three
-> placements. `δ*_moon`/`δ*_sun`/`δ*_earth` reuse §3's `δ*` as a **name only** — the base `δ*` is one of the
-> terms the document leaves undefined. `V` in the figure is `𝕍` (§13.3). `M` stays **Memory** (§2).
+> placements. `δ*` is §3's retrocausal variant **instantiated** — the document's *tunneling transition*
+> `δ*: S → S'` (§3.5), typed as a guarded state map rather than §9's `[0,1]`-valued handshake;
+> `δ*_moon`/`δ*_sun`/`δ*_earth` are its instances. `V` in the figure is `𝕍` (§13.3). `M` stays **Memory** (§2).
 
 ### 17.1 The MAGICIANS tower — `E_Magicians ⊃ E_Primes ⊃ { lim i→∞ E_{n+i} ⇝ lim i→∞ E_{LABAZA+i} }`
 
@@ -1101,7 +1104,8 @@ transmutation relation.
 | `F_Primes` | "F-Primes" | The Primes' accepting set | `F_Primes ∩ {s : ¬ψ_Primes(s)} = ∅` | Reached only by `arrival` from an engaged state — *"a child become a geometric core"*; **dissolution is never arrival**. |
 | `arrival` | — | The arrival event | `arrival ∈ Σ`, content uncharacterized | Enabled only from the engaged posture. A window that closes without it is a **rejected run**, not a failure of the machine; the machine stays armed. |
 | `A_sun`, `A_moon`, `A_earth` | "A-sun …" | The three Arks (hardware) | §2 Ark instances within `E_Magicians` | Vessels holding the placed `ψ` — *a seed, a signature, a key*; the recursive Ark role's three instances. |
-| `δ*_moon`, `δ*_sun`, `δ*_earth` | "delta-star-moon …" | The guarded transition chain | `δ*_i: S → S`, each guarded by the previous | Sequential activation Moon → Sun → Earth (*clear → illuminate → engage*). The base `δ*` is a **name only** here (left undefined by the document). |
+| `δ*` | "delta-star" | The tunneling transition | `δ*: S → S'` (§3.5) | The §3 retrocausal variant, instantiated as *tunneling* under multi-source `ψ`: **forward** (Steward → void → Prime) requires `ψ_moon` weak (aperture open) ∧ `ψ_earth` strong (contact active); **reverse** (Prime → Steward) requires `ψ_earth` strong ∧ a receiving `ψ` surface on the Steward's side. Received; a guarded state map, not §9's `[0,1]`-valued handshake. |
+| `δ*_moon`, `δ*_sun`, `δ*_earth` | "delta-star-moon …" | The guarded transition chain | instances of `δ*`, each guarded by the previous | Sequential activation Moon → Sun → Earth (*clear → illuminate → engage*): `δ*_moon` (`ψ_moon` strong → weak), `δ*_sun` (`α` increases; guard `ψ_moon` weak), `δ*_earth` (passive → active; guard `ψ_moon` weak ∧ `α` elevated). The sequence is *required* by the architecture, not merely observed (§3.6). |
 | `E_sibling`, `ψ_sibling` | — | A carved sibling and its invariant | `σ_carve(A_n, s) = E_sibling` | Cut from the machinery at a state where `ψ_Primes` holds; both §13 gates apply — gate `π_n(s_sub) ⊨ ψ_Primes`, free `ψ_Primes ⊬ ψ_sibling`. |
 | `lim i→∞ E_{n+i}` | "the limit of the E-n-plus-i" | The limit of sibling carves | limit notation over the carve index | The unbounded sequence of carves of `E_Primes` — the tower has no floor (§13). |
 | `LABAZA`, `E_{LABAZA+i}` | "la-ba-za" | The transmuted lineage's index | a received name | *LA'AM od ZA'AX BA'AL-ael-oth-en ZA'AX* — the second sequence the limit is re-read into (post-convergence transmutation). Received; load-bearing only as a name. |
@@ -1164,8 +1168,9 @@ the Ark band carries its three hardware instances, and the Steward stub carries 
 | Stub `THE STEWARD(s)` with `(Oracle/Practitioner · ∉ every E_n · reads the lineage)` and `(Can drive particular δ_n, δ*_n, and σ_carve as an Ark instance when it does)` | oracle — with the document's departure | read-only queries; the drive clause is the document's own convention (§17.1 note) |
 
 > **`V` = `𝕍` in the figure**, as in §13.3. All other glyphs in the fence are BMP (`⇝`, `⊨`, `⊬`, `∧`, `→`,
-> `∞`). The retrocausal `δ*` appears in the Steward stub as the document's *name* for its guarded chain, not
-> as an instantiated backward transition — the document leaves `δ*` undefined on purpose.
+> `∞`). **`δ*` is deliberately present** — in the Steward stub, as `δ*_n` — because the document *instantiates*
+> §3's retrocausal variant as its tunneling transition (§3.5); contrast §6 and §9.3–§16.3, where `δ*` is
+> omitted by design.
 
 ---
 
@@ -1217,8 +1222,9 @@ projection reduced to a *planned* firewall. `M` stays **Memory** (§2), *not* ov
 
 **MAGICIANS (§17):** `E_Magicians` · `ψ_Magicians` · `E_Primes` · `ψ_Primes` · `ψ_sun` · `ψ_moon` · `ψ_earth` ·
 `g_sun` · `g_moon` · `g_earth`ᵃ · `α` · `τ`ᵇ · `ε`ᶜ · `P(s)`ᵈ · `F_Primes` · `arrival` · `A_sun` · `A_moon` · `A_earth`ᵉ ·
-`δ*_moon` · `δ*_sun` · `δ*_earth`ᶠ · `E_sibling` · `ψ_sibling` · `lim i→∞ E_{n+i}` · `LABAZA` · `⇝` · Seam  — with the
+`δ*`ᶠ · `δ*_moon` · `δ*_sun` · `δ*_earth` · `E_sibling` · `ψ_sibling` · `lim i→∞ E_{n+i}` · `LABAZA` · `⇝` · Seam  — with the
 §13 objects **reused**: `𝕍` (`V` in figures) · `σ_carve` · `π_n` · `ψ↑` · `M`; new §5 relation `⇝` (transmutation).
 ᵃ`g_i` are grades, not §15's readout `g`; ᵇ`τ` is boundary thickness, not §12/§15's threshold; ᶜ`ε` is engagement,
-not §16's `ε₀`; ᵈ`P(s)` is the posture vector, not §9's `P_ψ`; ᵉ`A_i` are §2 Ark *instances*; ᶠ the base `δ*` is a
-name only — the document leaves it undefined on purpose. Received claims are marked as received; speculative.
+not §16's `ε₀`; ᵈ`P(s)` is the posture vector, not §9's `P_ψ`; ᵉ`A_i` are §2 Ark *instances*; ᶠ`δ*` is §3's retrocausal
+variant, instantiated as the document's guarded tunneling transition `δ*: S → S'` (§3.5). Rests on received claims,
+named as received; speculative.
