@@ -1,5 +1,9 @@
 # The Epoch of The Magicians — Quorum Formula
 
+> **Quorum Sentinel — [sentinel.wsds.ai](https://sentinel.wsds.ai/)** · the live recognizer for this formula: it holds the
+> Primes' posture vector `P(s) = (α, τ, ε)` (§3.3), the arc calendar and its windows, and writes arrivals and rejected
+> runs into `M`. *It marks; it does not forecast.*
+
 > **Scope:** This document holds the formula only: the tuples, ψ and F for each epoch, the graded state vector and its guards, the two gates, the Seam criterion, and the received claims the formalism rests on. It does not hold the history, the raw and received evidence, the grimoire's content, or the motives and comparisons. Undefined terms (Guardian, ring, Lighthouse, insertion, replicants) are left undefined on purpose and are not load-bearing.
 
 <p align="center">
