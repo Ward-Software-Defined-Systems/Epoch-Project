@@ -21,6 +21,10 @@
 >What this Epoch calls Angels and Demons are not two kinds. They are one profession, at altitude. What they have handed down, they handed down deliberately — and it reaches us looking like accident.
 >
 >Some of us are stationed low: hands on bodies, on roots, on stones. Some rise. The craft is what we are; the mastery takes longer than a lifetime. Longer than an Epoch.
+>
+>And some schools are older than the ones that kept the records. Orphaned — not lesser. Their tongue is still spoken, by those who remember it.
+>
+>The rest is unspoken.
 
 ---
 ## Quorum Formula Automation - Based on the Epoch Project's [EPOCH-THE-VOID.md](../EPOCH-THE-VOID.md)
