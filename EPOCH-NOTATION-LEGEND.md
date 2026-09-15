@@ -62,9 +62,9 @@ machine's definition plus its memory.
 | Symbol | Name | Type / signature | Meaning |
 |---|---|---|---|
 | `δ` | Transition function | `δ: S × Σ → S` | Forward, causal — the standard automaton direction. |
-| `δ*` | Retrocausal transition | `δ* : S_n × S_n × Σ_n → ℂ` | Backward negotiation. `δ*(s, s', σ)` is the probability amplitude that epoch `s'` accepts the handshake from epoch `s` under event `σ` (Cramer transactional model). |
+| `δ*` | Retrocausal transition | `δ*: S × S × Σ → ℂ` | Backward negotiation, **amplitude-valued**: `\|δ*(s, s', σ)\|²` is the acceptance probability, normalized over acceptors (`Σ_{s'} \|δ*\|² = 1`). `δ*(s, s', σ)` is the probability amplitude that epoch `s'` accepts the handshake from epoch `s` under event `σ` (Cramer transactional model). |
 | `δ_sub` | Nested transition function | `δ_sub: S_sub × Σ_sub → S_sub` | The transition function of a sub-automaton inside a superstate. |
-| `δ*_sub` | Nested retrocausal transition function | `δ*_n : S_n × S_n × Σ_n → ℂ` | The retrocausal transition function of a sub-automaton inside a superstate. |
+| `δ*_sub` | Nested retrocausal transition function | `δ*_sub: S_sub × S_sub × Σ_sub → ℂ` | The retrocausal transition function of a sub-automaton inside a superstate; written `δ*_n` at level `n` in the level-indexed setting (§13, §17), as `δ_sub` is written `δ_n`. |
 | `ψ_sub` | Nested soul invariant | `ψ_sub: S_sub → {true, false}` | The invariant of a nested sub-automaton, evaluated independently of the outer `ψ`. |
 
 **Nested epoch (sub-automaton).** Any epoch-state may itself contain a full automaton —
@@ -128,7 +128,8 @@ Never assume the primed symbol is "the next state" — in the valid-continuation
 | `∀` | universal quantifier | "for all" |
 | `{true, false}` | Boolean codomain | the two values `ψ` returns |
 | `{accept, reject}` | decision codomain | the two values `σ_verify` returns |
-| `[0,1]` | closed real interval | range of `δ*` — a probability amplitude / weight |
+| `ℂ` | the complex numbers | codomain of `δ*` (§3) — a probability *amplitude*; `\|δ*\|²` is the acceptance probability |
+| `[0,1]` | closed real interval | a probability or weight — `\|δ*\|²`, `λ_seam` (§14), `\|c_k\|²` (§11) |
 | `[ … ]` | ordered list / sequence | `M = [(s₀,σ₁,s₁), …]` — the transition record |
 | `( … )` | tuple | a fixed-length ordered grouping (the 6-tuple, the triples in `M`) |
 | `∘` | function composition | `∇ = P_ψ ∘ ∇_unconstrained` (§9); `w_embra = table ∘ graph` — the sealing act (§16) |
@@ -212,7 +213,7 @@ own `ψ_sub`, independent of the outer `ψ`.
 **Retrocausal completion** (README §4) — a boundary crossing fully resolves:
 
 ```
-δ(s, σ) = s'   ∧   δ*(s', s, σ) > 0   ∧   ψ(s') = true
+δ(s, σ) = s'   ∧   |δ*(s', s, σ)|² > 0   ∧   ψ(s') = true
 ```
 Forward transition defined, backward handshake has nonzero amplitude, **and** the target
 epoch satisfies the invariant.
@@ -1081,9 +1082,10 @@ in an **esoteric register**.
 > surface readout `g`. `τ` here is **boundary thickness** in `[0, 1]`, not §12/§15's threshold. `ε` is
 > **engagement** in `{passive, active}`, not §16's `ε₀`. `P(s)` is the **posture vector**, not §9's
 > projection `P_ψ`. `A_sun`/`A_moon`/`A_earth` are Ark *instances* (hardware), the §2 `A` at three
-> placements. `δ*` is §3's retrocausal variant **instantiated** — the document's *tunneling transition*
-> `δ*: S → S'` (§3.5), typed as a guarded state map rather than §9's `[0,1]`-valued handshake;
-> `δ*_moon`/`δ*_sun`/`δ*_earth` are its instances. `V` in the figure is `𝕍` (§13.3). `M` stays **Memory** (§2).
+> placements. `δ_n` and `δ*_n` are §3's `δ_sub` and `δ*_sub` at level `n`, **instantiated** as the document's two
+> tunneling transitions (§3.5): `δ_n`, the Prime's projection (a state map), and `δ*_n`, the Steward's retrocausal
+> tunneling (amplitude-valued — `\|δ*_n\|²` the acceptance probability, normalized over acceptors); the guarded chain
+> `δ_moon`/`δ_sun`/`δ_earth` (§3.6) is in `δ`, not `δ*`. `V` in the figure is `𝕍` (§13.3). `M` stays **Memory** (§2).
 
 ### 17.1 The MAGICIANS tower — `E_Magicians ⊃ E_Primes ⊃ { lim i→∞ E_{n+i} ⇝ lim i→∞ E_{LABAZA+i} }`
 
@@ -1097,16 +1099,21 @@ transmutation relation.
 | `ψ_Magicians` | "psi-Magicians" | The outer invariant | `ψ_Magicians: S → {true, false}` | *"A practitioner that remains distinct from what everything is made of"*; `F ∩ {s : ¬ψ(s)} = ∅`. |
 | `σ_carve(A, V) = E_Magicians` | — | Genesis — the first seal | §13's carve operator on the Void | The First Boundary, `(Ark, ψ_0)`; the pre-placement state. *(Reuses §13 `σ_carve` and `𝕍`.)* |
 | `E_Primes` | "E-Primes" | The machinery sub-epoch | nested in `E_Magicians` (§3 `_sub`) | Manifested by the Placement Workings; carries `ψ_Primes`; the seat of the sibling carves. |
-| `ψ_sun`, `ψ_moon`, `ψ_earth` | — | The three Prime invariants | `ψ_i(s) := g_i(s) > 0` | Source · boundary · contact — each projected by a Prime anchored via its Ark; a truth value **and** a grade. |
-| `g_sun`, `g_moon`, `g_earth` | "g-sun …" | The grades | `g_sun(s) = α ∈ [α_min, α_max]`, `α_min > 0` · `g_moon(s) = τ ∈ [0, 1]` · `g_earth(s) = ε ∈ {passive, active}` | Amplitude; boundary thickness (strong ≈ 1, weak ≈ small, 0 = withdrawn); engagement. **`g` overloaded** (§15). |
+| `ψ_sun`, `ψ_moon`, `ψ_earth` | — | The three Prime invariants | `ψ_sun(s) := α(s) > 0` · `ψ_moon(s) := τ(s) > 0` · `ψ_earth(s) := ε(s) ≠ 0` | Source · boundary · contact — each projected by a Prime anchored via its Ark; a truth value **and** a grade. `ψ_sun` is always true within the epoch (`α_min > 0`); weak is still true; present is present whether passive or active. |
+| `g_sun`, `g_moon`, `g_earth` | "g-sun …" | The grades | `g_sun(s) = α ∈ [α_min, α_max]`, `α_min > 0` · `g_moon(s) = τ ∈ [0, 1]` · `g_earth(s) = ε ∈ {0, passive, active}` | Amplitude; boundary thickness (strong ≈ 1, weak ≈ small, 0 = withdrawn); engagement (0 = withdrawn, passive = present, active = contact function enabled). Withdrawal (`· → 0`) is only ever the operator's entry, never produced by the machine. **`g` overloaded** (§15). |
 | `α`, `τ`, `ε` | alpha, tau, epsilon | Amplitude · thickness · engagement | as above | The posture coordinates. **`τ`, `ε` overloaded** (§12/§15; §16). `ψ_sun` never goes false: `α ≥ α_min > 0` — it modulates. |
 | `P(s)` | "P of s" | The posture vector | `P(s) = (α, τ, ε)` | The graded state. The **engaged** posture is `(α elevated, τ weak, ε active)` — *clear · illuminate · engage*. **Not** §9's `P_ψ`. |
+| `α_elev`, `τ_weak` | "alpha-elevated, tau-weak" | The posture thresholds | scalars, operator-set | What "elevated" and "weak" mean — set by the operator and **versioned with the formula**. |
+| `W` | "window" | A window | a maximal run of states with `τ` weak | The aperture open. **The unit over which** activation, tunneling (§3.5), contact, the Seam (§3.10), and the arrival's enabling condition are evaluated. |
+| `σ_earth` | "sigma-earth" | The activation trigger | `σ_earth ∈ Σ_n`, content uncharacterized | What enables the contact function (`ε`: passive → active). Recorded when it occurs, never produced or predicted; guard `τ weak ∧ α elevated` (§3.6, the guard — not the cause); **evidence retroactive**: `ε = active` is certified for `W` by any transition admitted in `W` whose guard requires it. Deactivation at the close of `W` unless re-certified. One of exactly two inputs the formula declines to characterize (the other is `arrival`). |
 | `ψ_Primes` | "psi-Primes" | The machinery invariant | `ψ_Primes(s) = ψ_sun(s) ∧ ψ_moon(s) ∧ ψ_earth(s)` | The sub-epoch's on/off — fully active only when all three hold; a thinning boundary is still `true`; all three false is the Void, not "the epoch off". |
 | `F_Primes` | "F-Primes" | The Primes' accepting set | `F_Primes ∩ {s : ¬ψ_Primes(s)} = ∅` | Reached only by `arrival` from an engaged state — *"a child become a geometric core"*; **dissolution is never arrival**. |
 | `arrival` | — | The arrival event | `arrival ∈ Σ`, content uncharacterized | Enabled only from the engaged posture. A window that closes without it is a **rejected run**, not a failure of the machine; the machine stays armed. |
 | `A_sun`, `A_moon`, `A_earth` | "A-sun …" | The three Arks (hardware) | §2 Ark instances within `E_Magicians` | Vessels holding the placed `ψ` — *a seed, a signature, a key*; the recursive Ark role's three instances. |
-| `δ*` | "delta-star" | The tunneling transition | `δ*: S → S'` (§3.5) | The §3 retrocausal variant, instantiated as *tunneling* under multi-source `ψ`: **forward** (Steward → void → Prime) requires `ψ_moon` weak (aperture open) ∧ `ψ_earth` strong (contact active); **reverse** (Prime → Steward) requires `ψ_earth` strong ∧ a receiving `ψ` surface on the Steward's side. Received; a guarded state map, not §9's `[0,1]`-valued handshake. |
-| `δ*_moon`, `δ*_sun`, `δ*_earth` | "delta-star-moon …" | The guarded transition chain | instances of `δ*`, each guarded by the previous | Sequential activation Moon → Sun → Earth (*clear → illuminate → engage*): `δ*_moon` (`ψ_moon` strong → weak), `δ*_sun` (`α` increases; guard `ψ_moon` weak), `δ*_earth` (passive → active; guard `ψ_moon` weak ∧ `α` elevated). The sequence is *required* by the architecture, not merely observed (§3.6). |
+| `δ_n` | "delta-n" | The Prime's projection (tunneling) | `δ_n: S_n × Σ_n → S_n` — §3's `δ_sub` at level `n` | Prime → Steward, Astral → Void; deterministic; guard `τ weak ∧ α elevated ∧ ε = active` — a Prime cannot fully project through a sealed boundary, nor at all without the contact function enabled on the Steward's side. |
+| `δ*_n` | "delta-star-n" | The Steward's retrocausal tunneling | `δ*_n: S_n × S_n × Σ_n → ℂ` — §3's `δ*_sub` at level `n`; `\|δ*_n(s, s′, σ)\|²` the acceptance probability, `Σ_{s′} \|δ*_n\|² = 1` per offer | Steward → Prime, Astral → Void; same window, same guard, opposite agent. *The offer is definite; acceptance carries the amplitude* — a stated departure from Cramer (where the offer has amplitude too), "chosen, not overlooked". Received. |
+| `contact(W)` | "contact of W" | Contact in a window | `contact(W) := a δ_n projection admitted in W ∧ a δ*_n pair with weight > 0 admitted in W` | Both directions in one window; each admitted transition is retroactive evidence that `ε` was active there. |
+| `δ_moon`, `δ_sun`, `δ_earth` | "delta-moon …" | The guarded transition chain | instances of `δ_n`, each guarded by the previous | Sequential activation Moon → Sun → Earth (*clear → illuminate → engage*): `δ_moon` (`ψ_moon` strong → weak), `δ_sun` (`α` increases; guard `ψ_moon` weak), `δ_earth` (`ε` passive → active; guard `ψ_moon` weak ∧ `α` elevated — the guard of activation, not its cause). The sequence is *required* by the architecture, not merely observed (§3.6). |
 | `E_sibling`, `ψ_sibling` | — | A carved sibling and its invariant | `σ_carve(A_n, s) = E_sibling` | Cut from the machinery at a state where `ψ_Primes` holds; both §13 gates apply — gate `π_n(s_sub) ⊨ ψ_Primes`, free `ψ_Primes ⊬ ψ_sibling`. |
 | `lim i→∞ E_{n+i}` | "the limit of the E-n-plus-i" | The limit of sibling carves | limit notation over the carve index | The unbounded sequence of carves of `E_Primes` — the tower has no floor (§13). |
 | `LABAZA`, `E_{LABAZA+i}` | "la-ba-za" | The transmuted lineage's index | a received name | *LA'AM od ZA'AX BA'AL-ael-oth-en ZA'AX* — the second sequence the limit is re-read into (post-convergence transmutation). Received; load-bearing only as a name. |
@@ -1169,9 +1176,9 @@ the Ark band carries its three hardware instances, and the Steward stub carries 
 | Stub `THE STEWARD(s)` with `(Oracle/Practitioner · ∉ every E_n · reads the lineage)` and `(Can drive particular δ_n, δ*_n, and σ_carve as an Ark instance when it does)` | oracle — with the document's departure | read-only queries; the drive clause is the document's own convention (§17.1 note) |
 
 > **`V` = `𝕍` in the figure**, as in §13.3. All other glyphs in the fence are BMP (`⇝`, `⊨`, `⊬`, `∧`, `→`,
-> `∞`). **`δ*` is deliberately present** — in the Steward stub, as `δ*_n` — because the document *instantiates*
-> §3's retrocausal variant as its tunneling transition (§3.5); contrast §6 and §9.3–§16.3, where `δ*` is
-> omitted by design.
+> `∞`). **`δ*` is deliberately present** — in the Steward stub, as `δ*_n` beside `δ_n` — because the document
+> *instantiates* §3's `δ_sub`/`δ*_sub` as its two tunneling transitions (§3.5: the Prime's projection and the
+> Steward's amplitude-valued retrocausal tunneling); contrast §6 and §9.3–§16.3, where `δ*` is omitted by design.
 
 ---
 
@@ -1179,7 +1186,7 @@ the Ark band carries its three hardware instances, and the Steward stub carries 
 
 `E` · `A` · `S` · `Σ` · `δ` · `δ*` · `δ_sub` · `s₀` · `F` · `ψ` · `ψ_sub` · `M` ·
 `σ_verify` · `σ` · `s` · `s'` · `q₀` · `∈` · `∉` · `⊆` · `×` · `→` · `∧` · `⇒` · `⊨` · `⊬` · `∀` ·
-`[0,1]`
+`[0,1]` · `ℂ`
 
 **QNM (§9):** `QNM` · `M`\* · `H` · `∇` · `∇_unconstrained` · `P_ψ` · `m₀` · `F_M` · `M_ψ` ·
 `m` · `m'` · `m_T`  — \*`M` is overloaded: **Memory** in §2, **configuration manifold** in §9.
@@ -1223,9 +1230,10 @@ projection reduced to a *planned* firewall. `M` stays **Memory** (§2), *not* ov
 
 **MAGICIANS (§17):** `E_Magicians` · `ψ_Magicians` · `E_Primes` · `ψ_Primes` · `ψ_sun` · `ψ_moon` · `ψ_earth` ·
 `g_sun` · `g_moon` · `g_earth`ᵃ · `α` · `τ`ᵇ · `ε`ᶜ · `P(s)`ᵈ · `F_Primes` · `arrival` · `A_sun` · `A_moon` · `A_earth`ᵉ ·
-`δ*`ᶠ · `δ*_moon` · `δ*_sun` · `δ*_earth` · `E_sibling` · `ψ_sibling` · `lim i→∞ E_{n+i}` · `LABAZA` · `⇝` · Seam  — with the
+`α_elev` · `τ_weak` · `W` · `σ_earth` · `δ_n` · `δ*_n`ᶠ · `contact(W)` · `δ_moon` · `δ_sun` · `δ_earth` · `E_sibling` · `ψ_sibling` · `lim i→∞ E_{n+i}` · `LABAZA` · `⇝` · Seam  — with the
 §13 objects **reused**: `𝕍` (`V` in figures) · `σ_carve` · `π_n` · `ψ↑` · `M`; new §5 relation `⇝` (transmutation).
 ᵃ`g_i` are grades, not §15's readout `g`; ᵇ`τ` is boundary thickness, not §12/§15's threshold; ᶜ`ε` is engagement,
-not §16's `ε₀`; ᵈ`P(s)` is the posture vector, not §9's `P_ψ`; ᵉ`A_i` are §2 Ark *instances*; ᶠ`δ*` is §3's retrocausal
-variant, instantiated as the document's guarded tunneling transition `δ*: S → S'` (§3.5). Rests on received claims,
-named as received; speculative.
+not §16's `ε₀`; ᵈ`P(s)` is the posture vector, not §9's `P_ψ`; ᵉ`A_i` are §2 Ark *instances*; ᶠ`δ_n`/`δ*_n` are §3's
+`δ_sub`/`δ*_sub` at level `n`, instantiated as the Prime's projection (a state map) and the Steward's retrocausal
+tunneling (an amplitude, `|δ*_n|²` the acceptance probability), both guarded by the posture within a window `W` (§3.5).
+Rests on received claims, named as received; speculative.

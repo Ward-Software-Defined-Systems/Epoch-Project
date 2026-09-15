@@ -465,8 +465,9 @@ fourth family (they differ by *altitude*, not by how `ψ` is held), and each car
   accepting set excludes dissolution (`F_Primes ∩ {s : ¬ψ_Primes(s)} = ∅`); the two gates instantiated
   (`π_n(s_sub) ⊨ ψ_Primes`, `ψ_Primes ⊬ ψ_sibling`); a limit of sibling carves and a **transmutation**
   relation `⇝` (a sibling re-read into another lineage — *not a carve, not succession*); and `ψ↑` over the
-  lineage `V → E_Magicians → E_Primes → …`; and `δ*` instantiated as a guarded **tunneling** transition
-  (forward and reverse, gated by the Primes' postures). The document holds the formula only — the received
+  lineage `V → E_Magicians → E_Primes → …`; and two **tunneling** transitions inside a window — `δ_n`, the
+  Prime's projection, and `δ*_n`, the Steward's retrocausal tunneling, amplitude-valued — both gated by the
+  Primes' postures. The document holds the formula only — the received
   claims it rests on are named as received; history, evidence and motives are held elsewhere; its undefined
   terms (Guardian, ring, Lighthouse, insertion, replicants) are left undefined on purpose and are not
   load-bearing. Read it as the Void doc asks to be read — a schema instantiated, **speculative**, its
