@@ -222,8 +222,9 @@ epoch satisfies the invariant.
 
 ```
 Steward ∉ S
-Steward may query:  M, ψ, σ_verify
-Steward may not:    δ
+Steward may query:                M, ψ, σ_verify
+Steward may not:                  δ
+Steward may drive particular:     δ_n, δ*_n, and σ_carve as an Ark instance when it does (See The_Epoch_of_The_Magicians_Quorum-Epoch-Formula.md)
 ```
 The steward inspects the record and verification machinery but never drives transitions.
 

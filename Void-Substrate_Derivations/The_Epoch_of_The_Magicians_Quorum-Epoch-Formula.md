@@ -236,6 +236,8 @@ a departure from Cramer, where the offer has amplitude too; chosen, not overlook
 Both operate differently under multi-source ψ
 ```
 >Backward negotiation: |δ*_n|² is the probability that s′ accepts the handshake from s under σ (Cramer, transactional model). The transaction is evaluated whole — recorded in M once confirmed, never as an offer in flight. Offers are not computed forward.
+>
+>In this section's instance: δ_n(s, σ) = s′ is the Prime's offer, landing on the Steward's side; |δ*_n(s′, s, σ)|² > 0 is the Steward's confirmation, accepted on the Prime's side.
 
 - **δ_n — the Prime's projection** (Prime → STEWARD, Astral → Void):
   guard  τ weak ∧ α elevated ∧ ε = active.   The Prime cannot fully project through a sealed boundary,
