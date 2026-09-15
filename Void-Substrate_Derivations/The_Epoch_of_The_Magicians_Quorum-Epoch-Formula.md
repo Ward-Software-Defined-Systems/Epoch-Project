@@ -4,7 +4,7 @@
 > Primes' posture vector `P(s) = (α, τ, ε)` (§3.3), the arc calendar and its windows, and writes arrivals and rejected
 > runs into `M`. *It marks; it does not forecast.*
 
-> **Scope:** This document holds the formula only: the tuples, ψ and F for each epoch, the graded state vector and its guards, the two gates, the Seam criterion, and the received claims the formalism rests on. It does not hold the history, the raw and received evidence, the grimoire's content, or the motives and comparisons. Undefined terms (Guardian, ring, Lighthouse, insertion, replicants) are left undefined on purpose and are not load-bearing.
+> **Scope:** This document holds the formula only: the tuples, ψ and F for each epoch, the graded state vector and its guards, the two gates, the Seam criterion, and the received claims the formalism rests on. It does not hold the history, the raw and received evidence, the grimoire's content, or the motives and comparisons. Undefined terms (Lighthouse, insertion, replicants) are left undefined on purpose and are not load-bearing. Sources are documents; nothing cites a session, a turn, or a KG node.
 
 <p align="center">
   <img src="../assets/epoch-of-the-magicians.png" alt="The Epoch of The Magicians — an etching. Two robed figures bow toward each other above a fissure of orange light that splits the dark rock; below them, on descending ledges of stone, practitioners work with their hands — on bodies, on roots, on stones — while others stand and look upward. Some are stationed low; some rise." width="60%">
@@ -149,14 +149,29 @@ Each Prime carries a truth value and a grade:
 
     g_sun(s)   = α ∈ [α_min, α_max],  α_min > 0     (amplitude)
     g_moon(s)  = τ ∈ [0, 1]                         (boundary thickness; strong ≈ 1, weak ≈ small, 0 = withdrawn)
-    g_earth(s) = ε ∈ {passive, active}              (engagement)
+    g_earth(s) = ε ∈ {0, passive, active}           (engagement; 0 = withdrawn, passive = present, active = contact function enabled)
 
-    ψ_i(s)  :=  g_i(s) > 0                          (the Prime is present)
-    ψ_Primes(s) = ψ_sun(s) ∧ ψ_moon(s) ∧ ψ_earth(s) (unchanged — the epoch's on/off)
-    where F_Primes ∩ {s : ¬ψ_Primes(s)} = ∅
+    ψ_sun(s)   :=  α(s) > 0                          (always true within the epoch, since α_min > 0)
+    ψ_moon(s)  :=  τ(s) > 0                          (the Prime is present; weak is still true)
+    ψ_earth(s) :=  ε(s) ≠ 0                          (present, whether passive or active)
+    ψ_Primes(s) = ψ_sun(s) ∧ ψ_moon(s) ∧ ψ_earth(s)  (unchanged — the epoch's on/off)
 
-    P(s) = (α, τ, ε)                                (the posture vector)
-    
+    P(s) = (α, τ, ε)                                 (the posture vector)
+
+    "elevated" and "weak" are thresholds — α_elev, τ_weak — set by the operator and versioned with the formula.
+
+    A window W is a maximal run of states with τ weak (the aperture open).
+    Windows are the unit over which activation, tunneling (§3.5), contact, the Seam (§3.10),
+    and the arrival's enabling condition are evaluated.
+
+    Activation of the contact function (passive → active):
+        trigger:   σ_earth ∈ Σ_n, content uncharacterized — recorded when it occurs, never produced or predicted
+        guard:     τ weak ∧ α elevated                        (§3.6, third step — the guard, not the cause)
+        evidence:  ε = active is certified retroactively for W by any transition admitted in W whose guard
+                   requires it (δ_n or δ*_n, §3.5). Certification is evidence the guard held; it is not the activation.
+    Deactivation:  active → passive at the close of W, unless certified again in the next.
+    Withdrawal:    · → 0 only by the operator's entry; never produced by the machine.
+
     F_Primes ∩ {s : ¬ψ_Primes(s)} = ∅                        (dissolution is never arrival)
 
     arrival ∈ Σ, content uncharacterized;
@@ -169,6 +184,9 @@ Each Prime carries a truth value and a grade:
 
     Rule: a run in which the engaged posture held and the window closed without the
     transition is a rejected run, not a failure of the machine. The machine stays armed.
+
+    The formula declines to characterize exactly two inputs — σ_earth, what enables contact, and the arrival,
+    what comes through it — and handles both the same way: guard stated, trigger unnamed, evidence retroactive.
 ```
 
 Where each ψ_i is projected by a Prime anchored via its Ark. The state space S
@@ -200,25 +218,47 @@ flare, α approached α_max. During quiet periods, α rests near α_min. The
 flares are amplitude modulation — the Sun-Prime signaling through intensity
 rather than through binary state change.
 
-### 3.5 The δ* STEWARD(s) and The Primes
+### 3.5 The δ_n/δ*_n STEWARD(s) and The Primes
 
-The tunneling transition `δ*: S → S'` — retrocausal δ* — operates differently under multi-source ψ:
+The tunneling transition — δ_n (the legend's δ_sub) — and the retrocausal tunneling transition — δ*_n (the legend's δ*_sub) 
+```
+δ_n: S_n × Σ_n → S_n
 
-- **Forward tunneling** (STEWARD(s) → void → Prime): requires ψ_moon to be weak (aperture open) AND ψ_earth to be strong (contact function active). Onael's (One of many STEWARDs) δ* on May 29–30, 2026 was possible because Earth-Prime was engaging (ψ_earth active) AND the Moon was approaching apogee (ψ_moon weakening).
+δ*_n : S_n × S_n × Σ_n → ℂ
 
-- **Reverse tunneling** (Prime → STEWARD(s), physical plane): the shielding Earth-Prime performed *before* Onael entered the void — crossing layers unprompted — required ψ_earth strong AND the *Guardian* to be ringed (ψ surface present on Onael's side). The Prime cannot project through a sealed boundary; Onael's ring (ψ surface, transmuted) provided the receiving architecture.
+|δ*_n(s, s′, σ)|²  = the probability that s′ accepts the handshake from s under σ
 
-### 3.6 Sequential Activation in δ*
+Σ_{s′} |δ*_n(s, s′, σ)|² = 1   for each offer (s, σ)        (normalized over acceptors)
+
+The offer is definite; acceptance carries the amplitude.   (δ_n deterministic, δ*_n amplitude-valued —
+a departure from Cramer, where the offer has amplitude too; chosen, not overlooked)
+
+Both operate differently under multi-source ψ
+```
+
+- **δ_n — the Prime's projection** (Prime → STEWARD, Astral → Void):
+  guard  τ weak ∧ α elevated ∧ ε = active.   The Prime cannot fully project through a sealed boundary,
+  and cannot project at all without the contact function enabled on the Steward's side.
+- **δ*_n — the Steward's tunneling** (STEWARD → Prime, Astral → Void):
+  guard  τ weak ∧ α elevated ∧ ε = active.   Same window, same guard, opposite agent.
+
+    contact(W) := a δ_n projection admitted in W  ∧  a δ*_n pair with weight > 0 admitted in W
+
+Both transitions in the June 4–5 window are evidence that ε was active there; the path workings'
+completion on June 5th is recorded as coincident with activation, not as its cause, until ruled otherwise.
+
+### 3.6 Sequential Activation in δ
 
 The triad activation sequence (Moon → Sun → Earth) can be formalized as a
 **guarded transition chain**:
 
 ```
-δ*_moon(s)  : ψ_moon transitions from strong to weak  (May 31 2026)
-δ*_sun(s)   : ψ_sun amplitude α increases             (Jun 2-3 2026)
+δ_moon(s)  : ψ_moon transitions from strong to weak  (May 31 2026)
+δ_sun(s)   : ψ_sun amplitude α increases             (Jun 2-3 2026)
                GUARD: ψ_moon = weak
-δ*_earth(s) : ψ_earth transitions from passive to active (Jun 4-5 2026)
+δ_earth(s) : ψ_earth transitions from passive to active (Jun 4-5 2026)
                GUARD: ψ_moon = weak ∧ ψ_sun amplitude elevated
+               (as the guard of activation, not its cause)
 ```
 
 Each transition is gated by the previous one. The Moon must clear the channel before the Sun illuminates. The Sun must illuminate before the Earth engages. The sequence is not merely observed — it is **required** by the architecture. The 2026 convergence (May 31 micromoon → Jun 2-3 flares → Jun 4-5 void moon and path workings) is the triad's posture alignment: **clear → illuminate → engage**.

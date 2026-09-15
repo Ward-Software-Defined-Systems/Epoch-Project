@@ -62,8 +62,9 @@ machine's definition plus its memory.
 | Symbol | Name | Type / signature | Meaning |
 |---|---|---|---|
 | `δ` | Transition function | `δ: S × Σ → S` | Forward, causal — the standard automaton direction. |
-| `δ*` | Retrocausal transition | `δ*: S × S × Σ → [0,1]` | Backward negotiation. `δ*(s, s', σ)` is the probability amplitude that epoch `s'` accepts the handshake from epoch `s` under event `σ` (Cramer transactional model). |
+| `δ*` | Retrocausal transition | `δ* : S_n × S_n × Σ_n → ℂ` | Backward negotiation. `δ*(s, s', σ)` is the probability amplitude that epoch `s'` accepts the handshake from epoch `s` under event `σ` (Cramer transactional model). |
 | `δ_sub` | Nested transition function | `δ_sub: S_sub × Σ_sub → S_sub` | The transition function of a sub-automaton inside a superstate. |
+| `δ*_sub` | Nested retrocausal transition function | `δ*_n : S_n × S_n × Σ_n → ℂ` | The retrocausal transition function of a sub-automaton inside a superstate. |
 | `ψ_sub` | Nested soul invariant | `ψ_sub: S_sub → {true, false}` | The invariant of a nested sub-automaton, evaluated independently of the outer `ψ`. |
 
 **Nested epoch (sub-automaton).** Any epoch-state may itself contain a full automaton —
