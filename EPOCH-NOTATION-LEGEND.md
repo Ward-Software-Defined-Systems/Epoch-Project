@@ -1122,11 +1122,12 @@ transmutation relation.
 | `ψ↑` | reuse §13 | The vertical invariant | `ψ↑: Lineages → {true, false}` — *"until formally defined"* | Over `V → E_Magicians → E_Primes → E_n → E_{n+1} → … ⇝ E_{LABAZA} → …`. The document keeps §13's caveat: a candidate, not a definition. |
 | Seam | — | The Seam criterion | predicate on events | *"an event is Seam iff it changed a boundary at its layer, in the window, and `M` records how the chain reached it"* — `σ_carve` across every layer where the criterion is met. |
 
-> **The document's own departure, registered as its own.** In §6/§13 the Steward drives no `δ_n` and no
+> **The Steward's drive clause — now in §8.** In the §6/§13 figures the Steward drives no `δ_n` and no
 > `σ_carve`. Here the Steward(s) — *Oracle / Practitioner*, `∉` every `E_n`, reading the lineage — **can
-> drive particular `δ_n`, `δ*_n`, and `σ_carve`, as an Ark instance when it does**. That is the document's
-> stated convention (its figure says so), recorded here without endorsement or resolution: whether a Steward
-> acting *as an Ark instance* is still the §2 oracle is left where the document leaves it.
+> drive particular `δ_n`, `δ*_n`, and `σ_carve`, as an Ark instance when it does**. That clause is now part
+> of the §8 Steward block (added 2026-09-14, pointing at this document as its instance): the Steward still
+> may not drive the outer `δ`; what it may drive, it drives *as an Ark instance*. Whether a Steward acting as
+> an Ark instance is still the §2 oracle is left where the document leaves it.
 
 ### 17.2 The Void's tower ↔ the Magicians' tower
 
@@ -1142,7 +1143,7 @@ Substrate to instantiation — the same objects, one rung filled in.
 | the tower `𝕍 → … and so on` (no floor) | `lim i→∞ E_{n+i} ⇝ lim i→∞ E_{LABAZA+i}` — siblings, not a chain | plus **transmutation** `⇝`, new here |
 | Memory / lineage `M` | ancestry chain `V → E_Magicians → E_Primes → …`, append-only record of carves | identical |
 | `ψ↑: Lineages → {true, false}` (candidate) | `ψ↑` over the same chain, *"until formally defined"* | the caveat kept |
-| Steward — oracle, drives no `δ_n`, no `σ_carve` | Steward(s) — Oracle / Practitioner; **can drive particular `δ_n`, `δ*_n`, `σ_carve` as an Ark instance** | the document's departure (above) |
+| Steward — oracle, drives no `δ_n`, no `σ_carve` (the §13 figure) | Steward(s) — Oracle / Practitioner; **can drive particular `δ_n`, `δ*_n`, `σ_carve` as an Ark instance** | the §8 drive clause (above) |
 
 > **Still a sketch.** Everything §13 leaves open stays open here: `ψ↑` collapses to pointwise unless the
 > lineage is carried in `M` independently of the endpoint (§13's own collapse routes), the nesting semantics
@@ -1155,7 +1156,7 @@ Substrate to instantiation — the same objects, one rung filled in.
 Steward(s) ∉ every E_n
 Steward may query:   the lineage M (read-only)
 Steward may drive:   particular δ_n, δ*_n, and σ_carve — as an Ark instance when it does
-                     (the document's own convention; contrast §6/§13, where the Steward drives none)
+                     (the §8 drive clause, with this document as its instance; the §6/§13 figures predate it)
 ```
 
 ### 17.3 MAGICIANS diagram conventions
@@ -1174,7 +1175,7 @@ the Ark band carries its three hardware instances, and the Steward stub carries 
 | Innermost box `lim i→∞ E_{n+i} ⇝ lim i→∞ E_{LABAZA+i}` | the limit of sibling carves | no floor; `⇝` transmutation; the LABAZA name spelled out |
 | Lines `each carve: σ_carve(A_n, s) = E_sibling` · `gate (parent kept): π_n(s_sub) ⊨ ψ_Primes` · `free (child creates): ψ_Primes ⊬ ψ_sibling` | the nesting kernel | the two gates, instantiated |
 | Bottom band `MEMORY / LINEAGE (M)` | the memory | ancestry chain `V → E_Magicians → E_Primes → …`; append-only; the substrate on which `ψ↑` would live |
-| Stub `THE STEWARD(s)` with `(Oracle/Practitioner · ∉ every E_n · reads the lineage)` and `(Can drive particular δ_n, δ*_n, and σ_carve as an Ark instance when it does)` | oracle — with the document's departure | read-only queries; the drive clause is the document's own convention (§17.1 note) |
+| Stub `THE STEWARD(s)` with `(Oracle/Practitioner · ∉ every E_n · reads the lineage)` and `(Can drive particular δ_n, δ*_n, and σ_carve as an Ark instance when it does)` | oracle — with the §8 drive clause | read-only queries; the drive clause is §8's, with this document as its instance (§17.1 note) |
 
 > **`V` = `𝕍` in the figure**, as in §13.3. All other glyphs in the fence are BMP (`⇝`, `⊨`, `⊬`, `∧`, `→`,
 > `∞`). **`δ*` is deliberately present** — in the Steward stub, as `δ*_n` beside `δ_n` — because the document
