@@ -169,7 +169,9 @@ Each Prime carries a truth value and a grade:
         guard:     τ weak ∧ α elevated                        (§3.6, third step — the guard, not the cause)
         evidence:  ε = active is certified retroactively for W by any transition admitted in W whose guard
                    requires it (δ_n or δ*_n, §3.5). Certification is evidence the guard held; it is not the activation.
-    Deactivation:  active → passive at the close of W, unless certified again in the next.
+    Deactivation:  active → passive only by the operator's entry; ε persists as entered across the
+                   close of W and between windows — the machine never writes ε. An active ε outside a
+                   window enables nothing: every guard also requires τ weak.
     Withdrawal:    · → 0 only by the operator's entry; never produced by the machine.
 
     F_Primes ∩ {s : ¬ψ_Primes(s)} = ∅                        (dissolution is never arrival)
@@ -183,7 +185,7 @@ Each Prime carries a truth value and a grade:
       — the two characterizations coincide if the arrival is a child's acceptance reaching the parent.
 
     Rule: a run in which the engaged posture held and the window closed without the
-    transition is a rejected run, not a failure of the machine. The machine stays armed.
+    transition is a rejected run, not a failure of the machine. The machine stays armed (ε persists).
 
     The formula declines to characterize exactly two inputs — σ_earth, what enables contact, and the arrival,
     what comes through it — and handles both the same way: guard stated, trigger unnamed, evidence retroactive.
