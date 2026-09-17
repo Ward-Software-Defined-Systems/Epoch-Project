@@ -257,14 +257,15 @@ The triad activation sequence (Moon → Sun → Earth) can be formalized as a
 
 ```
 δ_moon(s)  : ψ_moon transitions from strong to weak  (May 31 2026)
-δ_sun(s)   : ψ_sun amplitude α increases             (Jun 2-3 2026)
+δ_sun(s)   : ψ_sun amplitude α increases             (Jun 3 2026, UTC — the M9.3 at 01:36Z was the evening of Jun 2 PDT)
                GUARD: ψ_moon = weak
-δ_earth(s) : ψ_earth transitions from passive to active (Jun 4-5 2026)
+δ_earth(s) : ψ_earth transitions from passive to active (Jun 5 2026, 22:30Z)
                GUARD: ψ_moon = weak ∧ ψ_sun amplitude elevated
                (as the guard of activation, not its cause)
+arrival ∈ Σ : from the engaged state                   (Jul 1 2026, 10:00Z — recorded in M on window 2026-05-25)
 ```
 
-Each transition is gated by the previous one. The Moon must clear the channel before the Sun illuminates. The Sun must illuminate before the Earth engages. The sequence is not merely observed — it is **required** by the architecture. The 2026 convergence (May 31 micromoon → Jun 2-3 flares → Jun 4-5 void moon and path workings) is the triad's posture alignment: **clear → illuminate → engage**.
+Each transition is gated by the previous one. The Moon must clear the channel before the Sun illuminates. The Sun must illuminate before the Earth engages. The sequence is not merely observed — it is **required** by the architecture. The 2026 convergence (May 31 micromoon → Jun 3 flares → Jun 5 void moon and path workings) is the triad's posture alignment: **clear → illuminate → engage**.
 
 ### 3.7 The Convergence as ψ-Posture Alignment
 
@@ -288,12 +289,14 @@ began within 48 hours of the May 31 micromoon and continued through July 3.
 is variable. The Sun-Prime can project more or less ψ_sun without breaking
 the conjunction. The flares are not instability — they are **signal**.
 
+Dates and times are UTC, the ledger's clock; the M9.3 at 01:36Z on Jun 3 was the evening of Jun 2 in PDT.
+
 | Date | Event | Classification |
 |------|-------|---------------|
-| Jun 2 | AR4455 M9.3 flare | Near X-class. Anti-Hale sunspot — reversed magnetic polarity. "Foreign within its own domain." |
-| Jun 3 | AR4455 M7.7 flare | Second in the triple sequence |
-| Jun 3 | AR4455 **X1.0 flare** | Earth-directed CME. Cannibal CME formed. G3 geomagnetic storm. |
-| Jun 4-5 | G3 storm arrival | During void moon and path working window. |
+| Jun 3 01:36Z | AR4455 M9.3 flare | Near X-class. Anti-Hale sunspot — reversed magnetic polarity. "Foreign within its own domain." |
+| Jun 3 07:00Z | AR4455 M7.7 flare | Second in the triple sequence |
+| Jun 3 11:28Z | AR4455 **X1.0 flare** | Earth-directed CME. Cannibal CME formed. G3 watch issued 14:52Z for Jun 4–5. |
+| Jun 5 | CME arrival (~07:30Z); G2 observed, Kp 6 at 17:36Z — G3 was the watch level | Between the two void Moons, Jun 4 03:04Z → 13:45Z (late Capricorn) and Jun 5 19:50Z → Jun 7 00:42Z (late Aquarius); the path working window, ε active 22:30Z. The storm continued into Jun 6 under G1 (Kp max 4.7). |
 | Jun 21 | AR4473 M6.8 flare | Solstice flare |
 | Jun 26 | AR4478 emergence | Largest sunspot in 5 years. Beta-gamma-delta classification. |
 | Jun 30 | AR4479 **X1.1 flare** | Earth-directed CME. Radio blackouts across North America. |
@@ -337,8 +340,10 @@ The 2026 micromoons are the boundary at its weakest.
 | Date | Event | Epoch Significance |
 |------|-------|-------------------|
 | **May 31** | Blue Micromoon (apogee) | ψ_moon partial withdrawal. Aperture opens. |
-| **Jun 2-3** | AR4455 triple flare: M9.3→M7.7→**X1.0** | ψ_sun intensifies. Anti-Hale polarity — "foreign within its own domain." Cannibal CME. |
-| **Jun 4-5** | G3 geomagnetic storm. Void ψ_moon and Path Workings. | ψ_earth engages. Epoch Formulations Received. Lighthouse insertion. |
+| **Jun 3** | AR4455 triple flare: M9.3 (01:36Z) → M7.7 (07:00Z) → **X1.0** (11:28Z) | ψ_sun intensifies. Anti-Hale polarity — "foreign within its own domain." Cannibal CME; G3 watch issued for Jun 4–5. |
+| **Jun 4** | Moon void of course 03:04Z → 13:45Z (late Capricorn). Quiet, Kp max 3: the CME has not arrived. | Epoch Formulations Received (10:00Z). |
+| **Jun 5** | CME arrival (~07:30Z); G2 observed, Kp 6 at 17:36Z — G3 was the watch level. Moon void of course again 19:50Z → Jun 7 00:42Z (late Aquarius). Path Workings. | ψ_earth engages: ε active 22:30Z. Lighthouse insertion (23:30Z). |
+| **Jun 6** | The storm continues under G1 (Kp max 4.7). | Void ψ_moon Workings (05:30Z). |
 | **Jun 7** | Onael's Return | σ_carve at biological layer |
 | **Jun 9** | Venus-Jupiter conjunction (1°38' separation) | The insertion's manufactured deadline. |
 | **Jun 17** | Rare daytime lunar occultation of Venus | First visible from US since December 2015. ~87 minutes. |
@@ -346,7 +351,7 @@ The 2026 micromoons are the boundary at its weakest.
 | **Jun 26** | AR4478 — largest sunspot in 5 years | Beta-gamma-delta. Rotating into Earth-strike zone. Peak Jun 30-Jul 1. |
 | **Jun 29** | Micro Strawberry Moon (apogee) | ψ_moon withdrawal **sustained**. Second consecutive micromoon. Celestial cycle completes. CERN LS3. |
 | **Jun 30** | AR4479 **X1.1 flare** | Earth-directed CME. Radio blackouts across North America. ψ_sun answers again. |
-| **Jul 1** | Onael Realized (PA'AD) | דם / ילד. Blood and Birth |
+| **Jul 1** | Onael Realized (PA'AD) | דם / ילד. Blood and Birth. The arrival ∈ Σ, 10:00Z, on the window opened May 25. |
 | **Jul 2** | Replica Realization | Defense architecture holds. |
 | **Jul 3** | CME A Expected. Moderate geomagnetic storm. | The Sun's June 30 answer reaches Earth. |
 
@@ -374,8 +379,8 @@ E_Magicians (outer — ψ: Base Magick and Reality)
 │   ├── Sentinel postures: waiting
 │   ├── 2026 convergence: sequential activation (Moon → Sun → Earth)
 │   │   ├── May 31: Moon-Prime withdraws (micromoon — aperture opens)
-│   │   ├── Jun 2-3: Sun-Prime answers (AR4455 triple flare — X1.0)
-│   │   ├── Jun 4-5: Earth-Prime engages (Void ψ_moon and Path Workings)
+│   │   ├── Jun 3: Sun-Prime answers (AR4455 triple flare — X1.0)
+│   │   ├── Jun 5: Earth-Prime engages (CME arrival, G2; void ψ_moon and Path Workings — ε active 22:30Z)
 │   │   ├── Jun 7: σ_carve at biological layer
 │   │   ├── Jun 29: Moon-Prime sustains withdrawal (second micromoon)
 │   │   ├── Jun 30: Sun-Prime answers again (AR4479 X1.1 — Earth-directed CME)
