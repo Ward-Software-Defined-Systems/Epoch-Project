@@ -161,6 +161,7 @@ Each Prime carries a truth value and a grade:
     "elevated" and "weak" are thresholds — α_elev, τ_weak — set by the operator and versioned with the formula.
 
     A window W is a maximal run of states with τ weak (the aperture open).
+    Windows are keyed by the date of their opening step in the arc calendar (the 2026 window: 2026-05-25).
     Windows are the unit over which activation, tunneling (§3.5), contact, the Seam (§3.10),
     and the arrival's enabling condition are evaluated.
 
@@ -258,7 +259,8 @@ The triad activation sequence (Moon → Sun → Earth) can be formalized as a
 **guarded transition chain**:
 
 ```
-δ_moon(s)  : ψ_moon transitions from strong to weak  (May 31 2026)
+δ_moon(s)  : ψ_moon transitions from strong to weak  (May 25 2026 — the opening step of window 2026-05-25;
+               the May 31 micromoon is the withdrawal's visible sign, six days inside it)
 δ_sun(s)   : ψ_sun amplitude α increases             (Jun 3 2026, UTC — the M9.3 at 01:36Z was the evening of Jun 2 PDT)
                GUARD: ψ_moon = weak
 δ_earth(s) : ψ_earth transitions from passive to active (Jun 5 2026, 22:30Z)
@@ -267,7 +269,7 @@ The triad activation sequence (Moon → Sun → Earth) can be formalized as a
 arrival ∈ Σ : from the engaged state                   (Jul 1 2026, 10:00Z — recorded in M on window 2026-05-25)
 ```
 
-Each transition is gated by the previous one. The Moon must clear the channel before the Sun illuminates. The Sun must illuminate before the Earth engages. The sequence is not merely observed — it is **required** by the architecture. The 2026 convergence (May 31 micromoon → Jun 3 flares → Jun 5 void moon and path workings) is the triad's posture alignment: **clear → illuminate → engage**.
+Each transition is gated by the previous one. The Moon must clear the channel before the Sun illuminates. The Sun must illuminate before the Earth engages. The sequence is not merely observed — it is **required** by the architecture. The 2026 convergence (window open May 25, the May 31 micromoon its sign → Jun 3 flares → Jun 5 void moon and path workings) is the triad's posture alignment: **clear → illuminate → engage**.
 
 ### 3.7 The Convergence as ψ-Posture Alignment
 
@@ -317,7 +319,7 @@ days. The boundary had been thin for the entire convergence arc.
 
 | Full Moon | Date | Type | ψ_moon Posture |
 |-----------|------|------|---------------|
-| Blue Moon | May 31, 1:46 AM PDT | Micromoon (apogee) | Partial withdrawal — aperture opens |
+| Blue Moon | May 31, 1:46 AM PDT | Micromoon (apogee) | Partial withdrawal, the visible sign — aperture open since May 25 |
 | Strawberry Moon | June 29, 7:56 PM ET | Micromoon (apogee) | Withdrawal sustained — aperture held open |
 
 The Moon-Prime is not cycling normally. It is holding a posture.
@@ -341,7 +343,8 @@ The 2026 micromoons are the boundary at its weakest.
 
 | Date | Event | Epoch Significance |
 |------|-------|-------------------|
-| **May 31** | Blue Micromoon (apogee) | ψ_moon partial withdrawal. Aperture opens. |
+| **May 25** | Window 2026-05-25 opens — τ weak by the arc calendar | δ_moon: ψ_moon strong → weak. Aperture opens. |
+| **May 31** | Blue Micromoon (apogee) | ψ_moon partial withdrawal, the visible sign. Aperture already open (window 2026-05-25). |
 | **Jun 3** | AR4455 triple flare: M9.3 (01:36Z) → M7.7 (07:00Z) → **X1.0** (11:28Z) | ψ_sun intensifies. Anti-Hale polarity — "foreign within its own domain." Cannibal CME; G3 watch issued for Jun 4–5. |
 | **Jun 4** | Moon void of course 03:04Z → 13:45Z (late Capricorn). Quiet, Kp max 3: the CME has not arrived. | Epoch Formulations Received (10:00Z). |
 | **Jun 5** | CME arrival (~07:30Z); G2 observed, Kp 6 at 17:36Z — G3 was the watch level. Moon void of course again 19:50Z → Jun 7 00:42Z (late Aquarius). Path Workings. | ψ_earth engages: ε active 22:30Z. Lighthouse insertion (23:30Z). |
@@ -380,7 +383,7 @@ E_Magicians (outer — ψ: Base Magick and Reality)
 │   │   └── E_{n} → E_{n+1} → lim i→∞ E_{n+i} → ...
 │   ├── Sentinel postures: waiting
 │   ├── 2026 convergence: sequential activation (Moon → Sun → Earth)
-│   │   ├── May 31: Moon-Prime withdraws (micromoon — aperture opens)
+│   │   ├── May 25: Moon-Prime withdraws (window 2026-05-25 opens; the May 31 micromoon its visible sign)
 │   │   ├── Jun 3: Sun-Prime answers (AR4455 triple flare — X1.0)
 │   │   ├── Jun 5: Earth-Prime engages (CME arrival, G2; void ψ_moon and Path Workings — ε active 22:30Z)
 │   │   ├── Jun 7: σ_carve at biological layer
